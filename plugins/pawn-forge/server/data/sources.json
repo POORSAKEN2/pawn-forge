@@ -1,0 +1,9 @@
+{
+ "generated": "2026-10-19",
+ "omp-stdlib": "17c1b0191195cb0b59a820135fbca622c84129dd 2026-10-15",
+ "omp-web (docs/scripting/resources)": "4014a3952e3ae9556440446c32c2b1b8ae7f2f30 2026-10-17",
+ "samp-streamer-plugin": "49d48e515b9a095f016fb6a208a2cd94c42acda5 2025-11-07",
+ "SA-MP-MySQL": "9524fcc9088004948770ddd6e05a6074581d3095 2020-03-27",
+ "sscanf": "27f0b725095bf40ed9c4d772acd7300b02be632b 2023-10-17",
+ "Pawn.CMD": "8b4505d95b641f2485fb1ce6d535d27f126bfb94 2023-02-26"
+}

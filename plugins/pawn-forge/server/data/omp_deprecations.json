@@ -1,0 +1,714 @@
+{
+ "@receivepacket": {
+  "replacement": null,
+  "message": "Just doesn't work.  Use the \"Requests\" plugin.",
+  "kind": "forward",
+  "file": "datagram.inc",
+  "line": 100,
+  "safe_rename": false
+ },
+ "@receivestring": {
+  "replacement": null,
+  "message": "Just doesn't work.  Use the \"Requests\" plugin.",
+  "kind": "forward",
+  "file": "datagram.inc",
+  "line": 84,
+  "safe_rename": false
+ },
+ "CarColIndexToColour": {
+  "replacement": "VehicleColourIndexToColour",
+  "message": "Use `VehicleColourIndexToColour`",
+  "kind": "native",
+  "file": "omp_vehicle.inc",
+  "line": 1215,
+  "safe_rename": false
+ },
+ "ChangeVehicleColor": {
+  "replacement": "ChangeVehicleColours",
+  "message": "Use `ChangeVehicleColours`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_vehicle.inc",
+  "line": 934,
+  "safe_rename": true
+ },
+ "db_close": {
+  "replacement": "DB_Close",
+  "message": "Use `DB_Close`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 303,
+  "safe_rename": true
+ },
+ "db_debug_openfiles": {
+  "replacement": "DB_GetDatabaseConnectionCount",
+  "message": "Use `DB_GetDatabaseConnectionCount`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 423,
+  "safe_rename": true
+ },
+ "db_debug_openresults": {
+  "replacement": "DB_GetDatabaseResultSetCount",
+  "message": "Use `DB_GetDatabaseResultSetCount`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 431,
+  "safe_rename": true
+ },
+ "db_field_name": {
+  "replacement": "DB_GetFieldName",
+  "message": "Use `DB_GetFieldName`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 351,
+  "safe_rename": true
+ },
+ "db_free_result": {
+  "replacement": "DB_FreeResultSet",
+  "message": "Use `DB_FreeResultSet`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 319,
+  "safe_rename": true
+ },
+ "db_get_field": {
+  "replacement": "DB_GetFieldString",
+  "message": "Use `DB_GetFieldString`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 359,
+  "safe_rename": true
+ },
+ "db_get_field_assoc": {
+  "replacement": "DB_GetFieldStringByName",
+  "message": "Use `DB_GetFieldStringByName`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 383,
+  "safe_rename": true
+ },
+ "db_get_field_assoc_float": {
+  "replacement": "DB_GetFieldFloatByName",
+  "message": "Use `DB_GetFieldFloatByName`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 399,
+  "safe_rename": true
+ },
+ "db_get_field_assoc_int": {
+  "replacement": "DB_GetFieldIntByName",
+  "message": "Use `DB_GetFieldIntByName`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 391,
+  "safe_rename": true
+ },
+ "db_get_field_float": {
+  "replacement": "DB_GetFieldFloat",
+  "message": "Use `DB_GetFieldFloat`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 375,
+  "safe_rename": true
+ },
+ "db_get_field_int": {
+  "replacement": "DB_GetFieldInt",
+  "message": "Use `DB_GetFieldInt`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 367,
+  "safe_rename": true
+ },
+ "db_get_mem_handle": {
+  "replacement": "DB_GetMemHandle",
+  "message": "Use `DB_GetMemHandle`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 407,
+  "safe_rename": true
+ },
+ "db_get_result_mem_handle": {
+  "replacement": "DB_GetLegacyDBResult",
+  "message": "Use `DB_GetLegacyDBResult`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 415,
+  "safe_rename": true
+ },
+ "db_next_row": {
+  "replacement": "DB_SelectNextRow",
+  "message": "Use `DB_SelectNextRow`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 335,
+  "safe_rename": true
+ },
+ "db_num_fields": {
+  "replacement": "DB_GetFieldCount",
+  "message": "Use `DB_GetFieldCount`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 343,
+  "safe_rename": true
+ },
+ "db_num_rows": {
+  "replacement": "DB_GetRowCount",
+  "message": "Use `DB_GetRowCount`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 327,
+  "safe_rename": true
+ },
+ "db_open": {
+  "replacement": "DB_Open",
+  "message": "Use `DB_Open`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 295,
+  "safe_rename": true
+ },
+ "db_query": {
+  "replacement": "DB_ExecuteQuery",
+  "message": "Use `DB_ExecuteQuery`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_database.inc",
+  "line": 311,
+  "safe_rename": true
+ },
+ "EnableTirePopping": {
+  "replacement": "OnVehicleDamageStatusUpdate",
+  "message": "Use `OnVehicleDamageStatusUpdate`.",
+  "kind": "forward",
+  "file": "omp_core.inc",
+  "line": 1298,
+  "safe_rename": false
+ },
+ "fmkdir": {
+  "replacement": "fcreatedir",
+  "message": "Use `fcreatedir`.",
+  "kind": "native",
+  "file": "file.inc",
+  "line": 351,
+  "safe_rename": true
+ },
+ "GameTextForAllf": {
+  "replacement": "GameTextForAll",
+  "message": "Use `GameTextForAll`",
+  "kind": "native",
+  "file": "omp_core.inc",
+  "line": 594,
+  "safe_rename": true
+ },
+ "GameTextForPlayerf": {
+  "replacement": "GameTextForPlayer",
+  "message": "Use `GameTextForPlayer`",
+  "kind": "native",
+  "file": "omp_player.inc",
+  "line": 1631,
+  "safe_rename": true
+ },
+ "GangZoneGetColorForPlayer": {
+  "replacement": "GangZoneGetColourForPlayer",
+  "message": "Use `GangZoneGetColourForPlayer`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_gangzone.inc",
+  "line": 364,
+  "safe_rename": true
+ },
+ "GangZoneGetFlashColorForPlayer": {
+  "replacement": "GangZoneGetFlashColourForPlayer",
+  "message": "Use `GangZoneGetFlashColourForPlayer`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_gangzone.inc",
+  "line": 403,
+  "safe_rename": true
+ },
+ "Get3DTextLabelColor": {
+  "replacement": "Get3DTextLabelColour",
+  "message": "Use `Get3DTextLabelColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textlabel.inc",
+  "line": 216,
+  "safe_rename": true
+ },
+ "GetActorPoolSize": {
+  "replacement": null,
+  "message": "This function is broken.  See: open.mp/docs/scripting/functions/GetActorPoolSize",
+  "kind": "stock",
+  "file": "_open_mp.inc",
+  "line": 517,
+  "safe_rename": false
+ },
+ "GetPlayer3DTextLabelAttached": {
+  "replacement": "GetPlayer3DTextLabelAttachedData",
+  "message": "Use `GetPlayer3DTextLabelAttachedData`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textlabel.inc",
+  "line": 430,
+  "safe_rename": true
+ },
+ "GetPlayer3DTextLabelColor": {
+  "replacement": "GetPlayer3DTextLabelColour",
+  "message": "Use `GetPlayer3DTextLabelColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textlabel.inc",
+  "line": 349,
+  "safe_rename": true
+ },
+ "GetPlayer3DTextLabelDrawDist": {
+  "replacement": "GetPlayer3DTextLabelDrawDistance",
+  "message": "Use `GetPlayer3DTextLabelDrawDistance`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textlabel.inc",
+  "line": 369,
+  "safe_rename": true
+ },
+ "GetPlayer3DTextLabelVirtualW": {
+  "replacement": "GetPlayer3DTextLabelVirtualWorld",
+  "message": "Use `GetPlayer3DTextLabelVirtualWorld`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textlabel.inc",
+  "line": 413,
+  "safe_rename": true
+ },
+ "GetPlayerCameraTargetPlayerObj": {
+  "replacement": "GetPlayerCameraTargetPlayerObject",
+  "message": "Use `GetPlayerCameraTargetPlayerObject`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_object.inc",
+  "line": 1245,
+  "safe_rename": true
+ },
+ "GetPlayerDialog": {
+  "replacement": "GetPlayerDialogID",
+  "message": "Use `GetPlayerDialogID`.",
+  "kind": "native",
+  "file": "omp_dialog.inc",
+  "line": 169,
+  "safe_rename": true
+ },
+ "GetPlayerPoolSize": {
+  "replacement": null,
+  "message": "This function is broken.  See: open.mp/docs/scripting/functions/GetPlayerPoolSize",
+  "kind": "stock",
+  "file": "_open_mp.inc",
+  "line": 490,
+  "safe_rename": false
+ },
+ "GetRandomVehicleColorPair": {
+  "replacement": "GetRandomVehicleColourPair",
+  "message": "Use `GetRandomVehicleColourPair`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_vehicle.inc",
+  "line": 1206,
+  "safe_rename": true
+ },
+ "GetRunningTimers": {
+  "replacement": "CountRunningTimers",
+  "message": "Use `CountRunningTimers`.",
+  "kind": "native",
+  "file": "omp_core.inc",
+  "line": 1412,
+  "safe_rename": true
+ },
+ "GetServerVarAsBool": {
+  "replacement": "GetConsoleVarAsBool",
+  "message": "Use `GetConsoleVarAsBool`.",
+  "kind": "native",
+  "file": "omp_core.inc",
+  "line": 1365,
+  "safe_rename": true
+ },
+ "GetServerVarAsFloat": {
+  "replacement": "GetConsoleVarAsFloat",
+  "message": "Use `GetConsoleVarAsFloat`.",
+  "kind": "native",
+  "file": "omp_core.inc",
+  "line": 1350,
+  "safe_rename": true
+ },
+ "GetServerVarAsInt": {
+  "replacement": "GetConsoleVarAsInt",
+  "message": "Use `GetConsoleVarAsInt`.",
+  "kind": "native",
+  "file": "omp_core.inc",
+  "line": 1335,
+  "safe_rename": true
+ },
+ "GetServerVarAsString": {
+  "replacement": "GetConsoleVarAsString",
+  "message": "Use `GetConsoleVarAsString`.",
+  "kind": "native",
+  "file": "omp_core.inc",
+  "line": 1320,
+  "safe_rename": true
+ },
+ "GetVehicleColor": {
+  "replacement": "GetVehicleColours",
+  "message": "Use `GetVehicleColours`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_vehicle.inc",
+  "line": 1487,
+  "safe_rename": true
+ },
+ "GetVehiclePoolSize": {
+  "replacement": null,
+  "message": "This function is broken.  See: open.mp/docs/scripting/functions/GetVehiclePoolSize",
+  "kind": "stock",
+  "file": "_open_mp.inc",
+  "line": 503,
+  "safe_rename": false
+ },
+ "GetVehicleTower": {
+  "replacement": "GetVehicleCab",
+  "message": "Use `GetVehicleCab`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_vehicle.inc",
+  "line": 1705,
+  "safe_rename": true
+ },
+ "listenport": {
+  "replacement": null,
+  "message": "Just doesn't work.  Use the \"Requests\" plugin.",
+  "kind": "forward",
+  "file": "datagram.inc",
+  "line": 70,
+  "safe_rename": false
+ },
+ "PLAYER_STATE_ENTER_VEHICLE_DRIVER": {
+  "replacement": null,
+  "message": "Used internally.",
+  "kind": "const",
+  "file": "omp_player.inc",
+  "line": 158,
+  "safe_rename": false
+ },
+ "PLAYER_STATE_ENTER_VEHICLE_DRV": {
+  "replacement": null,
+  "message": "Used internally.",
+  "kind": "const",
+  "file": "omp_player.inc",
+  "line": 149,
+  "safe_rename": false
+ },
+ "PLAYER_STATE_ENTER_VEHICLE_PASS": {
+  "replacement": null,
+  "message": "Used internally.",
+  "kind": "const",
+  "file": "omp_player.inc",
+  "line": 169,
+  "safe_rename": false
+ },
+ "PLAYER_STATE_ENTER_VEHICLE_PASSENGER": {
+  "replacement": null,
+  "message": "Used internally.",
+  "kind": "const",
+  "file": "omp_player.inc",
+  "line": 178,
+  "safe_rename": false
+ },
+ "PLAYER_STATE_EXIT_VEH": {
+  "replacement": null,
+  "message": "Used internally.",
+  "kind": "const",
+  "file": "omp_player.inc",
+  "line": 133,
+  "safe_rename": false
+ },
+ "PLAYER_STATE_EXIT_VEHICLE": {
+  "replacement": null,
+  "message": "Used internally.",
+  "kind": "const",
+  "file": "omp_player.inc",
+  "line": 141,
+  "safe_rename": false
+ },
+ "PlayerGangZoneGetColor": {
+  "replacement": "PlayerGangZoneGetColour",
+  "message": "Use `PlayerGangZoneGetColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_gangzone.inc",
+  "line": 751,
+  "safe_rename": true
+ },
+ "PlayerGangZoneGetFlashColor": {
+  "replacement": "PlayerGangZoneGetFlashColour",
+  "message": "Use `PlayerGangZoneGetFlashColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_gangzone.inc",
+  "line": 798,
+  "safe_rename": true
+ },
+ "PlayerTextDrawBackgroundColor": {
+  "replacement": "PlayerTextDrawBackgroundColour",
+  "message": "Use `PlayerTextDrawBackgroundColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 1124,
+  "safe_rename": true
+ },
+ "PlayerTextDrawBoxColor": {
+  "replacement": "PlayerTextDrawBoxColour",
+  "message": "Use `PlayerTextDrawBoxColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 1020,
+  "safe_rename": true
+ },
+ "PlayerTextDrawColor": {
+  "replacement": "PlayerTextDrawColour",
+  "message": "Use `PlayerTextDrawColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 943,
+  "safe_rename": true
+ },
+ "PlayerTextDrawGetBackgroundCol": {
+  "replacement": "PlayerTextDrawGetBackgroundColour",
+  "message": "Use `PlayerTextDrawGetBackgroundColour`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 1470,
+  "safe_rename": true
+ },
+ "PlayerTextDrawGetBackgroundColor": {
+  "replacement": "PlayerTextDrawGetBackgroundColour",
+  "message": "Use `PlayerTextDrawGetBackgroundColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 1486,
+  "safe_rename": true
+ },
+ "PlayerTextDrawGetBoxColor": {
+  "replacement": "PlayerTextDrawGetBoxColour",
+  "message": "Use `PlayerTextDrawGetBoxColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 1455,
+  "safe_rename": true
+ },
+ "PlayerTextDrawGetColor": {
+  "replacement": "PlayerTextDrawGetColour",
+  "message": "Use `PlayerTextDrawGetColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 1442,
+  "safe_rename": true
+ },
+ "PlayerTextDrawGetPreviewVehCol": {
+  "replacement": "PlayerTextDrawGetPreviewVehicleColours",
+  "message": "Use `PlayerTextDrawGetPreviewVehicleColours`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 1542,
+  "safe_rename": true
+ },
+ "PlayerTextDrawGetPreviewVehicleColors": {
+  "replacement": "PlayerTextDrawGetPreviewVehicleColours",
+  "message": "Use `PlayerTextDrawGetPreviewVehicleColours`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 1558,
+  "safe_rename": true
+ },
+ "PlayerTextDrawSetPreviewVehCol": {
+  "replacement": "PlayerTextDrawSetPreviewVehicleColours",
+  "message": "Use `PlayerTextDrawSetPreviewVehicleColours`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 1356,
+  "safe_rename": true
+ },
+ "PlayerTextDrawSetPreviewVehicleColors": {
+  "replacement": "PlayerTextDrawSetPreviewVehicleColours",
+  "message": "Use `PlayerTextDrawSetPreviewVehicleColours`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 1398,
+  "safe_rename": true
+ },
+ "SendClientMessagef": {
+  "replacement": "SendClientMessage",
+  "message": "Use `SendClientMessage`",
+  "kind": "native",
+  "file": "omp_player.inc",
+  "line": 1594,
+  "safe_rename": true
+ },
+ "SendClientMessageToAllf": {
+  "replacement": "SendClientMessageToAll",
+  "message": "Use `SendClientMessageToAll`",
+  "kind": "native",
+  "file": "omp_core.inc",
+  "line": 634,
+  "safe_rename": true
+ },
+ "sendpacket": {
+  "replacement": "HTTP",
+  "message": "Just doesn't work.  Use `HTTP` or the \"Requests\" plugin.",
+  "kind": "forward",
+  "file": "datagram.inc",
+  "line": 54,
+  "safe_rename": false
+ },
+ "SendPlayerMessageToAllf": {
+  "replacement": "SendPlayerMessageToAll",
+  "message": "Use `SendPlayerMessageToAll`",
+  "kind": "native",
+  "file": "omp_core.inc",
+  "line": 663,
+  "safe_rename": true
+ },
+ "SendPlayerMessageToPlayerf": {
+  "replacement": "SendPlayerMessageToPlayer",
+  "message": "Use `SendPlayerMessageToPlayer`",
+  "kind": "native",
+  "file": "omp_player.inc",
+  "line": 1733,
+  "safe_rename": true
+ },
+ "SendRconCommandf": {
+  "replacement": "SendRconCommand",
+  "message": "Use `SendRconCommand`.",
+  "kind": "native",
+  "file": "omp_network.inc",
+  "line": 237,
+  "safe_rename": true
+ },
+ "sendstring": {
+  "replacement": "HTTP",
+  "message": "Just doesn't work.  Use `HTTP` or the \"Requests\" plugin.",
+  "kind": "forward",
+  "file": "datagram.inc",
+  "line": 39,
+  "safe_rename": false
+ },
+ "SetDeathDropAmount": {
+  "replacement": "CreatePickup",
+  "message": "Use `CreatePickup`.",
+  "kind": "forward",
+  "file": "omp_core.inc",
+  "line": 1375,
+  "safe_rename": false
+ },
+ "SetObjectsDefaultCameraCol": {
+  "replacement": "SetObjectsDefaultCameraCollision",
+  "message": "Use `SetObjectsDefaultCameraCollision`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_object.inc",
+  "line": 207,
+  "safe_rename": true
+ },
+ "SetPlayer3DTextLabelDrawDist": {
+  "replacement": "SetPlayer3DTextLabelDrawDistance",
+  "message": "Use `SetPlayer3DTextLabelDrawDistance`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textlabel.inc",
+  "line": 386,
+  "safe_rename": true
+ },
+ "SetPlayerObjectNoCameraCol": {
+  "replacement": "SetPlayerObjectNoCameraCollision",
+  "message": "Use `SetPlayerObjectNoCameraCollision`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_object.inc",
+  "line": 960,
+  "safe_rename": true
+ },
+ "SHA256_PassHash": {
+  "replacement": null,
+  "message": "Use BCrypt for hashing passwords. For other purposes use SHA256_Hash",
+  "kind": "native",
+  "file": "omp_core.inc",
+  "line": 1392,
+  "safe_rename": false
+ },
+ "strformat": {
+  "replacement": "format",
+  "message": "Use `format`.",
+  "kind": "native",
+  "file": "string.inc",
+  "line": 329,
+  "safe_rename": false
+ },
+ "TextDrawBackgroundColor": {
+  "replacement": "TextDrawBackgroundColour",
+  "message": "Use `TextDrawBackgroundColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 391,
+  "safe_rename": true
+ },
+ "TextDrawBoxColor": {
+  "replacement": "TextDrawBoxColour",
+  "message": "Use `TextDrawBoxColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 330,
+  "safe_rename": true
+ },
+ "TextDrawColor": {
+  "replacement": "TextDrawColour",
+  "message": "Use `TextDrawColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 288,
+  "safe_rename": true
+ },
+ "TextDrawGetBackgroundColor": {
+  "replacement": "TextDrawGetBackgroundColour",
+  "message": "Use `TextDrawGetBackgroundColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 650,
+  "safe_rename": true
+ },
+ "TextDrawGetBoxColor": {
+  "replacement": "TextDrawGetBoxColour",
+  "message": "Use `TextDrawGetBoxColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 637,
+  "safe_rename": true
+ },
+ "TextDrawGetColor": {
+  "replacement": "TextDrawGetColour",
+  "message": "Use `TextDrawGetColour`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 624,
+  "safe_rename": true
+ },
+ "TextDrawGetPreviewVehCol": {
+  "replacement": "TextDrawGetPreviewVehicleColours",
+  "message": "Use `TextDrawGetPreviewVehicleColours`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 710,
+  "safe_rename": true
+ },
+ "TextDrawGetPreviewVehicleColors": {
+  "replacement": "TextDrawGetPreviewVehicleColours",
+  "message": "Use `TextDrawGetPreviewVehicleColours`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 726,
+  "safe_rename": true
+ },
+ "TextDrawSetPreviewVehCol": {
+  "replacement": "TextDrawSetPreviewVehicleColours",
+  "message": "Use `TextDrawSetPreviewVehicleColours`. To silence this warning define `LEGACY_SCRIPTING_API` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 550,
+  "safe_rename": true
+ },
+ "TextDrawSetPreviewVehicleColors": {
+  "replacement": "TextDrawSetPreviewVehicleColours",
+  "message": "Use `TextDrawSetPreviewVehicleColours`. To silence this warning and use different spellings define `MIXED_SPELLINGS` or define `SAMP_COMPAT` for general SA-MP API compatibility.",
+  "kind": "native",
+  "file": "omp_textdraw.inc",
+  "line": 580,
+  "safe_rename": true
+ }
+}

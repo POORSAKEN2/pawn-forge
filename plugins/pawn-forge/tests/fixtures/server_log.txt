@@ -1,0 +1,38 @@
+[19:50:01]
+[19:50:01] Server Plugins
+[19:50:01] --------------
+[19:50:01]  Loading plugin: crashdetect.so
+[19:50:01]   CrashDetect plugin 4.19.4
+[19:50:01]   Loaded.
+[19:50:01]  Loading plugin: streamer.so
+[19:50:01]   Failed (plugins/streamer.so: cannot open shared object file: No such file or directory)
+[19:50:02] Number of vehicle models: 0
+[19:50:02] [debug] Run time error 19: "File or function is not found"
+[19:50:02] [debug]  CreateDynamicObject
+[19:50:02] [debug]  CreateDynamic3DTextLabel
+[19:57:09] [debug] Run time error 4: "Array index out of bounds"
+[19:57:09] [debug]  Attempted to read/write array element at index 11 in array of size 10
+[19:57:09] [debug] AMX backtrace:
+[19:57:09] [debug] #0 00084b24 in public ShowStats (playerid=2, targetid=2) at C:\server\gamemodes\stats.pwn:8
+[19:57:09] [debug] #1 00533020 in public pc_cmd_stats (playerid=2, params[]=@0061d2d8 "") at C:\server\gamemodes\stats.pwn:15
+[19:57:15] [debug] Run time error 4: "Array index out of bounds"
+[19:57:15] [debug]  Attempted to read/write array element at index 11 in array of size 10
+[19:57:15] [debug] AMX backtrace:
+[19:57:15] [debug] #0 00084b24 in public ShowStats (playerid=5, targetid=5) at C:\server\gamemodes\stats.pwn:8
+[19:57:15] [debug] #1 00533020 in public pc_cmd_stats (playerid=5, params[]=@0061d2d8 "") at C:\server\gamemodes\stats.pwn:15
+[20:01:44] [debug] Run time error 4: "Array index out of bounds"
+[20:01:44] [debug]  Accessing element at index 65535 past array upper bound 999
+[20:01:44] [debug] AMX backtrace:
+[20:01:44] [debug] #0 0000ab10 in GetPlayerMoneyEx (playerid=65535) at gamemodes/economy.pwn:42
+[20:01:44] [debug] #1 0000b2c0 in public OnDialogResponse (playerid=3, dialogid=12, response=1, listitem=0, inputtext[]=@01234 "abc") at gamemodes/economy.pwn:88
+[20:03:00] [debug] Long callback execution detected (hang or performance issue)
+[20:03:00] [debug] AMX backtrace:
+[20:03:00] [debug] #0 00012340 in public SaveAllAccounts () at gamemodes/save.pwn:120
+[20:06:08] [debug] Server crashed while executing gm.amx
+[20:06:08] [debug] AMX backtrace:
+[20:06:08] [debug] #0 native mysql_tquery () from mysql.so
+[20:06:08] [debug] #1 00001234 in public OnPlayerDisconnect (playerid=1, reason=1) at gamemodes/gm.pwn:300
+[20:06:08] [debug] Native backtrace:
+[20:06:08] [debug] #0 f73ae8b6 in _Z13GetStackTraceRSt6vectorI10StackFrameSaIS0_EEPv () in plugins/crashdetect.so
+[20:06:08] [debug] #1 f7012345 in mysql_tquery () in plugins/mysql.so
+[20:06:08] [debug] #2 0804a123 in ?? () in samp03svr

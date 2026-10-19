@@ -1,0 +1,31 @@
+{
+  "description": "pawn-forge: lint the lines Claude edits in Pawn files, and announce the toolchain in Pawn projects",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${user_config.python_command}",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/lint_hook.py"],
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${user_config.python_command}",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/session_start.py"],
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "pawn-forge",
+  "displayName": "Pawn Forge",
+  "version": "0.1.0",
+  "description": "Turns Claude into a SA-MP / open.mp engineer: real Pawn compiler in the loop, static analysis for buffer overflows, SQL injection and resource leaks, CrashDetect log triage, verified vehicle/skin/weapon/animation IDs, exact API signatures, SA-MP to open.mp migration, TextDraw scaffolding and headless y_testing runs.",
+  "author": {
+    "name": "POORSAKEN2",
+    "url": "https://github.com/POORSAKEN2"
+  },
+  "homepage": "https://github.com/POORSAKEN2/pawn-forge",
+  "repository": "https://github.com/POORSAKEN2/pawn-forge",
+  "license": "MIT",
+  "keywords": [
+    "pawn",
+    "sa-mp",
+    "samp",
+    "open.mp",
+    "openmp",
+    "gta",
+    "ysi",
+    "streamer",
+    "mysql",
+    "sscanf",
+    "crashdetect",
+    "game-server"
+  ],
+  "userConfig": {
+    "python_command": {
+      "type": "string",
+      "title": "Python command",
+      "description": "Command that runs Python 3.8+. Use python3 on macOS/Linux; on Windows use py or python.",
+      "default": "python3"
+    },
+    "pawncc_path": {
+      "type": "string",
+      "title": "pawncc path (optional)",
+      "description": "Full path to pawncc / pawncc.exe. Leave empty to auto-detect (project qawno/ or pawno/, PATH, or the install_compiler tool).",
+      "default": ""
+    },
+    "include_paths": {
+      "type": "string",
+      "title": "Extra include directories (optional)",
+      "description": "Additional include directories, separated by ':' on macOS/Linux or ';' on Windows. Project include/, qawno/include, pawno/include and sampctl dependencies/ are found automatically.",
+      "default": ""
+    },
+    "lint_on_edit": {
+      "type": "boolean",
+      "title": "Lint Pawn files after each edit",
+      "description": "Run the pawn-forge linter on the lines Claude just changed in .pwn/.inc files and feed findings back to Claude.",
+      "default": true
+    }
+  },
+  "mcpServers": {
+    "pawn": {
+      "command": "${user_config.python_command}",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/server/pawn_mcp.py"
+      ],
+      "env": {
+        "PAWNFORGE_PAWNCC": "${user_config.pawncc_path}",
+        "PAWNFORGE_INCLUDE_PATHS": "${user_config.include_paths}",
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    }
+  }
+}

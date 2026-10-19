@@ -1,0 +1,25 @@
+{
+  "name": "pawn-forge",
+  "owner": {
+    "name": "POORSAKEN2",
+    "url": "https://github.com/POORSAKEN2"
+  },
+  "description": "Claude Code tooling for Pawn (SA-MP / open.mp) game-server development.",
+  "plugins": [
+    {
+      "name": "pawn-forge",
+      "source": "./plugins/pawn-forge",
+      "description": "Real Pawn compiler in the loop, static analysis for overflows/SQL injection/leaks, CrashDetect log triage, verified game IDs and API signatures, SA-MP to open.mp migration, TextDraw scaffolding and headless y_testing runs.",
+      "category": "development",
+      "tags": [
+        "pawn",
+        "sa-mp",
+        "open.mp",
+        "game-server",
+        "static-analysis",
+        "compiler",
+        "mcp"
+      ]
+    }
+  ]
+}

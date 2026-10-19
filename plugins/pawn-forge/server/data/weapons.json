@@ -1,0 +1,532 @@
+[
+ {
+  "id": 0,
+  "name": "Fist",
+  "constant": "WEAPON_FIST",
+  "slot": 0,
+  "model": null,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 1,
+  "name": "Brass Knuckles",
+  "constant": "WEAPON_BRASSKNUCKLE",
+  "slot": 0,
+  "model": 331,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 2,
+  "name": "Golf Club",
+  "constant": "WEAPON_GOLFCLUB",
+  "slot": 1,
+  "model": 333,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 3,
+  "name": "Nite Stick",
+  "constant": "WEAPON_NITESTICK",
+  "slot": 1,
+  "model": 334,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 4,
+  "name": "Knife",
+  "constant": "WEAPON_KNIFE",
+  "slot": 1,
+  "model": 335,
+  "clip": null,
+  "givable": true,
+  "notes": "Can de-sync players when their throat is cut (they appear dead to other players). Also, knife death may not sync for players killed in AFK"
+ },
+ {
+  "id": 5,
+  "name": "Baseball Bat",
+  "constant": "WEAPON_BAT",
+  "slot": 1,
+  "model": 336,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 6,
+  "name": "Shovel",
+  "constant": "WEAPON_SHOVEL",
+  "slot": 1,
+  "model": 337,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 7,
+  "name": "Pool Cue",
+  "constant": "WEAPON_POOLSTICK",
+  "slot": 1,
+  "model": 338,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 8,
+  "name": "Katana",
+  "constant": "WEAPON_KATANA",
+  "slot": 1,
+  "model": 339,
+  "clip": null,
+  "givable": true,
+  "notes": "Can not decapitate players (like in single-player)"
+ },
+ {
+  "id": 9,
+  "name": "Chainsaw",
+  "constant": "WEAPON_CHAINSAW",
+  "slot": 1,
+  "model": 341,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 10,
+  "name": "Dildo",
+  "constant": "WEAPON_DILDO",
+  "slot": 10,
+  "model": 321,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 11,
+  "name": "Dildo",
+  "constant": "WEAPON_DILDO2",
+  "slot": 10,
+  "model": 322,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 12,
+  "name": "Vibrator",
+  "constant": "WEAPON_VIBRATOR",
+  "slot": 10,
+  "model": 323,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 13,
+  "name": "Vibrator",
+  "constant": "WEAPON_VIBRATOR2",
+  "slot": 10,
+  "model": 324,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 14,
+  "name": "Flowers",
+  "constant": "WEAPON_FLOWER",
+  "slot": 10,
+  "model": 325,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 15,
+  "name": "Cane",
+  "constant": "WEAPON_CANE",
+  "slot": 10,
+  "model": 326,
+  "clip": null,
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 16,
+  "name": "Grenade",
+  "constant": "WEAPON_GRENADE",
+  "slot": 8,
+  "model": 342,
+  "clip": "1",
+  "givable": true,
+  "notes": "Does not produce fire. Only synced for players that were streamed-in when a grenade was thrown"
+ },
+ {
+  "id": 17,
+  "name": "Teargas",
+  "constant": "WEAPON_TEARGAS",
+  "slot": 8,
+  "model": 343,
+  "clip": "1",
+  "givable": true,
+  "notes": "The coughing effect is disabled in SA-MP. Only synced for players that were streamed-in when a tear gas grenade was thrown"
+ },
+ {
+  "id": 18,
+  "name": "Molotov Cocktail",
+  "constant": "WEAPON_MOLTOV",
+  "slot": 8,
+  "model": 344,
+  "clip": "1",
+  "givable": true,
+  "notes": "Produces fire. Only synced for players that were streamed-in when a molotov cocktail was thrown"
+ },
+ {
+  "id": 22,
+  "name": "Colt 45",
+  "constant": "WEAPON_COLT45",
+  "slot": 2,
+  "model": 346,
+  "clip": "17 (34 for dual gun)",
+  "givable": true,
+  "notes": "Skill can be set with SetPlayerSkillLevel"
+ },
+ {
+  "id": 23,
+  "name": "Silenced Pistol",
+  "constant": "WEAPON_SILENCED",
+  "slot": 2,
+  "model": 347,
+  "clip": "17",
+  "givable": true,
+  "notes": "Skill can be set with SetPlayerSkillLevel"
+ },
+ {
+  "id": 24,
+  "name": "Desert Eagle",
+  "constant": "WEAPON_DEAGLE",
+  "slot": 2,
+  "model": 348,
+  "clip": "7",
+  "givable": true,
+  "notes": "Skill can be set with SetPlayerSkillLevel"
+ },
+ {
+  "id": 25,
+  "name": "Shotgun",
+  "constant": "WEAPON_SHOTGUN",
+  "slot": 3,
+  "model": 349,
+  "clip": "1",
+  "givable": true,
+  "notes": "Skill can be set with SetPlayerSkillLevel"
+ },
+ {
+  "id": 26,
+  "name": "Sawn-off Shotgun",
+  "constant": "WEAPON_SAWEDOFF",
+  "slot": 3,
+  "model": 350,
+  "clip": "2 (4 for dual gun)",
+  "givable": true,
+  "notes": "Skill can be set with SetPlayerSkillLevel"
+ },
+ {
+  "id": 27,
+  "name": "Combat Shotgun",
+  "constant": "WEAPON_SHOTGSPA",
+  "slot": 3,
+  "model": 351,
+  "clip": "7",
+  "givable": true,
+  "notes": "Skill can be set with SetPlayerSkillLevel"
+ },
+ {
+  "id": 28,
+  "name": "UZI",
+  "constant": "WEAPON_UZI",
+  "slot": 4,
+  "model": 352,
+  "clip": "50 (100 for dual gun)",
+  "givable": true,
+  "notes": "Skill can be set with SetPlayerSkillLevel"
+ },
+ {
+  "id": 29,
+  "name": "MP5",
+  "constant": "WEAPON_MP5",
+  "slot": 4,
+  "model": 353,
+  "clip": "30",
+  "givable": true,
+  "notes": "Skill can be set with SetPlayerSkillLevel"
+ },
+ {
+  "id": 30,
+  "name": "AK-47",
+  "constant": "WEAPON_AK47",
+  "slot": 5,
+  "model": 355,
+  "clip": "30",
+  "givable": true,
+  "notes": "Skill can be set with SetPlayerSkillLevel"
+ },
+ {
+  "id": 31,
+  "name": "M4",
+  "constant": "WEAPON_M4",
+  "slot": 5,
+  "model": 356,
+  "clip": "50",
+  "givable": true,
+  "notes": "Skill can be set with SetPlayerSkillLevel"
+ },
+ {
+  "id": 32,
+  "name": "TEC9",
+  "constant": "WEAPON_TEC9",
+  "slot": 4,
+  "model": 372,
+  "clip": "50 (100 for dual gun)",
+  "givable": true,
+  "notes": "Skill can be set with SetPlayerSkillLevel"
+ },
+ {
+  "id": 33,
+  "name": "Rifle",
+  "constant": "WEAPON_RIFLE",
+  "slot": 6,
+  "model": 357,
+  "clip": "1",
+  "givable": true,
+  "notes": "Skill can be set with SetPlayerSkillLevel, but it won't have any effect"
+ },
+ {
+  "id": 34,
+  "name": "Sniper Rifle",
+  "constant": "WEAPON_SNIPER",
+  "slot": 6,
+  "model": 358,
+  "clip": "1",
+  "givable": true,
+  "notes": "Skill can be set with SetPlayerSkillLevel, but it won't have any effect"
+ },
+ {
+  "id": 35,
+  "name": "Rocket Launcher",
+  "constant": "WEAPON_ROCKETLAUNCHER",
+  "slot": 7,
+  "model": 359,
+  "clip": "1",
+  "givable": true,
+  "notes": "Only synced for players that were streamed-in when the projectile was launched"
+ },
+ {
+  "id": 36,
+  "name": "Heat Seeker",
+  "constant": "WEAPON_HEATSEEKER",
+  "slot": 7,
+  "model": 360,
+  "clip": "1",
+  "givable": true,
+  "notes": "Lock-on is not synced. Only synced for players that were streamed-in when the projectile was launched"
+ },
+ {
+  "id": 37,
+  "name": "Flamethrower",
+  "constant": "WEAPON_FLAMETHROWER",
+  "slot": 7,
+  "model": 361,
+  "clip": "500 (shows in game as 50)",
+  "givable": true,
+  "notes": "This is used by a damage by fire, even when the fire is created by a rocket explosion or a molotov. Produced fire does not sync between players"
+ },
+ {
+  "id": 38,
+  "name": "Minigun",
+  "constant": "WEAPON_MINIGUN",
+  "slot": 7,
+  "model": 362,
+  "clip": "500",
+  "givable": true,
+  "notes": null
+ },
+ {
+  "id": 39,
+  "name": "Satchel Explosives",
+  "constant": "WEAPON_SATCHEL",
+  "slot": 8,
+  "model": 363,
+  "clip": "1",
+  "givable": true,
+  "notes": "Only synced for players that were streamed-in when the satchels were thrown"
+ },
+ {
+  "id": 40,
+  "name": "Bomb",
+  "constant": "WEAPON_BOMB",
+  "slot": 12,
+  "model": 364,
+  "clip": null,
+  "givable": true,
+  "notes": "Given automatically when players throw a satchel charge (see ID 39) (omit from anti-cheat checks). It also detonates bombs thrown by other players"
+ },
+ {
+  "id": 41,
+  "name": "Spray Can",
+  "constant": "WEAPON_SPRAYCAN",
+  "slot": 9,
+  "model": 365,
+  "clip": "500",
+  "givable": true,
+  "notes": "Players that are sprayed choke"
+ },
+ {
+  "id": 42,
+  "name": "Fire Extinguisher",
+  "constant": "WEAPON_FIREEXTINGUISHER",
+  "slot": 9,
+  "model": 366,
+  "clip": "500",
+  "givable": true,
+  "notes": "Players that are sprayed choke"
+ },
+ {
+  "id": 43,
+  "name": "Camera",
+  "constant": "WEAPON_CAMERA",
+  "slot": 9,
+  "model": 367,
+  "clip": "36",
+  "givable": true,
+  "notes": "Saves photos to player's gallery if enabled via pause menu (My Documents\\GTA San Andreas User Files\\Gallery)"
+ },
+ {
+  "id": 44,
+  "name": "Night Vision",
+  "constant": "WEAPON_NIGHT_VISION_GOGGLES",
+  "slot": 11,
+  "model": 368,
+  "clip": null,
+  "givable": true,
+  "notes": "Visual effects show for all players (fix available)"
+ },
+ {
+  "id": 45,
+  "name": "Thermal Goggles",
+  "constant": "WEAPON_THERMAL_GOGGLES",
+  "slot": 11,
+  "model": 369,
+  "clip": null,
+  "givable": true,
+  "notes": "Visual effects show for all players (fix available)"
+ },
+ {
+  "id": 46,
+  "name": "Parachute",
+  "constant": "WEAPON_PARACHUTE",
+  "slot": 11,
+  "model": 371,
+  "clip": null,
+  "givable": true,
+  "notes": "Players will die if teleported while diving with a parachute (can be fixed using ResetPlayerWeapons). Parachutes are given when bailing out of aircraft (omit from anti-cheat checks)"
+ },
+ {
+  "id": 47,
+  "name": "Fake Pistol",
+  "constant": null,
+  "slot": null,
+  "model": null,
+  "clip": null,
+  "givable": false,
+  "notes": "Only a death icon, can not be used in GivePlayerWeapon etc."
+ },
+ {
+  "id": 49,
+  "name": "Vehicle",
+  "constant": "WEAPON_VEHICLE",
+  "slot": null,
+  "model": null,
+  "clip": null,
+  "givable": false,
+  "notes": "Only a death icon, can not be used in GivePlayerWeapon etc."
+ },
+ {
+  "id": 50,
+  "name": "Helicopter Blades",
+  "constant": "REASON_HELICOPTER_BLADES",
+  "slot": null,
+  "model": null,
+  "clip": null,
+  "givable": false,
+  "notes": "Only a death icon, can not be used in GivePlayerWeapon etc."
+ },
+ {
+  "id": 51,
+  "name": "Explosion",
+  "constant": "REASON_EXPLOSION",
+  "slot": null,
+  "model": null,
+  "clip": null,
+  "givable": false,
+  "notes": "Only a death icon, can not be used in GivePlayerWeapon etc. This may sometimes be used at an indirect damage through an exploding rocket or grenade"
+ },
+ {
+  "id": 53,
+  "name": "Drowned",
+  "constant": "WEAPON_DROWN",
+  "slot": null,
+  "model": null,
+  "clip": null,
+  "givable": false,
+  "notes": "Only a death icon, can not be used in GivePlayerWeapon etc."
+ },
+ {
+  "id": 54,
+  "name": "Splat",
+  "constant": "WEAPON_COLLISION",
+  "slot": null,
+  "model": null,
+  "clip": null,
+  "givable": false,
+  "notes": "Only a death icon, can not be used in GivePlayerWeapon etc."
+ },
+ {
+  "id": 200,
+  "name": "Connect",
+  "constant": "REASON_CONNECT",
+  "slot": null,
+  "model": null,
+  "clip": null,
+  "givable": false,
+  "notes": "Only usable in SendDeathMessage"
+ },
+ {
+  "id": 201,
+  "name": "Disconnect",
+  "constant": "REASON_DISCONNECT",
+  "slot": null,
+  "model": null,
+  "clip": null,
+  "givable": false,
+  "notes": "Only usable in SendDeathMessage"
+ },
+ {
+  "id": 255,
+  "name": "Suicide",
+  "constant": "REASON_SUICIDE",
+  "slot": null,
+  "model": null,
+  "clip": null,
+  "givable": false,
+  "notes": "Only a death icon, can not be used in GivePlayerWeapon etc. Used when a player gets 0 HP by SetPlayerHealth, exploding in a vehicle etc."
+ }
+]

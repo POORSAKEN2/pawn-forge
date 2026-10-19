@@ -1,0 +1,1034 @@
+[
+ {
+  "section": "24/7's",
+  "name": "24/7 1",
+  "interior": 17,
+  "x": -25.722,
+  "y": -187.8216,
+  "z": 1003.5469
+ },
+ {
+  "section": "24/7's",
+  "name": "24/7 2",
+  "interior": 10,
+  "x": 6.0856,
+  "y": -28.8966,
+  "z": 1003.5494
+ },
+ {
+  "section": "24/7's",
+  "name": "24/7 3",
+  "interior": 18,
+  "x": -30.9875,
+  "y": -89.6806,
+  "z": 1003.5469
+ },
+ {
+  "section": "24/7's",
+  "name": "24/7 4",
+  "interior": 16,
+  "x": -26.1856,
+  "y": -140.9164,
+  "z": 1003.5469
+ },
+ {
+  "section": "24/7's",
+  "name": "24/7 5",
+  "interior": 4,
+  "x": -27.844,
+  "y": -26.6737,
+  "z": 1003.5573
+ },
+ {
+  "section": "24/7's",
+  "name": "24/7 6",
+  "interior": 6,
+  "x": -26.8339,
+  "y": -55.5846,
+  "z": 1003.5469
+ },
+ {
+  "section": "Modding shops",
+  "name": "Loco Low Co.",
+  "interior": 2,
+  "x": 611.3536,
+  "y": -77.5574,
+  "z": 997.9995
+ },
+ {
+  "section": "Modding shops",
+  "name": "Wheel Arch Angels",
+  "interior": 3,
+  "x": 612.2191,
+  "y": -123.9028,
+  "z": 997.9922
+ },
+ {
+  "section": "Modding shops",
+  "name": "TransFender",
+  "interior": 1,
+  "x": 621.4528,
+  "y": -23.7289,
+  "z": 1000.9219
+ },
+ {
+  "section": "Casinos",
+  "name": "Four Dragons",
+  "interior": 10,
+  "x": 2016.1156,
+  "y": 1017.1541,
+  "z": 996.875
+ },
+ {
+  "section": "Casinos",
+  "name": "Casino (Redsands West)",
+  "interior": 12,
+  "x": 1133.2007,
+  "y": -15.7586,
+  "z": 1000.3251
+ },
+ {
+  "section": "Casinos",
+  "name": "Caligula's Casino",
+  "interior": 1,
+  "x": 2233.9363,
+  "y": 1711.8038,
+  "z": 1011.6312
+ },
+ {
+  "section": "Casinos",
+  "name": "Caligula's Roof",
+  "interior": 1,
+  "x": 2268.5156,
+  "y": 1647.7682,
+  "z": 1084.2344
+ },
+ {
+  "section": "Clothing Shops",
+  "name": "Victim",
+  "interior": 5,
+  "x": 225.0306,
+  "y": -9.1838,
+  "z": 1002.218
+ },
+ {
+  "section": "Clothing Shops",
+  "name": "Sub Urban",
+  "interior": 1,
+  "x": 204.1174,
+  "y": -46.8047,
+  "z": 1001.8047
+ },
+ {
+  "section": "Clothing Shops",
+  "name": "Zip",
+  "interior": 18,
+  "x": 161.4048,
+  "y": -94.2416,
+  "z": 1001.8047
+ },
+ {
+  "section": "Clothing Shops",
+  "name": "Didier Sachs",
+  "interior": 14,
+  "x": 204.1658,
+  "y": -165.7678,
+  "z": 1000.5234
+ },
+ {
+  "section": "Clothing Shops",
+  "name": "Binco",
+  "interior": 15,
+  "x": 207.5219,
+  "y": -109.7448,
+  "z": 1005.1328
+ },
+ {
+  "section": "Clothing Shops",
+  "name": "Pro-Laps",
+  "interior": 3,
+  "x": 206.4627,
+  "y": -137.7076,
+  "z": 1003.0938
+ },
+ {
+  "section": "Restaurants, bars",
+  "name": "Pizza Stack",
+  "interior": 5,
+  "x": 372.5565,
+  "y": -131.3607,
+  "z": 1001.4922
+ },
+ {
+  "section": "Restaurants, bars",
+  "name": "Rusty Brown's Donuts",
+  "interior": 17,
+  "x": 378.026,
+  "y": -190.5155,
+  "z": 1000.6328
+ },
+ {
+  "section": "Restaurants, bars",
+  "name": "Burger Shot",
+  "interior": 10,
+  "x": 366.0248,
+  "y": -73.3478,
+  "z": 1001.5078
+ },
+ {
+  "section": "Restaurants, bars",
+  "name": "Cluckin' Bell",
+  "interior": 9,
+  "x": 366.0002,
+  "y": -9.4338,
+  "z": 1001.8516
+ },
+ {
+  "section": "Restaurants, bars",
+  "name": "Bar",
+  "interior": 11,
+  "x": 501.9578,
+  "y": -70.5648,
+  "z": 998.7578
+ },
+ {
+  "section": "Restaurants, bars",
+  "name": "Lil' Probe Inn",
+  "interior": 18,
+  "x": -227.5703,
+  "y": 1401.5544,
+  "z": 27.7656
+ },
+ {
+  "section": "Barber, tattoo, sex shops",
+  "name": "Barber shop 1",
+  "interior": 12,
+  "x": 411.9707,
+  "y": -51.9217,
+  "z": 1001.8984
+ },
+ {
+  "section": "Barber, tattoo, sex shops",
+  "name": "Barber shop 2",
+  "interior": 2,
+  "x": 414.2987,
+  "y": -18.8044,
+  "z": 1001.8047
+ },
+ {
+  "section": "Barber, tattoo, sex shops",
+  "name": "Barber shop 3",
+  "interior": 3,
+  "x": 418.4666,
+  "y": -80.4595,
+  "z": 1001.8047
+ },
+ {
+  "section": "Barber, tattoo, sex shops",
+  "name": "Tattoo parlor",
+  "interior": 3,
+  "x": -201.2236,
+  "y": -43.2465,
+  "z": 1002.2734
+ },
+ {
+  "section": "Barber, tattoo, sex shops",
+  "name": "Sex shop",
+  "interior": 3,
+  "x": -100.2674,
+  "y": -22.9376,
+  "z": 1000.7188
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 1",
+  "interior": 3,
+  "x": 234.6087,
+  "y": 1187.8195,
+  "z": 1080.2578
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 2",
+  "interior": 2,
+  "x": 225.5707,
+  "y": 1240.0643,
+  "z": 1082.1406
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 3",
+  "interior": 1,
+  "x": 224.288,
+  "y": 1289.1907,
+  "z": 1082.1406
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 4",
+  "interior": 5,
+  "x": 239.2819,
+  "y": 1114.1991,
+  "z": 1080.9922
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 5",
+  "interior": 15,
+  "x": 295.1391,
+  "y": 1473.3719,
+  "z": 1080.2578
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 6",
+  "interior": 2,
+  "x": 446.626,
+  "y": 1397.738,
+  "z": 1084.3047
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 7",
+  "interior": 5,
+  "x": 227.7559,
+  "y": 1114.3844,
+  "z": 1080.9922
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 8",
+  "interior": 4,
+  "x": 261.1165,
+  "y": 1287.2197,
+  "z": 1080.2578
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 9",
+  "interior": 10,
+  "x": 24.3769,
+  "y": 1341.1829,
+  "z": 1084.375
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 10",
+  "interior": 4,
+  "x": 221.6766,
+  "y": 1142.4962,
+  "z": 1082.6094
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 11",
+  "interior": 4,
+  "x": -262.1759,
+  "y": 1456.6158,
+  "z": 1084.3672
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 12",
+  "interior": 5,
+  "x": 22.861,
+  "y": 1404.9165,
+  "z": 1084.4297
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 13",
+  "interior": 5,
+  "x": 140.3679,
+  "y": 1367.8837,
+  "z": 1083.8621
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 14",
+  "interior": 6,
+  "x": 234.2826,
+  "y": 1065.229,
+  "z": 1084.2101
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 15",
+  "interior": 6,
+  "x": -68.5145,
+  "y": 1353.8485,
+  "z": 1080.2109
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 16",
+  "interior": 15,
+  "x": -285.2511,
+  "y": 1471.197,
+  "z": 1084.375
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 17",
+  "interior": 8,
+  "x": -42.5267,
+  "y": 1408.23,
+  "z": 1084.4297
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 18",
+  "interior": 9,
+  "x": 84.9244,
+  "y": 1324.2983,
+  "z": 1083.8594
+ },
+ {
+  "section": "Burglary houses",
+  "name": "Burglary house 19",
+  "interior": 9,
+  "x": 260.7421,
+  "y": 1238.2261,
+  "z": 1084.2578
+ },
+ {
+  "section": "Ammunations",
+  "name": "Ammu-nation 1",
+  "interior": 7,
+  "x": 315.244,
+  "y": -140.8858,
+  "z": 999.6016
+ },
+ {
+  "section": "Ammunations",
+  "name": "Ammu-nation 2",
+  "interior": 1,
+  "x": 285.8361,
+  "y": -39.0166,
+  "z": 1001.5156
+ },
+ {
+  "section": "Ammunations",
+  "name": "Ammu-nation 3",
+  "interior": 4,
+  "x": 291.7626,
+  "y": -80.1306,
+  "z": 1001.5156
+ },
+ {
+  "section": "Ammunations",
+  "name": "Ammu-nation 4",
+  "interior": 6,
+  "x": 297.144,
+  "y": -109.8702,
+  "z": 1001.5156
+ },
+ {
+  "section": "Ammunations",
+  "name": "Ammu-nation 5",
+  "interior": 6,
+  "x": 316.5025,
+  "y": -167.6272,
+  "z": 999.5938
+ },
+ {
+  "section": "Safe houses",
+  "name": "The Johnson house",
+  "interior": 3,
+  "x": 2496.0549,
+  "y": -1695.1749,
+  "z": 1014.7422
+ },
+ {
+  "section": "Safe houses",
+  "name": "Angel Pine trailer",
+  "interior": 2,
+  "x": 1.1853,
+  "y": -3.2387,
+  "z": 999.4284
+ },
+ {
+  "section": "Safe houses",
+  "name": "Abandoned AC tower",
+  "interior": 10,
+  "x": 419.8936,
+  "y": 2537.1155,
+  "z": 10.0
+ },
+ {
+  "section": "Safe houses",
+  "name": "Wardrobe/Changing room",
+  "interior": 14,
+  "x": 256.9047,
+  "y": -41.6537,
+  "z": 1002.0234
+ },
+ {
+  "section": "Safe houses",
+  "name": "The Camel's Toe safehouse",
+  "interior": 1,
+  "x": 2216.1282,
+  "y": -1076.3052,
+  "z": 1050.4844
+ },
+ {
+  "section": "Safe houses",
+  "name": "Verdant Bluffs safehouse",
+  "interior": 8,
+  "x": 2365.1089,
+  "y": -1133.0795,
+  "z": 1050.875
+ },
+ {
+  "section": "Safe houses",
+  "name": "Willowfield safehouse",
+  "interior": 11,
+  "x": 2282.9766,
+  "y": -1140.2861,
+  "z": 1050.8984
+ },
+ {
+  "section": "Safe houses",
+  "name": "Safehouse 1",
+  "interior": 5,
+  "x": 2233.6919,
+  "y": -1112.8107,
+  "z": 1050.8828
+ },
+ {
+  "section": "Safe houses",
+  "name": "Safehouse 3",
+  "interior": 9,
+  "x": 2319.1272,
+  "y": -1023.9562,
+  "z": 1050.2109
+ },
+ {
+  "section": "Safe houses",
+  "name": "Safehouse 4",
+  "interior": 10,
+  "x": 2261.0977,
+  "y": -1137.8833,
+  "z": 1050.6328
+ },
+ {
+  "section": "Safe houses",
+  "name": "Unused safe house",
+  "interior": 12,
+  "x": 2323.7063,
+  "y": -1147.6509,
+  "z": 1050.7101
+ },
+ {
+  "section": "Girlfriend related",
+  "name": "Denise's house",
+  "interior": 1,
+  "x": 245.2307,
+  "y": 304.7632,
+  "z": 999.1484
+ },
+ {
+  "section": "Girlfriend related",
+  "name": "Helena's barn",
+  "interior": 3,
+  "x": 290.623,
+  "y": 309.0622,
+  "z": 999.1484
+ },
+ {
+  "section": "Girlfriend related",
+  "name": "Barbara's \"house\"",
+  "interior": 5,
+  "x": 322.5014,
+  "y": 303.6906,
+  "z": 999.1484
+ },
+ {
+  "section": "Girlfriend related",
+  "name": "Katie's house",
+  "interior": 2,
+  "x": 269.6405,
+  "y": 305.9512,
+  "z": 999.1484
+ },
+ {
+  "section": "Girlfriend related",
+  "name": "Michelle's house",
+  "interior": 4,
+  "x": 306.1966,
+  "y": 307.819,
+  "z": 1003.3047
+ },
+ {
+  "section": "Departments",
+  "name": "Planning Department",
+  "interior": 3,
+  "x": 386.5259,
+  "y": 173.6381,
+  "z": 1008.3828
+ },
+ {
+  "section": "Departments",
+  "name": "Los Santos Police Department",
+  "interior": 6,
+  "x": 246.6695,
+  "y": 65.8039,
+  "z": 1003.6406
+ },
+ {
+  "section": "Departments",
+  "name": "Las Venturas Police Department",
+  "interior": 3,
+  "x": 288.4723,
+  "y": 170.0647,
+  "z": 1007.1794
+ },
+ {
+  "section": "Departments",
+  "name": "San Fierro Police Department",
+  "interior": 10,
+  "x": 246.0688,
+  "y": 108.9703,
+  "z": 1003.2188
+ },
+ {
+  "section": "Stadiums",
+  "name": "Oval Stadium",
+  "interior": 1,
+  "x": -1402.6613,
+  "y": 106.3897,
+  "z": 1032.2734
+ },
+ {
+  "section": "Stadiums",
+  "name": "Vice Stadium",
+  "interior": 16,
+  "x": -1401.067,
+  "y": 1265.3706,
+  "z": 1039.8672
+ },
+ {
+  "section": "Stadiums",
+  "name": "Blood Bowl Stadium",
+  "interior": 15,
+  "x": -1417.8927,
+  "y": 932.4482,
+  "z": 1041.5313
+ },
+ {
+  "section": "Schools",
+  "name": "Bike school",
+  "interior": 3,
+  "x": 1494.8589,
+  "y": 1306.48,
+  "z": 1093.2953
+ },
+ {
+  "section": "Schools",
+  "name": "Driving school",
+  "interior": 3,
+  "x": -2031.1196,
+  "y": -115.8287,
+  "z": 1035.1719
+ },
+ {
+  "section": "GYMs",
+  "name": "Ganton Gym",
+  "interior": 5,
+  "x": 770.8033,
+  "y": -0.7033,
+  "z": 1000.7267
+ },
+ {
+  "section": "GYMs",
+  "name": "Cobra Gym",
+  "interior": 6,
+  "x": 773.8887,
+  "y": -47.7698,
+  "z": 1000.5859
+ },
+ {
+  "section": "GYMs",
+  "name": "Below The Belt Gym",
+  "interior": 7,
+  "x": 773.7318,
+  "y": -74.6957,
+  "z": 1000.6542
+ },
+ {
+  "section": "Clubs, Brothels",
+  "name": "Brothel 1",
+  "interior": 3,
+  "x": 974.0177,
+  "y": -9.5937,
+  "z": 1001.1484
+ },
+ {
+  "section": "Clubs, Brothels",
+  "name": "Brothel 2",
+  "interior": 3,
+  "x": 961.9308,
+  "y": -51.9071,
+  "z": 1001.1172
+ },
+ {
+  "section": "Clubs, Brothels",
+  "name": "The Big Spread Ranch",
+  "interior": 3,
+  "x": 1212.1489,
+  "y": -28.5388,
+  "z": 1000.9531
+ },
+ {
+  "section": "Clubs, Brothels",
+  "name": "The Pig Pen",
+  "interior": 2,
+  "x": 1204.668,
+  "y": -13.5429,
+  "z": 1000.9219
+ },
+ {
+  "section": "Clubs, Brothels",
+  "name": "Club",
+  "interior": 17,
+  "x": 493.1443,
+  "y": -24.2607,
+  "z": 1000.6797
+ },
+ {
+  "section": "Clubs, Brothels",
+  "name": "Fanny Batter's Whore House",
+  "interior": 6,
+  "x": 748.4623,
+  "y": 1438.2378,
+  "z": 1102.9531
+ },
+ {
+  "section": "Warehouses",
+  "name": "Warehouse 1",
+  "interior": 18,
+  "x": 1290.4106,
+  "y": 1.9512,
+  "z": 1001.0201
+ },
+ {
+  "section": "Warehouses",
+  "name": "Warehouse 2",
+  "interior": 1,
+  "x": 1412.1472,
+  "y": -2.2836,
+  "z": 1000.9241
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Inside Track Betting",
+  "interior": 3,
+  "x": 830.6016,
+  "y": 5.9404,
+  "z": 1004.1797
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Blastin' Fools Records",
+  "interior": 3,
+  "x": 1037.8276,
+  "y": 0.397,
+  "z": 1001.2845
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "B Dup's Apartment",
+  "interior": 3,
+  "x": 1527.0468,
+  "y": -12.0236,
+  "z": 1002.0971
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "B Dup's Crack Palace",
+  "interior": 2,
+  "x": 1523.5098,
+  "y": -47.8211,
+  "z": 1002.2699
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "OG Loc's House",
+  "interior": 3,
+  "x": 512.9291,
+  "y": -11.6929,
+  "z": 1001.5653
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Ryder's house",
+  "interior": 2,
+  "x": 2447.8704,
+  "y": -1704.4509,
+  "z": 1013.5078
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Sweet's House",
+  "interior": 1,
+  "x": 2527.0176,
+  "y": -1679.2076,
+  "z": 1015.4986
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Wu-Zi Mu's",
+  "interior": 1,
+  "x": -2158.6731,
+  "y": 642.09,
+  "z": 1052.375
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Los Santos Airport",
+  "interior": 14,
+  "x": -1864.9434,
+  "y": 55.7325,
+  "z": 1055.5276
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Four Dragons' Janitor's Office",
+  "interior": 10,
+  "x": 1893.0731,
+  "y": 1017.8958,
+  "z": 31.8828
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Jefferson Motel",
+  "interior": 15,
+  "x": 2217.281,
+  "y": -1150.5349,
+  "z": 1025.7969
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Kickstart Stadium",
+  "interior": 14,
+  "x": -1420.4277,
+  "y": 1616.9221,
+  "z": 1052.5313
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Liberty City",
+  "interior": 1,
+  "x": -741.8495,
+  "y": 493.0036,
+  "z": 1371.9766
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Francis International Airport",
+  "interior": 14,
+  "x": -1813.213,
+  "y": -58.012,
+  "z": 1058.9641
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "The Pleasure Domes",
+  "interior": 3,
+  "x": -2638.8232,
+  "y": 1407.3395,
+  "z": 906.4609
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "RC Battlefield",
+  "interior": 10,
+  "x": -1129.8909,
+  "y": 1057.5424,
+  "z": 1346.4141
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "San Fierro Garage",
+  "interior": 1,
+  "x": -2041.2334,
+  "y": 178.3969,
+  "z": 28.8465
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "The Welcome Pump",
+  "interior": 1,
+  "x": 681.6216,
+  "y": -451.8933,
+  "z": -25.6172
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "8-Track Stadium",
+  "interior": 7,
+  "x": -1403.0116,
+  "y": -250.4526,
+  "z": 1043.5341
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Dirtbike Stadium",
+  "interior": 4,
+  "x": -1421.5618,
+  "y": -663.8262,
+  "z": 1059.5569
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Crack Den",
+  "interior": 5,
+  "x": 322.1117,
+  "y": 1119.327,
+  "z": 1083.883
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Big Smoke's Crack Palace",
+  "interior": 2,
+  "x": 2536.5322,
+  "y": -1294.8425,
+  "z": 1044.125
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Zero's RC Shop",
+  "interior": 6,
+  "x": -2240.1028,
+  "y": 136.973,
+  "z": 1035.4141
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Sherman Dam",
+  "interior": 17,
+  "x": -944.2402,
+  "y": 1886.1536,
+  "z": 5.0051
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Rosenberg's Office",
+  "interior": 2,
+  "x": 2182.2017,
+  "y": 1628.5848,
+  "z": 1043.8723
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Secret Valley Diner",
+  "interior": 6,
+  "x": 442.1295,
+  "y": -52.4782,
+  "z": 999.7167
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "World of Coq",
+  "interior": 1,
+  "x": 445.6003,
+  "y": -6.9823,
+  "z": 1000.7344
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Jays Diner",
+  "interior": 5,
+  "x": 454.9853,
+  "y": -107.2548,
+  "z": 999.4376
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Madd Dogg's Mansion",
+  "interior": 5,
+  "x": 1267.8407,
+  "y": -776.9587,
+  "z": 1091.9063
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Colonel Furhberger's",
+  "interior": 8,
+  "x": 2807.3604,
+  "y": -1171.7048,
+  "z": 1025.5703
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Burning Desire Building",
+  "interior": 5,
+  "x": 2350.1597,
+  "y": -1181.0658,
+  "z": 1027.9766
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Atrium",
+  "interior": 18,
+  "x": 1727.2853,
+  "y": -1642.9451,
+  "z": 20.2254
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Sindacco Abatoir",
+  "interior": 1,
+  "x": 963.0586,
+  "y": 2159.7563,
+  "z": 1011.0303
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Jet Interior",
+  "interior": 1,
+  "x": 1.5491,
+  "y": 23.3183,
+  "z": 1199.5938
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Andromada",
+  "interior": 9,
+  "x": 315.4544,
+  "y": 976.5972,
+  "z": 1960.8511
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Palomino Bank",
+  "interior": 0,
+  "x": 2306.3826,
+  "y": -15.2365,
+  "z": 26.7496
+ },
+ {
+  "section": "Cutscene, Missions",
+  "name": "Dillimore Gas Station",
+  "interior": 0,
+  "x": 663.0588,
+  "y": -573.6274,
+  "z": 16.3359
+ },
+ {
+  "section": "Non-categorized",
+  "name": "Random House",
+  "interior": 2,
+  "x": 2236.6997,
+  "y": -1078.9478,
+  "z": 1049.0234
+ },
+ {
+  "section": "Non-categorized",
+  "name": "Budget Inn Motel Room",
+  "interior": 12,
+  "x": 446.3247,
+  "y": 509.9662,
+  "z": 1001.4195
+ }
+]

@@ -1,0 +1,1055 @@
+[
+ {
+  "name": "OnActorStreamIn",
+  "library": "open.mp",
+  "signature": "forward OnActorStreamIn(actorid, forplayerid)",
+  "return_tag": null,
+  "params": "actorid, forplayerid",
+  "file": "omp_actor.inc",
+  "line": 435,
+  "summary": "This callback is called when an actor is streamed in by a player's client."
+ },
+ {
+  "name": "OnActorStreamOut",
+  "library": "open.mp",
+  "signature": "forward OnActorStreamOut(actorid, forplayerid)",
+  "return_tag": null,
+  "params": "actorid, forplayerid",
+  "file": "omp_actor.inc",
+  "line": 447,
+  "summary": "This callback is called when an actor is streamed out by a player's client."
+ },
+ {
+  "name": "OnClientCheckResponse",
+  "library": "open.mp",
+  "signature": "forward OnClientCheckResponse(playerid, actionid, memaddr, retndata)",
+  "return_tag": null,
+  "params": "playerid, actionid, memaddr, retndata",
+  "file": "omp_network.inc",
+  "line": 631,
+  "summary": "This callback is called when a SendClientCheck request comletes"
+ },
+ {
+  "name": "OnDialogResponse",
+  "library": "open.mp",
+  "signature": "forward OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])",
+  "return_tag": null,
+  "params": "playerid, dialogid, response, listitem, inputtext[]",
+  "file": "omp_dialog.inc",
+  "line": 213,
+  "summary": "This callback is called when a player responds to a dialog shown using ShowPlayerDialog by either clicking a button, pressing ENTER/ESC or double-clicking a list item (if using a list style dialog)."
+ },
+ {
+  "name": "OnEnterExitModShop",
+  "library": "open.mp",
+  "signature": "forward OnEnterExitModShop(playerid, enterexit, interiorid)",
+  "return_tag": null,
+  "params": "playerid, enterexit, interiorid",
+  "file": "omp_vehicle.inc",
+  "line": 1902,
+  "summary": "This callback is called when a player enters or exits a mod shop."
+ },
+ {
+  "name": "OnFilterScriptExit",
+  "library": "open.mp",
+  "signature": "forward OnFilterScriptExit()",
+  "return_tag": null,
+  "params": "",
+  "file": "omp_core.inc",
+  "line": 1486,
+  "summary": "This callback is called when a filterscript is unloaded. It is only called inside the filterscript which is unloaded."
+ },
+ {
+  "name": "OnFilterScriptInit",
+  "library": "open.mp",
+  "signature": "forward OnFilterScriptInit()",
+  "return_tag": null,
+  "params": "",
+  "file": "omp_core.inc",
+  "line": 1476,
+  "summary": "This callback is called when a filterscript is initialized (loaded). It is only called inside the filterscript which is starting."
+ },
+ {
+  "name": "OnGameModeExit",
+  "library": "open.mp",
+  "signature": "forward OnGameModeExit()",
+  "return_tag": null,
+  "params": "",
+  "file": "omp_core.inc",
+  "line": 1466,
+  "summary": "This callback is called when a gamemode ends, either through 'gmx', the server being shut down, or GameModeExit."
+ },
+ {
+  "name": "OnGameModeInit",
+  "library": "open.mp",
+  "signature": "forward OnGameModeInit()",
+  "return_tag": null,
+  "params": "",
+  "file": "omp_core.inc",
+  "line": 1442,
+  "summary": "This callback is triggered when the gamemode starts."
+ },
+ {
+  "name": "OnIncomingConnection",
+  "library": "open.mp",
+  "signature": "forward OnIncomingConnection(playerid, ip_address[], port)",
+  "return_tag": null,
+  "params": "playerid, ip_address[], port",
+  "file": "omp_player.inc",
+  "line": 3295,
+  "summary": "This callback is called when an IP address attempts a connection to the server. To block incoming connections, use BlockIpAddress."
+ },
+ {
+  "name": "OnNPCChangeNode",
+  "library": "open.mp",
+  "signature": "forward OnNPCChangeNode(npcid, newnodeid, oldnodeid)",
+  "return_tag": null,
+  "params": "npcid, newnodeid, oldnodeid",
+  "file": "omp_npc.inc",
+  "line": 1338
+ },
+ {
+  "name": "OnNPCCreate",
+  "library": "open.mp",
+  "signature": "forward OnNPCCreate(npcid)",
+  "return_tag": null,
+  "params": "npcid",
+  "file": "omp_npc.inc",
+  "line": 1273
+ },
+ {
+  "name": "OnNPCDeath",
+  "library": "open.mp",
+  "signature": "forward OnNPCDeath(npcid, killerid, WEAPON:reason)",
+  "return_tag": null,
+  "params": "npcid, killerid, WEAPON:reason",
+  "file": "omp_npc.inc",
+  "line": 1308
+ },
+ {
+  "name": "OnNPCDestroy",
+  "library": "open.mp",
+  "signature": "forward OnNPCDestroy(npcid)",
+  "return_tag": null,
+  "params": "npcid",
+  "file": "omp_npc.inc",
+  "line": 1278
+ },
+ {
+  "name": "OnNPCFinishMove",
+  "library": "open.mp",
+  "signature": "forward OnNPCFinishMove(npcid)",
+  "return_tag": null,
+  "params": "npcid",
+  "file": "omp_npc.inc",
+  "line": 1268
+ },
+ {
+  "name": "OnNPCFinishMovePath",
+  "library": "open.mp",
+  "signature": "forward OnNPCFinishMovePath(npcid, pathid)",
+  "return_tag": null,
+  "params": "npcid, pathid",
+  "file": "omp_npc.inc",
+  "line": 1343
+ },
+ {
+  "name": "OnNPCFinishMovePathPoint",
+  "library": "open.mp",
+  "signature": "forward OnNPCFinishMovePathPoint(npcid, pathid, pointid)",
+  "return_tag": null,
+  "params": "npcid, pathid, pointid",
+  "file": "omp_npc.inc",
+  "line": 1348
+ },
+ {
+  "name": "OnNPCFinishNode",
+  "library": "open.mp",
+  "signature": "forward OnNPCFinishNode(npcid, nodeid)",
+  "return_tag": null,
+  "params": "npcid, nodeid",
+  "file": "omp_npc.inc",
+  "line": 1333
+ },
+ {
+  "name": "OnNPCFinishNodePoint",
+  "library": "open.mp",
+  "signature": "forward OnNPCFinishNodePoint(npcid, nodeid, pointid)",
+  "return_tag": null,
+  "params": "npcid, nodeid, pointid",
+  "file": "omp_npc.inc",
+  "line": 1328
+ },
+ {
+  "name": "OnNPCGiveDamage",
+  "library": "open.mp",
+  "signature": "forward OnNPCGiveDamage(npcid, damagedid, Float:amount, WEAPON:weaponid, bodypart)",
+  "return_tag": null,
+  "params": "npcid, damagedid, Float:amount, WEAPON:weaponid, bodypart",
+  "file": "omp_npc.inc",
+  "line": 1303
+ },
+ {
+  "name": "OnNPCPlaybackEnd",
+  "library": "open.mp",
+  "signature": "forward OnNPCPlaybackEnd(npcid, recordid)",
+  "return_tag": null,
+  "params": "npcid, recordid",
+  "file": "omp_npc.inc",
+  "line": 1318
+ },
+ {
+  "name": "OnNPCPlaybackStart",
+  "library": "open.mp",
+  "signature": "forward OnNPCPlaybackStart(npcid, recordid)",
+  "return_tag": null,
+  "params": "npcid, recordid",
+  "file": "omp_npc.inc",
+  "line": 1313
+ },
+ {
+  "name": "OnNPCRespawn",
+  "library": "open.mp",
+  "signature": "forward OnNPCRespawn(npcid)",
+  "return_tag": null,
+  "params": "npcid",
+  "file": "omp_npc.inc",
+  "line": 1288
+ },
+ {
+  "name": "OnNPCSpawn",
+  "library": "open.mp",
+  "signature": "forward OnNPCSpawn(npcid)",
+  "return_tag": null,
+  "params": "npcid",
+  "file": "omp_npc.inc",
+  "line": 1283
+ },
+ {
+  "name": "OnNPCTakeDamage",
+  "library": "open.mp",
+  "signature": "forward OnNPCTakeDamage(npcid, issuerid, Float:amount, WEAPON:weaponid, bodypart)",
+  "return_tag": null,
+  "params": "npcid, issuerid, Float:amount, WEAPON:weaponid, bodypart",
+  "file": "omp_npc.inc",
+  "line": 1298
+ },
+ {
+  "name": "OnNPCWeaponShot",
+  "library": "open.mp",
+  "signature": "forward OnNPCWeaponShot(npcid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hitid, Float:fX, Float:fY, Float:fZ)",
+  "return_tag": null,
+  "params": "npcid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hitid, Float:fX, Float:fY, Float:fZ",
+  "file": "omp_npc.inc",
+  "line": 1323
+ },
+ {
+  "name": "OnNPCWeaponStateChange",
+  "library": "open.mp",
+  "signature": "forward OnNPCWeaponStateChange(npcid, newState, oldState)",
+  "return_tag": null,
+  "params": "npcid, newState, oldState",
+  "file": "omp_npc.inc",
+  "line": 1293
+ },
+ {
+  "name": "OnObjectMoved",
+  "library": "open.mp",
+  "signature": "forward OnObjectMoved(objectid)",
+  "return_tag": null,
+  "params": "objectid",
+  "file": "omp_object.inc",
+  "line": 1520,
+  "summary": "This callback is called when an object is moved after MoveObject (when it stops moving)."
+ },
+ {
+  "name": "OnPickupStreamIn",
+  "library": "open.mp",
+  "signature": "forward OnPickupStreamIn(pickupid, playerid)",
+  "return_tag": null,
+  "params": "pickupid, playerid",
+  "file": "omp_pickup.inc",
+  "line": 359,
+  "summary": "Called when a pickup enters the visual range of a player."
+ },
+ {
+  "name": "OnPickupStreamOut",
+  "library": "open.mp",
+  "signature": "forward OnPickupStreamOut(pickupid, playerid)",
+  "return_tag": null,
+  "params": "pickupid, playerid",
+  "file": "omp_pickup.inc",
+  "line": 372,
+  "summary": "Called when a pickup leaves the visual range of a player."
+ },
+ {
+  "name": "OnPlayerClickGangZone",
+  "library": "open.mp",
+  "signature": "forward OnPlayerClickGangZone(playerid, zoneid)",
+  "return_tag": null,
+  "params": "playerid, zoneid",
+  "file": "omp_gangzone.inc",
+  "line": 960,
+  "summary": "This callback is called when a player clicked a gangzone."
+ },
+ {
+  "name": "OnPlayerClickMap",
+  "library": "open.mp",
+  "signature": "forward OnPlayerClickMap(playerid, Float:fX, Float:fY, Float:fZ)",
+  "return_tag": null,
+  "params": "playerid, Float:fX, Float:fY, Float:fZ",
+  "file": "omp_player.inc",
+  "line": 3276,
+  "summary": "OnPlayerClickMap is called when a player places a target/waypoint on the pause menu map (by right-clicking)."
+ },
+ {
+  "name": "OnPlayerClickPlayer",
+  "library": "open.mp",
+  "signature": "forward OnPlayerClickPlayer(playerid, clickedplayerid, CLICK_SOURCE:source)",
+  "return_tag": null,
+  "params": "playerid, clickedplayerid, CLICK_SOURCE:source",
+  "file": "omp_player.inc",
+  "line": 3177,
+  "summary": "Called when a player double-clicks on a player on the scoreboard."
+ },
+ {
+  "name": "OnPlayerClickPlayerGangZone",
+  "library": "open.mp",
+  "signature": "forward OnPlayerClickPlayerGangZone(playerid, zoneid)",
+  "return_tag": null,
+  "params": "playerid, zoneid",
+  "file": "omp_gangzone.inc",
+  "line": 974,
+  "summary": "This callback is called when a player clicked a player gangzone."
+ },
+ {
+  "name": "OnPlayerClickPlayerTextDraw",
+  "library": "open.mp",
+  "signature": "forward OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:playertextid",
+  "file": "omp_textdraw.inc",
+  "line": 1657,
+  "summary": "This callback is called when a player clicks on a player-textdraw. It is not called when player cancels the select mode (ESC) - however, OnPlayerClickTextDraw is."
+ },
+ {
+  "name": "OnPlayerClickTextDraw",
+  "library": "open.mp",
+  "signature": "forward OnPlayerClickTextDraw(playerid, Text:clickedid)",
+  "return_tag": null,
+  "params": "playerid, Text:clickedid",
+  "file": "omp_textdraw.inc",
+  "line": 1634,
+  "summary": "This callback is called when a player clicks on a textdraw or cancels the select mode with the Escape key."
+ },
+ {
+  "name": "OnPlayerCommandText",
+  "library": "open.mp",
+  "signature": "forward OnPlayerCommandText(playerid, cmdtext[])",
+  "return_tag": null,
+  "params": "playerid, cmdtext[]",
+  "file": "omp_player.inc",
+  "line": 3436,
+  "summary": "This callback is called when a player enters a command into the client chat window. Commands are anything that start with a forward slash, e.g. /help."
+ },
+ {
+  "name": "OnPlayerConnect",
+  "library": "open.mp",
+  "signature": "forward OnPlayerConnect(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "omp_player.inc",
+  "line": 3451,
+  "summary": "This callback is called when a player connects to the server."
+ },
+ {
+  "name": "OnPlayerDeath",
+  "library": "open.mp",
+  "signature": "forward OnPlayerDeath(playerid, killerid, WEAPON:reason)",
+  "return_tag": null,
+  "params": "playerid, killerid, WEAPON:reason",
+  "file": "omp_player.inc",
+  "line": 3203,
+  "summary": "This callback is called when a player dies, either by suicide or by being killed by another player."
+ },
+ {
+  "name": "OnPlayerDisconnect",
+  "library": "open.mp",
+  "signature": "forward OnPlayerDisconnect(playerid, reason)",
+  "return_tag": null,
+  "params": "playerid, reason",
+  "file": "omp_player.inc",
+  "line": 3480,
+  "summary": "This callback is called when a player disconnects from the server."
+ },
+ {
+  "name": "OnPlayerEditAttachedObject",
+  "library": "open.mp",
+  "signature": "forward OnPlayerEditAttachedObject(playerid, EDIT_RESPONSE:response, index, modelid, boneid, Float:fOffsetX, Float:fOffsetY, Float:fOffsetZ, Float:fRotX, Float:fRotY, Float:fRotZ, Float:fScaleX, Float:fScaleY, Float:fScaleZ)",
+  "return_tag": null,
+  "params": "playerid, EDIT_RESPONSE:response, index, modelid, boneid, Float:fOffsetX, Float:fOffsetY, Float:fOffsetZ, Float:fRotX, Float:fRotY, Float:fRotZ, Float:fScaleX, Float:fScaleY, Float:fScaleZ",
+  "file": "omp_object.inc",
+  "line": 1503,
+  "summary": "This callback is called when a player ends attached object edition mode."
+ },
+ {
+  "name": "OnPlayerEditObject",
+  "library": "open.mp",
+  "signature": "forward OnPlayerEditObject(playerid, playerobject, objectid, EDIT_RESPONSE:response, Float:fX, Float:fY, Float:fZ, Float:fRotX, Float:fRotY, Float:fRotZ)",
+  "return_tag": null,
+  "params": "playerid, playerobject, objectid, EDIT_RESPONSE:response, Float:fX, Float:fY, Float:fZ, Float:fRotX, Float:fRotY, Float:fRotZ",
+  "file": "omp_object.inc",
+  "line": 1474,
+  "summary": "This callback is called when a player finishes editing an object (EditObject/EditPlayerObject)."
+ },
+ {
+  "name": "OnPlayerEnterCheckpoint",
+  "library": "open.mp",
+  "signature": "forward OnPlayerEnterCheckpoint(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "omp_checkpoint.inc",
+  "line": 342,
+  "summary": "This callback is called when a player enters the checkpoint set for that player."
+ },
+ {
+  "name": "OnPlayerEnterGangZone",
+  "library": "open.mp",
+  "signature": "forward OnPlayerEnterGangZone(playerid, zoneid)",
+  "return_tag": null,
+  "params": "playerid, zoneid",
+  "file": "omp_gangzone.inc",
+  "line": 904,
+  "summary": "This callback is called when a player enters a gangzone."
+ },
+ {
+  "name": "OnPlayerEnterPlayerGangZone",
+  "library": "open.mp",
+  "signature": "forward OnPlayerEnterPlayerGangZone(playerid, zoneid)",
+  "return_tag": null,
+  "params": "playerid, zoneid",
+  "file": "omp_gangzone.inc",
+  "line": 932,
+  "summary": "This callback is called when a player enters a player gangzone."
+ },
+ {
+  "name": "OnPlayerEnterRaceCheckpoint",
+  "library": "open.mp",
+  "signature": "forward OnPlayerEnterRaceCheckpoint(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "omp_checkpoint.inc",
+  "line": 384,
+  "summary": "This callback is called when a player enters a race checkpoint."
+ },
+ {
+  "name": "OnPlayerEnterVehicle",
+  "library": "open.mp",
+  "signature": "forward OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)",
+  "return_tag": null,
+  "params": "playerid, vehicleid, ispassenger",
+  "file": "omp_vehicle.inc",
+  "line": 1812,
+  "summary": "This callback is called when a player starts to enter a vehicle, meaning the player is not in vehicle yet at the time this callback is called."
+ },
+ {
+  "name": "OnPlayerExitedMenu",
+  "library": "open.mp",
+  "signature": "forward OnPlayerExitedMenu(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "omp_menu.inc",
+  "line": 340,
+  "summary": "Called when a player exits a menu."
+ },
+ {
+  "name": "OnPlayerExitVehicle",
+  "library": "open.mp",
+  "signature": "forward OnPlayerExitVehicle(playerid, vehicleid)",
+  "return_tag": null,
+  "params": "playerid, vehicleid",
+  "file": "omp_vehicle.inc",
+  "line": 1832,
+  "summary": "This callback is called when a player starts to exit a vehicle."
+ },
+ {
+  "name": "OnPlayerFinishedDownloading",
+  "library": "open.mp",
+  "signature": "forward OnPlayerFinishedDownloading(playerid, virtualworld)",
+  "return_tag": null,
+  "params": "playerid, virtualworld",
+  "file": "omp_network.inc",
+  "line": 666,
+  "summary": "This callback is called when a player finishes downloading custom models. For more information on how to add custom models to your server, see the release thread and this tutorial."
+ },
+ {
+  "name": "OnPlayerGiveDamage",
+  "library": "open.mp",
+  "signature": "forward OnPlayerGiveDamage(playerid, damagedid, Float:amount, WEAPON:weaponid, bodypart)",
+  "return_tag": null,
+  "params": "playerid, damagedid, Float:amount, WEAPON:weaponid, bodypart",
+  "file": "omp_player.inc",
+  "line": 3161,
+  "summary": "This callback is called when a player gives damage to another player."
+ },
+ {
+  "name": "OnPlayerGiveDamageActor",
+  "library": "open.mp",
+  "signature": "forward OnPlayerGiveDamageActor(playerid, damaged_actorid, Float:amount, WEAPON:weaponid, bodypart)",
+  "return_tag": null,
+  "params": "playerid, damaged_actorid, Float:amount, WEAPON:weaponid, bodypart",
+  "file": "omp_actor.inc",
+  "line": 423,
+  "summary": "This callback is called when a player gives damage to an actor."
+ },
+ {
+  "name": "OnPlayerInteriorChange",
+  "library": "open.mp",
+  "signature": "forward OnPlayerInteriorChange(playerid, newinteriorid, oldinteriorid)",
+  "return_tag": null,
+  "params": "playerid, newinteriorid, oldinteriorid",
+  "file": "omp_player.inc",
+  "line": 3331,
+  "summary": "Called when a player changes interior. Can be triggered by SetPlayerInterior or when a player enter/exits a building."
+ },
+ {
+  "name": "OnPlayerKeyStateChange",
+  "library": "open.mp",
+  "signature": "forward OnPlayerKeyStateChange(playerid, KEY:newkeys, KEY:oldkeys)",
+  "return_tag": null,
+  "params": "playerid, KEY:newkeys, KEY:oldkeys",
+  "file": "omp_player.inc",
+  "line": 3366,
+  "summary": "This callback is called when the state of any supported key is changed (pressed/released). Directional keys do not trigger OnPlayerKeyStateChange (up/down/left/right)."
+ },
+ {
+  "name": "OnPlayerLeaveCheckpoint",
+  "library": "open.mp",
+  "signature": "forward OnPlayerLeaveCheckpoint(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "omp_checkpoint.inc",
+  "line": 364,
+  "summary": "This callback is called when a player leaves the checkpoint set for them by SetPlayerCheckpoint. Only one checkpoint can be set at a time."
+ },
+ {
+  "name": "OnPlayerLeaveGangZone",
+  "library": "open.mp",
+  "signature": "forward OnPlayerLeaveGangZone(playerid, zoneid)",
+  "return_tag": null,
+  "params": "playerid, zoneid",
+  "file": "omp_gangzone.inc",
+  "line": 918,
+  "summary": "This callback is called when a player exited a gangzone."
+ },
+ {
+  "name": "OnPlayerLeavePlayerGangZone",
+  "library": "open.mp",
+  "signature": "forward OnPlayerLeavePlayerGangZone(playerid, zoneid)",
+  "return_tag": null,
+  "params": "playerid, zoneid",
+  "file": "omp_gangzone.inc",
+  "line": 946,
+  "summary": "This callback is called when a player exited a player gangzone."
+ },
+ {
+  "name": "OnPlayerLeaveRaceCheckpoint",
+  "library": "open.mp",
+  "signature": "forward OnPlayerLeaveRaceCheckpoint(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "omp_checkpoint.inc",
+  "line": 404,
+  "summary": "This callback is called when a player leaves the race checkpoint."
+ },
+ {
+  "name": "OnPlayerObjectMoved",
+  "library": "open.mp",
+  "signature": "forward OnPlayerObjectMoved(playerid, objectid)",
+  "return_tag": null,
+  "params": "playerid, objectid",
+  "file": "omp_object.inc",
+  "line": 1537,
+  "summary": "This callback is called when a player object is moved after MovePlayerObject (when it stops moving)."
+ },
+ {
+  "name": "OnPlayerPickUpPickup",
+  "library": "open.mp",
+  "signature": "forward OnPlayerPickUpPickup(playerid, pickupid)",
+  "return_tag": null,
+  "params": "playerid, pickupid",
+  "file": "omp_pickup.inc",
+  "line": 333,
+  "summary": "Called when a player picks up a pickup created with CreatePickup."
+ },
+ {
+  "name": "OnPlayerPickUpPlayerPickup",
+  "library": "open.mp",
+  "signature": "forward OnPlayerPickUpPlayerPickup(playerid, pickupid)",
+  "return_tag": null,
+  "params": "playerid, pickupid",
+  "file": "omp_pickup.inc",
+  "line": 346,
+  "summary": "Called when a player picks up a pickup created with CreatePlayerPickup."
+ },
+ {
+  "name": "OnPlayerPickupStreamIn",
+  "library": "open.mp",
+  "signature": "forward OnPlayerPickupStreamIn(pickupid, playerid)",
+  "return_tag": null,
+  "params": "pickupid, playerid",
+  "file": "omp_pickup.inc",
+  "line": 385,
+  "summary": "Called when a pickup enters the visual range of a player."
+ },
+ {
+  "name": "OnPlayerPickupStreamOut",
+  "library": "open.mp",
+  "signature": "forward OnPlayerPickupStreamOut(pickupid, playerid)",
+  "return_tag": null,
+  "params": "pickupid, playerid",
+  "file": "omp_pickup.inc",
+  "line": 398,
+  "summary": "Called when a pickup leaves the visual range of a player."
+ },
+ {
+  "name": "OnPlayerRequestClass",
+  "library": "open.mp",
+  "signature": "forward OnPlayerRequestClass(playerid, classid)",
+  "return_tag": null,
+  "params": "playerid, classid",
+  "file": "omp_class.inc",
+  "line": 255,
+  "summary": "Called when a player changes class at class selection (and when class selection first appears)."
+ },
+ {
+  "name": "OnPlayerRequestDownload",
+  "library": "open.mp",
+  "signature": "forward OnPlayerRequestDownload(playerid, DOWNLOAD_REQUEST:type, crc)",
+  "return_tag": null,
+  "params": "playerid, DOWNLOAD_REQUEST:type, crc",
+  "file": "omp_network.inc",
+  "line": 673
+ },
+ {
+  "name": "OnPlayerRequestSpawn",
+  "library": "open.mp",
+  "signature": "forward OnPlayerRequestSpawn(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "omp_class.inc",
+  "line": 272,
+  "summary": "Called when a player attempts to spawn via class selection either by pressing SHIFT or clicking the 'Spawn' button."
+ },
+ {
+  "name": "OnPlayerSelectedMenuRow",
+  "library": "open.mp",
+  "signature": "forward OnPlayerSelectedMenuRow(playerid, row)",
+  "return_tag": null,
+  "params": "playerid, row",
+  "file": "omp_menu.inc",
+  "line": 327,
+  "summary": "This callback is called when a player selects an item from a menu (ShowMenuForPlayer)."
+ },
+ {
+  "name": "OnPlayerSelectObject",
+  "library": "open.mp",
+  "signature": "forward OnPlayerSelectObject(playerid, SELECT_OBJECT:type, objectid, modelid, Float:fX, Float:fY, Float:fZ)",
+  "return_tag": null,
+  "params": "playerid, SELECT_OBJECT:type, objectid, modelid, Float:fX, Float:fY, Float:fZ",
+  "file": "omp_object.inc",
+  "line": 1445
+ },
+ {
+  "name": "OnPlayerSpawn",
+  "library": "open.mp",
+  "signature": "forward OnPlayerSpawn(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "omp_class.inc",
+  "line": 291,
+  "summary": "This callback is called when a player spawns.(i.e. after caling SpawnPlayer function)."
+ },
+ {
+  "name": "OnPlayerStateChange",
+  "library": "open.mp",
+  "signature": "forward OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate)",
+  "return_tag": null,
+  "params": "playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstate",
+  "file": "omp_player.inc",
+  "line": 3400,
+  "summary": "This callback is called when a player changes state. For example, when a player changes from being the driver of a vehicle to being on-foot."
+ },
+ {
+  "name": "OnPlayerStreamIn",
+  "library": "open.mp",
+  "signature": "forward OnPlayerStreamIn(playerid, forplayerid)",
+  "return_tag": null,
+  "params": "playerid, forplayerid",
+  "file": "omp_player.inc",
+  "line": 3079,
+  "summary": "This callback is called when a player is streamed by some other player's client."
+ },
+ {
+  "name": "OnPlayerStreamOut",
+  "library": "open.mp",
+  "signature": "forward OnPlayerStreamOut(playerid, forplayerid)",
+  "return_tag": null,
+  "params": "playerid, forplayerid",
+  "file": "omp_player.inc",
+  "line": 3094,
+  "summary": "This callback is called when a player is streamed out from some other player's client."
+ },
+ {
+  "name": "OnPlayerTakeDamage",
+  "library": "open.mp",
+  "signature": "forward OnPlayerTakeDamage(playerid, issuerid, Float:amount, WEAPON:weaponid, bodypart)",
+  "return_tag": null,
+  "params": "playerid, issuerid, Float:amount, WEAPON:weaponid, bodypart",
+  "file": "omp_player.inc",
+  "line": 3128,
+  "summary": "This callback is called when a player takes damage."
+ },
+ {
+  "name": "OnPlayerText",
+  "library": "open.mp",
+  "signature": "forward OnPlayerText(playerid, text[])",
+  "return_tag": null,
+  "params": "playerid, text[]",
+  "file": "omp_player.inc",
+  "line": 3417,
+  "summary": "Called when a player sends a chat message."
+ },
+ {
+  "name": "OnPlayerUpdate",
+  "library": "open.mp",
+  "signature": "forward OnPlayerUpdate(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "omp_player.inc",
+  "line": 3314,
+  "summary": "This callback is called every time a client/player updates the server with their status. It is often used to create custom callbacks for client updates that aren't actively tracked by the server, such as health or armor updates or players switching weapons."
+ },
+ {
+  "name": "OnPlayerWeaponShot",
+  "library": "open.mp",
+  "signature": "forward OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hitid, Float:fX, Float:fY, Float:fZ)",
+  "return_tag": null,
+  "params": "playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hitid, Float:fX, Float:fY, Float:fZ",
+  "file": "omp_player.inc",
+  "line": 3255,
+  "summary": "This callback is called when a player fires a shot from a weapon. Only bullet weapons are supported. Only passenger drive-by is supported (not driver drive-by, and not sea sparrow / hunter shots)."
+ },
+ {
+  "name": "OnRconCommand",
+  "library": "open.mp",
+  "signature": "forward OnRconCommand(cmd[])",
+  "return_tag": null,
+  "params": "cmd[]",
+  "file": "omp_network.inc",
+  "line": 696,
+  "summary": "This callback is called when a command is sent through the server console, remote RCON, or via the in-game \"/rcon command\"."
+ },
+ {
+  "name": "OnRconLoginAttempt",
+  "library": "open.mp",
+  "signature": "forward OnRconLoginAttempt(ip[], password[], success)",
+  "return_tag": null,
+  "params": "ip[], password[], success",
+  "file": "omp_network.inc",
+  "line": 650,
+  "summary": "This callback is called when someone attempts to log in to RCON in-game; successful or not."
+ },
+ {
+  "name": "OnScriptLoadPlayer",
+  "library": "open.mp",
+  "signature": "forward OnScriptLoadPlayer(playerid, bool:isEntryScript)",
+  "return_tag": null,
+  "params": "playerid, bool:isEntryScript",
+  "file": "omp_core.inc",
+  "line": 1496,
+  "summary": "This callback is called for each connected player when a script is loaded."
+ },
+ {
+  "name": "OnScriptUnloadPlayer",
+  "library": "open.mp",
+  "signature": "forward OnScriptUnloadPlayer(playerid, bool:isEntryScript)",
+  "return_tag": null,
+  "params": "playerid, bool:isEntryScript",
+  "file": "omp_core.inc",
+  "line": 1506,
+  "summary": "This callback is called for each connected player when a script is unloaded."
+ },
+ {
+  "name": "OnTrailerUpdate",
+  "library": "open.mp",
+  "signature": "forward OnTrailerUpdate(playerid, vehicleid)",
+  "return_tag": null,
+  "params": "playerid, vehicleid",
+  "file": "omp_vehicle.inc",
+  "line": 1742,
+  "summary": "This callback is called when a player sent a trailer update."
+ },
+ {
+  "name": "OnUnoccupiedVehicleUpdate",
+  "library": "open.mp",
+  "signature": "forward OnUnoccupiedVehicleUpdate(vehicleid, playerid, passenger_seat, Float:new_x, Float:new_y, Float:new_z, Float:vel_x, Float:vel_y, Float:vel_z)",
+  "return_tag": null,
+  "params": "vehicleid, playerid, passenger_seat, Float:new_x, Float:new_y, Float:new_z, Float:vel_x, Float:vel_y, Float:vel_z",
+  "file": "omp_vehicle.inc",
+  "line": 1992,
+  "summary": "This callback is called when a player's client updates/syncs the position of a vehicle they're not driving. This can happen outside of the vehicle or when the player is a passenger of a vehicle that has no driver."
+ },
+ {
+  "name": "OnVehicleDamageStatusUpdate",
+  "library": "open.mp",
+  "signature": "forward OnVehicleDamageStatusUpdate(vehicleid, playerid)",
+  "return_tag": null,
+  "params": "vehicleid, playerid",
+  "file": "omp_vehicle.inc",
+  "line": 1963,
+  "summary": "This callback is called when a vehicle element such as doors, tires, panels, or lights change their damage status."
+ },
+ {
+  "name": "OnVehicleDeath",
+  "library": "open.mp",
+  "signature": "forward OnVehicleDeath(vehicleid, killerid)",
+  "return_tag": null,
+  "params": "vehicleid, killerid",
+  "file": "omp_vehicle.inc",
+  "line": 1866,
+  "summary": "This callback is called when a vehicle is destroyed - either by exploding or becoming submerged in water."
+ },
+ {
+  "name": "OnVehicleMod",
+  "library": "open.mp",
+  "signature": "forward OnVehicleMod(playerid, vehicleid, componentid)",
+  "return_tag": null,
+  "params": "playerid, vehicleid, componentid",
+  "file": "omp_vehicle.inc",
+  "line": 1885,
+  "summary": "This callback is called when a vehicle is modded."
+ },
+ {
+  "name": "OnVehiclePaintjob",
+  "library": "open.mp",
+  "signature": "forward OnVehiclePaintjob(playerid, vehicleid, paintjobid)",
+  "return_tag": null,
+  "params": "playerid, vehicleid, paintjobid",
+  "file": "omp_vehicle.inc",
+  "line": 1922,
+  "summary": "Called when a player previews a vehicle paintjob inside a mod shop. Watch out, this callback is not called when the player buys the paintjob."
+ },
+ {
+  "name": "OnVehicleRespray",
+  "library": "open.mp",
+  "signature": "forward OnVehicleRespray(playerid, vehicleid, color1, color2)",
+  "return_tag": null,
+  "params": "playerid, vehicleid, color1, color2",
+  "file": "omp_vehicle.inc",
+  "line": 1946,
+  "summary": "This callback is called when a player exits a mod shop, even if the colours weren't changed. Watch out, the name is ambiguous, Pay 'n' Spray shops don't call this callback."
+ },
+ {
+  "name": "OnVehicleSirenStateChange",
+  "library": "open.mp",
+  "signature": "forward OnVehicleSirenStateChange(playerid, vehicleid, newstate)",
+  "return_tag": null,
+  "params": "playerid, vehicleid, newstate",
+  "file": "omp_vehicle.inc",
+  "line": 1760,
+  "summary": "This callback is called when a vehicle's siren is toggled."
+ },
+ {
+  "name": "OnVehicleSpawn",
+  "library": "open.mp",
+  "signature": "forward OnVehicleSpawn(vehicleid)",
+  "return_tag": null,
+  "params": "vehicleid",
+  "file": "omp_vehicle.inc",
+  "line": 1847,
+  "summary": "This callback is called when a vehicle respawns."
+ },
+ {
+  "name": "OnVehicleStreamIn",
+  "library": "open.mp",
+  "signature": "forward OnVehicleStreamIn(vehicleid, forplayerid)",
+  "return_tag": null,
+  "params": "vehicleid, forplayerid",
+  "file": "omp_vehicle.inc",
+  "line": 1775,
+  "summary": "Called when a vehicle is streamed to a player's client."
+ },
+ {
+  "name": "OnVehicleStreamOut",
+  "library": "open.mp",
+  "signature": "forward OnVehicleStreamOut(vehicleid, forplayerid)",
+  "return_tag": null,
+  "params": "vehicleid, forplayerid",
+  "file": "omp_vehicle.inc",
+  "line": 1791,
+  "summary": "This callback is called when a vehicle is streamed out for a player's client (it's so far away that they can't see it)."
+ },
+ {
+  "name": "OnDynamicActorStreamIn",
+  "library": "streamer",
+  "signature": "forward OnDynamicActorStreamIn(STREAMER_TAG_ACTOR:actorid, forplayerid)",
+  "return_tag": null,
+  "params": "STREAMER_TAG_ACTOR:actorid, forplayerid",
+  "file": "streamer.inc",
+  "line": 452
+ },
+ {
+  "name": "OnDynamicActorStreamOut",
+  "library": "streamer",
+  "signature": "forward OnDynamicActorStreamOut(STREAMER_TAG_ACTOR:actorid, forplayerid)",
+  "return_tag": null,
+  "params": "STREAMER_TAG_ACTOR:actorid, forplayerid",
+  "file": "streamer.inc",
+  "line": 453
+ },
+ {
+  "name": "OnDynamicObjectMoved",
+  "library": "streamer",
+  "signature": "forward OnDynamicObjectMoved(STREAMER_TAG_OBJECT:objectid)",
+  "return_tag": null,
+  "params": "STREAMER_TAG_OBJECT:objectid",
+  "file": "streamer.inc",
+  "line": 440
+ },
+ {
+  "name": "OnPlayerEditDynamicObject",
+  "library": "streamer",
+  "signature": "forward OnPlayerEditDynamicObject(playerid, STREAMER_TAG_OBJECT:objectid, response, Float:x, Float:y, Float:z, Float:rx, Float:ry, Float:rz)",
+  "return_tag": null,
+  "params": "playerid, STREAMER_TAG_OBJECT:objectid, response, Float:x, Float:y, Float:z, Float:rx, Float:ry, Float:rz",
+  "file": "streamer.inc",
+  "line": 441
+ },
+ {
+  "name": "OnPlayerEnterDynamicArea",
+  "library": "streamer",
+  "signature": "forward OnPlayerEnterDynamicArea(playerid, STREAMER_TAG_AREA:areaid)",
+  "return_tag": null,
+  "params": "playerid, STREAMER_TAG_AREA:areaid",
+  "file": "streamer.inc",
+  "line": 449
+ },
+ {
+  "name": "OnPlayerEnterDynamicCP",
+  "library": "streamer",
+  "signature": "forward OnPlayerEnterDynamicCP(playerid, STREAMER_TAG_CP:checkpointid)",
+  "return_tag": null,
+  "params": "playerid, STREAMER_TAG_CP:checkpointid",
+  "file": "streamer.inc",
+  "line": 445
+ },
+ {
+  "name": "OnPlayerEnterDynamicRaceCP",
+  "library": "streamer",
+  "signature": "forward OnPlayerEnterDynamicRaceCP(playerid, STREAMER_TAG_RACE_CP:checkpointid)",
+  "return_tag": null,
+  "params": "playerid, STREAMER_TAG_RACE_CP:checkpointid",
+  "file": "streamer.inc",
+  "line": 447
+ },
+ {
+  "name": "OnPlayerGiveDamageDynamicActor",
+  "library": "streamer",
+  "signature": "forward OnPlayerGiveDamageDynamicActor(playerid, STREAMER_TAG_ACTOR:actorid, Float:amount, weaponid, bodypart)",
+  "return_tag": null,
+  "params": "playerid, STREAMER_TAG_ACTOR:actorid, Float:amount, weaponid, bodypart",
+  "file": "streamer.inc",
+  "line": 451
+ },
+ {
+  "name": "OnPlayerLeaveDynamicArea",
+  "library": "streamer",
+  "signature": "forward OnPlayerLeaveDynamicArea(playerid, STREAMER_TAG_AREA:areaid)",
+  "return_tag": null,
+  "params": "playerid, STREAMER_TAG_AREA:areaid",
+  "file": "streamer.inc",
+  "line": 450
+ },
+ {
+  "name": "OnPlayerLeaveDynamicCP",
+  "library": "streamer",
+  "signature": "forward OnPlayerLeaveDynamicCP(playerid, STREAMER_TAG_CP:checkpointid)",
+  "return_tag": null,
+  "params": "playerid, STREAMER_TAG_CP:checkpointid",
+  "file": "streamer.inc",
+  "line": 446
+ },
+ {
+  "name": "OnPlayerLeaveDynamicRaceCP",
+  "library": "streamer",
+  "signature": "forward OnPlayerLeaveDynamicRaceCP(playerid, STREAMER_TAG_RACE_CP:checkpointid)",
+  "return_tag": null,
+  "params": "playerid, STREAMER_TAG_RACE_CP:checkpointid",
+  "file": "streamer.inc",
+  "line": 448
+ },
+ {
+  "name": "OnPlayerPickUpDynamicPickup",
+  "library": "streamer",
+  "signature": "forward OnPlayerPickUpDynamicPickup(playerid, STREAMER_TAG_PICKUP:pickupid)",
+  "return_tag": null,
+  "params": "playerid, STREAMER_TAG_PICKUP:pickupid",
+  "file": "streamer.inc",
+  "line": 444
+ },
+ {
+  "name": "OnPlayerSelectDynamicObject",
+  "library": "streamer",
+  "signature": "forward OnPlayerSelectDynamicObject(playerid, STREAMER_TAG_OBJECT:objectid, modelid, Float:x, Float:y, Float:z)",
+  "return_tag": null,
+  "params": "playerid, STREAMER_TAG_OBJECT:objectid, modelid, Float:x, Float:y, Float:z",
+  "file": "streamer.inc",
+  "line": 442
+ },
+ {
+  "name": "OnPlayerShootDynamicObject",
+  "library": "streamer",
+  "signature": "forward OnPlayerShootDynamicObject(playerid, weaponid, STREAMER_TAG_OBJECT:objectid, Float:x, Float:y, Float:z)",
+  "return_tag": null,
+  "params": "playerid, weaponid, STREAMER_TAG_OBJECT:objectid, Float:x, Float:y, Float:z",
+  "file": "streamer.inc",
+  "line": 443
+ },
+ {
+  "name": "OnQueryError",
+  "library": "mysql-r41",
+  "signature": "forward OnQueryError(errorid, const error[], const callback[], const query[], MySQL:handle)",
+  "return_tag": null,
+  "params": "errorid, const error[], const callback[], const query[], MySQL:handle",
+  "file": "a_mysql.inc.in",
+  "line": 237
+ },
+ {
+  "name": "OnCachedInit",
+  "library": "sscanf",
+  "signature": "forward OnCachedInit()",
+  "return_tag": null,
+  "params": "",
+  "file": "sscanf2.inc",
+  "line": 1266
+ },
+ {
+  "name": "OnPlayerCommandPerformed",
+  "library": "pawn.cmd",
+  "signature": "forward OnPlayerCommandPerformed(playerid, cmd[], params[], result, flags)",
+  "return_tag": null,
+  "params": "playerid, cmd[], params[], result, flags",
+  "file": "src/Pawn.CMD.inc",
+  "line": 68
+ },
+ {
+  "name": "OnPlayerCommandReceived",
+  "library": "pawn.cmd",
+  "signature": "forward OnPlayerCommandReceived(playerid, cmd[], params[], flags)",
+  "return_tag": null,
+  "params": "playerid, cmd[], params[], flags",
+  "file": "src/Pawn.CMD.inc",
+  "line": 64
+ }
+]
