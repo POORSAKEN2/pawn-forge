@@ -1,10 +1,10 @@
 # Pawn Forge
 
-A Claude Code plugin that turns Claude into a SA-MP / open.mp engineer instead of a code guesser.
+A plugin for Claude Code and Google Antigravity that turns your AI assistant into a SA-MP / open.mp engineer instead of a code guesser.
 
 General models write Pawn the way 2008-2014 forum tutorials did: `strtok` commands, `dini` accounts,
 `format(query, ..., "'%s'")` SQL, `new string[256]`, invented vehicle IDs and animation names. Pawn Forge puts
-deterministic tools in the loop so Claude **compiles** what it writes, **lints** it for the defects that actually crash
+deterministic tools in the loop so your AI assistant (Claude or Antigravity) **compiles** what it writes, **lints** it for the defects that actually crash
 or compromise servers, and **looks up** IDs and signatures from the real open.mp data and library headers.
 
 ## What you get
@@ -13,11 +13,13 @@ or compromise servers, and **looks up** IDs and signatures from the real open.mp
 |---|---|
 | **MCP server** (11 tools, Python stdlib only) | Compiler bridge, static analysis, crash-log triage, ID and API lookup, open.mp migration, TextDraw conversion, headless server runs |
 | **Skill: pawn-standards** | Loaded automatically for `.pwn`/`.inc` work: modern practice for strings, MySQL R41, SQLite, YSI 5, Streamer, Pawn.CMD, sscanf, open.mp. Every snippet in it is compile-tested. |
-| **Workflows** | `/pawn-forge:build`, `/pawn-forge:audit`, `/pawn-forge:migrate-openmp`, `/pawn-forge:debug-crash`, `/pawn-forge:textdraw`, `/pawn-forge:modernize-storage`, `/pawn-forge:test` |
+| **Workflows / Skills** | `/pawn-forge:build`, `/pawn-forge:audit`, `/pawn-forge:migrate-openmp`, `/pawn-forge:debug-crash`, `/pawn-forge:textdraw`, `/pawn-forge:modernize-storage`, `/pawn-forge:test` (invoked as slash commands in Claude Code or on-demand skills in Antigravity) |
 | **Agents** | `pawn-auditor` (read-only, large audits), `pawn-build-fixer` (compile until clean) |
-| **Hooks** | Lints the lines Claude just edited in Pawn files and feeds findings back; announces the toolchain when a session starts in a Pawn project |
+| **Hooks** | Lints the lines the assistant just edited in Pawn files and feeds findings back; announces the toolchain when a session starts in a Pawn project |
 
 ## Install
+
+### Claude Code
 
 ```text
 /plugin marketplace add POORSAKEN2/pawn-forge
@@ -26,6 +28,14 @@ or compromise servers, and **looks up** IDs and signatures from the real open.mp
 
 or from a shell: `claude plugin marketplace add POORSAKEN2/pawn-forge` then `claude plugin install pawn-forge@pawn-forge`.
 To try it from a local checkout: `claude --plugin-dir ./plugins/pawn-forge`.
+
+### Google Antigravity
+
+Pawn Forge includes native `plugin.json` and `mcp_config.json` manifests for Antigravity.
+
+- **Workspace / Project**: Clone or copy into `.agents/plugins/pawn-forge` in your Pawn project.
+- **Global**: Clone into `~/.gemini/config/plugins/pawn-forge` (Windows: `%USERPROFILE%\.gemini\config\plugins\pawn-forge`).
+- **Standalone MCP**: Add `server/pawn_mcp.py` to your `mcp_config.json`.
 
 ### Requirements
 
@@ -109,7 +119,7 @@ or `// pawnforge-ignore-file PF503`.
 ## How the pieces fit
 
 ```text
- you ──► Claude ──► skills (what good Pawn looks like, step-by-step workflows)
+ you ──► Claude / Antigravity ──► skills (what good Pawn looks like, step-by-step workflows)
              │
              ├──► MCP tools ──► pawncc / sampctl ──► diagnostics ──► fix ──► recompile
              │              ├─► linter, log analyser, migrator, TextDraw converter

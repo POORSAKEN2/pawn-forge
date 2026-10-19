@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "pawn": {
+      "command": "python",
+      "args": [
+        "server/pawn_mcp.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    }
+  }
+}

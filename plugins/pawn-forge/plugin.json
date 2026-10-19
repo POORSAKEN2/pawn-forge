@@ -1,0 +1,27 @@
+{
+  "name": "pawn-forge",
+  "displayName": "Pawn Forge",
+  "version": "0.1.0",
+  "description": "SA-MP and open.mp game-server development plugin for Claude Code and Antigravity: real compiler in the loop, static analysis for buffer overflows, SQL injection and resource leaks, CrashDetect log triage, verified game IDs and API signatures, SA-MP to open.mp migration, TextDraw scaffolding and headless y_testing runs.",
+  "author": {
+    "name": "POORSAKEN2",
+    "url": "https://github.com/POORSAKEN2"
+  },
+  "homepage": "https://github.com/POORSAKEN2/pawn-forge",
+  "repository": "https://github.com/POORSAKEN2/pawn-forge",
+  "license": "MIT",
+  "keywords": [
+    "pawn",
+    "sa-mp",
+    "samp",
+    "open.mp",
+    "openmp",
+    "gta",
+    "ysi",
+    "streamer",
+    "mysql",
+    "sscanf",
+    "crashdetect",
+    "game-server"
+  ]
+}

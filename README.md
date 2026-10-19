@@ -1,19 +1,20 @@
 # Pawn Forge
 
-**A Claude Code plugin that turns Claude into a SA-MP / open.mp engineer instead of a code guesser.**
+**A plugin for Claude Code and Google Antigravity that turns your AI assistant into a SA-MP / open.mp engineer instead of a code guesser.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue)
 ![Platforms](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
 ![open.mp](https://img.shields.io/badge/open.mp-ready-orange)
+![AI: Claude & Antigravity](https://img.shields.io/badge/AI-Claude%20Code%20%7C%20Antigravity-purple)
 
 General-purpose AI models write Pawn the way 2008-2014 forum tutorials did: `strtok` command parsers, `dini`
 account files, `format(query, ..., "'%s'")` SQL, `new string[256]` everywhere, and vehicle IDs or animation names
 pulled from thin air. That code compiles (sometimes), then crashes servers and leaks accounts.
 
-Pawn Forge puts deterministic tools in the loop. Claude **compiles** what it writes with the real Pawn compiler,
-**lints** it for the defects that actually crash or compromise servers, **looks up** IDs and function signatures
-from official open.mp data and real library headers, and can **run tests** on a headless open.mp server.
+Pawn Forge puts deterministic tools in the loop. Your AI assistant (Claude or Antigravity) **compiles** what it writes
+with the real Pawn compiler, **lints** it for the defects that actually crash or compromise servers, **looks up** IDs
+and function signatures from official open.mp data and real library headers, and can **run tests** on a headless open.mp server.
 
 ---
 
@@ -21,6 +22,8 @@ from official open.mp data and real library headers, and can **run tests** on a 
 
 - [Features](#features)
 - [Quick start](#quick-start)
+  - [In Claude Code](#in-claude-code)
+  - [In Google Antigravity](#in-google-antigravity)
 - [Requirements](#requirements)
 - [Configuration](#configuration)
 - [Using it](#using-it)
@@ -36,7 +39,7 @@ from official open.mp data and real library headers, and can **run tests** on a 
 ## Features
 
 - **Real compiler in the loop.** Compiles files or snippets with pawncc 3.10.x (or sampctl for `pawn.json`
-  projects) and returns structured diagnostics with fix hints and stack-usage estimates. Claude iterates until the
+  projects) and returns structured diagnostics with fix hints and stack-usage estimates. The assistant iterates until the
   build is clean. YSI's backslash include paths are normalised automatically so YSI builds on Linux and macOS too.
 - **Static analysis built for Pawn.** 31 rules for buffer/`sizeof` mismatches, format-specifier vs argument
   mismatches, unsized `sscanf` strings, SQL injection, weak password hashing, unfreed MySQL caches and SQLite
@@ -61,6 +64,8 @@ from official open.mp data and real library headers, and can **run tests** on a 
 
 ## Quick start
 
+### In Claude Code
+
 In Claude Code:
 
 ```text
@@ -83,11 +88,63 @@ Then open your server or gamemode folder in Claude Code and ask, for example:
 
 To try it without installing, clone this repo and run `claude --plugin-dir ./plugins/pawn-forge`.
 
+---
+
+### In Google Antigravity
+
+Pawn Forge natively supports Google Antigravity as an agent plugin and MCP toolchain.
+
+#### Option A: Workspace / Project Plugin (Recommended)
+
+To make Pawn Forge available for anyone opening your repository in Antigravity, add it to your project's `.agents/plugins/` directory:
+
+```bash
+# From your Pawn project root:
+mkdir -p .agents/plugins
+git clone https://github.com/POORSAKEN2/pawn-forge.git .agents/plugins/pawn-forge
+```
+
+Antigravity automatically discovers `.agents/plugins/pawn-forge`, activates its Pawn skills (`pawn-standards`, `build`, `audit`, etc.), launches the MCP server, and enables the lifecycle hooks.
+
+#### Option B: Global Plugin (All Projects)
+
+To make Pawn Forge available across all workspaces on your machine, clone or copy it to your global Antigravity plugins directory:
+
+- **Windows**:
+  ```powershell
+  git clone https://github.com/POORSAKEN2/pawn-forge.git "$env:USERPROFILE\.gemini\config\plugins\pawn-forge"
+  ```
+- **Linux / macOS**:
+  ```bash
+  git clone https://github.com/POORSAKEN2/pawn-forge.git ~/.gemini/config/plugins/pawn-forge
+  ```
+
+#### Option C: Standalone MCP Server
+
+If you only want the MCP tools in Antigravity or another MCP client without the full plugin wrapper, add the server to `~/.gemini/config/mcp_config.json` or your project's `.agents/mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "pawn-forge": {
+      "command": "python",
+      "args": [
+        "<path-to-pawn-forge>/plugins/pawn-forge/server/pawn_mcp.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    }
+  }
+}
+```
+
 ## Requirements
 
 | Requirement | Notes |
 |---|---|
-| **Claude Code** | Recent version with plugin support |
+| **Claude Code** or **Google Antigravity** | Claude Code with plugin support, or Google Antigravity IDE / CLI |
 | **Python 3.8+** | On PATH. Standard library only; nothing to `pip install`. On Windows set the *Python command* option to `py` or `python`. |
 | **Pawn compiler** | pawncc 3.10.x. Found automatically in the project's `qawno/` or `pawno/`, on PATH, or via the *pawncc path* option. The `install_compiler` tool can download the community build for you (open.mp's 3.10.11; 3.10.10 on macOS). |
 | **32-bit runtime (Linux only)** | The compiler and open.mp server are 32-bit. Debian/Ubuntu: `sudo apt install libc6-i386 lib32stdc++6 lib32atomic1` |
@@ -95,21 +152,23 @@ To try it without installing, clone this repo and run `claude --plugin-dir ./plu
 
 ## Configuration
 
-You are asked for these on install; change them any time with `/plugin configure pawn-forge@pawn-forge`.
+In Claude Code, you are asked for these on install; change them any time with `/plugin configure pawn-forge@pawn-forge`. In Antigravity or manual setups, these can be set via environment variables.
 
-| Option | Default | Purpose |
-|---|---|---|
-| Python command | `python3` | Interpreter for the MCP server and hooks (`py` on Windows) |
-| pawncc path | auto-detect | Explicit path to `pawncc` / `pawncc.exe` |
-| Extra include directories | none | Added to every compile, separated by `:` (macOS/Linux) or `;` (Windows) |
-| Lint Pawn files after each edit | on | Feeds lint findings on the lines Claude just changed back to Claude |
+| Option | Default | Environment Variable | Purpose |
+|---|---|---|---|
+| Python command | `python3` / `py` | `PYTHON` | Interpreter for the MCP server and hooks (`py` or `python` on Windows) |
+| pawncc path | auto-detect | `PAWNFORGE_PAWNCC` | Explicit path to `pawncc` / `pawncc.exe` |
+| Extra include directories | none | `PAWNFORGE_INCLUDE_PATHS` | Added to every compile, separated by `:` (macOS/Linux) or `;` (Windows) |
+| Lint Pawn files after each edit | on | — | Feeds lint findings on the lines changed back to the assistant |
 
 Project include folders (`include/`, `qawno/include`, `pawno/include`, sampctl `dependencies/`) are found
 automatically.
 
 ## Using it
 
-### Workflows
+### Workflows & Skills
+
+In **Claude Code**, invoke workflows with slash commands:
 
 | Command | What it does |
 |---|---|
@@ -121,26 +180,29 @@ automatically.
 | `/pawn-forge:modernize-storage [sqlite\|mysql]` | Replace dini / y_ini storage with a database, including data migration and password re-hashing |
 | `/pawn-forge:test [server-dir]` | Write and run YSI y_testing tests on a headless open.mp server |
 
-### Just ask
+In **Google Antigravity**, these workflows are on-demand skills (`build`, `audit`, `debug-crash`, `migrate-openmp`, `textdraw`, `modernize-storage`, `test`, and `pawn-standards`). Antigravity activates them automatically based on your task or prompt.
+
+### Natural Conversation (Claude & Antigravity)
 
 You don't need the commands. With the plugin installed, ordinary requests use the tools automatically:
 
-- "Add a /givecash admin command with Pawn.CMD and sscanf."
-- "Why does my server crash? Here's log.txt."
-- "What's the vehicle ID for the NRG-500, and give me a sitting animation."
-- "Is this login system safe?"
-- "Move our accounts from dini to SQLite."
+- *"Add a /givecash admin command with Pawn.CMD and sscanf."*
+- *"Why does my server crash? Here's log.txt."*
+- *"What's the vehicle ID for the NRG-500, and give me a sitting animation."*
+- *"Is this login system safe?"*
+- *"Move our accounts from dini to SQLite."*
+- *"Compile gamemodes/main.pwn and fix any build errors."*
 
 ### Agents
 
-- **pawn-auditor**: a read-only auditor for large codebases that returns a compact, prioritised report.
-- **pawn-build-fixer**: takes a broken build to clean without filling your conversation with compiler output.
+- **`pawn-auditor`**: a read-only auditor for large codebases that returns a compact, prioritised report.
+- **`pawn-build-fixer`**: takes a broken build to clean without filling your conversation with compiler output.
 
 ### Hooks
 
-- After Claude edits a `.pwn`/`.inc` file, the changed lines are linted and any issues are fed back to Claude.
+- After the assistant edits a `.pwn`/`.inc` file, the changed lines are linted and any issues are fed back.
   Pre-existing problems elsewhere in the file are not repeated on every edit.
-- When a session starts in a Pawn project, Claude is reminded which tools exist. Outside Pawn projects it stays silent.
+- When a session starts in a Pawn project, the assistant is reminded which tools exist. Outside Pawn projects it stays silent.
 
 ## Tools
 
@@ -201,7 +263,7 @@ Suppress a finding deliberately with a comment: `// pawnforge-ignore PF101` (sam
 ## How it works
 
 ```text
- you ──► Claude ──► skills: what good Pawn looks like + step-by-step workflows
+ you ──► Claude / Antigravity ──► skills: what good Pawn looks like + step-by-step workflows
              │
              ├──► MCP tools ──► pawncc / sampctl ──► diagnostics ──► fix ──► recompile
              │              ├─► linter · log analyser · migrator · TextDraw converter
