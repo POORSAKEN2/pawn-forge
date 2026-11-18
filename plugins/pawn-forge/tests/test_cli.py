@@ -165,6 +165,57 @@ class CliTest(unittest.TestCase):
         self.assertEqual(st["package-dir"]["pawnforge._data"], "plugins/pawn-forge/server/data")
         self.assertEqual(st["package-data"]["pawnforge._data"], ["*.json"])
 
+    def test_pawnforge_exec_standalone_and_missing_fallback(self):
+        import shutil
+
+        src_exec = PLUGIN / "tools" / "pawnforge_exec.py"
+        self.assertTrue(src_exec.is_file(), f"Missing {src_exec}")
+
+        with tempfile.TemporaryDirectory() as d:
+            tmp = Path(d)
+            standalone = tmp / "pawnforge_exec.py"
+            shutil.copy2(src_exec, standalone)
+
+            # 1. Standalone with PYTHONPATH pointing to server/ resolves via find_spec("pawnforge")
+            env_found = dict(os.environ, PYTHONPATH=str(PLUGIN / "server"))
+            r_ok = subprocess.run(
+                [sys.executable, str(standalone), "lookup", "vehicle", "infernus", "--json"],
+                cwd=tmp, capture_output=True, text=True, timeout=60, env=env_found,
+            )
+            self.assertEqual(r_ok.returncode, 0, r_ok.stderr)
+            ok_payload = json.loads(r_ok.stdout)
+            self.assertEqual(ok_payload["kind"], "vehicle")
+            self.assertEqual(ok_payload["results"][0]["id"], 411)
+
+            # 2. Workspace plugin path fallback (cwd=REPO_ROOT, empty PATH, no PYTHONPATH)
+            env_ws = {"PATH": "", "HOME": str(tmp), "USERPROFILE": str(tmp)}
+            if "SystemRoot" in os.environ:
+                env_ws["SystemRoot"] = os.environ["SystemRoot"]
+            r_ws = subprocess.run(
+                [sys.executable, "-S", str(standalone), "lookup", "vehicle", "infernus", "--json"],
+                cwd=REPO_ROOT, capture_output=True, text=True, timeout=60, env=env_ws,
+            )
+            self.assertEqual(r_ws.returncode, 0, r_ws.stderr)
+            self.assertEqual(json.loads(r_ws.stdout)["results"][0]["id"], 411)
+
+            # 3. Isolated environment with empty PATH, no PYTHONPATH, redirected HOME/USERPROFILE
+            #    and -S (no site-packages) deterministically triggers missing fallback.
+            env_missing = {
+                "PATH": "",
+                "HOME": str(tmp),
+                "USERPROFILE": str(tmp),
+            }
+            if "SystemRoot" in os.environ:
+                env_missing["SystemRoot"] = os.environ["SystemRoot"]
+            r_miss = subprocess.run(
+                [sys.executable, "-S", str(standalone), "lookup", "vehicle", "infernus", "--json"],
+                cwd=tmp, capture_output=True, text=True, timeout=60, env=env_missing,
+            )
+            self.assertEqual(r_miss.returncode, 1, r_miss.stderr)
+            miss_payload = json.loads(r_miss.stdout)
+            self.assertFalse(miss_payload["ok"])
+            self.assertIn("install", miss_payload)
+
 
 if __name__ == "__main__":
     unittest.main()
