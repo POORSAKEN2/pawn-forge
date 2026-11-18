@@ -10219,8 +10219,8 @@
   "signature": "native Float:acos(Float:value)",
   "return_tag": "Float",
   "params": "Float:value",
-  "file": "a_npc.inc",
-  "line": 338,
+  "file": "a_samp.inc",
+  "line": 618,
   "summary": "Get the inversed value of a cosine in degrees."
  },
  {
@@ -10376,8 +10376,8 @@
   "signature": "native Float:asin(Float:value)",
   "return_tag": "Float",
   "params": "Float:value",
-  "file": "a_npc.inc",
-  "line": 332,
+  "file": "a_samp.inc",
+  "line": 612,
   "summary": "Get the inversed value of a sine in degrees."
  },
  {
@@ -10386,8 +10386,8 @@
   "signature": "native Float:atan(Float:value)",
   "return_tag": "Float",
   "params": "Float:value",
-  "file": "a_npc.inc",
-  "line": 345,
+  "file": "a_samp.inc",
+  "line": 625,
   "summary": "Get the inversed value of a tangent in degrees."
  },
  {
@@ -10396,8 +10396,8 @@
   "signature": "native Float:atan2(Float:y, Float:x)",
   "return_tag": "Float",
   "params": "Float:y, Float:x",
-  "file": "a_npc.inc",
-  "line": 353,
+  "file": "a_samp.inc",
+  "line": 633,
   "summary": "Get the multi-valued inversed value of a tangent in degrees."
  },
  {
@@ -11211,8 +11211,8 @@
   "signature": "native format(output[], len = sizeof output, const format[], {Float,_}:...)",
   "return_tag": null,
   "params": "output[], len = sizeof output, const format[], {Float,_}:...",
-  "file": "a_npc.inc",
-  "line": 299,
+  "file": "a_samp.inc",
+  "line": 399,
   "summary": "Formats a string to include variables and other strings inside it."
  },
  {
@@ -11557,11 +11557,12 @@
  {
   "name": "GetPlayerArmour",
   "library": "samp-stdlib",
-  "signature": "native GetPlayerArmour(playerid)",
+  "signature": "native GetPlayerArmour(playerid, &Float:armour)",
   "return_tag": null,
-  "params": "playerid",
-  "file": "a_npc.inc",
-  "line": 415
+  "params": "playerid, &Float:armour",
+  "file": "a_players.inc",
+  "line": 315,
+  "summary": "This function stores the armour of a player into a variable."
  },
  {
   "name": "GetPlayerCameraAspectRatio",
@@ -11698,8 +11699,8 @@
   "signature": "native GetPlayerFacingAngle(playerid, &Float:ang)",
   "return_tag": null,
   "params": "playerid, &Float:ang",
-  "file": "a_npc.inc",
-  "line": 454,
+  "file": "a_players.inc",
+  "line": 194,
   "summary": "Gets the angle a player is facing."
  },
  {
@@ -11715,11 +11716,12 @@
  {
   "name": "GetPlayerHealth",
   "library": "samp-stdlib",
-  "signature": "native GetPlayerHealth(playerid)",
+  "signature": "native GetPlayerHealth(playerid, &Float:health)",
   "return_tag": null,
-  "params": "playerid",
-  "file": "a_npc.inc",
-  "line": 414
+  "params": "playerid, &Float:health",
+  "file": "a_players.inc",
+  "line": 286,
+  "summary": "The function GetPlayerHealth allows you to retrieve the health of a player. Useful for cheat detection, among other things."
  },
  {
   "name": "GetPlayerInterior",
@@ -11747,8 +11749,8 @@
   "signature": "native GetPlayerKeys(playerid, &keys, &updown, &leftright)",
   "return_tag": null,
   "params": "playerid, &keys, &updown, &leftright",
-  "file": "a_npc.inc",
-  "line": 447,
+  "file": "a_players.inc",
+  "line": 643,
   "summary": "Check which keys a player is pressing."
  },
  {
@@ -11787,8 +11789,8 @@
   "signature": "native GetPlayerName(playerid, name[], len = sizeof name)",
   "return_tag": null,
   "params": "playerid, name[], len = sizeof name",
-  "file": "a_npc.inc",
-  "line": 523,
+  "file": "a_players.inc",
+  "line": 656,
   "summary": "Get a player's name."
  },
  {
@@ -11857,8 +11859,8 @@
   "signature": "native GetPlayerPos(playerid, &Float:x, &Float:y, &Float:z)",
   "return_tag": null,
   "params": "playerid, &Float:x, &Float:y, &Float:z",
-  "file": "a_npc.inc",
-  "line": 402,
+  "file": "a_players.inc",
+  "line": 173,
   "summary": "Get the position of a player, represented by X, Y and Z coordinates."
  },
  {
@@ -11887,8 +11889,8 @@
   "signature": "native GetPlayerSpecialAction(playerid)",
   "return_tag": null,
   "params": "playerid",
-  "file": "a_npc.inc",
-  "line": 422,
+  "file": "a_players.inc",
+  "line": 1819,
   "summary": "Retrieves a player's current special action."
  },
  {
@@ -11897,8 +11899,8 @@
   "signature": "native GetPlayerState(playerid)",
   "return_tag": null,
   "params": "playerid",
-  "file": "a_npc.inc",
-  "line": 389,
+  "file": "a_players.inc",
+  "line": 599,
   "summary": "Get a player's current state."
  },
  {
@@ -11967,8 +11969,8 @@
   "signature": "native GetPlayerVehicleID(playerid)",
   "return_tag": null,
   "params": "playerid",
-  "file": "a_npc.inc",
-  "line": 411,
+  "file": "a_players.inc",
+  "line": 1685,
   "summary": "This function gets the ID of the vehicle the player is currently in. Note: NOT the model id of the vehicle. See GetVehicleModel for that."
  },
  {
@@ -12217,8 +12219,8 @@
   "signature": "native GetTickCount()",
   "return_tag": null,
   "params": "",
-  "file": "a_npc.inc",
-  "line": 326,
+  "file": "a_samp.inc",
+  "line": 547,
   "summary": "Returns the uptime of the actual server (not the SA-MP server) in milliseconds."
  },
  {
@@ -12537,8 +12539,8 @@
   "signature": "native IsPlayerConnected(playerid)",
   "return_tag": null,
   "params": "playerid",
-  "file": "a_npc.inc",
-  "line": 532,
+  "file": "a_players.inc",
+  "line": 2256,
   "summary": "Checks if a player is connected (if an ID is taken by a connected player)."
  },
  {
@@ -12574,11 +12576,11 @@
  {
   "name": "IsPlayerInRangeOfPoint",
   "library": "samp-stdlib",
-  "signature": "native IsPlayerInRangeOfPoint(playerid, Float:range, Float:X, Float:Y, Float:Z)",
+  "signature": "native IsPlayerInRangeOfPoint(playerid, Float:range, Float:x, Float:y, Float:z)",
   "return_tag": null,
-  "params": "playerid, Float:range, Float:X, Float:Y, Float:Z",
-  "file": "a_npc.inc",
-  "line": 510,
+  "params": "playerid, Float:range, Float:x, Float:y, Float:z",
+  "file": "a_players.inc",
+  "line": 207,
   "summary": "Checks if a player is in range of a point. This native function is faster than the PAWN implementation using distance formula."
  },
  {
@@ -12614,12 +12616,12 @@
  {
   "name": "IsPlayerStreamedIn",
   "library": "samp-stdlib",
-  "signature": "native IsPlayerStreamedIn(playerid)",
+  "signature": "native IsPlayerStreamedIn(playerid, forplayerid)",
   "return_tag": null,
-  "params": "playerid",
-  "file": "a_npc.inc",
-  "line": 429,
-  "summary": "Checks if a player is streamed in for an NPC. Only nearby players are streamed in."
+  "params": "playerid, forplayerid",
+  "file": "a_players.inc",
+  "line": 234,
+  "summary": "Checks if a player is streamed in another player's client."
  },
  {
   "name": "IsTrailerAttachedToVehicle",
@@ -12684,12 +12686,12 @@
  {
   "name": "IsVehicleStreamedIn",
   "library": "samp-stdlib",
-  "signature": "native IsVehicleStreamedIn(vehicleid)",
+  "signature": "native IsVehicleStreamedIn(vehicleid, forplayerid)",
   "return_tag": null,
-  "params": "vehicleid",
-  "file": "a_npc.inc",
-  "line": 436,
-  "summary": "Checks if a vehicle is streamed in for an NPC. Only nearby vehicles are streamed in."
+  "params": "vehicleid, forplayerid",
+  "file": "a_vehicles.inc",
+  "line": 99,
+  "summary": "Checks if a vehicle is streamed in for a player. Only nearby vehicles are streamed in (visible) for a player."
  },
  {
   "name": "Kick",
@@ -12707,8 +12709,8 @@
   "signature": "native KillTimer(timerid)",
   "return_tag": null,
   "params": "timerid",
-  "file": "a_npc.inc",
-  "line": 319,
+  "file": "a_samp.inc",
+  "line": 540,
   "summary": "Kills (stops) a running timer."
  },
  {
@@ -13117,8 +13119,8 @@
   "signature": "native print(const string[])",
   "return_tag": null,
   "params": "const string[]",
-  "file": "a_npc.inc",
-  "line": 247,
+  "file": "a_samp.inc",
+  "line": 347,
   "summary": "Prints a string to the server console (not in-game chat) and logs (server_log.txt)."
  },
  {
@@ -13127,8 +13129,8 @@
   "signature": "native printf(const format[], {Float,_}:...)",
   "return_tag": null,
   "params": "const format[], {Float,_}:...",
-  "file": "a_npc.inc",
-  "line": 272,
+  "file": "a_samp.inc",
+  "line": 372,
   "summary": "Outputs a formatted string on the console (the server window, not the in-game chat)."
  },
  {
@@ -14006,8 +14008,8 @@
   "signature": "native SetTimer(const funcname[], interval, repeating)",
   "return_tag": null,
   "params": "const funcname[], interval, repeating",
-  "file": "a_npc.inc",
-  "line": 312,
+  "file": "a_samp.inc",
+  "line": 505,
   "summary": "Sets a 'timer' to call a function after some time. Can be set to repeat."
  },
  {

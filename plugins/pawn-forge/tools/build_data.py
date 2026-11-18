@@ -319,7 +319,10 @@ def main():
 
     libs = {
         "open.mp": (sorted((src / "omp-stdlib").glob("*.inc")), src / "omp-stdlib"),
-        "samp-stdlib": (sorted((src / "samp-stdlib").glob("a_*.inc")), src / "samp-stdlib"),
+        "samp-stdlib": (
+            sorted((src / "samp-stdlib").glob("a_*.inc"), key=lambda p: (p.name == "a_npc.inc", p.name)),
+            src / "samp-stdlib",
+        ),
         "streamer": ([src / "samp-streamer-plugin" / "streamer.inc"], src / "samp-streamer-plugin"),
         "mysql-r41": ([src / "SA-MP-MySQL" / "a_mysql.inc.in"], src / "SA-MP-MySQL"),
         "sscanf": ([src / "sscanf" / "sscanf2.inc"], src / "sscanf"),

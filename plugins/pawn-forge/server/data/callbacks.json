@@ -1143,12 +1143,12 @@
  {
   "name": "OnPlayerDeath",
   "library": "samp-stdlib",
-  "signature": "forward OnPlayerDeath(playerid)",
+  "signature": "forward OnPlayerDeath(playerid, killerid, reason)",
   "return_tag": null,
-  "params": "playerid",
-  "file": "a_npc.inc",
-  "line": 613,
-  "summary": "Just as the player version of the callback, this callback is called when any player dies."
+  "params": "playerid, killerid, reason",
+  "file": "a_samp.inc",
+  "line": 2329,
+  "summary": "This callback is called when a player dies, either by suicide or by being killed by another player."
  },
  {
   "name": "OnPlayerDisconnect",
@@ -1372,22 +1372,22 @@
  {
   "name": "OnPlayerStreamIn",
   "library": "samp-stdlib",
-  "signature": "forward OnPlayerStreamIn(playerid)",
+  "signature": "forward OnPlayerStreamIn(playerid, forplayerid)",
   "return_tag": null,
-  "params": "playerid",
-  "file": "a_npc.inc",
-  "line": 624,
-  "summary": "This callback is called when a player is streamed in for an NPC. Only nearby players are streamed in."
+  "params": "playerid, forplayerid",
+  "file": "a_samp.inc",
+  "line": 2802,
+  "summary": "This callback is called when a player is streamed by some other player's client."
  },
  {
   "name": "OnPlayerStreamOut",
   "library": "samp-stdlib",
-  "signature": "forward OnPlayerStreamOut(playerid)",
+  "signature": "forward OnPlayerStreamOut(playerid, forplayerid)",
   "return_tag": null,
-  "params": "playerid",
-  "file": "a_npc.inc",
-  "line": 629,
-  "summary": "This callback is called when a player is streamed out the NPC."
+  "params": "playerid, forplayerid",
+  "file": "a_samp.inc",
+  "line": 2816,
+  "summary": "This callback is called when a player is streamed out from some other player's client."
  },
  {
   "name": "OnPlayerTakeDamage",
@@ -1405,9 +1405,9 @@
   "signature": "forward OnPlayerText(playerid, text[])",
   "return_tag": null,
   "params": "playerid, text[]",
-  "file": "a_npc.inc",
-  "line": 619,
-  "summary": "Opposed to the player version of this callback, this callback is called everytime anyone says anything in the chat. This includes any player, any other NPC, or the same NPC himself."
+  "file": "a_samp.inc",
+  "line": 2368,
+  "summary": "Called when a player sends a chat message."
  },
  {
   "name": "OnPlayerUpdate",
@@ -1562,22 +1562,22 @@
  {
   "name": "OnVehicleStreamIn",
   "library": "samp-stdlib",
-  "signature": "forward OnVehicleStreamIn(vehicleid)",
+  "signature": "forward OnVehicleStreamIn(vehicleid, forplayerid)",
   "return_tag": null,
-  "params": "vehicleid",
-  "file": "a_npc.inc",
-  "line": 634,
-  "summary": "This callback is called when a vehicle is streamed by the NPC. A simpler definition would be when the NPC sees the grey vehicle icon appear on his map."
+  "params": "vehicleid, forplayerid",
+  "file": "a_samp.inc",
+  "line": 2830,
+  "summary": "Called when a vehicle is streamed to a player's client."
  },
  {
   "name": "OnVehicleStreamOut",
   "library": "samp-stdlib",
-  "signature": "forward OnVehicleStreamOut(vehicleid)",
+  "signature": "forward OnVehicleStreamOut(vehicleid, forplayerid)",
   "return_tag": null,
-  "params": "vehicleid",
-  "file": "a_npc.inc",
-  "line": 639,
-  "summary": "This callback is called when a vehicle is streamed out for an NPC."
+  "params": "vehicleid, forplayerid",
+  "file": "a_samp.inc",
+  "line": 2844,
+  "summary": "This callback is called when a vehicle is streamed out for a player's client (it's so far away that they can't see it)."
  },
  {
   "name": "OnDynamicActorStreamIn",

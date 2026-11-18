@@ -148,6 +148,10 @@ class ProjectAndPlatformApiTest(unittest.TestCase):
         samp = api.api_lookup(name="SendClientMessage", platform="sa-mp")
         self.assertTrue(samp["found"])
         self.assertEqual(samp["results"][0]["library"], "samp-stdlib")
+        death = api.api_lookup(name="OnPlayerDeath", platform="sa-mp")
+        self.assertTrue(death["found"])
+        self.assertIn("killerid", death["results"][0]["params"])
+        self.assertIn("reason", death["results"][0]["params"])
         self.assertIn("samp-stdlib", data.load("sources"))
 
 
