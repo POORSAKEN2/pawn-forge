@@ -1,25 +1,30 @@
 ---
-description: Convert a raw TextDraw editor export (Zamaroht/iTD/nTD style TextDrawCreate and CreatePlayerTextDraw code) into a clean, leak-free Pawn module with arrays, named indices and Create/Destroy/Show/Hide functions, then compile it. Use when the user pastes TextDraw editor output or asks to clean up, refactor or build a HUD/TextDraw UI.
+name: textdraw
+description: Convert raw TextDraw editor exports (Zamaroht/iTD/nTD TextDrawCreate and CreatePlayerTextDraw) into a clean, leak-free Pawn module with arrays, named indices, and Create/Destroy/Show/Hide helpers, then compile it. Use when given TextDraw exports or asked to refactor or build a TextDraw HUD/UI.
+license: MIT
+compatibility: Optional Python 3.8+ for pawnforge CLI / MCP tools and pawncc.
+metadata:
+  author: POORSAKEN2
+  version: "0.2.0"
 argument-hint: "[export-file] [Prefix]"
-allowed-tools: mcp__plugin_pawn-forge_pawn__convert_textdraws mcp__plugin_pawn-forge_pawn__compile mcp__plugin_pawn-forge_pawn__project_info
 ---
 
 # TextDraw export to module
 
-Input: `$ARGUMENTS` - an export file and optionally a module prefix; or the export pasted in the conversation.
+Input: an export file or pasted TextDraw code, plus an optional PascalCase module prefix.
 
-1. Pick a prefix: the one given, else a short PascalCase name from what the TextDraws show (e.g. `Speedo`, `Hud`,
-   `Login`). Target `openmp` unless `project_info` says the project is SA-MP.
-2. `convert_textdraws` with the export (`file` or `code`), `prefix`, `target`, and `ysi_hooks: true` only if the
-   project already uses YSI.
-3. Show the `warnings` (off-canvas positions, selectable TextDraws without TextSize, limits) and fix them in the
-   export or ask the user how they want them handled; then convert again.
-4. Write the module: `includes/<prefix_lowercase>_td.inc` (or the project's include folder) via `write_to`. It
-   refuses to overwrite; pick another name or ask.
-5. Verify it compiles: `compile` with `code` = `#include <open.mp>` + `#include "<module>"` + `main(){}`, passing the
-   module's directory in `includes`. Fix anything reported.
-6. Wire it in (with the user's go-ahead): create in `OnGameModeInit` / `OnPlayerConnect`, destroy in
-   `OnGameModeExit` / `OnPlayerDisconnect` (skip if `ysi_hooks` was used), show/hide where the UI appears. Update
-   individual TextDraws through the generated `<Prefix>_GetPlayerTD(playerid, INDEX)` / `<Prefix>_GetGlobalTD(INDEX)`.
-7. Remind the user: TextDraws live on a fixed 640x448 virtual canvas that scales with the screen; "responsive" means
-   keeping elements inside the canvas and anchoring them with alignment, not pixel maths.
+## Tool Resolution
+
+1. **Pawn Forge MCP**: `project_info`, `convert_textdraws`, `compile`.
+2. **Standalone CLI**: `pawnforge <cmd> --json` (or `python scripts/pawnforge_exec.py <cmd> --json`, `python -m pawnforge <cmd> --json`, or `uvx --from git+https://github.com/POORSAKEN2/pawn-forge pawnforge <cmd> --json`).
+3. **Fallback**: refactor manually into `enum` + `Text:`/`PlayerText:` arrays and compile with `pawncc`; suggest `pip install git+https://github.com/POORSAKEN2/pawn-forge.git`.
+
+## Workflow
+
+1. **Pick prefix & target.** Use the requested PascalCase prefix or derive a short name (`Speedo`, `Hud`, `Login`). Target `openmp` unless `project_info` / `pawnforge info . --json` reports `sa-mp`.
+2. **Convert** with `convert_textdraws` (`file` or `code`, `prefix`, `target`, and `ysi_hooks: true` only if the project already uses YSI) or `pawnforge textdraw [file] --prefix <Prefix> --target <openmp|samp> [--ysi-hooks] --json`.
+3. **Review `warnings`** (off-canvas coordinates, selectable TextDraws missing `TextSize`, pool limits). Fix them in the export or confirm handling with the user, then convert again.
+4. **Write module** to `includes/<prefix_lowercase>_td.inc` (or the project's include folder) via `write_to` / `--write-to`. It refuses to overwrite existing files—choose another path or ask.
+5. **Verify compilation** using `compile` / `pawnforge compile --code - --includes <dir> --json` with `#include <open.mp>` (or `<a_samp>`) + `#include "<module>"` + `main(){}`, fixing any diagnostics.
+6. **Wire lifecycle** (with the user's go-ahead): create in `OnGameModeInit` / `OnPlayerConnect`, destroy in `OnGameModeExit` / `OnPlayerDisconnect` (skip if `ysi_hooks` was used), and show/hide where the UI appears. Update elements via `<Prefix>_GetPlayerTD(playerid, INDEX)` / `<Prefix>_GetGlobalTD(INDEX)`.
+7. **Canvas note:** TextDraws render on a fixed `640x448` virtual canvas that scales with the screen; responsive layout means staying within bounds and anchoring via alignment, not pixel maths.

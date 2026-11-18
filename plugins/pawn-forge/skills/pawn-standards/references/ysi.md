@@ -1,7 +1,7 @@
 # YSI 5 essentials
 
 Include paths use the YSI 5 layout (`YSI_Coding`, `YSI_Data`, `YSI_Visual`...). YSI 4 paths (`YSI\y_hooks`) are
-outdated. YSI requires semicolons (`-;+`), which the `compile` tool passes by default.
+outdated. YSI requires semicolons (`-;+`), which `compile` / `pawnforge compile` passes by default.
 
 ## y_hooks: one callback, many modules
 
@@ -49,10 +49,10 @@ new Timer:t = repeat RespawnLater(playerid);  // repeating; stop t; to cancel
 - `inline Name() { ... }` with `using inline Name` for callbacks that close over local variables
   (y_inline_mysql: `MySQL_TQueryInline`).
 - Tests: `#define RUN_TESTS`, `#include <YSI_Core\y_testing>`, `@test() Name() { ASSERT_EQ(a, b); }`.
-  The `run_server` tool runs them headlessly and reports `*** Tests: N, Checks: N, Fails: N`.
+  `run_server` / `pawnforge run-server` runs them headlessly and reports `*** Tests: N, Checks: N, Fails: N`.
 
 ## Gotchas
 
 - Include YSI after `<open.mp>` / `<a_samp>` and after plugin includes it integrates with (e.g. `a_mysql`).
-- YSI's internal includes use backslash paths; `compile` normalises them automatically on Linux/macOS.
+- YSI's internal includes use backslash paths; `compile` / `pawnforge compile` normalises them automatically on Linux/macOS.
 - First YSI compile is slow; that is normal.

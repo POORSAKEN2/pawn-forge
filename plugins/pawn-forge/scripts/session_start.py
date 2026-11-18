@@ -40,7 +40,8 @@ def main() -> int:
         "Pawn change (iterate until clean), `lint` on changed files, `lookup` for any vehicle/skin/weapon/interior/"
         "animation ID, `api_lookup` for exact native signatures, `analyze_log` for crashes, `project_info` for layout. "
         "Workflows: /pawn-forge:build, /pawn-forge:audit, /pawn-forge:migrate-openmp, /pawn-forge:debug-crash, "
-        "/pawn-forge:textdraw, /pawn-forge:modernize-storage, /pawn-forge:test."
+        "/pawn-forge:textdraw, /pawn-forge:modernize-storage, /pawn-forge:test, /pawn-forge:roleplay, "
+        "/pawn-forge:anticheat, /pawn-forge:ecosystem."
     )
     return 0
 

@@ -1,6 +1,6 @@
 # Incognito's Streamer plugin
 
-Confirm signatures with `api_lookup library=streamer`.
+Confirm signatures with `api_lookup` (`library="streamer"`) or `pawnforge api --library streamer --json`.
 
 ## Objects and maps
 
@@ -43,4 +43,4 @@ With YSI, `hook` these callbacks per module.
 
 - Create world items once (init or when the owning entity is created) and destroy them with the entity.
 - Store IDs with the right tag (`STREAMER_TAG_OBJECT`, `STREAMER_TAG_AREA`...).
-- Prefer areas over polling `IsPlayerInRangeOfPoint` in timers.
+- Prefer areas over polling `IsPlayerInRangeOfPoint` in timers or `OnPlayerUpdate`.

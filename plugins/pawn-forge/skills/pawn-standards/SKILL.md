@@ -1,6 +1,11 @@
 ---
 name: pawn-standards
-description: Modern, safe Pawn for SA-MP and open.mp game servers. Use whenever writing, reviewing, refactoring or explaining Pawn (.pwn/.inc) gamemodes, filterscripts or includes, including YSI, Streamer, MySQL R41, sscanf and Pawn.CMD code. Replaces outdated 2008-2014 SA-MP forum habits with verified current practice.
+description: Modern, safe Pawn for SA-MP 0.3.7 and open.mp game servers, including YSI, Streamer, MySQL R41, sscanf, Pawn.CMD, Pawn.RakNet, samp-bcrypt, and ColAndreas. Use when writing, reviewing, refactoring, or explaining Pawn (.pwn/.inc) gamemodes, filterscripts, or includes.
+license: MIT
+compatibility: Optional Python 3.8+ for pawnforge CLI / MCP verification and pawncc 3.10.x compiler.
+metadata:
+  author: POORSAKEN2
+  version: "0.2.0"
 when_to_use: Any task touching .pwn or .inc files, SA-MP/open.mp scripting questions, "write a command/system/gamemode", reviewing Pawn snippets, choosing Pawn libraries.
 paths: "**/*.pwn, **/*.inc, **/pawn.json"
 user-invocable: false
@@ -8,75 +13,67 @@ user-invocable: false
 
 # Writing Pawn the modern way
 
-Most public Pawn code is 2008-2014 SA-MP forum code: `strtok` commands, `dini` accounts, `format(query, ..., "%s")`
-SQL, `new string[256]` everywhere, magic-number IDs. Treat any instinct that looks like that as suspect.
-pawn-forge gives you tools so you never have to guess. Use them.
+Treat 2008-2014 forum habits (`strtok`, `dini`, `format()` SQL, `new string[256]`, magic IDs) as suspect. Verify every signature, ID, and build instead of guessing.
+
+## Tool Resolution Order
+
+Use the first available tier for any verification tool:
+1. **Pawn Forge MCP** (if connected): `project_info`, `compile`, `lint`, `api_lookup`, `lookup`, `install_compiler`, `convert_textdraws`.
+2. **Standalone CLI**: `pawnforge <cmd> --json` (or `python scripts/pawnforge_exec.py <cmd> --json`, `python -m pawnforge <cmd> --json`, or `uvx --from git+https://github.com/POORSAKEN2/pawn-forge pawnforge <cmd> --json`).
+3. **Fallback**: run `pawncc` directly or review manually, and suggest `pip install git+https://github.com/POORSAKEN2/pawn-forge.git`.
 
 ## 1. Verify, never recall
 
-| Need | Do this |
+| Need | MCP tool / CLI command |
 |---|---|
-| Does it compile? | `compile` (file or `code`) after **every** change. Iterate until `ok` and ideally `clean`. Never present Pawn you have not compiled when a compiler is available. |
-| Exact native/callback signature | `api_lookup name=...` (pass `project_dir` to use the project's own include versions) |
-| Vehicle / skin / weapon / interior / animation ID | `lookup kind=...`. Never type an ID or animation name from memory. |
-| Is this safe / leaky / legacy? | `lint` the file or snippet |
-| Unfamiliar project | `project_info` first: platform, libraries, include dirs, compiler |
+| Unfamiliar project | `project_info` / `pawnforge info <dir> --json` (platform, libraries, includes, compiler) |
+| Does it compile? | `compile` / `pawnforge compile <file> --json` after **every** change until clean |
+| Native or callback signature | `api_lookup` / `pawnforge api --name <sym> --platform <auto\|open.mp\|sa-mp> --project-dir <dir> --json` (covers `open.mp`, `samp-stdlib`, `streamer`, `mysql-r41`, `sscanf`, `pawn.cmd`, `pawn.raknet`, `samp-bcrypt`, `colandreas`) |
+| Vehicle / skin / weapon / interior / anim ID | `lookup` / `pawnforge lookup <kind> <query> --json` (never guess IDs or anim names) |
+| Static safety / leak / legacy check | `lint` / `pawnforge lint <path> --json` |
 
-If no compiler is found, say so and offer `install_compiler`; do not silently skip verification.
+If no compiler is found, report it and offer `install_compiler` / `pawnforge install-compiler`; do not silently skip compilation.
 
 ## 2. Pick the target, then stay consistent
 
-`project_info` reports `platform`. For **open.mp** (default for new work):
-- `#include <open.mp>` (not `<a_samp>`), British spellings (`TextDrawColour`), `DB_*` SQLite natives.
-- Use tagged constants: `true/false` for `bool:`, `WEAPON_DEAGLE` not `24`, `TEXT_DRAW_FONT_*`, `TEXT_DRAW_ALIGN_*`, `Float:` literals with a decimal point.
-- Callbacks have tagged parameters, e.g. `OnPlayerDeath(playerid, killerid, WEAPON:reason)`. Copy the header from `api_lookup`.
-- Many natives take format arguments directly: `SendClientMessage(playerid, -1, "Hi %s", name)`.
+`project_info` / `pawnforge info` reports `platform` (`open.mp` or `sa-mp`).
 
-For **SA-MP 0.3.7** keep `a_samp` names, but every other rule here still applies.
+- **open.mp** (default for new work): `#include <open.mp>`, British spellings (`TextDrawColour`), `DB_*` SQLite natives, tagged constants (`true`/`false`, `WEAPON_DEAGLE`, `TEXT_DRAW_FONT_*`, `TEXT_DRAW_ALIGN_*`, `Float:` literals), tagged callback headers from `api_lookup` (`platform="open.mp"`), and direct format args (`SendClientMessage(playerid, -1, "Hi %s", name)`).
+- **SA-MP 0.3.7** (first-class support): `#include <a_samp>`, SA-MP spellings/natives (`TextDrawColor`, `db_*`), verify headers with `api_lookup` (`platform="sa-mp"`), and compile with `compat: true` (`--compat` / `-Z`) if legacy includes require it. Every safety, DB, command, loop, and structure rule below still applies.
 
-## 3. Strings and buffers (where most crashes come from)
+## 3. Strings and buffers
 
-- A string is an array of cells, NUL-terminated. `sizeof(arr)` is its capacity in cells.
-- Always pass the size of **the destination itself**: `format(msg, sizeof msg, ...)`, never a literal or another buffer's `sizeof`.
-- Size buffers to real limits, not `256`: chat output 144, chat/command input 128, dialog caption 64, dialog input 128, dialog body 4096, player name `MAX_PLAYER_NAME + 1`.
-- Never `dest = src` for strings of different sizes (error 047). Use `strcopy(dest, src)` (open.mp) or `strcat((dest[0] = EOS, dest), src)` on SA-MP.
-- Mark read-only array parameters `const` (fixes warnings 214/239): `stock Greet(const name[])`.
-- Never pass user text as a format string: `SendClientMessage(playerid, -1, "%s", inputtext)`, not `SendClientMessage(playerid, -1, inputtext)` when formatting is active.
-- Large buffers (> ~1-2 KB) in hot callbacks: make them `static` or global, or raise `#pragma dynamic`. Check the `stack` field of `compile` output.
-- Details and patterns: [references/strings-and-buffers.md](references/strings-and-buffers.md)
+- Pass the destination's own size: `format(msg, sizeof msg, ...)`, never a literal or another buffer's `sizeof`.
+- Size buffers to real limits, not `256`: chat output `144`, chat/command input `128`, dialog caption `64`, dialog input `128`, dialog body `4096`, player name `MAX_PLAYER_NAME + 1`.
+- Never `dest = src` for differently sized strings (error 047). Use `strcopy(dest, src)` on open.mp or `strcat((dest[0] = EOS, dest), src)` on SA-MP.
+- Mark read-only array params `const` (warnings 214/239): `stock Greet(const name[])`.
+- Never pass user text as a format string: `SendClientMessage(playerid, -1, "%s", inputtext)`.
+- Make large locals (>1-2 KB) `static`/global or raise `#pragma dynamic`; watch `compile` `stack` output.
+- Details: [references/strings-and-buffers.md](references/strings-and-buffers.md)
 
 ## 4. Data storage
 
-- **Never** `dini`/`dfile`/`dudb`/`DOF2`/y_ini for accounts. Use MySQL R41 or SQLite (built in). See the `modernize-storage` skill.
-- MySQL R41: `mysql_tquery` + callback, `mysql_format` with `%e` for every quoted value, `%d`/`%f` for numbers. `mysql_query` blocks the whole server; avoid it. Guard async callbacks against the player having left (race-check counter). Details: [references/mysql-r41.md](references/mysql-r41.md)
-- SQLite: escape quoted values with `%q` (`format` and `DB_ExecuteQuery` format arguments). Free **every** result with `DB_FreeResultSet`, including UPDATE/INSERT results.
-- R41 has no server-side prepared statements; `mysql_format` + `%e` (or the ORM API) is the safe parameterisation. Say this plainly if asked for "prepared statements".
-- Passwords: bcrypt (samp-bcrypt plugin). Never `udb_hash`, Whirlpool, MD5 or `SHA256_PassHash` (deprecated by open.mp itself).
+- Never use `dini`/`dfile`/`dudb`/`DOF2`/`y_ini` for accounts. Use MySQL R41 or SQLite (`modernize-storage`).
+- MySQL R41: `mysql_tquery` + callback, `mysql_format` with `%e` for every quoted value (`%d`/`%f` for numbers); avoid blocking `mysql_query`. Race-check async callbacks against disconnect/reconnect. Details: [references/mysql-r41.md](references/mysql-r41.md)
+- SQLite: escape quoted values with `%q` and free **every** result with `DB_FreeResultSet` (`db_free_result` on SA-MP), including UPDATE/INSERT.
+- R41 has no server-side prepared statements; `mysql_format` + `%e` (or ORM API) is the safe parameterisation.
+- Passwords: `samp-bcrypt`. Never `udb_hash`, Whirlpool, MD5, or `SHA256_PassHash`.
 
 ## 5. Commands and input
 
-- Commands: Pawn.CMD (`cmd:name(playerid, params[])`, `alias:`, `flags:`) or YSI `YCMD:name(playerid, params[], help)`. Never `strtok`/`strcmp` chains in `OnPlayerCommandText`.
-- Parse with sscanf2: `if (sscanf(params, "us[64]", target, reason)) return SendClientMessage(playerid, -1, "Usage: /kick [player] [reason]");`
-  Every `s` needs a size. `u` yields `INVALID_PLAYER_ID` when no player matches: always check it.
-- Validate everything from the client: `listitem` ranges, `inputtext` length and content, that the dialog you are handling is the one you showed, target IDs are connected.
-- Details: [references/commands-and-input.md](references/commands-and-input.md)
+- Use Pawn.CMD (`cmd:name(playerid, params[])`, `alias:`, `flags:`) or YSI `YCMD:name(playerid, params[], help)`, never `strtok`/`strcmp` chains in `OnPlayerCommandText`.
+- Parse with `sscanf2`: every `s` needs `[size]`; `u` yields `INVALID_PLAYER_ID` when unmatched—always check it.
+- Validate all client input: `dialogid`, `listitem` bounds, `inputtext` non-empty/length (guard `strcmp` against empty `inputtext`), connected targets, and combat IDs. Details: [references/commands-and-input.md](references/commands-and-input.md)
 
 ## 6. Loops, timers, entities
 
-- Iterate players with `foreach (new i : Player)` (YSI y_iterate). `GetPlayerPoolSize` is deprecated on open.mp; if you must loop slots use `i < MAX_PLAYERS`.
-- Store every repeating timer ID and `KillTimer` it on disconnect, or use y_timers `ptask`/`task`/`defer`.
-- Create TextDraws, labels and pickups once and destroy them when done; never create per spawn without destroying. Use `convert_textdraws` for editor exports.
-- Maps and many objects: Streamer (`CreateDynamicObject`, areas, CPs). Call `Streamer_UpdateEx` before teleporting onto mapped floors. Details: [references/streamer.md](references/streamer.md)
-- Keep `OnPlayerUpdate` trivial: no queries, file I/O or player loops.
+- Iterate players with `foreach (new i : Player)` (`y_iterate`). `GetPlayerPoolSize` is deprecated on open.mp; fallback loop is `i < MAX_PLAYERS`.
+- Store every repeating timer ID and `KillTimer` on disconnect, or use `y_timers` `ptask`/`task`/`defer`.
+- Create TextDraws/labels/pickups once and destroy on cleanup; convert editor exports with `textdraw`.
+- Use Streamer (`CreateDynamicObject`, areas, CPs) for maps; call `Streamer_UpdateEx` before teleporting onto mapped floors. Details: [references/streamer.md](references/streamer.md)
+- Keep `OnPlayerUpdate` trivial: no queries, file I/O, player loops, or `IsPlayerInRangeOfPoint` polling.
 
-## 7. Structure
+## 7. Structure & legacy code
 
-- Split gamemodes into modules (`includes/<system>.inc`) with `static` module state and a small public API.
-- With YSI, hook callbacks per module (`hook OnPlayerConnect(playerid)`) instead of one giant callback. Details: [references/ysi.md](references/ysi.md)
-- Name dialog IDs with an `enum`; never reuse magic numbers across systems.
-- Compile with `-d3` and load CrashDetect in development so runtime errors have file:line backtraces.
-
-## Legacy to modern quick map
-
-See [references/legacy-to-modern.md](references/legacy-to-modern.md) for a full table. When you meet legacy code, fix what
-the task touches, mention the rest, and offer the `audit` or `migrate-openmp` workflow rather than rewriting unasked.
+- Split gamemodes into `includes/<system>.inc` with `static` state, `enum` dialog IDs, and YSI `hook` callbacks ([references/ysi.md](references/ysi.md)). Compile with `-d3` + CrashDetect in dev.
+- Legacy quick map: [references/legacy-to-modern.md](references/legacy-to-modern.md). Fix what the task touches, note the rest, and offer `audit` or `migrate-openmp`.
