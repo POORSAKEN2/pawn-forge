@@ -5,7 +5,17 @@ import functools
 import json
 from pathlib import Path
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+_PKG_DATA = Path(__file__).resolve().parent / "_data"
+
+
+def _resolve_data_dir(pkg_data: Path | None = None) -> Path:
+    cand = pkg_data if pkg_data is not None else _PKG_DATA
+    if (cand / "sources.json").exists():
+        return cand
+    return Path(__file__).resolve().parent.parent / "data"
+
+
+DATA_DIR = _resolve_data_dir()
 
 
 @functools.lru_cache(maxsize=None)
