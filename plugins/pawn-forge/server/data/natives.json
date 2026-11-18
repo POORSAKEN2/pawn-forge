@@ -10214,6 +10214,4403 @@
   "summary": "Writes a numeric field to an INI file."
  },
  {
+  "name": "acos",
+  "library": "samp-stdlib",
+  "signature": "native Float:acos(Float:value)",
+  "return_tag": "Float",
+  "params": "Float:value",
+  "file": "a_npc.inc",
+  "line": 338,
+  "summary": "Get the inversed value of a cosine in degrees."
+ },
+ {
+  "name": "AddCharModel",
+  "library": "samp-stdlib",
+  "signature": "native AddCharModel(baseid, newid, const dffname[], const txdname[])",
+  "return_tag": null,
+  "params": "baseid, newid, const dffname[], const txdname[]",
+  "file": "a_samp.inc",
+  "line": 1169
+ },
+ {
+  "name": "AddMenuItem",
+  "library": "samp-stdlib",
+  "signature": "native AddMenuItem(Menu:menuid, column, const menutext[])",
+  "return_tag": null,
+  "params": "Menu:menuid, column, const menutext[]",
+  "file": "a_samp.inc",
+  "line": 1598,
+  "summary": "Adds an item to a specified menu."
+ },
+ {
+  "name": "AddPlayerClass",
+  "library": "samp-stdlib",
+  "signature": "native AddPlayerClass(modelid, Float:spawn_x, Float:spawn_y, Float:spawn_z, Float:z_angle, weapon1, weapon1_ammo, weapon2, weapon2_ammo, weapon3, weapon3_ammo)",
+  "return_tag": null,
+  "params": "modelid, Float:spawn_x, Float:spawn_y, Float:spawn_z, Float:z_angle, weapon1, weapon1_ammo, weapon2, weapon2_ammo, weapon3, weapon3_ammo",
+  "file": "a_samp.inc",
+  "line": 847,
+  "summary": "Adds a class to class selection. Classes are used so players may spawn with a skin of their choice."
+ },
+ {
+  "name": "AddPlayerClassEx",
+  "library": "samp-stdlib",
+  "signature": "native AddPlayerClassEx(teamid, modelid, Float:spawn_x, Float:spawn_y, Float:spawn_z, Float:z_angle, weapon1, weapon1_ammo, weapon2, weapon2_ammo, weapon3, weapon3_ammo)",
+  "return_tag": null,
+  "params": "teamid, modelid, Float:spawn_x, Float:spawn_y, Float:spawn_z, Float:z_angle, weapon1, weapon1_ammo, weapon2, weapon2_ammo, weapon3, weapon3_ammo",
+  "file": "a_samp.inc",
+  "line": 873,
+  "summary": "This function is exactly the same as the AddPlayerClass function, with the addition of a team parameter."
+ },
+ {
+  "name": "AddSimpleModel",
+  "library": "samp-stdlib",
+  "signature": "native AddSimpleModel(virtualworld, baseid, newid, const dffname[], const txdname[])",
+  "return_tag": null,
+  "params": "virtualworld, baseid, newid, const dffname[], const txdname[]",
+  "file": "a_samp.inc",
+  "line": 1170
+ },
+ {
+  "name": "AddSimpleModelTimed",
+  "library": "samp-stdlib",
+  "signature": "native AddSimpleModelTimed(virtualworld, baseid, newid, const dffname[], const txdname[], timeon, timeoff)",
+  "return_tag": null,
+  "params": "virtualworld, baseid, newid, const dffname[], const txdname[], timeon, timeoff",
+  "file": "a_samp.inc",
+  "line": 1171
+ },
+ {
+  "name": "AddStaticPickup",
+  "library": "samp-stdlib",
+  "signature": "native AddStaticPickup(model, type, Float:X, Float:Y, Float:Z, virtualworld = 0)",
+  "return_tag": null,
+  "params": "model, type, Float:X, Float:Y, Float:Z, virtualworld = 0",
+  "file": "a_samp.inc",
+  "line": 933,
+  "summary": "This function adds a 'static' pickup to the game. These pickups support weapons, health, armor etc., with the ability to function without scripting them (weapons/health/armor will be given automatically)."
+ },
+ {
+  "name": "AddStaticVehicle",
+  "library": "samp-stdlib",
+  "signature": "native AddStaticVehicle(modelid, Float:spawn_x, Float:spawn_y, Float:spawn_z, Float:z_angle, color1, color2)",
+  "return_tag": null,
+  "params": "modelid, Float:spawn_x, Float:spawn_y, Float:spawn_z, Float:z_angle, color1, color2",
+  "file": "a_samp.inc",
+  "line": 893,
+  "summary": "Adds a 'static' vehicle (models are pre-loaded for players) to the gamemode."
+ },
+ {
+  "name": "AddStaticVehicleEx",
+  "library": "samp-stdlib",
+  "signature": "native AddStaticVehicleEx(modelid, Float:spawn_x, Float:spawn_y, Float:spawn_z, Float:z_angle, color1, color2, respawn_delay, addsiren=0)",
+  "return_tag": null,
+  "params": "modelid, Float:spawn_x, Float:spawn_y, Float:spawn_z, Float:z_angle, color1, color2, respawn_delay, addsiren=0",
+  "file": "a_samp.inc",
+  "line": 915,
+  "summary": "Adds a 'static' vehicle (models are pre-loaded for players)to the gamemode. Differs from AddStaticVehicle in only one way: allows a respawn time to be set for when the vehicle is left unoccupied by the driver."
+ },
+ {
+  "name": "AddVehicleComponent",
+  "library": "samp-stdlib",
+  "signature": "native AddVehicleComponent(vehicleid, componentid)",
+  "return_tag": null,
+  "params": "vehicleid, componentid",
+  "file": "a_vehicles.inc",
+  "line": 350,
+  "summary": "Adds a 'component' (often referred to as a 'mod' (modification)) to a vehicle. Valid components can be found here."
+ },
+ {
+  "name": "AllowAdminTeleport",
+  "library": "samp-stdlib",
+  "signature": "native AllowAdminTeleport(allow)",
+  "return_tag": null,
+  "params": "allow",
+  "file": "a_samp.inc",
+  "line": 1080,
+  "summary": "This function will determine whether RCON admins will be teleported to their waypoint when they set one."
+ },
+ {
+  "name": "AllowInteriorWeapons",
+  "library": "samp-stdlib",
+  "signature": "native AllowInteriorWeapons(allow)",
+  "return_tag": null,
+  "params": "allow",
+  "file": "a_samp.inc",
+  "line": 1051,
+  "summary": "Toggle whether the usage of weapons in interiors is allowed or not."
+ },
+ {
+  "name": "AllowPlayerTeleport",
+  "library": "samp-stdlib",
+  "signature": "native AllowPlayerTeleport(playerid, allow)",
+  "return_tag": null,
+  "params": "playerid, allow",
+  "file": "a_players.inc",
+  "line": 2033,
+  "summary": "Enable/Disable the teleporting ability for a player by right-clicking on the map."
+ },
+ {
+  "name": "ApplyActorAnimation",
+  "library": "samp-stdlib",
+  "signature": "native ApplyActorAnimation(actorid, const animlib[], const animname[], Float:fDelta, loop, lockx, locky, freeze, time)",
+  "return_tag": null,
+  "params": "actorid, const animlib[], const animname[], Float:fDelta, loop, lockx, locky, freeze, time",
+  "file": "a_actor.inc",
+  "line": 114,
+  "summary": "Apply an animation to an actor."
+ },
+ {
+  "name": "ApplyAnimation",
+  "library": "samp-stdlib",
+  "signature": "native ApplyAnimation(playerid, const animlib[], const animname[], Float:fDelta, loop, lockx, locky, freeze, time, forcesync = 0)",
+  "return_tag": null,
+  "params": "playerid, const animlib[], const animname[], Float:fDelta, loop, lockx, locky, freeze, time, forcesync = 0",
+  "file": "a_players.inc",
+  "line": 1751,
+  "summary": "Apply an animation to a player."
+ },
+ {
+  "name": "asin",
+  "library": "samp-stdlib",
+  "signature": "native Float:asin(Float:value)",
+  "return_tag": "Float",
+  "params": "Float:value",
+  "file": "a_npc.inc",
+  "line": 332,
+  "summary": "Get the inversed value of a sine in degrees."
+ },
+ {
+  "name": "atan",
+  "library": "samp-stdlib",
+  "signature": "native Float:atan(Float:value)",
+  "return_tag": "Float",
+  "params": "Float:value",
+  "file": "a_npc.inc",
+  "line": 345,
+  "summary": "Get the inversed value of a tangent in degrees."
+ },
+ {
+  "name": "atan2",
+  "library": "samp-stdlib",
+  "signature": "native Float:atan2(Float:y, Float:x)",
+  "return_tag": "Float",
+  "params": "Float:y, Float:x",
+  "file": "a_npc.inc",
+  "line": 353,
+  "summary": "Get the multi-valued inversed value of a tangent in degrees."
+ },
+ {
+  "name": "Attach3DTextLabelToPlayer",
+  "library": "samp-stdlib",
+  "signature": "native Attach3DTextLabelToPlayer(Text3D:id, playerid, Float:OffsetX, Float:OffsetY, Float:OffsetZ)",
+  "return_tag": null,
+  "params": "Text3D:id, playerid, Float:OffsetX, Float:OffsetY, Float:OffsetZ",
+  "file": "a_samp.inc",
+  "line": 2096,
+  "summary": "Attach a 3D text label to a player."
+ },
+ {
+  "name": "Attach3DTextLabelToVehicle",
+  "library": "samp-stdlib",
+  "signature": "native Attach3DTextLabelToVehicle(Text3D:id, vehicleid, Float:OffsetX, Float:OffsetY, Float:OffsetZ)",
+  "return_tag": null,
+  "params": "Text3D:id, vehicleid, Float:OffsetX, Float:OffsetY, Float:OffsetZ",
+  "file": "a_samp.inc",
+  "line": 2112,
+  "summary": "Attaches a 3D Text Label to a specific vehicle."
+ },
+ {
+  "name": "AttachCameraToObject",
+  "library": "samp-stdlib",
+  "signature": "native AttachCameraToObject(playerid, objectid)",
+  "return_tag": null,
+  "params": "playerid, objectid",
+  "file": "a_players.inc",
+  "line": 2200,
+  "summary": "You can use this function to attach the player camera to objects."
+ },
+ {
+  "name": "AttachCameraToPlayerObject",
+  "library": "samp-stdlib",
+  "signature": "native AttachCameraToPlayerObject(playerid, playerobjectid)",
+  "return_tag": null,
+  "params": "playerid, playerobjectid",
+  "file": "a_players.inc",
+  "line": 2210,
+  "summary": "Attaches a player's camera to a player-object. The player is able to move their camera while it is attached to an object. Can be used with MovePlayerObject and AttachPlayerObjectToVehicle."
+ },
+ {
+  "name": "AttachObjectToObject",
+  "library": "samp-stdlib",
+  "signature": "native AttachObjectToObject(objectid, attachtoid, Float:OffsetX, Float:OffsetY, Float:OffsetZ, Float:RotX, Float:RotY, Float:RotZ, SyncRotation = 1)",
+  "return_tag": null,
+  "params": "objectid, attachtoid, Float:OffsetX, Float:OffsetY, Float:OffsetZ, Float:RotX, Float:RotY, Float:RotZ, SyncRotation = 1",
+  "file": "a_objects.inc",
+  "line": 113,
+  "summary": "You can use this function to attach objects to other objects. The objects will folow the main object."
+ },
+ {
+  "name": "AttachObjectToPlayer",
+  "library": "samp-stdlib",
+  "signature": "native AttachObjectToPlayer(objectid, playerid, Float:OffsetX, Float:OffsetY, Float:OffsetZ, Float:RotX, Float:RotY, Float:RotZ)",
+  "return_tag": null,
+  "params": "objectid, playerid, Float:OffsetX, Float:OffsetY, Float:OffsetZ, Float:RotX, Float:RotY, Float:RotZ",
+  "file": "a_objects.inc",
+  "line": 130,
+  "summary": "Attach an object to a player."
+ },
+ {
+  "name": "AttachObjectToVehicle",
+  "library": "samp-stdlib",
+  "signature": "native AttachObjectToVehicle(objectid, vehicleid, Float:OffsetX, Float:OffsetY, Float:OffsetZ, Float:RotX, Float:RotY, Float:RotZ)",
+  "return_tag": null,
+  "params": "objectid, vehicleid, Float:OffsetX, Float:OffsetY, Float:OffsetZ, Float:RotX, Float:RotY, Float:RotZ",
+  "file": "a_objects.inc",
+  "line": 87,
+  "summary": "Attach an object to a vehicle."
+ },
+ {
+  "name": "AttachPlayerObjectToPlayer",
+  "library": "samp-stdlib",
+  "signature": "native AttachPlayerObjectToPlayer(objectplayer, objectid, attachplayer, Float:OffsetX, Float:OffsetY, Float:OffsetZ, Float:rX, Float:rY, Float:rZ)",
+  "return_tag": null,
+  "params": "objectplayer, objectid, attachplayer, Float:OffsetX, Float:OffsetY, Float:OffsetZ, Float:rX, Float:rY, Float:rZ",
+  "file": "a_objects.inc",
+  "line": 507,
+  "summary": "The same as AttachObjectToPlayer but for objects which were created for player."
+ },
+ {
+  "name": "AttachPlayerObjectToVehicle",
+  "library": "samp-stdlib",
+  "signature": "native AttachPlayerObjectToVehicle(playerid, objectid, vehicleid, Float:fOffsetX, Float:fOffsetY, Float:fOffsetZ, Float:fRotX, Float:fRotY, Float:RotZ)",
+  "return_tag": null,
+  "params": "playerid, objectid, vehicleid, Float:fOffsetX, Float:fOffsetY, Float:fOffsetZ, Float:fRotX, Float:fRotY, Float:RotZ",
+  "file": "a_objects.inc",
+  "line": 348,
+  "summary": "Attach a player object to a vehicle."
+ },
+ {
+  "name": "AttachTrailerToVehicle",
+  "library": "samp-stdlib",
+  "signature": "native AttachTrailerToVehicle(trailerid, vehicleid)",
+  "return_tag": null,
+  "params": "trailerid, vehicleid",
+  "file": "a_vehicles.inc",
+  "line": 444,
+  "summary": "Attach a vehicle to another vehicle as a trailer."
+ },
+ {
+  "name": "Ban",
+  "library": "samp-stdlib",
+  "signature": "native Ban(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 1199,
+  "summary": "Ban a player who is currently in the server. They will be unable to join the server ever again. The ban will be IP-based, and be saved in the samp.ban file in the server's root directory. BanEx can be used to give a reason for the ban. IP bans can be added/removed using the RCON banip and unbanip co"
+ },
+ {
+  "name": "BanEx",
+  "library": "samp-stdlib",
+  "signature": "native BanEx(playerid, const reason[])",
+  "return_tag": null,
+  "params": "playerid, const reason[]",
+  "file": "a_samp.inc",
+  "line": 1207,
+  "summary": "Ban a player with a reason."
+ },
+ {
+  "name": "BlockIpAddress",
+  "library": "samp-stdlib",
+  "signature": "native BlockIpAddress(const ip_address[], timems)",
+  "return_tag": null,
+  "params": "const ip_address[], timems",
+  "file": "a_samp.inc",
+  "line": 1297,
+  "summary": "Blocks an IP address from further communication with the server for a set amount of time (with wildcards allowed). Players trying to connect to the server with a blocked IP address will receive the generic \"You are banned from this server.\" message. Players that are online on the specified IP before"
+ },
+ {
+  "name": "CallLocalFunction",
+  "library": "samp-stdlib",
+  "signature": "native CallLocalFunction(const function[], const format[], {Float,_}:...)",
+  "return_tag": null,
+  "params": "const function[], const format[], {Float,_}:...",
+  "file": "a_samp.inc",
+  "line": 594,
+  "summary": "Calls a public function from the script in which it is used."
+ },
+ {
+  "name": "CallRemoteFunction",
+  "library": "samp-stdlib",
+  "signature": "native CallRemoteFunction(const function[], const format[], {Float,_}:...)",
+  "return_tag": null,
+  "params": "const function[], const format[], {Float,_}:...",
+  "file": "a_samp.inc",
+  "line": 574,
+  "summary": "Calls a public function in any script that is loaded."
+ },
+ {
+  "name": "CancelEdit",
+  "library": "samp-stdlib",
+  "signature": "native CancelEdit(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_objects.inc",
+  "line": 306,
+  "summary": "Cancel object edition mode for a player."
+ },
+ {
+  "name": "CancelSelectTextDraw",
+  "library": "samp-stdlib",
+  "signature": "native CancelSelectTextDraw(playerid); // cancel textdraw selection with the mouse",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2424,
+  "summary": "Cancel textdraw selection with the mouse."
+ },
+ {
+  "name": "ChangeVehicleColor",
+  "library": "samp-stdlib",
+  "signature": "native ChangeVehicleColor(vehicleid, color1, color2)",
+  "return_tag": null,
+  "params": "vehicleid, color1, color2",
+  "file": "a_vehicles.inc",
+  "line": 373,
+  "summary": "Change a vehicle's primary and secondary colors."
+ },
+ {
+  "name": "ChangeVehiclePaintjob",
+  "library": "samp-stdlib",
+  "signature": "native ChangeVehiclePaintjob(vehicleid, paintjobid)",
+  "return_tag": null,
+  "params": "vehicleid, paintjobid",
+  "file": "a_vehicles.inc",
+  "line": 386,
+  "summary": "Change a vehicle's paintjob (for plain colors see ChangeVehicleColor)."
+ },
+ {
+  "name": "ClearActorAnimations",
+  "library": "samp-stdlib",
+  "signature": "native ClearActorAnimations(actorid)",
+  "return_tag": null,
+  "params": "actorid",
+  "file": "a_actor.inc",
+  "line": 124,
+  "summary": "Clear any animations applied to an actor."
+ },
+ {
+  "name": "ClearAnimations",
+  "library": "samp-stdlib",
+  "signature": "native ClearAnimations(playerid, forcesync = 0)",
+  "return_tag": null,
+  "params": "playerid, forcesync = 0",
+  "file": "a_players.inc",
+  "line": 1760,
+  "summary": "Clears all animations for the given player (it also cancels all current tasks such as jetpacking,parachuting,entering vehicles, driving (removes player out of vehicle), swimming, etc.. )."
+ },
+ {
+  "name": "ConnectNPC",
+  "library": "samp-stdlib",
+  "signature": "native ConnectNPC(const name[], const script[])",
+  "return_tag": null,
+  "params": "const name[], const script[]",
+  "file": "a_samp.inc",
+  "line": 1159,
+  "summary": "Connect an NPC to the server."
+ },
+ {
+  "name": "Create3DTextLabel",
+  "library": "samp-stdlib",
+  "signature": "native Text3D:Create3DTextLabel(const text[], color, Float:X, Float:Y, Float:Z, Float:DrawDistance, virtualworld, testLOS=0)",
+  "return_tag": "Text3D",
+  "params": "const text[], color, Float:X, Float:Y, Float:Z, Float:DrawDistance, virtualworld, testLOS=0",
+  "file": "a_samp.inc",
+  "line": 2063,
+  "summary": "Creates a 3D Text Label at a specific location in the world."
+ },
+ {
+  "name": "CreateActor",
+  "library": "samp-stdlib",
+  "signature": "native CreateActor(modelid, Float:X, Float:Y, Float:Z, Float:Rotation)",
+  "return_tag": null,
+  "params": "modelid, Float:X, Float:Y, Float:Z, Float:Rotation",
+  "file": "a_actor.inc",
+  "line": 55,
+  "summary": "Create a static 'actor' in the world. These 'actors' are like NPCs, however they have limited functionality. They do not take up server player slots."
+ },
+ {
+  "name": "CreateExplosion",
+  "library": "samp-stdlib",
+  "signature": "native CreateExplosion(Float:X, Float:Y, Float:Z, type, Float:Radius)",
+  "return_tag": null,
+  "params": "Float:X, Float:Y, Float:Z, type, Float:Radius",
+  "file": "a_samp.inc",
+  "line": 1097,
+  "summary": "Create an explosion at the specified coordinates."
+ },
+ {
+  "name": "CreateExplosionForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native CreateExplosionForPlayer(playerid, Float:X, Float:Y, Float:Z, type, Float:Radius)",
+  "return_tag": null,
+  "params": "playerid, Float:X, Float:Y, Float:Z, type, Float:Radius",
+  "file": "a_players.inc",
+  "line": 2439,
+  "summary": "Creates an explosion that is only visible to a single player. This can be used to isolate explosions from other players or to make them only appear in specific virtual worlds."
+ },
+ {
+  "name": "CreateMenu",
+  "library": "samp-stdlib",
+  "signature": "native Menu:CreateMenu(const title[], columns, Float:x, Float:y, Float:col1width, Float:col2width = 0.0)",
+  "return_tag": "Menu",
+  "params": "const title[], columns, Float:x, Float:y, Float:col1width, Float:col2width = 0.0",
+  "file": "a_samp.inc",
+  "line": 1567,
+  "summary": "Creates a menu."
+ },
+ {
+  "name": "CreateObject",
+  "library": "samp-stdlib",
+  "signature": "native CreateObject(modelid, Float:X, Float:Y, Float:Z, Float:rX, Float:rY, Float:rZ, Float:DrawDistance = 0.0)",
+  "return_tag": null,
+  "params": "modelid, Float:X, Float:Y, Float:Z, Float:rX, Float:rY, Float:rZ, Float:DrawDistance = 0.0",
+  "file": "a_objects.inc",
+  "line": 69,
+  "summary": "Creates an object at specified coordinates in the game world."
+ },
+ {
+  "name": "CreatePickup",
+  "library": "samp-stdlib",
+  "signature": "native CreatePickup(model, type, Float:X, Float:Y, Float:Z, virtualworld = 0)",
+  "return_tag": null,
+  "params": "model, type, Float:X, Float:Y, Float:Z, virtualworld = 0",
+  "file": "a_samp.inc",
+  "line": 977,
+  "summary": "This function does exactly the same as AddStaticPickup, except it returns a pickup ID which can be used to destroy it afterwards and be tracked using OnPlayerPickUpPickup."
+ },
+ {
+  "name": "CreatePlayer3DTextLabel",
+  "library": "samp-stdlib",
+  "signature": "native PlayerText3D:CreatePlayer3DTextLabel(playerid, const text[], color, Float:X, Float:Y, Float:Z, Float:DrawDistance, attachedplayer=INVALID_PLAYER_ID, attachedvehicle=INVALID_VEHICLE_ID, testLOS=0)",
+  "return_tag": "PlayerText3D",
+  "params": "playerid, const text[], color, Float:X, Float:Y, Float:Z, Float:DrawDistance, attachedplayer=INVALID_PLAYER_ID, attachedvehicle=INVALID_VEHICLE_ID, testLOS=0",
+  "file": "a_samp.inc",
+  "line": 2154,
+  "summary": "Creates a 3D Text Label only for a specific player."
+ },
+ {
+  "name": "CreatePlayerObject",
+  "library": "samp-stdlib",
+  "signature": "native CreatePlayerObject(playerid, modelid, Float:X, Float:Y, Float:Z, Float:rX, Float:rY, Float:rZ, Float:DrawDistance = 0.0)",
+  "return_tag": null,
+  "params": "playerid, modelid, Float:X, Float:Y, Float:Z, Float:rX, Float:rY, Float:rZ, Float:DrawDistance = 0.0",
+  "file": "a_objects.inc",
+  "line": 331,
+  "summary": "Creates an object which will be visible to only one player."
+ },
+ {
+  "name": "CreatePlayerTextDraw",
+  "library": "samp-stdlib",
+  "signature": "native PlayerText:CreatePlayerTextDraw(playerid, Float:x, Float:y, const text[])",
+  "return_tag": "PlayerText",
+  "params": "playerid, Float:x, Float:y, const text[]",
+  "file": "a_players.inc",
+  "line": 1083,
+  "summary": "Creates a textdraw for a single player. This can be used as a way around the global text-draw limit."
+ },
+ {
+  "name": "CreateVehicle",
+  "library": "samp-stdlib",
+  "signature": "native CreateVehicle(vehicletype, Float:x, Float:y, Float:z, Float:rotation, color1, color2, respawn_delay, addsiren=0)",
+  "return_tag": null,
+  "params": "vehicletype, Float:x, Float:y, Float:z, Float:rotation, color1, color2, respawn_delay, addsiren=0",
+  "file": "a_vehicles.inc",
+  "line": 73,
+  "summary": "Creates a vehicle in the world. Can be used in place of AddStaticVehicleEx at any time in the script."
+ },
+ {
+  "name": "db_close",
+  "library": "samp-stdlib",
+  "signature": "native db_close(DB:db)",
+  "return_tag": null,
+  "params": "DB:db",
+  "file": "a_sampdb.inc",
+  "line": 33,
+  "summary": "Closes an SQLite database that was opened with db_open."
+ },
+ {
+  "name": "db_debug_openfiles",
+  "library": "samp-stdlib",
+  "signature": "native db_debug_openfiles()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_sampdb.inc",
+  "line": 133
+ },
+ {
+  "name": "db_debug_openresults",
+  "library": "samp-stdlib",
+  "signature": "native db_debug_openresults()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_sampdb.inc",
+  "line": 134
+ },
+ {
+  "name": "db_field_name",
+  "library": "samp-stdlib",
+  "signature": "native db_field_name(DBResult:dbresult, field, result[], maxlength = sizeof result)",
+  "return_tag": null,
+  "params": "DBResult:dbresult, field, result[], maxlength = sizeof result",
+  "file": "a_sampdb.inc",
+  "line": 73,
+  "summary": "Returns the name of a field at a particular index."
+ },
+ {
+  "name": "db_free_result",
+  "library": "samp-stdlib",
+  "signature": "native db_free_result(DBResult:dbresult)",
+  "return_tag": null,
+  "params": "DBResult:dbresult",
+  "file": "a_sampdb.inc",
+  "line": 46,
+  "summary": "Frees result memory allocated from db_query."
+ },
+ {
+  "name": "db_get_field",
+  "library": "samp-stdlib",
+  "signature": "native db_get_field(DBResult:dbresult, field, result[], maxlength = sizeof result)",
+  "return_tag": null,
+  "params": "DBResult:dbresult, field, result[], maxlength = sizeof result",
+  "file": "a_sampdb.inc",
+  "line": 82,
+  "summary": "Get the content of a field from db_query."
+ },
+ {
+  "name": "db_get_field_assoc",
+  "library": "samp-stdlib",
+  "signature": "native db_get_field_assoc(DBResult:dbresult, const field[], result[], maxlength = sizeof result)",
+  "return_tag": null,
+  "params": "DBResult:dbresult, const field[], result[], maxlength = sizeof result",
+  "file": "a_sampdb.inc",
+  "line": 105,
+  "summary": "Get the contents of field with specified name."
+ },
+ {
+  "name": "db_get_field_assoc_float",
+  "library": "samp-stdlib",
+  "signature": "native Float:db_get_field_assoc_float(DBResult:result, const field[])",
+  "return_tag": "Float",
+  "params": "DBResult:result, const field[]",
+  "file": "a_sampdb.inc",
+  "line": 119,
+  "summary": "Get the contents of field as a float with specified name."
+ },
+ {
+  "name": "db_get_field_assoc_int",
+  "library": "samp-stdlib",
+  "signature": "native db_get_field_assoc_int(DBResult:result, const field[])",
+  "return_tag": null,
+  "params": "DBResult:result, const field[]",
+  "file": "a_sampdb.inc",
+  "line": 112,
+  "summary": "Get the contents of field as an integer with specified name."
+ },
+ {
+  "name": "db_get_field_float",
+  "library": "samp-stdlib",
+  "signature": "native Float:db_get_field_float(DBResult:result, field = 0)",
+  "return_tag": "Float",
+  "params": "DBResult:result, field = 0",
+  "file": "a_sampdb.inc",
+  "line": 96,
+  "summary": "Get the content of a field as a float from db_query."
+ },
+ {
+  "name": "db_get_field_int",
+  "library": "samp-stdlib",
+  "signature": "native db_get_field_int(DBResult:result, field = 0)",
+  "return_tag": null,
+  "params": "DBResult:result, field = 0",
+  "file": "a_sampdb.inc",
+  "line": 89,
+  "summary": "Get the content of a field as an integer from db_query."
+ },
+ {
+  "name": "db_get_mem_handle",
+  "library": "samp-stdlib",
+  "signature": "native db_get_mem_handle(DB:db)",
+  "return_tag": null,
+  "params": "DB:db",
+  "file": "a_sampdb.inc",
+  "line": 125,
+  "summary": "Get memory handle for an SQLite database that was opened with db_open."
+ },
+ {
+  "name": "db_get_result_mem_handle",
+  "library": "samp-stdlib",
+  "signature": "native db_get_result_mem_handle(DBResult:result)",
+  "return_tag": null,
+  "params": "DBResult:result",
+  "file": "a_sampdb.inc",
+  "line": 131,
+  "summary": "Get memory handle for an SQLite query that was executed with db_query."
+ },
+ {
+  "name": "db_next_row",
+  "library": "samp-stdlib",
+  "signature": "native db_next_row(DBResult:dbresult)",
+  "return_tag": null,
+  "params": "DBResult:dbresult",
+  "file": "a_sampdb.inc",
+  "line": 58,
+  "summary": "Moves to the next row of the result allocated from db_query."
+ },
+ {
+  "name": "db_num_fields",
+  "library": "samp-stdlib",
+  "signature": "native db_num_fields(DBResult:dbresult)",
+  "return_tag": null,
+  "params": "DBResult:dbresult",
+  "file": "a_sampdb.inc",
+  "line": 64,
+  "summary": "Get the number of fields in a result."
+ },
+ {
+  "name": "db_num_rows",
+  "library": "samp-stdlib",
+  "signature": "native db_num_rows(DBResult:dbresult)",
+  "return_tag": null,
+  "params": "DBResult:dbresult",
+  "file": "a_sampdb.inc",
+  "line": 52,
+  "summary": "Returns the number of rows from a db_query."
+ },
+ {
+  "name": "db_open",
+  "library": "samp-stdlib",
+  "signature": "native DB:db_open(const name[])",
+  "return_tag": "DB",
+  "params": "const name[]",
+  "file": "a_sampdb.inc",
+  "line": 24,
+  "summary": "This function is used to open a connection to a SQLite database, which is inside the /scriptfiles folder."
+ },
+ {
+  "name": "db_query",
+  "library": "samp-stdlib",
+  "signature": "native DBResult:db_query(DB:db, const query[])",
+  "return_tag": "DBResult",
+  "params": "DB:db, const query[]",
+  "file": "a_sampdb.inc",
+  "line": 41,
+  "summary": "This function is used to execute an SQL query on an opened SQLite database."
+ },
+ {
+  "name": "Delete3DTextLabel",
+  "library": "samp-stdlib",
+  "signature": "native Delete3DTextLabel(Text3D:id)",
+  "return_tag": null,
+  "params": "Text3D:id",
+  "file": "a_samp.inc",
+  "line": 2076,
+  "summary": "Delete a 3D text label (created with Create3DTextLabel)."
+ },
+ {
+  "name": "DeletePlayer3DTextLabel",
+  "library": "samp-stdlib",
+  "signature": "native DeletePlayer3DTextLabel(playerid, PlayerText3D:id)",
+  "return_tag": null,
+  "params": "playerid, PlayerText3D:id",
+  "file": "a_samp.inc",
+  "line": 2170,
+  "summary": "Destroy a 3D text label that was created using CreatePlayer3DTextLabel."
+ },
+ {
+  "name": "DeletePVar",
+  "library": "samp-stdlib",
+  "signature": "native DeletePVar(playerid, const varname[])",
+  "return_tag": null,
+  "params": "playerid, const varname[]",
+  "file": "a_players.inc",
+  "line": 1592,
+  "summary": "Deletes a previously set player variable."
+ },
+ {
+  "name": "DeleteSVar",
+  "library": "samp-stdlib",
+  "signature": "native DeleteSVar(const varname[])",
+  "return_tag": null,
+  "params": "const varname[]",
+  "file": "a_samp.inc",
+  "line": 770,
+  "summary": "Deletes a previously set server variable."
+ },
+ {
+  "name": "DestroyActor",
+  "library": "samp-stdlib",
+  "signature": "native DestroyActor(actorid)",
+  "return_tag": null,
+  "params": "actorid",
+  "file": "a_actor.inc",
+  "line": 65,
+  "summary": "Destroy an actor which was created with CreateActor."
+ },
+ {
+  "name": "DestroyMenu",
+  "library": "samp-stdlib",
+  "signature": "native DestroyMenu(Menu:menuid)",
+  "return_tag": null,
+  "params": "Menu:menuid",
+  "file": "a_samp.inc",
+  "line": 1577,
+  "summary": "Destroys the specified menu."
+ },
+ {
+  "name": "DestroyObject",
+  "library": "samp-stdlib",
+  "signature": "native DestroyObject(objectid)",
+  "return_tag": null,
+  "params": "objectid",
+  "file": "a_objects.inc",
+  "line": 218,
+  "summary": "Destroys (removes) an object that was created using CreateObject."
+ },
+ {
+  "name": "DestroyPickup",
+  "library": "samp-stdlib",
+  "signature": "native DestroyPickup(pickup)",
+  "return_tag": null,
+  "params": "pickup",
+  "file": "a_samp.inc",
+  "line": 983,
+  "summary": "Destroys a pickup created with CreatePickup."
+ },
+ {
+  "name": "DestroyPlayerObject",
+  "library": "samp-stdlib",
+  "signature": "native DestroyPlayerObject(playerid, objectid)",
+  "return_tag": null,
+  "params": "playerid, objectid",
+  "file": "a_objects.inc",
+  "line": 449,
+  "summary": "Destroy a player-object created using CreatePlayerObject."
+ },
+ {
+  "name": "DestroyVehicle",
+  "library": "samp-stdlib",
+  "signature": "native DestroyVehicle(vehicleid)",
+  "return_tag": null,
+  "params": "vehicleid",
+  "file": "a_vehicles.inc",
+  "line": 84,
+  "summary": "Destroy a vehicle. It will disappear instantly."
+ },
+ {
+  "name": "DetachTrailerFromVehicle",
+  "library": "samp-stdlib",
+  "signature": "native DetachTrailerFromVehicle(vehicleid)",
+  "return_tag": null,
+  "params": "vehicleid",
+  "file": "a_vehicles.inc",
+  "line": 451,
+  "summary": "Detach the connection between a vehicle and its trailer, if any."
+ },
+ {
+  "name": "DisableInteriorEnterExits",
+  "library": "samp-stdlib",
+  "signature": "native DisableInteriorEnterExits();  // will disable all interior enter/exits in the game.",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 1116,
+  "summary": "Disable all the interior entrances and exits in the game (the yellow arrows at doors)."
+ },
+ {
+  "name": "DisableMenu",
+  "library": "samp-stdlib",
+  "signature": "native DisableMenu(Menu:menuid)",
+  "return_tag": null,
+  "params": "Menu:menuid",
+  "file": "a_samp.inc",
+  "line": 1653,
+  "summary": "Disable a menu."
+ },
+ {
+  "name": "DisableMenuRow",
+  "library": "samp-stdlib",
+  "signature": "native DisableMenuRow(Menu:menuid, row)",
+  "return_tag": null,
+  "params": "Menu:menuid, row",
+  "file": "a_samp.inc",
+  "line": 1666,
+  "summary": "Disable a specific row in a menu for all players. It will be greyed-out and can't be selected by players."
+ },
+ {
+  "name": "DisableNameTagLOS",
+  "library": "samp-stdlib",
+  "signature": "native DisableNameTagLOS(); // Disables the nametag Line-Of-Sight checking",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 1131,
+  "summary": "Disables the nametag Line-Of-Sight checking so that players can see nametags through objects."
+ },
+ {
+  "name": "DisablePlayerCheckpoint",
+  "library": "samp-stdlib",
+  "signature": "native DisablePlayerCheckpoint(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 1911,
+  "summary": "Disables (hides/destroys) a player's set checkpoint. Players can only have a single checkpoint set at a time. Checkpoints don't need to be disabled before setting another one."
+ },
+ {
+  "name": "DisablePlayerRaceCheckpoint",
+  "library": "samp-stdlib",
+  "signature": "native DisablePlayerRaceCheckpoint(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 1954,
+  "summary": "Disable any initialized race checkpoints for a specific player, since you can only have one at any given time."
+ },
+ {
+  "name": "DisableRemoteVehicleCollisions",
+  "library": "samp-stdlib",
+  "signature": "native DisableRemoteVehicleCollisions(playerid, disable)",
+  "return_tag": null,
+  "params": "playerid, disable",
+  "file": "a_players.inc",
+  "line": 1875,
+  "summary": "Disables collisions between occupied vehicles for a player."
+ },
+ {
+  "name": "EditAttachedObject",
+  "library": "samp-stdlib",
+  "signature": "native EditAttachedObject(playerid, index)",
+  "return_tag": null,
+  "params": "playerid, index",
+  "file": "a_players.inc",
+  "line": 1039,
+  "summary": "Enter edition mode for an attached object."
+ },
+ {
+  "name": "EditObject",
+  "library": "samp-stdlib",
+  "signature": "native EditObject(playerid, objectid)",
+  "return_tag": null,
+  "params": "playerid, objectid",
+  "file": "a_objects.inc",
+  "line": 272,
+  "summary": "Allows a player to edit an object (position and rotation) using their mouse on a GUI (Graphical User Interface)."
+ },
+ {
+  "name": "EditPlayerObject",
+  "library": "samp-stdlib",
+  "signature": "native EditPlayerObject(playerid, objectid)",
+  "return_tag": null,
+  "params": "playerid, objectid",
+  "file": "a_objects.inc",
+  "line": 287,
+  "summary": "Allows players to edit a player-object (position and rotation) with a GUI and their mouse."
+ },
+ {
+  "name": "EnablePlayerCameraTarget",
+  "library": "samp-stdlib",
+  "signature": "native EnablePlayerCameraTarget(playerid, enable)",
+  "return_tag": null,
+  "params": "playerid, enable",
+  "file": "a_players.inc",
+  "line": 2125,
+  "summary": "Toggle camera targeting functions for a player. Disabled by default to save bandwidth."
+ },
+ {
+  "name": "EnableStuntBonusForAll",
+  "library": "samp-stdlib",
+  "signature": "native EnableStuntBonusForAll(enable)",
+  "return_tag": null,
+  "params": "enable",
+  "file": "a_players.inc",
+  "line": 2338,
+  "summary": "Enables or disables stunt bonuses for all players. If enabled, players will receive monetary rewards when performing a stunt in a vehicle (e.g. a wheelie)."
+ },
+ {
+  "name": "EnableStuntBonusForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native EnableStuntBonusForPlayer(playerid, enable)",
+  "return_tag": null,
+  "params": "playerid, enable",
+  "file": "a_players.inc",
+  "line": 2333,
+  "summary": "Toggle stunt bonuses for a player. Enabled by default."
+ },
+ {
+  "name": "EnableTirePopping",
+  "library": "samp-stdlib",
+  "signature": "native EnableTirePopping(enable); // deprecated function",
+  "return_tag": null,
+  "params": "enable",
+  "file": "a_samp.inc",
+  "line": 1038
+ },
+ {
+  "name": "EnableVehicleFriendlyFire",
+  "library": "samp-stdlib",
+  "signature": "native EnableVehicleFriendlyFire()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 1043,
+  "summary": "Enable friendly fire for team vehicles. Players will be unable to damage teammates' vehicles (SetPlayerTeam must be used!)."
+ },
+ {
+  "name": "EnableZoneNames",
+  "library": "samp-stdlib",
+  "signature": "native EnableZoneNames(enable)",
+  "return_tag": null,
+  "params": "enable",
+  "file": "a_samp.inc",
+  "line": 1102,
+  "summary": "This function allows to turn on zone / area names such as the \"Vinewood\" or \"Doherty\" text at the bottom-right of the screen as they enter the area. This is a gamemode option and should be set in the callback OnGameModeInit."
+ },
+ {
+  "name": "FindModelFileNameFromCRC",
+  "library": "samp-stdlib",
+  "signature": "native FindModelFileNameFromCRC(crc, retstr[], retstr_size = sizeof retstr)",
+  "return_tag": null,
+  "params": "crc, retstr[], retstr_size = sizeof retstr",
+  "file": "a_samp.inc",
+  "line": 1172
+ },
+ {
+  "name": "FindTextureFileNameFromCRC",
+  "library": "samp-stdlib",
+  "signature": "native FindTextureFileNameFromCRC(crc, retstr[], retstr_size = sizeof retstr)",
+  "return_tag": null,
+  "params": "crc, retstr[], retstr_size = sizeof retstr",
+  "file": "a_samp.inc",
+  "line": 1173
+ },
+ {
+  "name": "ForceClassSelection",
+  "library": "samp-stdlib",
+  "signature": "native ForceClassSelection(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 711,
+  "summary": "Forces a player to go back to class selection."
+ },
+ {
+  "name": "format",
+  "library": "samp-stdlib",
+  "signature": "native format(output[], len = sizeof output, const format[], {Float,_}:...)",
+  "return_tag": null,
+  "params": "output[], len = sizeof output, const format[], {Float,_}:...",
+  "file": "a_npc.inc",
+  "line": 299,
+  "summary": "Formats a string to include variables and other strings inside it."
+ },
+ {
+  "name": "GameModeExit",
+  "library": "samp-stdlib",
+  "signature": "native GameModeExit()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 1012,
+  "summary": "Ends the current gamemode."
+ },
+ {
+  "name": "GameTextForAll",
+  "library": "samp-stdlib",
+  "signature": "native GameTextForAll(const string[], time, style)",
+  "return_tag": null,
+  "params": "const string[], time, style",
+  "file": "a_samp.inc",
+  "line": 479,
+  "summary": "Shows 'game text' (on-screen text) for a certain length of time for all players."
+ },
+ {
+  "name": "GameTextForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native GameTextForPlayer(playerid, const string[], time, style)",
+  "return_tag": null,
+  "params": "playerid, const string[], time, style",
+  "file": "a_samp.inc",
+  "line": 492,
+  "summary": "Shows 'game text' (on-screen text) for a certain length of time for a specific player."
+ },
+ {
+  "name": "GangZoneCreate",
+  "library": "samp-stdlib",
+  "signature": "native GangZoneCreate(Float:minx, Float:miny, Float:maxx, Float:maxy)",
+  "return_tag": null,
+  "params": "Float:minx, Float:miny, Float:maxx, Float:maxy",
+  "file": "a_samp.inc",
+  "line": 1901,
+  "summary": "Create a gangzone (colored radar area)."
+ },
+ {
+  "name": "GangZoneDestroy",
+  "library": "samp-stdlib",
+  "signature": "native GangZoneDestroy(zone)",
+  "return_tag": null,
+  "params": "zone",
+  "file": "a_samp.inc",
+  "line": 1914,
+  "summary": "Destroy a gangzone."
+ },
+ {
+  "name": "GangZoneFlashForAll",
+  "library": "samp-stdlib",
+  "signature": "native GangZoneFlashForAll(zone, flashcolor)",
+  "return_tag": null,
+  "params": "zone, flashcolor",
+  "file": "a_samp.inc",
+  "line": 2004,
+  "summary": "GangZoneFlashForAll flashes a gangzone for all players."
+ },
+ {
+  "name": "GangZoneFlashForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native GangZoneFlashForPlayer(playerid, zone, flashcolor)",
+  "return_tag": null,
+  "params": "playerid, zone, flashcolor",
+  "file": "a_samp.inc",
+  "line": 1990,
+  "summary": "Makes a gangzone flash for a player."
+ },
+ {
+  "name": "GangZoneHideForAll",
+  "library": "samp-stdlib",
+  "signature": "native GangZoneHideForAll(zone)",
+  "return_tag": null,
+  "params": "zone",
+  "file": "a_samp.inc",
+  "line": 1975,
+  "summary": "GangZoneHideForAll hides a gangzone from all players."
+ },
+ {
+  "name": "GangZoneHideForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native GangZoneHideForPlayer(playerid, zone)",
+  "return_tag": null,
+  "params": "playerid, zone",
+  "file": "a_samp.inc",
+  "line": 1962,
+  "summary": "Hides a gangzone for a player."
+ },
+ {
+  "name": "GangZoneShowForAll",
+  "library": "samp-stdlib",
+  "signature": "native GangZoneShowForAll(zone, color)",
+  "return_tag": null,
+  "params": "zone, color",
+  "file": "a_samp.inc",
+  "line": 1948,
+  "summary": "Shows a gangzone with the desired color to all players."
+ },
+ {
+  "name": "GangZoneShowForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native GangZoneShowForPlayer(playerid, zone, color)",
+  "return_tag": null,
+  "params": "playerid, zone, color",
+  "file": "a_samp.inc",
+  "line": 1930,
+  "summary": "Show a gangzone for a player. Must be created with GangZoneCreate first."
+ },
+ {
+  "name": "GangZoneStopFlashForAll",
+  "library": "samp-stdlib",
+  "signature": "native GangZoneStopFlashForAll(zone)",
+  "return_tag": null,
+  "params": "zone",
+  "file": "a_samp.inc",
+  "line": 2035,
+  "summary": "Stops a gangzone flashing for all players."
+ },
+ {
+  "name": "GangZoneStopFlashForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native GangZoneStopFlashForPlayer(playerid, zone)",
+  "return_tag": null,
+  "params": "playerid, zone",
+  "file": "a_samp.inc",
+  "line": 2018,
+  "summary": "Stops a gangzone flashing for a player."
+ },
+ {
+  "name": "GetActorFacingAngle",
+  "library": "samp-stdlib",
+  "signature": "native GetActorFacingAngle(actorid, &Float:ang)",
+  "return_tag": null,
+  "params": "actorid, &Float:ang",
+  "file": "a_actor.inc",
+  "line": 179,
+  "summary": "Get the facing angle of an actor."
+ },
+ {
+  "name": "GetActorHealth",
+  "library": "samp-stdlib",
+  "signature": "native GetActorHealth(actorid, &Float:health)",
+  "return_tag": null,
+  "params": "actorid, &Float:health",
+  "file": "a_actor.inc",
+  "line": 200,
+  "summary": "Get the health of an actor."
+ },
+ {
+  "name": "GetActorPoolSize",
+  "library": "samp-stdlib",
+  "signature": "native GetActorPoolSize()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 655,
+  "summary": "Gets the highest actorid created on the server."
+ },
+ {
+  "name": "GetActorPos",
+  "library": "samp-stdlib",
+  "signature": "native GetActorPos(actorid, &Float:X, &Float:Y, &Float:Z)",
+  "return_tag": null,
+  "params": "actorid, &Float:X, &Float:Y, &Float:Z",
+  "file": "a_actor.inc",
+  "line": 153,
+  "summary": "Get the position of an actor."
+ },
+ {
+  "name": "GetActorVirtualWorld",
+  "library": "samp-stdlib",
+  "signature": "native GetActorVirtualWorld(actorid)",
+  "return_tag": null,
+  "params": "actorid",
+  "file": "a_actor.inc",
+  "line": 95,
+  "summary": "Get the virtual world of an actor."
+ },
+ {
+  "name": "GetAnimationName",
+  "library": "samp-stdlib",
+  "signature": "native GetAnimationName(index, animlib[], len1 = sizeof animlib, animname[], len2 = sizeof animname); // get the animation lib/name for the index",
+  "return_tag": null,
+  "params": "index, animlib[], len1 = sizeof animlib, animname[], len2 = sizeof animname",
+  "file": "a_players.inc",
+  "line": 1778,
+  "summary": "Get the animation library/name for the index."
+ },
+ {
+  "name": "GetConsoleVarAsBool",
+  "library": "samp-stdlib",
+  "signature": "native GetConsoleVarAsBool(const varname[])",
+  "return_tag": null,
+  "params": "const varname[]",
+  "file": "a_samp.inc",
+  "line": 1367,
+  "summary": "Get the boolean value of a console variable."
+ },
+ {
+  "name": "GetConsoleVarAsInt",
+  "library": "samp-stdlib",
+  "signature": "native GetConsoleVarAsInt(const varname[])",
+  "return_tag": null,
+  "params": "const varname[]",
+  "file": "a_samp.inc",
+  "line": 1359,
+  "summary": "Get the integer value of a console variable."
+ },
+ {
+  "name": "GetConsoleVarAsString",
+  "library": "samp-stdlib",
+  "signature": "native GetConsoleVarAsString(const varname[], buffer[], len = sizeof buffer)",
+  "return_tag": null,
+  "params": "const varname[], buffer[], len = sizeof buffer",
+  "file": "a_samp.inc",
+  "line": 1351,
+  "summary": "Get the string value of a console variable."
+ },
+ {
+  "name": "GetDistanceFromMeToPoint",
+  "library": "samp-stdlib",
+  "signature": "native GetDistanceFromMeToPoint(Float:X, Float:Y, Float:Z, &Float:Distance)",
+  "return_tag": null,
+  "params": "Float:X, Float:Y, Float:Z, &Float:Distance",
+  "file": "a_npc.inc",
+  "line": 497,
+  "summary": "Get the distance between the NPC and a point."
+ },
+ {
+  "name": "GetGravity",
+  "library": "samp-stdlib",
+  "signature": "native Float:GetGravity()",
+  "return_tag": "Float",
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 1064,
+  "summary": "Get the currently set gravity."
+ },
+ {
+  "name": "GetMaxPlayers",
+  "library": "samp-stdlib",
+  "signature": "native GetMaxPlayers()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 554,
+  "summary": "Returns the maximum number of players that can join the server, as set by the server variable 'maxplayers' in server.cfg."
+ },
+ {
+  "name": "GetMyFacingAngle",
+  "library": "samp-stdlib",
+  "signature": "native GetMyFacingAngle(&Float:ang)",
+  "return_tag": null,
+  "params": "&Float:ang",
+  "file": "a_npc.inc",
+  "line": 479,
+  "summary": "Get the current facing angle of the NPC."
+ },
+ {
+  "name": "GetMyPos",
+  "library": "samp-stdlib",
+  "signature": "native GetMyPos(&Float:x, &Float:y, &Float:z)",
+  "return_tag": null,
+  "params": "&Float:x, &Float:y, &Float:z",
+  "file": "a_npc.inc",
+  "line": 463,
+  "summary": "Get the current location of the NPC."
+ },
+ {
+  "name": "GetNetworkStats",
+  "library": "samp-stdlib",
+  "signature": "native GetNetworkStats(retstr[], retstr_size = sizeof retstr)",
+  "return_tag": null,
+  "params": "retstr[], retstr_size = sizeof retstr",
+  "file": "a_samp.inc",
+  "line": 1276,
+  "summary": "Gets the server's network stats and stores them in a string."
+ },
+ {
+  "name": "GetObjectModel",
+  "library": "samp-stdlib",
+  "signature": "native GetObjectModel(objectid)",
+  "return_tag": null,
+  "params": "objectid",
+  "file": "a_objects.inc",
+  "line": 190,
+  "summary": "Get the model ID of an object."
+ },
+ {
+  "name": "GetObjectPos",
+  "library": "samp-stdlib",
+  "signature": "native GetObjectPos(objectid, &Float:X, &Float:Y, &Float:Z)",
+  "return_tag": null,
+  "params": "objectid, &Float:X, &Float:Y, &Float:Z",
+  "file": "a_objects.inc",
+  "line": 158,
+  "summary": "Get the position of an object."
+ },
+ {
+  "name": "GetObjectRot",
+  "library": "samp-stdlib",
+  "signature": "native GetObjectRot(objectid, &Float:RotX, &Float:RotY, &Float:RotZ)",
+  "return_tag": null,
+  "params": "objectid, &Float:RotX, &Float:RotY, &Float:RotZ",
+  "file": "a_objects.inc",
+  "line": 182,
+  "summary": "Use this function to get the objects current rotation. The rotation is saved by reference in three RotX/RotY/RotZ variables."
+ },
+ {
+  "name": "GetPlayerAmmo",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerAmmo(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 337,
+  "summary": "Gets the amount of ammo in a player's current weapon."
+ },
+ {
+  "name": "GetPlayerAnimationIndex",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerAnimationIndex(playerid); // return the index of any running applied animations (0 if none are running)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 1767,
+  "summary": "Returns the index of any running applied animations."
+ },
+ {
+  "name": "GetPlayerArmedWeapon",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerArmedWeapon(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_npc.inc",
+  "line": 412
+ },
+ {
+  "name": "GetPlayerArmour",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerArmour(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_npc.inc",
+  "line": 415
+ },
+ {
+  "name": "GetPlayerCameraAspectRatio",
+  "library": "samp-stdlib",
+  "signature": "native Float:GetPlayerCameraAspectRatio(playerid)",
+  "return_tag": "Float",
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2182,
+  "summary": "Retrieves the aspect ratio of a player's camera."
+ },
+ {
+  "name": "GetPlayerCameraFrontVector",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerCameraFrontVector(playerid, &Float:x, &Float:y, &Float:z)",
+  "return_tag": null,
+  "params": "playerid, &Float:x, &Float:y, &Float:z",
+  "file": "a_players.inc",
+  "line": 2101,
+  "summary": "This function will return the current direction of player's aiming in 3-D space, the coords are relative to the camera position, see GetPlayerCameraPos."
+ },
+ {
+  "name": "GetPlayerCameraMode",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerCameraMode(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2112,
+  "summary": "Returns the current GTA camera mode for the requested player. The camera modes are useful in determining whether a player is aiming, doing a passenger driveby etc."
+ },
+ {
+  "name": "GetPlayerCameraPos",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerCameraPos(playerid, &Float:x, &Float:y, &Float:z)",
+  "return_tag": null,
+  "params": "playerid, &Float:x, &Float:y, &Float:z",
+  "file": "a_players.inc",
+  "line": 2089,
+  "summary": "Get the position of the player's camera."
+ },
+ {
+  "name": "GetPlayerCameraTargetActor",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerCameraTargetActor(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2172,
+  "summary": "Allows you to retrieve the ID of the actor the player is looking at (if any)."
+ },
+ {
+  "name": "GetPlayerCameraTargetObject",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerCameraTargetObject(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2135,
+  "summary": "Allows you to retrieve the ID of the object the player is looking at."
+ },
+ {
+  "name": "GetPlayerCameraTargetPlayer",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerCameraTargetPlayer(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2159,
+  "summary": "Allows you to retrieve the ID of the player the playerid is looking at."
+ },
+ {
+  "name": "GetPlayerCameraTargetVehicle",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerCameraTargetVehicle(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2147,
+  "summary": "Get the ID of the vehicle the player is looking at."
+ },
+ {
+  "name": "GetPlayerCameraZoom",
+  "library": "samp-stdlib",
+  "signature": "native Float:GetPlayerCameraZoom(playerid)",
+  "return_tag": "Float",
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2192,
+  "summary": "Retrieves the game camera zoom level for a given player."
+ },
+ {
+  "name": "GetPlayerColor",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerColor(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 459,
+  "summary": "Gets the color of the player's name and radar marker. Only works after SetPlayerColor."
+ },
+ {
+  "name": "GetPlayerCustomSkin",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerCustomSkin(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 483
+ },
+ {
+  "name": "GetPlayerDistanceFromPoint",
+  "library": "samp-stdlib",
+  "signature": "native Float:GetPlayerDistanceFromPoint(playerid, Float:X, Float:Y, Float:Z)",
+  "return_tag": "Float",
+  "params": "playerid, Float:X, Float:Y, Float:Z",
+  "file": "a_players.inc",
+  "line": 219,
+  "summary": "Calculate the distance between a player and a map coordinate."
+ },
+ {
+  "name": "GetPlayerDrunkLevel",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerDrunkLevel(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 424,
+  "summary": "Checks the player's level of drunkenness. If the level is less than 2000, the player is sober. The player's level of drunkness goes down slowly automatically (1 level per frame) but will always reach 2000 at the end (in 0.3b it will stop at 0). The higher drunkenness levels affect the player's camer"
+ },
+ {
+  "name": "GetPlayerFacingAngle",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerFacingAngle(playerid, &Float:ang)",
+  "return_tag": null,
+  "params": "playerid, &Float:ang",
+  "file": "a_npc.inc",
+  "line": 454,
+  "summary": "Gets the angle a player is facing."
+ },
+ {
+  "name": "GetPlayerFightingStyle",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerFightingStyle(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 766,
+  "summary": "Get the fighting style the player currently using."
+ },
+ {
+  "name": "GetPlayerHealth",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerHealth(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_npc.inc",
+  "line": 414
+ },
+ {
+  "name": "GetPlayerInterior",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerInterior(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 254,
+  "summary": "Retrieves the player's current interior. A list of currently known interiors with their positions can be found on this page."
+ },
+ {
+  "name": "GetPlayerIp",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerIp(playerid, ip[], len = sizeof ip)",
+  "return_tag": null,
+  "params": "playerid, ip[], len = sizeof ip",
+  "file": "a_players.inc",
+  "line": 614,
+  "summary": "Get the specified player's IP address and store it in a string."
+ },
+ {
+  "name": "GetPlayerKeys",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerKeys(playerid, &keys, &updown, &leftright)",
+  "return_tag": null,
+  "params": "playerid, &keys, &updown, &leftright",
+  "file": "a_npc.inc",
+  "line": 447,
+  "summary": "Check which keys a player is pressing."
+ },
+ {
+  "name": "GetPlayerLastShotVectors",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerLastShotVectors(playerid, &Float:fOriginX, &Float:fOriginY, &Float:fOriginZ, &Float:fHitPosX, &Float:fHitPosY, &Float:fHitPosZ)",
+  "return_tag": null,
+  "params": "playerid, &Float:fOriginX, &Float:fOriginY, &Float:fOriginZ, &Float:fHitPosX, &Float:fHitPosY, &Float:fHitPosZ",
+  "file": "a_players.inc",
+  "line": 945,
+  "summary": "Retrieves the start and end (hit) position of the last bullet a player fired."
+ },
+ {
+  "name": "GetPlayerMenu",
+  "library": "samp-stdlib",
+  "signature": "native Menu:GetPlayerMenu(playerid)",
+  "return_tag": "Menu",
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 1679,
+  "summary": "Gets the ID of the menu the player is currently viewing (shown by ShowMenuForPlayer)."
+ },
+ {
+  "name": "GetPlayerMoney",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerMoney(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 576,
+  "summary": "Retrieves the amount of money a player has."
+ },
+ {
+  "name": "GetPlayerName",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerName(playerid, name[], len = sizeof name)",
+  "return_tag": null,
+  "params": "playerid, name[], len = sizeof name",
+  "file": "a_npc.inc",
+  "line": 523,
+  "summary": "Get a player's name."
+ },
+ {
+  "name": "GetPlayerNetworkStats",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerNetworkStats(playerid, retstr[], retstr_size = sizeof retstr)",
+  "return_tag": null,
+  "params": "playerid, retstr[], retstr_size = sizeof retstr",
+  "file": "a_samp.inc",
+  "line": 1237,
+  "summary": "Gets a player's network stats and saves them into a string."
+ },
+ {
+  "name": "GetPlayerObjectModel",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerObjectModel(playerid, objectid)",
+  "return_tag": null,
+  "params": "playerid, objectid",
+  "file": "a_objects.inc",
+  "line": 422,
+  "summary": "Retrieve the model ID of a player-object."
+ },
+ {
+  "name": "GetPlayerObjectPos",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerObjectPos(playerid, objectid, &Float:X, &Float:Y, &Float:Z)",
+  "return_tag": null,
+  "params": "playerid, objectid, &Float:X, &Float:Y, &Float:Z",
+  "file": "a_objects.inc",
+  "line": 383,
+  "summary": "Get the position of a player object (CreatePlayerObject)."
+ },
+ {
+  "name": "GetPlayerObjectRot",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerObjectRot(playerid, objectid, &Float:RotX, &Float:RotY, &Float:RotZ)",
+  "return_tag": null,
+  "params": "playerid, objectid, &Float:RotX, &Float:RotY, &Float:RotZ",
+  "file": "a_objects.inc",
+  "line": 413,
+  "summary": "Use this function to get the object's current rotation. The rotation is saved by reference in three RotX/RotY/RotZ variables."
+ },
+ {
+  "name": "GetPlayerPing",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerPing(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 623,
+  "summary": "Get the ping of a player. The ping measures the amount of time it takes for the server to 'ping' the client and for the client to send the message back."
+ },
+ {
+  "name": "GetPlayerPoolSize",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerPoolSize()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 641,
+  "summary": "Gets the highest playerid currently in use on the server."
+ },
+ {
+  "name": "GetPlayerPos",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerPos(playerid, &Float:x, &Float:y, &Float:z)",
+  "return_tag": null,
+  "params": "playerid, &Float:x, &Float:y, &Float:z",
+  "file": "a_npc.inc",
+  "line": 402,
+  "summary": "Get the position of a player, represented by X, Y and Z coordinates."
+ },
+ {
+  "name": "GetPlayerScore",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerScore(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 414,
+  "summary": "This function returns a player's score as it was set using SetPlayerScore."
+ },
+ {
+  "name": "GetPlayerSkin",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerSkin(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 481,
+  "summary": "Returns the class of the players skin."
+ },
+ {
+  "name": "GetPlayerSpecialAction",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerSpecialAction(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_npc.inc",
+  "line": 422,
+  "summary": "Retrieves a player's current special action."
+ },
+ {
+  "name": "GetPlayerState",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerState(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_npc.inc",
+  "line": 389,
+  "summary": "Get a player's current state."
+ },
+ {
+  "name": "GetPlayerSurfingObjectID",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerSurfingObjectID(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 909,
+  "summary": "Returns the ID of the object the player is surfing on."
+ },
+ {
+  "name": "GetPlayerSurfingVehicleID",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerSurfingVehicleID(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 903,
+  "summary": "Get the ID of the vehicle that the player is surfing (stuck to the roof of)."
+ },
+ {
+  "name": "GetPlayerTargetActor",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerTargetActor(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 376,
+  "summary": "Gets id of an actor which is aimed by certain player."
+ },
+ {
+  "name": "GetPlayerTargetPlayer",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerTargetPlayer(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 365,
+  "summary": "Check who a player is aiming at."
+ },
+ {
+  "name": "GetPlayerTeam",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerTeam(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 397,
+  "summary": "Get the ID of the team the player is on."
+ },
+ {
+  "name": "GetPlayerTime",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerTime(playerid, &hour, &minute)",
+  "return_tag": null,
+  "params": "playerid, &hour, &minute",
+  "file": "a_players.inc",
+  "line": 683,
+  "summary": "Get the player's current game time. Set by SetWorldTime or SetPlayerTime, or by the game automatically if TogglePlayerClock is used."
+ },
+ {
+  "name": "GetPlayerVehicleID",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerVehicleID(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_npc.inc",
+  "line": 411,
+  "summary": "This function gets the ID of the vehicle the player is currently in. Note: NOT the model id of the vehicle. See GetVehicleModel for that."
+ },
+ {
+  "name": "GetPlayerVehicleSeat",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerVehicleSeat(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 1694,
+  "summary": "Find out which seat a player is in."
+ },
+ {
+  "name": "GetPlayerVelocity",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerVelocity( playerid, &Float:X, &Float:Y, &Float:Z )",
+  "return_tag": null,
+  "params": "playerid, &Float:X, &Float:Y, &Float:Z",
+  "file": "a_players.inc",
+  "line": 792,
+  "summary": "Get the velocity (speed) of a player on the X, Y and Z axes."
+ },
+ {
+  "name": "GetPlayerVersion",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerVersion(playerid, version[], len = sizeof version); // Returns the SA-MP client revision as reported by the player",
+  "return_tag": null,
+  "params": "playerid, version[], len = sizeof version",
+  "file": "a_samp.inc",
+  "line": 1288,
+  "summary": "Returns the SA-MP client version, as reported by the player."
+ },
+ {
+  "name": "GetPlayerVirtualWorld",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerVirtualWorld(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2321,
+  "summary": "Retrieves the current virtual world the player is in."
+ },
+ {
+  "name": "GetPlayerWantedLevel",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerWantedLevel(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 729,
+  "summary": "Gets the wanted level of a player."
+ },
+ {
+  "name": "GetPlayerWeapon",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerWeapon(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 632,
+  "summary": "Returns the ID of the weapon a player is currently holding."
+ },
+ {
+  "name": "GetPlayerWeaponData",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerWeaponData(playerid, slot, &weapons, &ammo)",
+  "return_tag": null,
+  "params": "playerid, slot, &weapons, &ammo",
+  "file": "a_players.inc",
+  "line": 533,
+  "summary": "Get the weapon and ammo in a specific player's weapon slot (e.g. the weapon in the 'SMG' slot)."
+ },
+ {
+  "name": "GetPlayerWeaponState",
+  "library": "samp-stdlib",
+  "signature": "native GetPlayerWeaponState(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 354,
+  "summary": "Check the state of a player's weapon."
+ },
+ {
+  "name": "GetPVarFloat",
+  "library": "samp-stdlib",
+  "signature": "native Float:GetPVarFloat(playerid, const varname[])",
+  "return_tag": "Float",
+  "params": "playerid, const varname[]",
+  "file": "a_players.inc",
+  "line": 1576,
+  "summary": "Gets a player variable as a float."
+ },
+ {
+  "name": "GetPVarInt",
+  "library": "samp-stdlib",
+  "signature": "native GetPVarInt(playerid, const varname[])",
+  "return_tag": null,
+  "params": "playerid, const varname[]",
+  "file": "a_players.inc",
+  "line": 1521,
+  "summary": "Gets an integer player variable's value."
+ },
+ {
+  "name": "GetPVarNameAtIndex",
+  "library": "samp-stdlib",
+  "signature": "native GetPVarNameAtIndex(playerid, index, ret_varname[], ret_len = sizeof ret_varname)",
+  "return_tag": null,
+  "params": "playerid, index, ret_varname[], ret_len = sizeof ret_varname",
+  "file": "a_players.inc",
+  "line": 1610,
+  "summary": "Retrieve the name of a player's pVar via the index."
+ },
+ {
+  "name": "GetPVarString",
+  "library": "samp-stdlib",
+  "signature": "native GetPVarString(playerid, const varname[], string_return[], len = sizeof string_return)",
+  "return_tag": null,
+  "params": "playerid, const varname[], string_return[], len = sizeof string_return",
+  "file": "a_players.inc",
+  "line": 1548,
+  "summary": "Gets a player variable as a string."
+ },
+ {
+  "name": "GetPVarsUpperIndex",
+  "library": "samp-stdlib",
+  "signature": "native GetPVarsUpperIndex(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 1599,
+  "summary": "Each PVar (player-variable) has its own unique identification number for lookup, this function returns the highest ID set for a player."
+ },
+ {
+  "name": "GetPVarType",
+  "library": "samp-stdlib",
+  "signature": "native GetPVarType(playerid, const varname[])",
+  "return_tag": null,
+  "params": "playerid, const varname[]",
+  "file": "a_players.inc",
+  "line": 1632,
+  "summary": "Gets the type (integer, float or string) of a player variable."
+ },
+ {
+  "name": "GetServerTickRate",
+  "library": "samp-stdlib",
+  "signature": "native GetServerTickRate()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 1375,
+  "summary": "Gets the tick rate (like FPS) of the server."
+ },
+ {
+  "name": "GetServerVarAsBool",
+  "library": "samp-stdlib",
+  "signature": "native GetServerVarAsBool(const varname[])",
+  "return_tag": null,
+  "params": "const varname[]",
+  "file": "a_samp.inc",
+  "line": 1338,
+  "summary": "Get the boolean value of a server variable."
+ },
+ {
+  "name": "GetServerVarAsInt",
+  "library": "samp-stdlib",
+  "signature": "native GetServerVarAsInt(const varname[])",
+  "return_tag": null,
+  "params": "const varname[]",
+  "file": "a_samp.inc",
+  "line": 1329,
+  "summary": "Get the integer value of a server variable."
+ },
+ {
+  "name": "GetServerVarAsString",
+  "library": "samp-stdlib",
+  "signature": "native GetServerVarAsString(const varname[], buffer[], len = sizeof buffer)",
+  "return_tag": null,
+  "params": "const varname[], buffer[], len = sizeof buffer",
+  "file": "a_samp.inc",
+  "line": 1320,
+  "summary": "Get the string value of a server variable."
+ },
+ {
+  "name": "GetSVarFloat",
+  "library": "samp-stdlib",
+  "signature": "native Float:GetSVarFloat(const varname[])",
+  "return_tag": "Float",
+  "params": "const varname[]",
+  "file": "a_samp.inc",
+  "line": 755,
+  "summary": "Gets a float server variable's value."
+ },
+ {
+  "name": "GetSVarInt",
+  "library": "samp-stdlib",
+  "signature": "native GetSVarInt(const varname[])",
+  "return_tag": null,
+  "params": "const varname[]",
+  "file": "a_samp.inc",
+  "line": 697,
+  "summary": "Gets an integer server variable's value."
+ },
+ {
+  "name": "GetSVarNameAtIndex",
+  "library": "samp-stdlib",
+  "signature": "native GetSVarNameAtIndex(index, ret_varname[], ret_len = sizeof ret_varname)",
+  "return_tag": null,
+  "params": "index, ret_varname[], ret_len = sizeof ret_varname",
+  "file": "a_samp.inc",
+  "line": 786,
+  "summary": "Retrieve the name of a sVar via the index."
+ },
+ {
+  "name": "GetSVarString",
+  "library": "samp-stdlib",
+  "signature": "native GetSVarString(const varname[], string_return[], len = sizeof string_return)",
+  "return_tag": null,
+  "params": "const varname[], string_return[], len = sizeof string_return",
+  "file": "a_samp.inc",
+  "line": 727,
+  "summary": "Gets a string server variable's value."
+ },
+ {
+  "name": "GetSVarsUpperIndex",
+  "library": "samp-stdlib",
+  "signature": "native GetSVarsUpperIndex()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 776,
+  "summary": "Each SVar (server-variable) has its own unique identification number for lookup, this function returns the highest ID."
+ },
+ {
+  "name": "GetSVarType",
+  "library": "samp-stdlib",
+  "signature": "native GetSVarType(const varname[])",
+  "return_tag": null,
+  "params": "const varname[]",
+  "file": "a_samp.inc",
+  "line": 807,
+  "summary": "Gets the type (integer, float or string) of a server variable."
+ },
+ {
+  "name": "GetTickCount",
+  "library": "samp-stdlib",
+  "signature": "native GetTickCount()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_npc.inc",
+  "line": 326,
+  "summary": "Returns the uptime of the actual server (not the SA-MP server) in milliseconds."
+ },
+ {
+  "name": "GetVehicleComponentInSlot",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleComponentInSlot(vehicleid, slot); // There is 1 slot for each CARMODTYPE_*",
+  "return_tag": null,
+  "params": "vehicleid, slot",
+  "file": "a_vehicles.inc",
+  "line": 537,
+  "summary": "Retrieves the installed component ID (modshop mod(ification)) on a vehicle in a specific slot."
+ },
+ {
+  "name": "GetVehicleComponentType",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleComponentType(component); // Find CARMODTYPE_* for component id",
+  "return_tag": null,
+  "params": "component",
+  "file": "a_vehicles.inc",
+  "line": 548,
+  "summary": "Find out what type of component a certain ID is."
+ },
+ {
+  "name": "GetVehicleDamageStatus",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleDamageStatus(vehicleid, &panels, &doors, &lights, &tires)",
+  "return_tag": null,
+  "params": "vehicleid, &panels, &doors, &lights, &tires",
+  "file": "a_vehicles.inc",
+  "line": 653,
+  "summary": "Retrieve the damage statuses of a vehicle."
+ },
+ {
+  "name": "GetVehicleDistanceFromPoint",
+  "library": "samp-stdlib",
+  "signature": "native Float:GetVehicleDistanceFromPoint(vehicleid, Float:X, Float:Y, Float:Z)",
+  "return_tag": "Float",
+  "params": "vehicleid, Float:X, Float:Y, Float:Z",
+  "file": "a_vehicles.inc",
+  "line": 182,
+  "summary": "This function can be used to calculate the distance (as a float) between a vehicle and another map coordinate. This can be useful to detect how far a vehicle away is from a location."
+ },
+ {
+  "name": "GetVehicleHealth",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleHealth(vehicleid, &Float:health)",
+  "return_tag": null,
+  "params": "vehicleid, &Float:health",
+  "file": "a_vehicles.inc",
+  "line": 434,
+  "summary": "Get the health of a vehicle."
+ },
+ {
+  "name": "GetVehicleModel",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleModel(vehicleid)",
+  "return_tag": null,
+  "params": "vehicleid",
+  "file": "a_vehicles.inc",
+  "line": 498,
+  "summary": "Gets the model ID of a vehicle."
+ },
+ {
+  "name": "GetVehicleModelInfo",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleModelInfo(vehiclemodel, infotype, &Float:X, &Float:Y, &Float:Z)",
+  "return_tag": null,
+  "params": "vehiclemodel, infotype, &Float:X, &Float:Y, &Float:Z",
+  "file": "a_vehicles.inc",
+  "line": 723,
+  "summary": "Retrieve information about a specific vehicle model such as the size or position of seats."
+ },
+ {
+  "name": "GetVehicleParamsCarDoors",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleParamsCarDoors(vehicleid, &driver, &passenger, &backleft, &backright)",
+  "return_tag": null,
+  "params": "vehicleid, &driver, &passenger, &backleft, &backright",
+  "file": "a_vehicles.inc",
+  "line": 286,
+  "summary": "Allows you to retrieve the current state of a vehicle's doors."
+ },
+ {
+  "name": "GetVehicleParamsCarWindows",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleParamsCarWindows(vehicleid, &driver, &passenger, &backleft, &backright)",
+  "return_tag": null,
+  "params": "vehicleid, &driver, &passenger, &backleft, &backright",
+  "file": "a_vehicles.inc",
+  "line": 312,
+  "summary": "Allows you to retrieve the current state of a vehicle's windows."
+ },
+ {
+  "name": "GetVehicleParamsEx",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleParamsEx(vehicleid, &engine, &lights, &alarm, &doors, &bonnet, &boot, &objective)",
+  "return_tag": null,
+  "params": "vehicleid, &engine, &lights, &alarm, &doors, &bonnet, &boot, &objective",
+  "file": "a_vehicles.inc",
+  "line": 253,
+  "summary": "Gets a vehicle's parameters."
+ },
+ {
+  "name": "GetVehicleParamsSirenState",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleParamsSirenState(vehicleid)",
+  "return_tag": null,
+  "params": "vehicleid",
+  "file": "a_vehicles.inc",
+  "line": 260,
+  "summary": "Returns a vehicle's siren state (on/off)."
+ },
+ {
+  "name": "GetVehiclePoolSize",
+  "library": "samp-stdlib",
+  "signature": "native GetVehiclePoolSize()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 647,
+  "summary": "Gets the highest vehicleid currently in use on the server."
+ },
+ {
+  "name": "GetVehiclePos",
+  "library": "samp-stdlib",
+  "signature": "native GetVehiclePos(vehicleid, &Float:x, &Float:y, &Float:z)",
+  "return_tag": null,
+  "params": "vehicleid, &Float:x, &Float:y, &Float:z",
+  "file": "a_vehicles.inc",
+  "line": 113,
+  "summary": "Gets the position of a vehicle."
+ },
+ {
+  "name": "GetVehicleRotationQuat",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleRotationQuat(vehicleid, &Float:w, &Float:x, &Float:y, &Float:z)",
+  "return_tag": null,
+  "params": "vehicleid, &Float:w, &Float:x, &Float:y, &Float:z",
+  "file": "a_vehicles.inc",
+  "line": 171,
+  "summary": "Returns a vehicle's rotation on all axes as a quaternion."
+ },
+ {
+  "name": "GetVehicleTrailer",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleTrailer(vehicleid)",
+  "return_tag": null,
+  "params": "vehicleid",
+  "file": "a_vehicles.inc",
+  "line": 467,
+  "summary": "Get the ID of the trailer attached to a vehicle."
+ },
+ {
+  "name": "GetVehicleVelocity",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleVelocity(vehicleid, &Float:X, &Float:Y, &Float:Z)",
+  "return_tag": null,
+  "params": "vehicleid, &Float:X, &Float:Y, &Float:Z",
+  "file": "a_vehicles.inc",
+  "line": 575,
+  "summary": "Get the velocity of a vehicle on the X, Y and Z axes."
+ },
+ {
+  "name": "GetVehicleVirtualWorld",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleVirtualWorld(vehicleid)",
+  "return_tag": null,
+  "params": "vehicleid",
+  "file": "a_vehicles.inc",
+  "line": 739,
+  "summary": "Get the virtual world of a vehicle."
+ },
+ {
+  "name": "GetVehicleZAngle",
+  "library": "samp-stdlib",
+  "signature": "native GetVehicleZAngle(vehicleid, &Float:z_angle)",
+  "return_tag": null,
+  "params": "vehicleid, &Float:z_angle",
+  "file": "a_vehicles.inc",
+  "line": 142,
+  "summary": "Get the rotation of a vehicle on the Z axis (yaw)."
+ },
+ {
+  "name": "GetWeaponName",
+  "library": "samp-stdlib",
+  "signature": "native GetWeaponName(weaponid, weapon[], len = sizeof weapon)",
+  "return_tag": null,
+  "params": "weaponid, weapon[], len = sizeof weapon",
+  "file": "a_samp.inc",
+  "line": 1034,
+  "summary": "Get the name of a weapon."
+ },
+ {
+  "name": "GivePlayerMoney",
+  "library": "samp-stdlib",
+  "signature": "native GivePlayerMoney(playerid, money)",
+  "return_tag": null,
+  "params": "playerid, money",
+  "file": "a_players.inc",
+  "line": 544,
+  "summary": "Give money to or take money from a player."
+ },
+ {
+  "name": "GivePlayerWeapon",
+  "library": "samp-stdlib",
+  "signature": "native GivePlayerWeapon(playerid, weaponid, ammo)",
+  "return_tag": null,
+  "params": "playerid, weaponid, ammo",
+  "file": "a_players.inc",
+  "line": 495,
+  "summary": "Give a player a weapon with a specified amount of ammo."
+ },
+ {
+  "name": "gpci",
+  "library": "samp-stdlib",
+  "signature": "native gpci(playerid, serial[], maxlen)",
+  "return_tag": null,
+  "params": "playerid, serial[], maxlen",
+  "file": "a_samp.inc",
+  "line": 2211,
+  "summary": "Get a players unique ID."
+ },
+ {
+  "name": "HideMenuForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native HideMenuForPlayer(Menu:menuid, playerid)",
+  "return_tag": null,
+  "params": "Menu:menuid, playerid",
+  "file": "a_samp.inc",
+  "line": 1638,
+  "summary": "Hides a menu for a player."
+ },
+ {
+  "name": "HTTP",
+  "library": "samp-stdlib",
+  "signature": "native HTTP(index, type, const url[], const data[], const callback[])",
+  "return_tag": null,
+  "params": "index, type, const url[], const data[], const callback[]",
+  "file": "a_http.inc",
+  "line": 63,
+  "summary": "Sends a threaded HTTP request."
+ },
+ {
+  "name": "InterpolateCameraLookAt",
+  "library": "samp-stdlib",
+  "signature": "native InterpolateCameraLookAt(playerid, Float:FromX, Float:FromY, Float:FromZ, Float:ToX, Float:ToY, Float:ToZ, time, cut = CAMERA_CUT)",
+  "return_tag": null,
+  "params": "playerid, Float:FromX, Float:FromY, Float:FromZ, Float:ToX, Float:ToY, Float:ToZ, time, cut = CAMERA_CUT",
+  "file": "a_players.inc",
+  "line": 2245,
+  "summary": "Interpolate a player's camera's 'look at' point between two coordinates with a set speed. Can be be used with InterpolateCameraPos."
+ },
+ {
+  "name": "InterpolateCameraPos",
+  "library": "samp-stdlib",
+  "signature": "native InterpolateCameraPos(playerid, Float:FromX, Float:FromY, Float:FromZ, Float:ToX, Float:ToY, Float:ToZ, time, cut = CAMERA_CUT)",
+  "return_tag": null,
+  "params": "playerid, Float:FromX, Float:FromY, Float:FromZ, Float:ToX, Float:ToY, Float:ToZ, time, cut = CAMERA_CUT",
+  "file": "a_players.inc",
+  "line": 2228,
+  "summary": "Move a player's camera from one position to another, within the set time. Useful for scripted cut scenes."
+ },
+ {
+  "name": "IsActorInvulnerable",
+  "library": "samp-stdlib",
+  "signature": "native IsActorInvulnerable(actorid)",
+  "return_tag": null,
+  "params": "actorid",
+  "file": "a_actor.inc",
+  "line": 221,
+  "summary": "Check if an actor is invulnerable."
+ },
+ {
+  "name": "IsActorStreamedIn",
+  "library": "samp-stdlib",
+  "signature": "native IsActorStreamedIn(actorid, forplayerid)",
+  "return_tag": null,
+  "params": "actorid, forplayerid",
+  "file": "a_actor.inc",
+  "line": 75,
+  "summary": "Checks if an actor is streamed in for a player."
+ },
+ {
+  "name": "IsObjectMoving",
+  "library": "samp-stdlib",
+  "signature": "native IsObjectMoving(objectid)",
+  "return_tag": null,
+  "params": "objectid",
+  "file": "a_objects.inc",
+  "line": 257,
+  "summary": "Checks if the given objectid is moving."
+ },
+ {
+  "name": "IsPlayerAdmin",
+  "library": "samp-stdlib",
+  "signature": "native IsPlayerAdmin(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 1183,
+  "summary": "Check if a player is logged in as an RCON admin."
+ },
+ {
+  "name": "IsPlayerAttachedObjectSlotUsed",
+  "library": "samp-stdlib",
+  "signature": "native IsPlayerAttachedObjectSlotUsed(playerid, index)",
+  "return_tag": null,
+  "params": "playerid, index",
+  "file": "a_players.inc",
+  "line": 1016,
+  "summary": "Check if a player has an object attached in the specified index (slot)."
+ },
+ {
+  "name": "IsPlayerConnected",
+  "library": "samp-stdlib",
+  "signature": "native IsPlayerConnected(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_npc.inc",
+  "line": 532,
+  "summary": "Checks if a player is connected (if an ID is taken by a connected player)."
+ },
+ {
+  "name": "IsPlayerInAnyVehicle",
+  "library": "samp-stdlib",
+  "signature": "native IsPlayerInAnyVehicle(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2271,
+  "summary": "Check if a player is inside any vehicle (as a driver or passenger)."
+ },
+ {
+  "name": "IsPlayerInCheckpoint",
+  "library": "samp-stdlib",
+  "signature": "native IsPlayerInCheckpoint(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2285,
+  "summary": "Check if the player is currently inside a checkpoint, this could be used for properties or teleport points for example."
+ },
+ {
+  "name": "IsPlayerInRaceCheckpoint",
+  "library": "samp-stdlib",
+  "signature": "native IsPlayerInRaceCheckpoint(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2299,
+  "summary": "Check if the player is inside their current set race checkpoint (SetPlayerRaceCheckpoint)."
+ },
+ {
+  "name": "IsPlayerInRangeOfPoint",
+  "library": "samp-stdlib",
+  "signature": "native IsPlayerInRangeOfPoint(playerid, Float:range, Float:X, Float:Y, Float:Z)",
+  "return_tag": null,
+  "params": "playerid, Float:range, Float:X, Float:Y, Float:Z",
+  "file": "a_npc.inc",
+  "line": 510,
+  "summary": "Checks if a player is in range of a point. This native function is faster than the PAWN implementation using distance formula."
+ },
+ {
+  "name": "IsPlayerInVehicle",
+  "library": "samp-stdlib",
+  "signature": "native IsPlayerInVehicle(playerid, vehicleid)",
+  "return_tag": null,
+  "params": "playerid, vehicleid",
+  "file": "a_players.inc",
+  "line": 2264,
+  "summary": "Checks if a player is in a specific vehicle."
+ },
+ {
+  "name": "IsPlayerNPC",
+  "library": "samp-stdlib",
+  "signature": "native IsPlayerNPC(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 1167,
+  "summary": "Check if a player is an actual player or an NPC."
+ },
+ {
+  "name": "IsPlayerObjectMoving",
+  "library": "samp-stdlib",
+  "signature": "native IsPlayerObjectMoving(playerid, objectid)",
+  "return_tag": null,
+  "params": "playerid, objectid",
+  "file": "a_objects.inc",
+  "line": 490,
+  "summary": "Checks if the given player objectid is moving."
+ },
+ {
+  "name": "IsPlayerStreamedIn",
+  "library": "samp-stdlib",
+  "signature": "native IsPlayerStreamedIn(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_npc.inc",
+  "line": 429,
+  "summary": "Checks if a player is streamed in for an NPC. Only nearby players are streamed in."
+ },
+ {
+  "name": "IsTrailerAttachedToVehicle",
+  "library": "samp-stdlib",
+  "signature": "native IsTrailerAttachedToVehicle(vehicleid)",
+  "return_tag": null,
+  "params": "vehicleid",
+  "file": "a_vehicles.inc",
+  "line": 459,
+  "summary": "Checks if a vehicle has a trailer attached to it. Use GetVehicleTrailer to get the vehicle ID of the trailer (if any)."
+ },
+ {
+  "name": "IsValidActor",
+  "library": "samp-stdlib",
+  "signature": "native IsValidActor(actorid)",
+  "return_tag": null,
+  "params": "actorid",
+  "file": "a_actor.inc",
+  "line": 228,
+  "summary": "Checks if an actor ID is valid."
+ },
+ {
+  "name": "IsValidMenu",
+  "library": "samp-stdlib",
+  "signature": "native IsValidMenu(Menu:menuid)",
+  "return_tag": null,
+  "params": "Menu:menuid",
+  "file": "a_samp.inc",
+  "line": 1645,
+  "summary": "Check if a menu ID is vliad."
+ },
+ {
+  "name": "IsValidObject",
+  "library": "samp-stdlib",
+  "signature": "native IsValidObject(objectid)",
+  "return_tag": null,
+  "params": "objectid",
+  "file": "a_objects.inc",
+  "line": 211,
+  "summary": "Checks if an object with the ID provided exists."
+ },
+ {
+  "name": "IsValidPlayerObject",
+  "library": "samp-stdlib",
+  "signature": "native IsValidPlayerObject(playerid, objectid)",
+  "return_tag": null,
+  "params": "playerid, objectid",
+  "file": "a_objects.inc",
+  "line": 441,
+  "summary": "Checks if the given object ID is valid for the given player."
+ },
+ {
+  "name": "IsValidVehicle",
+  "library": "samp-stdlib",
+  "signature": "native bool:IsValidVehicle(vehicleid)",
+  "return_tag": "bool",
+  "params": "vehicleid",
+  "file": "a_vehicles.inc",
+  "line": 746,
+  "summary": "Check if a vehicle ID is valid."
+ },
+ {
+  "name": "IsVehicleStreamedIn",
+  "library": "samp-stdlib",
+  "signature": "native IsVehicleStreamedIn(vehicleid)",
+  "return_tag": null,
+  "params": "vehicleid",
+  "file": "a_npc.inc",
+  "line": 436,
+  "summary": "Checks if a vehicle is streamed in for an NPC. Only nearby vehicles are streamed in."
+ },
+ {
+  "name": "Kick",
+  "library": "samp-stdlib",
+  "signature": "native Kick(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 1191,
+  "summary": "Kicks a player from the server. They will have to quit the game and re-connect if they wish to continue playing."
+ },
+ {
+  "name": "KillTimer",
+  "library": "samp-stdlib",
+  "signature": "native KillTimer(timerid)",
+  "return_tag": null,
+  "params": "timerid",
+  "file": "a_npc.inc",
+  "line": 319,
+  "summary": "Kills (stops) a running timer."
+ },
+ {
+  "name": "LimitGlobalChatRadius",
+  "library": "samp-stdlib",
+  "signature": "native LimitGlobalChatRadius(Float:chat_radius)",
+  "return_tag": null,
+  "params": "Float:chat_radius",
+  "file": "a_samp.inc",
+  "line": 1139,
+  "summary": "Set a radius limitation for the chat. Only players at a certain distance from the player will see their message in the chat. Also changes the distance at which a player can see other players on the map at the same distance."
+ },
+ {
+  "name": "LimitPlayerMarkerRadius",
+  "library": "samp-stdlib",
+  "signature": "native LimitPlayerMarkerRadius(Float:marker_radius)",
+  "return_tag": null,
+  "params": "Float:marker_radius",
+  "file": "a_samp.inc",
+  "line": 1147,
+  "summary": "Set the player marker radius."
+ },
+ {
+  "name": "LinkVehicleToInterior",
+  "library": "samp-stdlib",
+  "signature": "native LinkVehicleToInterior(vehicleid, interiorid)",
+  "return_tag": null,
+  "params": "vehicleid, interiorid",
+  "file": "a_vehicles.inc",
+  "line": 333,
+  "summary": "Links a vehicle to an interior. Vehicles can only be seen by players in the same interior (SetPlayerInterior)."
+ },
+ {
+  "name": "ManualVehicleEngineAndLights",
+  "library": "samp-stdlib",
+  "signature": "native ManualVehicleEngineAndLights()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_vehicles.inc",
+  "line": 218,
+  "summary": "Use this function before any player connects (OnGameModeInit) to tell all clients that the script will control vehicle engines and lights. This prevents the game automatically turning the engine on/off when players enter/exit vehicles and headlights automatically coming on when it is dark."
+ },
+ {
+  "name": "MoveObject",
+  "library": "samp-stdlib",
+  "signature": "native MoveObject(objectid, Float:X, Float:Y, Float:Z, Float:Speed, Float:RotX = -1000.0, Float:RotY = -1000.0, Float:RotZ = -1000.0)",
+  "return_tag": null,
+  "params": "objectid, Float:X, Float:Y, Float:Z, Float:Speed, Float:RotX = -1000.0, Float:RotY = -1000.0, Float:RotZ = -1000.0",
+  "file": "a_objects.inc",
+  "line": 239,
+  "summary": "Move an object to a new position with a set speed. Players/vehicles will 'surf' the object as it moves."
+ },
+ {
+  "name": "MovePlayerObject",
+  "library": "samp-stdlib",
+  "signature": "native MovePlayerObject(playerid, objectid, Float:X, Float:Y, Float:Z, Float:Speed, Float:RotX = -1000.0, Float:RotY = -1000.0, Float:RotZ = -1000.0)",
+  "return_tag": null,
+  "params": "playerid, objectid, Float:X, Float:Y, Float:Z, Float:Speed, Float:RotX = -1000.0, Float:RotY = -1000.0, Float:RotZ = -1000.0",
+  "file": "a_objects.inc",
+  "line": 470,
+  "summary": "Move a player object with a set speed. Also supports rotation. Players/vehicles will surf moving objects."
+ },
+ {
+  "name": "NetStats_BytesReceived",
+  "library": "samp-stdlib",
+  "signature": "native NetStats_BytesReceived(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 1424,
+  "summary": "Gets the amount of data (in bytes) that the server has received from the player."
+ },
+ {
+  "name": "NetStats_BytesSent",
+  "library": "samp-stdlib",
+  "signature": "native NetStats_BytesSent(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 1456,
+  "summary": "Gets the amount of data (in bytes) that the server has sent to the player."
+ },
+ {
+  "name": "NetStats_ConnectionStatus",
+  "library": "samp-stdlib",
+  "signature": "native NetStats_ConnectionStatus(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 1524,
+  "summary": "Gets the player's current connection status."
+ },
+ {
+  "name": "NetStats_GetConnectedTime",
+  "library": "samp-stdlib",
+  "signature": "native NetStats_GetConnectedTime(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 1392,
+  "summary": "Gets the amount of time (in milliseconds) that a player has been connected to the server for."
+ },
+ {
+  "name": "NetStats_GetIpPort",
+  "library": "samp-stdlib",
+  "signature": "native NetStats_GetIpPort(playerid, ip_port[], ip_port_len = sizeof ip_port)",
+  "return_tag": null,
+  "params": "playerid, ip_port[], ip_port_len = sizeof ip_port",
+  "file": "a_samp.inc",
+  "line": 1542,
+  "summary": "Get a player's IP and port."
+ },
+ {
+  "name": "NetStats_MessagesReceived",
+  "library": "samp-stdlib",
+  "signature": "native NetStats_MessagesReceived(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 1408,
+  "summary": "Gets the number of messages the server has received from the player."
+ },
+ {
+  "name": "NetStats_MessagesRecvPerSecond",
+  "library": "samp-stdlib",
+  "signature": "native NetStats_MessagesRecvPerSecond(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 1472,
+  "summary": "Gets the number of messages the player has received in the last second."
+ },
+ {
+  "name": "NetStats_MessagesSent",
+  "library": "samp-stdlib",
+  "signature": "native NetStats_MessagesSent(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 1440,
+  "summary": "Gets the number of messages the server has sent to the player."
+ },
+ {
+  "name": "NetStats_PacketLossPercent",
+  "library": "samp-stdlib",
+  "signature": "native Float:NetStats_PacketLossPercent(playerid)",
+  "return_tag": "Float",
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 1491,
+  "summary": "Gets the packet loss percentage of a player. Packet loss means data the player is sending to the server is being lost (or vice-versa)."
+ },
+ {
+  "name": "PauseRecordingPlayback",
+  "library": "samp-stdlib",
+  "signature": "native PauseRecordingPlayback()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_npc.inc",
+  "line": 549,
+  "summary": "This will pause playing back the recording."
+ },
+ {
+  "name": "PlayAudioStreamForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native PlayAudioStreamForPlayer(playerid, const url[], Float:posX = 0.0, Float:posY = 0.0, Float:posZ = 0.0, Float:distance = 50.0, usepos = 0)",
+  "return_tag": null,
+  "params": "playerid, const url[], Float:posX = 0.0, Float:posY = 0.0, Float:posZ = 0.0, Float:distance = 50.0, usepos = 0",
+  "file": "a_players.inc",
+  "line": 841,
+  "summary": "Play an 'audio stream' for a player. Normal audio files also work (e.g. MP3)."
+ },
+ {
+  "name": "PlayCrimeReportForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native PlayCrimeReportForPlayer(playerid, suspectid, crime)",
+  "return_tag": null,
+  "params": "playerid, suspectid, crime",
+  "file": "a_players.inc",
+  "line": 824,
+  "summary": "This function plays a crime report for a player - just like in single-player when CJ commits a crime."
+ },
+ {
+  "name": "PlayerPlaySound",
+  "library": "samp-stdlib",
+  "signature": "native PlayerPlaySound(playerid, soundid, Float:x, Float:y, Float:z)",
+  "return_tag": null,
+  "params": "playerid, soundid, Float:x, Float:y, Float:z",
+  "file": "a_players.inc",
+  "line": 1733,
+  "summary": "Plays the specified sound for a player."
+ },
+ {
+  "name": "PlayerSpectatePlayer",
+  "library": "samp-stdlib",
+  "signature": "native PlayerSpectatePlayer(playerid, targetplayerid, mode = SPECTATE_MODE_NORMAL)",
+  "return_tag": null,
+  "params": "playerid, targetplayerid, mode = SPECTATE_MODE_NORMAL",
+  "file": "a_players.inc",
+  "line": 2374,
+  "summary": "Makes a player spectate (watch) another player."
+ },
+ {
+  "name": "PlayerSpectateVehicle",
+  "library": "samp-stdlib",
+  "signature": "native PlayerSpectateVehicle(playerid, targetvehicleid, mode = SPECTATE_MODE_NORMAL)",
+  "return_tag": null,
+  "params": "playerid, targetvehicleid, mode = SPECTATE_MODE_NORMAL",
+  "file": "a_players.inc",
+  "line": 2388,
+  "summary": "Sets a player to spectate another vehicle. Their camera will be attached to the vehicle as if they are driving it."
+ },
+ {
+  "name": "PlayerTextDrawAlignment",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawAlignment(playerid, PlayerText:text, alignment)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, alignment",
+  "file": "a_players.inc",
+  "line": 1188,
+  "summary": "Set the text alignment of a player-textdraw."
+ },
+ {
+  "name": "PlayerTextDrawBackgroundColor",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawBackgroundColor(playerid, PlayerText:text, color)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, color",
+  "file": "a_players.inc",
+  "line": 1323,
+  "summary": "Adjust the background color of a player-textdraw."
+ },
+ {
+  "name": "PlayerTextDrawBoxColor",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawBoxColor(playerid, PlayerText:text, color)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, color",
+  "file": "a_players.inc",
+  "line": 1256,
+  "summary": "Sets the color of a textdraw's box (PlayerTextDrawUseBox)."
+ },
+ {
+  "name": "PlayerTextDrawColor",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawColor(playerid, PlayerText:text, color)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, color",
+  "file": "a_players.inc",
+  "line": 1212,
+  "summary": "Sets the text color of a player-textdraw."
+ },
+ {
+  "name": "PlayerTextDrawDestroy",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawDestroy(playerid, PlayerText:text)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text",
+  "file": "a_players.inc",
+  "line": 1104,
+  "summary": "Destroy a player-textdraw."
+ },
+ {
+  "name": "PlayerTextDrawFont",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawFont(playerid, PlayerText:text, font)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, font",
+  "file": "a_players.inc",
+  "line": 1345,
+  "summary": "Change the font of a player-textdraw."
+ },
+ {
+  "name": "PlayerTextDrawHide",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawHide(playerid, PlayerText:text)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text",
+  "file": "a_players.inc",
+  "line": 1421,
+  "summary": "Hide a player-textdraw from the player it was created for."
+ },
+ {
+  "name": "PlayerTextDrawLetterSize",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawLetterSize(playerid, PlayerText:text, Float:x, Float:y)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, Float:x, Float:y",
+  "file": "a_players.inc",
+  "line": 1129,
+  "summary": "Sets the width and height of the letters in a player-textdraw."
+ },
+ {
+  "name": "PlayerTextDrawSetOutline",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawSetOutline(playerid, PlayerText:text, size)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, size",
+  "file": "a_players.inc",
+  "line": 1300,
+  "summary": "Set the outline of a player-textdraw. The outline colour cannot be changed unless PlayerTextDrawBackgroundColor is used."
+ },
+ {
+  "name": "PlayerTextDrawSetPreviewModel",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawSetPreviewModel(playerid, PlayerText:text, modelindex)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, modelindex",
+  "file": "a_players.inc",
+  "line": 1461,
+  "summary": "Sets a player textdraw 2D preview sprite of a specified model ID."
+ },
+ {
+  "name": "PlayerTextDrawSetPreviewRot",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawSetPreviewRot(playerid, PlayerText:text, Float:fRotX, Float:fRotY, Float:fRotZ, Float:fZoom = 1.0)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, Float:fRotX, Float:fRotY, Float:fRotZ, Float:fZoom = 1.0",
+  "file": "a_players.inc",
+  "line": 1477,
+  "summary": "Sets the rotation and zoom of a 3D model preview player-textdraw."
+ },
+ {
+  "name": "PlayerTextDrawSetPreviewVehCol",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawSetPreviewVehCol(playerid, PlayerText:text, color1, color2)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, color1, color2",
+  "file": "a_players.inc",
+  "line": 1490,
+  "summary": "Set the color of a vehicle in a player-textdraw model preview (if a vehicle is shown)."
+ },
+ {
+  "name": "PlayerTextDrawSetProportional",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawSetProportional(playerid, PlayerText:text, set)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, set",
+  "file": "a_players.inc",
+  "line": 1367,
+  "summary": "Appears to scale text spacing to a proportional ratio. Useful when using PlayerTextDrawLetterSize to ensure the text has even character spacing."
+ },
+ {
+  "name": "PlayerTextDrawSetSelectable",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawSetSelectable(playerid, PlayerText:text, set)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, set",
+  "file": "a_players.inc",
+  "line": 1379,
+  "summary": "Toggles whether a player-textdraw can be selected or not."
+ },
+ {
+  "name": "PlayerTextDrawSetShadow",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawSetShadow(playerid, PlayerText:text, size)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, size",
+  "file": "a_players.inc",
+  "line": 1278,
+  "summary": "Show a player-textdraw to the player it was created for."
+ },
+ {
+  "name": "PlayerTextDrawSetString",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawSetString(playerid, PlayerText:text, const string[])",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, const string[]",
+  "file": "a_players.inc",
+  "line": 1445,
+  "summary": "Change the text of a player-textdraw."
+ },
+ {
+  "name": "PlayerTextDrawShow",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawShow(playerid, PlayerText:text)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text",
+  "file": "a_players.inc",
+  "line": 1400,
+  "summary": "Show a player-textdraw to the player it was created for."
+ },
+ {
+  "name": "PlayerTextDrawTextSize",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawTextSize(playerid, PlayerText:text, Float:x, Float:y)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, Float:x, Float:y",
+  "file": "a_players.inc",
+  "line": 1165,
+  "summary": "Change the size of a player-textdraw (box if PlayerTextDrawUseBox is enabled and/or clickable area for use with PlayerTextDrawSetSelectable)."
+ },
+ {
+  "name": "PlayerTextDrawUseBox",
+  "library": "samp-stdlib",
+  "signature": "native PlayerTextDrawUseBox(playerid, PlayerText:text, use)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:text, use",
+  "file": "a_players.inc",
+  "line": 1234,
+  "summary": "Toggle the box on a player-textdraw."
+ },
+ {
+  "name": "print",
+  "library": "samp-stdlib",
+  "signature": "native print(const string[])",
+  "return_tag": null,
+  "params": "const string[]",
+  "file": "a_npc.inc",
+  "line": 247,
+  "summary": "Prints a string to the server console (not in-game chat) and logs (server_log.txt)."
+ },
+ {
+  "name": "printf",
+  "library": "samp-stdlib",
+  "signature": "native printf(const format[], {Float,_}:...)",
+  "return_tag": null,
+  "params": "const format[], {Float,_}:...",
+  "file": "a_npc.inc",
+  "line": 272,
+  "summary": "Outputs a formatted string on the console (the server window, not the in-game chat)."
+ },
+ {
+  "name": "PutPlayerInVehicle",
+  "library": "samp-stdlib",
+  "signature": "native PutPlayerInVehicle(playerid, vehicleid, seatid)",
+  "return_tag": null,
+  "params": "playerid, vehicleid, seatid",
+  "file": "a_players.inc",
+  "line": 1676,
+  "summary": "Puts a player in a vehicle."
+ },
+ {
+  "name": "RedirectDownload",
+  "library": "samp-stdlib",
+  "signature": "native RedirectDownload(playerid, const url[])",
+  "return_tag": null,
+  "params": "playerid, const url[]",
+  "file": "a_samp.inc",
+  "line": 1174
+ },
+ {
+  "name": "RemoveBuildingForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native RemoveBuildingForPlayer(playerid, modelid, Float:fX, Float:fY, Float:fZ, Float:fRadius)",
+  "return_tag": null,
+  "params": "playerid, modelid, Float:fX, Float:fY, Float:fZ, Float:fRadius",
+  "file": "a_players.inc",
+  "line": 924,
+  "summary": "Removes a standard San Andreas model for a single player within a specified range."
+ },
+ {
+  "name": "RemovePlayerAttachedObject",
+  "library": "samp-stdlib",
+  "signature": "native RemovePlayerAttachedObject(playerid, index)",
+  "return_tag": null,
+  "params": "playerid, index",
+  "file": "a_players.inc",
+  "line": 1007,
+  "summary": "Remove an attached object from a player."
+ },
+ {
+  "name": "RemovePlayerFromVehicle",
+  "library": "samp-stdlib",
+  "signature": "native RemovePlayerFromVehicle(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 1708,
+  "summary": "Removes/ejects a player from their vehicle."
+ },
+ {
+  "name": "RemovePlayerMapIcon",
+  "library": "samp-stdlib",
+  "signature": "native RemovePlayerMapIcon(playerid, iconid)",
+  "return_tag": null,
+  "params": "playerid, iconid",
+  "file": "a_players.inc",
+  "line": 2025,
+  "summary": "Removes a map icon that was set earlier for a player using SetPlayerMapIcon."
+ },
+ {
+  "name": "RemoveVehicleComponent",
+  "library": "samp-stdlib",
+  "signature": "native RemoveVehicleComponent(vehicleid, componentid)",
+  "return_tag": null,
+  "params": "vehicleid, componentid",
+  "file": "a_vehicles.inc",
+  "line": 360,
+  "summary": "Remove a component from a vehicle."
+ },
+ {
+  "name": "RepairVehicle",
+  "library": "samp-stdlib",
+  "signature": "native RepairVehicle(vehicleid); // Repairs the damage model and resets the health",
+  "return_tag": null,
+  "params": "vehicleid",
+  "file": "a_vehicles.inc",
+  "line": 559,
+  "summary": "Fully repairs a vehicle, including visual damage (bumps, dents, scratches, popped tires etc.)."
+ },
+ {
+  "name": "ResetPlayerMoney",
+  "library": "samp-stdlib",
+  "signature": "native ResetPlayerMoney(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 554,
+  "summary": "Reset a player's money to $0."
+ },
+ {
+  "name": "ResetPlayerWeapons",
+  "library": "samp-stdlib",
+  "signature": "native ResetPlayerWeapons(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 506,
+  "summary": "Removes all weapons from a player."
+ },
+ {
+  "name": "ResumeRecordingPlayback",
+  "library": "samp-stdlib",
+  "signature": "native ResumeRecordingPlayback()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_npc.inc",
+  "line": 554,
+  "summary": "This will resume the paused recording."
+ },
+ {
+  "name": "SelectObject",
+  "library": "samp-stdlib",
+  "signature": "native SelectObject(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_objects.inc",
+  "line": 297,
+  "summary": "Display the cursor and allow the player to select an object. OnPlayerSelectObject is called when the player selects an object."
+ },
+ {
+  "name": "SelectTextDraw",
+  "library": "samp-stdlib",
+  "signature": "native SelectTextDraw(playerid, hovercolor); // enables the mouse so the player can select a textdraw",
+  "return_tag": null,
+  "params": "playerid, hovercolor",
+  "file": "a_players.inc",
+  "line": 2415,
+  "summary": "Display the cursor and allow the player to select a textdraw."
+ },
+ {
+  "name": "SendChat",
+  "library": "samp-stdlib",
+  "signature": "native SendChat(const msg[])",
+  "return_tag": null,
+  "params": "const msg[]",
+  "file": "a_npc.inc",
+  "line": 360,
+  "summary": "This will send a player text by the bot, just like using SendPlayerMessageToAll, but this function is to be used inside the NPC scripts."
+ },
+ {
+  "name": "SendClientCheck",
+  "library": "samp-stdlib",
+  "signature": "native SendClientCheck(playerid, type, memAddr, memOffset, byteCount)",
+  "return_tag": null,
+  "params": "playerid, type, memAddr, memOffset, byteCount",
+  "file": "a_players.inc",
+  "line": 2447,
+  "summary": "Perform a memory check on the client."
+ },
+ {
+  "name": "SendClientMessage",
+  "library": "samp-stdlib",
+  "signature": "native SendClientMessage(playerid, color, const message[])",
+  "return_tag": null,
+  "params": "playerid, color, const message[]",
+  "file": "a_samp.inc",
+  "line": 415,
+  "summary": "This function sends a message to a specific player with a chosen color in the chat. The whole line in the chatbox will be in the set color unless color embedding is used (since 0.3c)."
+ },
+ {
+  "name": "SendClientMessageToAll",
+  "library": "samp-stdlib",
+  "signature": "native SendClientMessageToAll(color, const message[])",
+  "return_tag": null,
+  "params": "color, const message[]",
+  "file": "a_samp.inc",
+  "line": 424,
+  "summary": "Displays a message in chat to all players. This is a multi-player equivalent of SendClientMessage."
+ },
+ {
+  "name": "SendCommand",
+  "library": "samp-stdlib",
+  "signature": "native SendCommand(const commandtext[])",
+  "return_tag": null,
+  "params": "const commandtext[]",
+  "file": "a_npc.inc",
+  "line": 366,
+  "summary": "This will force the NPC to write a desired command, and this way, getting the effects it would produce."
+ },
+ {
+  "name": "SendDeathMessage",
+  "library": "samp-stdlib",
+  "signature": "native SendDeathMessage(killer, killee, weapon)",
+  "return_tag": null,
+  "params": "killer, killee, weapon",
+  "file": "a_samp.inc",
+  "line": 456,
+  "summary": "Adds a death to the 'killfeed' on the right-hand side of the screen for all players."
+ },
+ {
+  "name": "SendDeathMessageToPlayer",
+  "library": "samp-stdlib",
+  "signature": "native SendDeathMessageToPlayer(playerid, killer, killee, weapon)",
+  "return_tag": null,
+  "params": "playerid, killer, killee, weapon",
+  "file": "a_samp.inc",
+  "line": 470,
+  "summary": "Adds a death to the 'killfeed' on the right-hand side of the screen for a single player."
+ },
+ {
+  "name": "SendPlayerMessageToAll",
+  "library": "samp-stdlib",
+  "signature": "native SendPlayerMessageToAll(senderid, const message[])",
+  "return_tag": null,
+  "params": "senderid, const message[]",
+  "file": "a_samp.inc",
+  "line": 444,
+  "summary": "Sends a message in the name of a player to all other players on the server. The line will start with the sender's name in their color, followed by the message in white."
+ },
+ {
+  "name": "SendPlayerMessageToPlayer",
+  "library": "samp-stdlib",
+  "signature": "native SendPlayerMessageToPlayer(playerid, senderid, const message[])",
+  "return_tag": null,
+  "params": "playerid, senderid, const message[]",
+  "file": "a_samp.inc",
+  "line": 435,
+  "summary": "Sends a message in the name of a player to another player on the server. The message will appear in the chat box but can only be seen by the user specified with . The line will start with the sender's name in their color, followed by the message in white."
+ },
+ {
+  "name": "SendRconCommand",
+  "library": "samp-stdlib",
+  "signature": "native SendRconCommand(const command[])",
+  "return_tag": null,
+  "params": "const command[]",
+  "file": "a_samp.inc",
+  "line": 1219,
+  "summary": "Sends an RCON (Remote Console) command."
+ },
+ {
+  "name": "SetActorFacingAngle",
+  "library": "samp-stdlib",
+  "signature": "native SetActorFacingAngle(actorid, Float:ang)",
+  "return_tag": null,
+  "params": "actorid, Float:ang",
+  "file": "a_actor.inc",
+  "line": 167,
+  "summary": "Set the facing angle of an actor."
+ },
+ {
+  "name": "SetActorHealth",
+  "library": "samp-stdlib",
+  "signature": "native SetActorHealth(actorid, Float:health)",
+  "return_tag": null,
+  "params": "actorid, Float:health",
+  "file": "a_actor.inc",
+  "line": 190,
+  "summary": "Set the health of an actor."
+ },
+ {
+  "name": "SetActorInvulnerable",
+  "library": "samp-stdlib",
+  "signature": "native SetActorInvulnerable(actorid, invulnerable = true)",
+  "return_tag": null,
+  "params": "actorid, invulnerable = true",
+  "file": "a_actor.inc",
+  "line": 212,
+  "summary": "Toggle an actor's invulnerability."
+ },
+ {
+  "name": "SetActorPos",
+  "library": "samp-stdlib",
+  "signature": "native SetActorPos(actorid, Float:X, Float:Y, Float:Z)",
+  "return_tag": null,
+  "params": "actorid, Float:X, Float:Y, Float:Z",
+  "file": "a_actor.inc",
+  "line": 140,
+  "summary": "Set the position of an actor."
+ },
+ {
+  "name": "SetActorVirtualWorld",
+  "library": "samp-stdlib",
+  "signature": "native SetActorVirtualWorld(actorid, vworld)",
+  "return_tag": null,
+  "params": "actorid, vworld",
+  "file": "a_actor.inc",
+  "line": 88,
+  "summary": "Set the virtual world of an actor. Only players in the same world will see the actor."
+ },
+ {
+  "name": "SetCameraBehindPlayer",
+  "library": "samp-stdlib",
+  "signature": "native SetCameraBehindPlayer(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2074,
+  "summary": "Restore the camera to a place behind the player, after using a function like SetPlayerCameraPos."
+ },
+ {
+  "name": "SetDeathDropAmount",
+  "library": "samp-stdlib",
+  "signature": "native SetDeathDropAmount(amount)",
+  "return_tag": null,
+  "params": "amount",
+  "file": "a_samp.inc",
+  "line": 1086,
+  "summary": "This function does not work in the current SA:MP version!"
+ },
+ {
+  "name": "SetGameModeText",
+  "library": "samp-stdlib",
+  "signature": "native SetGameModeText(const string[])",
+  "return_tag": null,
+  "params": "const string[]",
+  "file": "a_samp.inc",
+  "line": 813,
+  "summary": "Set the name of the game mode, which appears in the server browser."
+ },
+ {
+  "name": "SetGravity",
+  "library": "samp-stdlib",
+  "signature": "native SetGravity(Float:gravity)",
+  "return_tag": null,
+  "params": "Float:gravity",
+  "file": "a_samp.inc",
+  "line": 1073,
+  "summary": "Set the gravity for all players."
+ },
+ {
+  "name": "SetMenuColumnHeader",
+  "library": "samp-stdlib",
+  "signature": "native SetMenuColumnHeader(Menu:menuid, column, const columnheader[])",
+  "return_tag": null,
+  "params": "Menu:menuid, column, const columnheader[]",
+  "file": "a_samp.inc",
+  "line": 1609,
+  "summary": "Sets the caption of a column in a menu."
+ },
+ {
+  "name": "SetMyFacingAngle",
+  "library": "samp-stdlib",
+  "signature": "native SetMyFacingAngle(Float:ang)",
+  "return_tag": null,
+  "params": "Float:ang",
+  "file": "a_npc.inc",
+  "line": 485,
+  "summary": "Set the NPC's facing angle."
+ },
+ {
+  "name": "SetMyPos",
+  "library": "samp-stdlib",
+  "signature": "native SetMyPos(Float:x, Float:y, Float:z)",
+  "return_tag": null,
+  "params": "Float:x, Float:y, Float:z",
+  "file": "a_npc.inc",
+  "line": 472,
+  "summary": "Set the position of the NPC."
+ },
+ {
+  "name": "SetNameTagDrawDistance",
+  "library": "samp-stdlib",
+  "signature": "native SetNameTagDrawDistance(Float:distance); // Distance at which nametags will start rendering on the client.",
+  "return_tag": null,
+  "params": "Float:distance",
+  "file": "a_samp.inc",
+  "line": 1124,
+  "summary": "Set the maximum distance to display the names of players."
+ },
+ {
+  "name": "SetObjectMaterial",
+  "library": "samp-stdlib",
+  "signature": "native SetObjectMaterial(objectid, materialindex, modelid, const txdname[], const texturename[], materialcolor=0)",
+  "return_tag": null,
+  "params": "objectid, materialindex, modelid, const txdname[], const texturename[], materialcolor=0",
+  "file": "a_objects.inc",
+  "line": 524,
+  "summary": "Replace the texture of an object with the texture from another model in the game."
+ },
+ {
+  "name": "SetObjectMaterialText",
+  "library": "samp-stdlib",
+  "signature": "native SetObjectMaterialText(objectid, const text[], materialindex = 0, materialsize = OBJECT_MATERIAL_SIZE_256x128, const fontface[] = \"Arial\", fontsize = 24, bold = 1, fontcolor = 0xFFFFFFFF, backcolor = 0, textalignment = 0)",
+  "return_tag": null,
+  "params": "objectid, const text[], materialindex = 0, materialsize = OBJECT_MATERIAL_SIZE_256x128, const fontface[] = \"Arial\", fontsize = 24, bold = 1, fontcolor = 0xFFFFFFFF, backcolor = 0, textalignment = 0",
+  "file": "a_objects.inc",
+  "line": 587,
+  "summary": "Replace the texture of an object with text."
+ },
+ {
+  "name": "SetObjectNoCameraCol",
+  "library": "samp-stdlib",
+  "signature": "native SetObjectNoCameraCol(objectid)",
+  "return_tag": null,
+  "params": "objectid",
+  "file": "a_objects.inc",
+  "line": 202,
+  "summary": "Disable collisions between players' cameras and the specified object."
+ },
+ {
+  "name": "SetObjectPos",
+  "library": "samp-stdlib",
+  "signature": "native SetObjectPos(objectid, Float:X, Float:Y, Float:Z)",
+  "return_tag": null,
+  "params": "objectid, Float:X, Float:Y, Float:Z",
+  "file": "a_objects.inc",
+  "line": 143,
+  "summary": "Change the position of an object."
+ },
+ {
+  "name": "SetObjectRot",
+  "library": "samp-stdlib",
+  "signature": "native SetObjectRot(objectid, Float:RotX, Float:RotY, Float:RotZ)",
+  "return_tag": null,
+  "params": "objectid, Float:RotX, Float:RotY, Float:RotZ",
+  "file": "a_objects.inc",
+  "line": 170,
+  "summary": "Set the rotation of an object on the three axes (X, Y and Z)."
+ },
+ {
+  "name": "SetObjectsDefaultCameraCol",
+  "library": "samp-stdlib",
+  "signature": "native SetObjectsDefaultCameraCol(disable)",
+  "return_tag": null,
+  "params": "disable",
+  "file": "a_objects.inc",
+  "line": 642,
+  "summary": "Allows camera collisions with newly created objects to be disabled by default."
+ },
+ {
+  "name": "SetPlayerAmmo",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerAmmo(playerid, weaponid, ammo)",
+  "return_tag": null,
+  "params": "playerid, weaponid, ammo",
+  "file": "a_players.inc",
+  "line": 329,
+  "summary": "Set the ammo of a player's weapon."
+ },
+ {
+  "name": "SetPlayerArmedWeapon",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerArmedWeapon(playerid, weaponid)",
+  "return_tag": null,
+  "params": "playerid, weaponid",
+  "file": "a_players.inc",
+  "line": 519,
+  "summary": "Sets which weapon (that a player already has) the player is holding."
+ },
+ {
+  "name": "SetPlayerArmour",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerArmour(playerid, Float:armour)",
+  "return_tag": null,
+  "params": "playerid, Float:armour",
+  "file": "a_players.inc",
+  "line": 300,
+  "summary": "Set a player's armor level."
+ },
+ {
+  "name": "SetPlayerAttachedObject",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerAttachedObject(playerid, index, modelid, bone, Float:fOffsetX = 0.0, Float:fOffsetY = 0.0, Float:fOffsetZ = 0.0, Float:fRotX = 0.0, Float:fRotY = 0.0, Float:fRotZ = 0.0, Float:fScaleX = 1.0, Float:fScaleY = 1.0, Float:fScaleZ = 1.0, materialcolor1 = 0, materialcolor2 = 0)",
+  "return_tag": null,
+  "params": "playerid, index, modelid, bone, Float:fOffsetX = 0.0, Float:fOffsetY = 0.0, Float:fOffsetZ = 0.0, Float:fRotX = 0.0, Float:fRotY = 0.0, Float:fRotZ = 0.0, Float:fScaleX = 1.0, Float:fScaleY = 1.0, Float:fScaleZ = 1.0, materialcolor1 = 0, materialcolor2 = 0",
+  "file": "a_players.inc",
+  "line": 998,
+  "summary": "Attach an object to a specific bone on a player."
+ },
+ {
+  "name": "SetPlayerCameraLookAt",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerCameraLookAt(playerid, Float:x, Float:y, Float:z, cut = CAMERA_CUT)",
+  "return_tag": null,
+  "params": "playerid, Float:x, Float:y, Float:z, cut = CAMERA_CUT",
+  "file": "a_players.inc",
+  "line": 2068,
+  "summary": "Set the direction a player's camera looks at. Generally meant to be used in combination with SetPlayerCameraPos."
+ },
+ {
+  "name": "SetPlayerCameraPos",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerCameraPos(playerid, Float:x, Float:y, Float:z)",
+  "return_tag": null,
+  "params": "playerid, Float:x, Float:y, Float:z",
+  "file": "a_players.inc",
+  "line": 2051,
+  "summary": "Sets the camera to a specific position for a player."
+ },
+ {
+  "name": "SetPlayerChatBubble",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerChatBubble(playerid, const text[], color, Float:drawdistance, expiretime)",
+  "return_tag": null,
+  "params": "playerid, const text[], color, Float:drawdistance, expiretime",
+  "file": "a_players.inc",
+  "line": 1647,
+  "summary": "Creates a chat bubble above a player's name tag."
+ },
+ {
+  "name": "SetPlayerCheckpoint",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerCheckpoint(playerid, Float:x, Float:y, Float:z, Float:size)",
+  "return_tag": null,
+  "params": "playerid, Float:x, Float:y, Float:z, Float:size",
+  "file": "a_players.inc",
+  "line": 1894,
+  "summary": "Sets a checkpoint (red cylinder) for a player. Also shows a red blip on the radar. When players enter a checkpoint, OnPlayerEnterCheckpoint is called and actions can be performed."
+ },
+ {
+  "name": "SetPlayerColor",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerColor(playerid, color)",
+  "return_tag": null,
+  "params": "playerid, color",
+  "file": "a_players.inc",
+  "line": 451,
+  "summary": "Set the colour of a player's nametag and marker (radar blip)."
+ },
+ {
+  "name": "SetPlayerDrunkLevel",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerDrunkLevel(playerid, level)",
+  "return_tag": null,
+  "params": "playerid, level",
+  "file": "a_players.inc",
+  "line": 441,
+  "summary": "Sets the drunk level of a player which makes the player's camera sway and vehicles hard to control."
+ },
+ {
+  "name": "SetPlayerFacingAngle",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerFacingAngle(playerid, Float:ang)",
+  "return_tag": null,
+  "params": "playerid, Float:ang",
+  "file": "a_players.inc",
+  "line": 185,
+  "summary": "Set a player's facing angle (Z rotation)."
+ },
+ {
+  "name": "SetPlayerFightingStyle",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerFightingStyle(playerid, style)",
+  "return_tag": null,
+  "params": "playerid, style",
+  "file": "a_players.inc",
+  "line": 748,
+  "summary": "Set a player's special fighting style. To use in-game, aim and press the 'secondary attack' key (ENTER by default)."
+ },
+ {
+  "name": "SetPlayerHealth",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerHealth(playerid, Float:health)",
+  "return_tag": null,
+  "params": "playerid, Float:health",
+  "file": "a_players.inc",
+  "line": 270,
+  "summary": "Set the health of a player."
+ },
+ {
+  "name": "SetPlayerInterior",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerInterior(playerid, interiorid)",
+  "return_tag": null,
+  "params": "playerid, interiorid",
+  "file": "a_players.inc",
+  "line": 246,
+  "summary": "Set a player's interior. A list of currently known interiors and their positions can be found here."
+ },
+ {
+  "name": "SetPlayerMapIcon",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerMapIcon(playerid, iconid, Float:x, Float:y, Float:z, markertype, color, style = MAPICON_LOCAL)",
+  "return_tag": null,
+  "params": "playerid, iconid, Float:x, Float:y, Float:z, markertype, color, style = MAPICON_LOCAL",
+  "file": "a_players.inc",
+  "line": 2015,
+  "summary": "Place an icon/marker on a player's map. Can be used to mark locations such as banks and hospitals to players."
+ },
+ {
+  "name": "SetPlayerMarkerForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerMarkerForPlayer(playerid, showplayerid, color)",
+  "return_tag": null,
+  "params": "playerid, showplayerid, color",
+  "file": "a_players.inc",
+  "line": 1976,
+  "summary": "Change the colour of a player's nametag and radar blip for another player."
+ },
+ {
+  "name": "SetPlayerName",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerName(playerid, const name[])",
+  "return_tag": null,
+  "params": "playerid, const name[]",
+  "file": "a_players.inc",
+  "line": 569,
+  "summary": "Sets the name of a player."
+ },
+ {
+  "name": "SetPlayerObjectMaterial",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerObjectMaterial(playerid, objectid, materialindex, modelid, const txdname[], const texturename[], materialcolor=0)",
+  "return_tag": null,
+  "params": "playerid, objectid, materialindex, modelid, const txdname[], const texturename[], materialcolor=0",
+  "file": "a_objects.inc",
+  "line": 538,
+  "summary": "Replace the texture of a player-object with the texture from another model in the game."
+ },
+ {
+  "name": "SetPlayerObjectMaterialText",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerObjectMaterialText(playerid, objectid, const text[], materialindex = 0, materialsize = OBJECT_MATERIAL_SIZE_256x128, const fontface[] = \"Arial\", fontsize = 24, bold = 1, fontcolor = 0xFFFFFFFF, backcolor = 0, textalignment = 0)",
+  "return_tag": null,
+  "params": "playerid, objectid, const text[], materialindex = 0, materialsize = OBJECT_MATERIAL_SIZE_256x128, const fontface[] = \"Arial\", fontsize = 24, bold = 1, fontcolor = 0xFFFFFFFF, backcolor = 0, textalignment = 0",
+  "file": "a_objects.inc",
+  "line": 632,
+  "summary": "Replace the texture of a player object with text."
+ },
+ {
+  "name": "SetPlayerObjectNoCameraCol",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerObjectNoCameraCol(playerid, objectid)",
+  "return_tag": null,
+  "params": "playerid, objectid",
+  "file": "a_objects.inc",
+  "line": 432,
+  "summary": "Toggles a player object camera collision."
+ },
+ {
+  "name": "SetPlayerObjectPos",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerObjectPos(playerid, objectid, Float:X, Float:Y, Float:Z)",
+  "return_tag": null,
+  "params": "playerid, objectid, Float:X, Float:Y, Float:Z",
+  "file": "a_objects.inc",
+  "line": 365,
+  "summary": "Sets the position of a player-object to the specified coordinates."
+ },
+ {
+  "name": "SetPlayerObjectRot",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerObjectRot(playerid, objectid, Float:RotX, Float:RotY, Float:RotZ)",
+  "return_tag": null,
+  "params": "playerid, objectid, Float:RotX, Float:RotY, Float:RotZ",
+  "file": "a_objects.inc",
+  "line": 400,
+  "summary": "Set the rotation of an object on the X, Y and Z axis."
+ },
+ {
+  "name": "SetPlayerPos",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerPos(playerid, Float:x, Float:y, Float:z)",
+  "return_tag": null,
+  "params": "playerid, Float:x, Float:y, Float:z",
+  "file": "a_players.inc",
+  "line": 146,
+  "summary": "Set a player's position."
+ },
+ {
+  "name": "SetPlayerPosFindZ",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerPosFindZ(playerid, Float:x, Float:y, Float:z)",
+  "return_tag": null,
+  "params": "playerid, Float:x, Float:y, Float:z",
+  "file": "a_players.inc",
+  "line": 160,
+  "summary": "This sets the players position then adjusts the players z-coordinate to the nearest solid ground under the position."
+ },
+ {
+  "name": "SetPlayerRaceCheckpoint",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerRaceCheckpoint(playerid, type, Float:x, Float:y, Float:z, Float:nextx, Float:nexty, Float:nextz, Float:size)",
+  "return_tag": null,
+  "params": "playerid, type, Float:x, Float:y, Float:z, Float:nextx, Float:nexty, Float:nextz, Float:size",
+  "file": "a_players.inc",
+  "line": 1941,
+  "summary": "Creates a race checkpoint. When the player enters it, the OnPlayerEnterRaceCheckpoint callback is called."
+ },
+ {
+  "name": "SetPlayerScore",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerScore(playerid, score)",
+  "return_tag": null,
+  "params": "playerid, score",
+  "file": "a_players.inc",
+  "line": 407,
+  "summary": "Set a player's score. Players' scores are shown in the scoreboard (shown by holding the TAB key)."
+ },
+ {
+  "name": "SetPlayerShopName",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerShopName(playerid, const shopname[])",
+  "return_tag": null,
+  "params": "playerid, const shopname[]",
+  "file": "a_players.inc",
+  "line": 870,
+  "summary": "Loads or unloads an interior script for a player (for example the ammunation menu)."
+ },
+ {
+  "name": "SetPlayerSkillLevel",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerSkillLevel(playerid, skill, level)",
+  "return_tag": null,
+  "params": "playerid, skill, level",
+  "file": "a_players.inc",
+  "line": 895,
+  "summary": "Set the skill level of a certain weapon type for a player."
+ },
+ {
+  "name": "SetPlayerSkin",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerSkin(playerid, skinid)",
+  "return_tag": null,
+  "params": "playerid, skinid",
+  "file": "a_players.inc",
+  "line": 473,
+  "summary": "Set the skin of a player. A player's skin is their character model."
+ },
+ {
+  "name": "SetPlayerSpecialAction",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerSpecialAction(playerid, actionid)",
+  "return_tag": null,
+  "params": "playerid, actionid",
+  "file": "a_players.inc",
+  "line": 1865,
+  "summary": "This function allows to set players special action."
+ },
+ {
+  "name": "SetPlayerTeam",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerTeam(playerid, teamid)",
+  "return_tag": null,
+  "params": "playerid, teamid",
+  "file": "a_players.inc",
+  "line": 386,
+  "summary": "Set the team of a player."
+ },
+ {
+  "name": "SetPlayerTime",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerTime(playerid, hour, minute)",
+  "return_tag": null,
+  "params": "playerid, hour, minute",
+  "file": "a_players.inc",
+  "line": 670,
+  "summary": "Sets the game time for a player. If a player's clock is enabled (TogglePlayerClock) the time displayed by it will update automatically."
+ },
+ {
+  "name": "SetPlayerVelocity",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerVelocity(playerid, Float:X, Float:Y, Float:Z)",
+  "return_tag": null,
+  "params": "playerid, Float:X, Float:Y, Float:Z",
+  "file": "a_players.inc",
+  "line": 781,
+  "summary": "Set a player's velocity on the X, Y and Z axes."
+ },
+ {
+  "name": "SetPlayerVirtualWorld",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerVirtualWorld(playerid, worldid)",
+  "return_tag": null,
+  "params": "playerid, worldid",
+  "file": "a_players.inc",
+  "line": 2313,
+  "summary": "Set the virtual world of a player. They can only see other players or vehicles that are in that same world."
+ },
+ {
+  "name": "SetPlayerWantedLevel",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerWantedLevel(playerid, level)",
+  "return_tag": null,
+  "params": "playerid, level",
+  "file": "a_players.inc",
+  "line": 722,
+  "summary": "Set a player's wanted level (6 brown stars under HUD)."
+ },
+ {
+  "name": "SetPlayerWeather",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerWeather(playerid, weather)",
+  "return_tag": null,
+  "params": "playerid, weather",
+  "file": "a_players.inc",
+  "line": 702,
+  "summary": "Set a player's weather."
+ },
+ {
+  "name": "SetPlayerWorldBounds",
+  "library": "samp-stdlib",
+  "signature": "native SetPlayerWorldBounds(playerid, Float:x_max,Float:x_min,Float:y_max,Float:y_min)",
+  "return_tag": null,
+  "params": "playerid, Float:x_max,Float:x_min,Float:y_max,Float:y_min",
+  "file": "a_players.inc",
+  "line": 1966,
+  "summary": "Set the world boundaries for a player. Players can not go out of the boundaries (they will be pushed back in)."
+ },
+ {
+  "name": "SetPVarFloat",
+  "library": "samp-stdlib",
+  "signature": "native SetPVarFloat(playerid, const varname[], Float:float_value)",
+  "return_tag": null,
+  "params": "playerid, const varname[], Float:float_value",
+  "file": "a_players.inc",
+  "line": 1564,
+  "summary": "Set a float player variable's value."
+ },
+ {
+  "name": "SetPVarInt",
+  "library": "samp-stdlib",
+  "signature": "native SetPVarInt(playerid, const varname[], int_value)",
+  "return_tag": null,
+  "params": "playerid, const varname[], int_value",
+  "file": "a_players.inc",
+  "line": 1509,
+  "summary": "Set an integer player variable."
+ },
+ {
+  "name": "SetPVarString",
+  "library": "samp-stdlib",
+  "signature": "native SetPVarString(playerid, const varname[], const string_value[])",
+  "return_tag": null,
+  "params": "playerid, const varname[], const string_value[]",
+  "file": "a_players.inc",
+  "line": 1533,
+  "summary": "Saves a string into a player variable."
+ },
+ {
+  "name": "SetSpawnInfo",
+  "library": "samp-stdlib",
+  "signature": "native SetSpawnInfo(playerid, team, skin, Float:x, Float:y, Float:z, Float:rotation, weapon1, weapon1_ammo, weapon2, weapon2_ammo, weapon3, weapon3_ammo)",
+  "return_tag": null,
+  "params": "playerid, team, skin, Float:x, Float:y, Float:z, Float:rotation, weapon1, weapon1_ammo, weapon2, weapon2_ammo, weapon3, weapon3_ammo",
+  "file": "a_players.inc",
+  "line": 115,
+  "summary": "This function can be used to change the spawn information of a specific player. It allows you to automatically set someone's spawn weapons, their team, skin and spawn position, normally used in case of minigames or automatic-spawn systems. This function is more crash-safe then using SetPlayerSkin in"
+ },
+ {
+  "name": "SetSVarFloat",
+  "library": "samp-stdlib",
+  "signature": "native SetSVarFloat(const varname[], Float:float_value)",
+  "return_tag": null,
+  "params": "const varname[], Float:float_value",
+  "file": "a_samp.inc",
+  "line": 743,
+  "summary": "Set a float server variable."
+ },
+ {
+  "name": "SetSVarInt",
+  "library": "samp-stdlib",
+  "signature": "native SetSVarInt(const varname[], int_value)",
+  "return_tag": null,
+  "params": "const varname[], int_value",
+  "file": "a_samp.inc",
+  "line": 685,
+  "summary": "Set an integer server variable."
+ },
+ {
+  "name": "SetSVarString",
+  "library": "samp-stdlib",
+  "signature": "native SetSVarString(const varname[], const string_value[])",
+  "return_tag": null,
+  "params": "const varname[], const string_value[]",
+  "file": "a_samp.inc",
+  "line": 713,
+  "summary": "Set a string server variable."
+ },
+ {
+  "name": "SetTeamCount",
+  "library": "samp-stdlib",
+  "signature": "native SetTeamCount(count)",
+  "return_tag": null,
+  "params": "count",
+  "file": "a_samp.inc",
+  "line": 820,
+  "summary": "This function is used to change the amount of teams used in the gamemode. It has no obvious way of being used, but can help to indicate the number of teams used for better (more effective) internal handling. This function should only be used in the OnGameModeInit callback. Important: You can pass 2 "
+ },
+ {
+  "name": "SetTimer",
+  "library": "samp-stdlib",
+  "signature": "native SetTimer(const funcname[], interval, repeating)",
+  "return_tag": null,
+  "params": "const funcname[], interval, repeating",
+  "file": "a_npc.inc",
+  "line": 312,
+  "summary": "Sets a 'timer' to call a function after some time. Can be set to repeat."
+ },
+ {
+  "name": "SetTimerEx",
+  "library": "samp-stdlib",
+  "signature": "native SetTimerEx(const funcname[], interval, repeating, const format[], {Float,_}:...)",
+  "return_tag": null,
+  "params": "const funcname[], interval, repeating, const format[], {Float,_}:...",
+  "file": "a_samp.inc",
+  "line": 533,
+  "summary": "Sets a timer to call a function after the specified interval. This variant ('Ex') can pass parameters (such as a player ID) to the function."
+ },
+ {
+  "name": "SetVehicleAngularVelocity",
+  "library": "samp-stdlib",
+  "signature": "native SetVehicleAngularVelocity(vehicleid, Float:X, Float:Y, Float:Z)",
+  "return_tag": null,
+  "params": "vehicleid, Float:X, Float:Y, Float:Z",
+  "file": "a_vehicles.inc",
+  "line": 603,
+  "summary": "Sets the angular X, Y and Z velocity of a vehicle."
+ },
+ {
+  "name": "SetVehicleHealth",
+  "library": "samp-stdlib",
+  "signature": "native SetVehicleHealth(vehicleid, Float:health)",
+  "return_tag": null,
+  "params": "vehicleid, Float:health",
+  "file": "a_vehicles.inc",
+  "line": 411,
+  "summary": "Set a vehicle's health. When a vehicle's health decreases the engine will produce smoke, and finally fire when it decreases to less than 250 (25%)."
+ },
+ {
+  "name": "SetVehicleNumberPlate",
+  "library": "samp-stdlib",
+  "signature": "native SetVehicleNumberPlate(vehicleid, const numberplate[])",
+  "return_tag": null,
+  "params": "vehicleid, const numberplate[]",
+  "file": "a_vehicles.inc",
+  "line": 489,
+  "summary": "Set a vehicle numberplate."
+ },
+ {
+  "name": "SetVehicleParamsCarDoors",
+  "library": "samp-stdlib",
+  "signature": "native SetVehicleParamsCarDoors(vehicleid, driver, passenger, backleft, backright)",
+  "return_tag": null,
+  "params": "vehicleid, driver, passenger, backleft, backright",
+  "file": "a_vehicles.inc",
+  "line": 273,
+  "summary": "Allows you to open and close the doors of a vehicle."
+ },
+ {
+  "name": "SetVehicleParamsCarWindows",
+  "library": "samp-stdlib",
+  "signature": "native SetVehicleParamsCarWindows(vehicleid, driver, passenger, backleft, backright)",
+  "return_tag": null,
+  "params": "vehicleid, driver, passenger, backleft, backright",
+  "file": "a_vehicles.inc",
+  "line": 298,
+  "summary": "Allows you to open and close the windows of a vehicle."
+ },
+ {
+  "name": "SetVehicleParamsEx",
+  "library": "samp-stdlib",
+  "signature": "native SetVehicleParamsEx(vehicleid, engine, lights, alarm, doors, bonnet, boot, objective)",
+  "return_tag": null,
+  "params": "vehicleid, engine, lights, alarm, doors, bonnet, boot, objective",
+  "file": "a_vehicles.inc",
+  "line": 239,
+  "summary": "Sets a vehicle's parameters for all players."
+ },
+ {
+  "name": "SetVehicleParamsForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native SetVehicleParamsForPlayer(vehicleid, playerid, objective, doorslocked)",
+  "return_tag": null,
+  "params": "vehicleid, playerid, objective, doorslocked",
+  "file": "a_vehicles.inc",
+  "line": 209,
+  "summary": "Set the parameters of a vehicle for a player."
+ },
+ {
+  "name": "SetVehiclePos",
+  "library": "samp-stdlib",
+  "signature": "native SetVehiclePos(vehicleid, Float:x, Float:y, Float:z)",
+  "return_tag": null,
+  "params": "vehicleid, Float:x, Float:y, Float:z",
+  "file": "a_vehicles.inc",
+  "line": 128,
+  "summary": "Set a vehicle's position."
+ },
+ {
+  "name": "SetVehicleToRespawn",
+  "library": "samp-stdlib",
+  "signature": "native SetVehicleToRespawn(vehicleid)",
+  "return_tag": null,
+  "params": "vehicleid",
+  "file": "a_vehicles.inc",
+  "line": 322,
+  "summary": "Sets a vehicle back to the position at where it was created."
+ },
+ {
+  "name": "SetVehicleVelocity",
+  "library": "samp-stdlib",
+  "signature": "native SetVehicleVelocity(vehicleid, Float:X, Float:Y, Float:Z)",
+  "return_tag": null,
+  "params": "vehicleid, Float:X, Float:Y, Float:Z",
+  "file": "a_vehicles.inc",
+  "line": 588,
+  "summary": "Sets the X, Y and Z velocity of a vehicle."
+ },
+ {
+  "name": "SetVehicleVirtualWorld",
+  "library": "samp-stdlib",
+  "signature": "native SetVehicleVirtualWorld(vehicleid, worldid)",
+  "return_tag": null,
+  "params": "vehicleid, worldid",
+  "file": "a_vehicles.inc",
+  "line": 732,
+  "summary": "Sets the 'virtual world' of a vehicle. Players will only be able to see vehicles in their own virtual world."
+ },
+ {
+  "name": "SetVehicleZAngle",
+  "library": "samp-stdlib",
+  "signature": "native SetVehicleZAngle(vehicleid, Float:z_angle)",
+  "return_tag": null,
+  "params": "vehicleid, Float:z_angle",
+  "file": "a_vehicles.inc",
+  "line": 195,
+  "summary": "Set the Z rotation (yaw) of a vehicle."
+ },
+ {
+  "name": "SetWeather",
+  "library": "samp-stdlib",
+  "signature": "native SetWeather(weatherid)",
+  "return_tag": null,
+  "params": "weatherid",
+  "file": "a_samp.inc",
+  "line": 1059,
+  "summary": "Set the world weather for all players."
+ },
+ {
+  "name": "SetWorldTime",
+  "library": "samp-stdlib",
+  "signature": "native SetWorldTime(hour)",
+  "return_tag": null,
+  "params": "hour",
+  "file": "a_samp.inc",
+  "line": 1021,
+  "summary": "Sets the world time (for all players) to a specific hour."
+ },
+ {
+  "name": "SHA256_PassHash",
+  "library": "samp-stdlib",
+  "signature": "native SHA256_PassHash(const password[], const salt[], ret_hash[], ret_hash_len = sizeof ret_hash); // SHA256 for password hashing",
+  "return_tag": null,
+  "params": "const password[], const salt[], ret_hash[], ret_hash_len = sizeof ret_hash",
+  "file": "a_samp.inc",
+  "line": 667,
+  "summary": "Hashes a password using the SHA-256 hashing algorithm. Includes a salt. The output is always 256 bytes in length, or the equivalent of 64 Pawn cells."
+ },
+ {
+  "name": "ShowMenuForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native ShowMenuForPlayer(Menu:menuid, playerid)",
+  "return_tag": null,
+  "params": "Menu:menuid, playerid",
+  "file": "a_samp.inc",
+  "line": 1625,
+  "summary": "Shows a previously created menu for a player."
+ },
+ {
+  "name": "ShowNameTags",
+  "library": "samp-stdlib",
+  "signature": "native ShowNameTags(show)",
+  "return_tag": null,
+  "params": "show",
+  "file": "a_samp.inc",
+  "line": 991,
+  "summary": "Toggle the drawing of nametags, health bars and armor bars above players."
+ },
+ {
+  "name": "ShowPlayerDialog",
+  "library": "samp-stdlib",
+  "signature": "native ShowPlayerDialog(playerid, dialogid, style, const caption[], const info[], const button1[], const button2[])",
+  "return_tag": null,
+  "params": "playerid, dialogid, style, const caption[], const info[], const button1[], const button2[]",
+  "file": "a_samp.inc",
+  "line": 2205,
+  "summary": "Shows the player a synchronous (only one at a time) dialog box."
+ },
+ {
+  "name": "ShowPlayerMarkers",
+  "library": "samp-stdlib",
+  "signature": "native ShowPlayerMarkers(mode)",
+  "return_tag": null,
+  "params": "mode",
+  "file": "a_samp.inc",
+  "line": 1008,
+  "summary": "Toggles player markers (blips on the radar). Must be used when the server starts (OnGameModeInit). For other times, see SetPlayerMarkerForPlayer."
+ },
+ {
+  "name": "ShowPlayerNameTagForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native ShowPlayerNameTagForPlayer(playerid, showplayerid, show)",
+  "return_tag": null,
+  "params": "playerid, showplayerid, show",
+  "file": "a_players.inc",
+  "line": 1986,
+  "summary": "This functions allows you to toggle the drawing of player nametags, healthbars and armor bars which display above their head. For use of a similar function like this on a global level, ShowNameTags function."
+ },
+ {
+  "name": "SpawnPlayer",
+  "library": "samp-stdlib",
+  "signature": "native SpawnPlayer(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 127,
+  "summary": "(Re)Spawns a player."
+ },
+ {
+  "name": "StartRecordingPlayback",
+  "library": "samp-stdlib",
+  "signature": "native StartRecordingPlayback(playbacktype, const recordname[])",
+  "return_tag": null,
+  "params": "playbacktype, const recordname[]",
+  "file": "a_npc.inc",
+  "line": 539,
+  "summary": "This will run a .rec file which has to be saved in the npcmodes/recordings folder. These files allow the NPC to follow certain actions. Their actions can be recorded manually. For more information, check the related functions."
+ },
+ {
+  "name": "StartRecordingPlayerData",
+  "library": "samp-stdlib",
+  "signature": "native StartRecordingPlayerData(playerid, recordtype, const recordname[])",
+  "return_tag": null,
+  "params": "playerid, recordtype, const recordname[]",
+  "file": "a_players.inc",
+  "line": 2396,
+  "summary": "Starts recording a player's movements to a file, which can then be reproduced by an NPC."
+ },
+ {
+  "name": "StopAudioStreamForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native StopAudioStreamForPlayer(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 848,
+  "summary": "Stops the current audio stream for a player."
+ },
+ {
+  "name": "StopObject",
+  "library": "samp-stdlib",
+  "signature": "native StopObject(objectid)",
+  "return_tag": null,
+  "params": "objectid",
+  "file": "a_objects.inc",
+  "line": 247,
+  "summary": "Stop a moving object after MoveObject has been used."
+ },
+ {
+  "name": "StopPlayerObject",
+  "library": "samp-stdlib",
+  "signature": "native StopPlayerObject(playerid, objectid)",
+  "return_tag": null,
+  "params": "playerid, objectid",
+  "file": "a_objects.inc",
+  "line": 479,
+  "summary": "Stop a moving player-object after MovePlayerObject has been used."
+ },
+ {
+  "name": "StopRecordingPlayback",
+  "library": "samp-stdlib",
+  "signature": "native StopRecordingPlayback()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_npc.inc",
+  "line": 544,
+  "summary": "This will stop the current .rec file which is being ran by the NPC, making it stay idle until some other order is given."
+ },
+ {
+  "name": "StopRecordingPlayerData",
+  "library": "samp-stdlib",
+  "signature": "native StopRecordingPlayerData(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_players.inc",
+  "line": 2402,
+  "summary": "Stops all the recordings that had been started with StartRecordingPlayerData for a specific player."
+ },
+ {
+  "name": "TextDrawAlignment",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawAlignment(Text:text, alignment)",
+  "return_tag": null,
+  "params": "Text:text, alignment",
+  "file": "a_samp.inc",
+  "line": 1742,
+  "summary": "Set the alignment of text in a text draw."
+ },
+ {
+  "name": "TextDrawBackgroundColor",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawBackgroundColor(Text:text, color)",
+  "return_tag": null,
+  "params": "Text:text, color",
+  "file": "a_samp.inc",
+  "line": 1789,
+  "summary": "Adjusts the text draw area background color (the outline/shadow - NOT the box. For box color, see TextDrawBoxColor)."
+ },
+ {
+  "name": "TextDrawBoxColor",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawBoxColor(Text:text, color)",
+  "return_tag": null,
+  "params": "Text:text, color",
+  "file": "a_samp.inc",
+  "line": 1765,
+  "summary": "Adjusts the text box colour (only used if TextDrawUseBox 'use' parameter is 1)."
+ },
+ {
+  "name": "TextDrawColor",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawColor(Text:text, color)",
+  "return_tag": null,
+  "params": "Text:text, color",
+  "file": "a_samp.inc",
+  "line": 1749,
+  "summary": "Sets the text color of a textdraw."
+ },
+ {
+  "name": "TextDrawCreate",
+  "library": "samp-stdlib",
+  "signature": "native Text:TextDrawCreate(Float:x, Float:y, const text[])",
+  "return_tag": "Text",
+  "params": "Float:x, Float:y, const text[]",
+  "file": "a_samp.inc",
+  "line": 1703,
+  "summary": "Creates a textdraw. Textdraws are, as the name implies, text (mainly - there can be boxes, sprites and model previews (skins/vehicles/weapons/objects too) that is drawn on a player's screens."
+ },
+ {
+  "name": "TextDrawDestroy",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawDestroy(Text:text)",
+  "return_tag": null,
+  "params": "Text:text",
+  "file": "a_samp.inc",
+  "line": 1707,
+  "summary": "Destroys a previously-created textdraw."
+ },
+ {
+  "name": "TextDrawFont",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawFont(Text:text, font)",
+  "return_tag": null,
+  "params": "Text:text, font",
+  "file": "a_samp.inc",
+  "line": 1795,
+  "summary": "Changes the text font."
+ },
+ {
+  "name": "TextDrawHideForAll",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawHideForAll(Text:text)",
+  "return_tag": null,
+  "params": "Text:text",
+  "file": "a_samp.inc",
+  "line": 1846,
+  "summary": "Hides a text draw for all players."
+ },
+ {
+  "name": "TextDrawHideForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawHideForPlayer(playerid, Text:text)",
+  "return_tag": null,
+  "params": "playerid, Text:text",
+  "file": "a_samp.inc",
+  "line": 1828,
+  "summary": "Hides a textdraw for a specific player."
+ },
+ {
+  "name": "TextDrawLetterSize",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawLetterSize(Text:text, Float:x, Float:y)",
+  "return_tag": null,
+  "params": "Text:text, Float:x, Float:y",
+  "file": "a_samp.inc",
+  "line": 1716,
+  "summary": "Sets the width and height of the letters."
+ },
+ {
+  "name": "TextDrawSetOutline",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawSetOutline(Text:text, size)",
+  "return_tag": null,
+  "params": "Text:text, size",
+  "file": "a_samp.inc",
+  "line": 1782,
+  "summary": "Sets the thickness of a textdraw's text's outline. TextDrawBackgroundColor can be used to change the color."
+ },
+ {
+  "name": "TextDrawSetPreviewModel",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawSetPreviewModel(Text:text, modelindex)",
+  "return_tag": null,
+  "params": "Text:text, modelindex",
+  "file": "a_samp.inc",
+  "line": 1860,
+  "summary": "Set the model for a textdraw model preview. Click here to see this function's effect."
+ },
+ {
+  "name": "TextDrawSetPreviewRot",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawSetPreviewRot(Text:text, Float:fRotX, Float:fRotY, Float:fRotZ, Float:fZoom = 1.0)",
+  "return_tag": null,
+  "params": "Text:text, Float:fRotX, Float:fRotY, Float:fRotZ, Float:fZoom = 1.0",
+  "file": "a_samp.inc",
+  "line": 1869,
+  "summary": "Sets the rotation and zoom of a 3D model preview textdraw."
+ },
+ {
+  "name": "TextDrawSetPreviewVehCol",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawSetPreviewVehCol(Text:text, color1, color2)",
+  "return_tag": null,
+  "params": "Text:text, color1, color2",
+  "file": "a_samp.inc",
+  "line": 1877,
+  "summary": "If a vehicle model is used in a 3D preview textdraw, this sets the two colour values for that vehicle."
+ },
+ {
+  "name": "TextDrawSetProportional",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawSetProportional(Text:text, set)",
+  "return_tag": null,
+  "params": "Text:text, set",
+  "file": "a_samp.inc",
+  "line": 1802,
+  "summary": "Appears to scale text spacing to a proportional ratio. Useful when using TextDrawLetterSize to ensure the text has even character spacing."
+ },
+ {
+  "name": "TextDrawSetSelectable",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawSetSelectable(Text:text, set)",
+  "return_tag": null,
+  "params": "Text:text, set",
+  "file": "a_samp.inc",
+  "line": 1810,
+  "summary": "Sets whether a textdraw can be selected (clicked on) or not."
+ },
+ {
+  "name": "TextDrawSetShadow",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawSetShadow(Text:text, size)",
+  "return_tag": null,
+  "params": "Text:text, size",
+  "file": "a_samp.inc",
+  "line": 1776,
+  "summary": "Sets the size of a textdraw's text's shadow."
+ },
+ {
+  "name": "TextDrawSetString",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawSetString(Text:text, const string[])",
+  "return_tag": null,
+  "params": "Text:text, const string[]",
+  "file": "a_samp.inc",
+  "line": 1852,
+  "summary": "Changes the text on a textdraw."
+ },
+ {
+  "name": "TextDrawShowForAll",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawShowForAll(Text:text)",
+  "return_tag": null,
+  "params": "Text:text",
+  "file": "a_samp.inc",
+  "line": 1839,
+  "summary": "Shows a textdraw for all players."
+ },
+ {
+  "name": "TextDrawShowForPlayer",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawShowForPlayer(playerid, Text:text)",
+  "return_tag": null,
+  "params": "playerid, Text:text",
+  "file": "a_samp.inc",
+  "line": 1820,
+  "summary": "Shows a textdraw for a specific player."
+ },
+ {
+  "name": "TextDrawTextSize",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawTextSize(Text:text, Float:x, Float:y)",
+  "return_tag": null,
+  "params": "Text:text, Float:x, Float:y",
+  "file": "a_samp.inc",
+  "line": 1736,
+  "summary": "Change the size of a textdraw (box if TextDrawUseBox is enabled and/or clickable area for use with TextDrawSetSelectable)."
+ },
+ {
+  "name": "TextDrawUseBox",
+  "library": "samp-stdlib",
+  "signature": "native TextDrawUseBox(Text:text, use)",
+  "return_tag": null,
+  "params": "Text:text, use",
+  "file": "a_samp.inc",
+  "line": 1759,
+  "summary": "Toggle whether a textdraw uses a box or not."
+ },
+ {
+  "name": "TogglePlayerClock",
+  "library": "samp-stdlib",
+  "signature": "native TogglePlayerClock(playerid, toggle)",
+  "return_tag": null,
+  "params": "playerid, toggle",
+  "file": "a_players.inc",
+  "line": 694,
+  "summary": "Toggle the in-game clock (top-right corner) for a specific player. When this is enabled, time will progress at 1 minute per second. Weather will also interpolate (slowly change over time) when set using SetWeather/SetPlayerWeather."
+ },
+ {
+  "name": "TogglePlayerControllable",
+  "library": "samp-stdlib",
+  "signature": "native TogglePlayerControllable(playerid, toggle)",
+  "return_tag": null,
+  "params": "playerid, toggle",
+  "file": "a_players.inc",
+  "line": 1717,
+  "summary": "Toggles whether a player can control their character or not. The player will also be unable to move their camera."
+ },
+ {
+  "name": "TogglePlayerSpectating",
+  "library": "samp-stdlib",
+  "signature": "native TogglePlayerSpectating(playerid, toggle)",
+  "return_tag": null,
+  "params": "playerid, toggle",
+  "file": "a_players.inc",
+  "line": 2352,
+  "summary": "Toggle whether a player is in spectator mode or not. While in spectator mode a player can spectate (watch) other players and vehicles. After using this function, either PlayerSpectatePlayer or PlayerSpectateVehicle needs to be used."
+ },
+ {
+  "name": "UnBlockIpAddress",
+  "library": "samp-stdlib",
+  "signature": "native UnBlockIpAddress(const ip_address[])",
+  "return_tag": null,
+  "params": "const ip_address[]",
+  "file": "a_samp.inc",
+  "line": 1305,
+  "summary": "Unblock an IP address that was previously blocked using BlockIpAddress."
+ },
+ {
+  "name": "Update3DTextLabelText",
+  "library": "samp-stdlib",
+  "signature": "native Update3DTextLabelText(Text3D:id, color, const text[])",
+  "return_tag": null,
+  "params": "Text3D:id, color, const text[]",
+  "file": "a_samp.inc",
+  "line": 2128,
+  "summary": "Updates a 3D Text Label text and color."
+ },
+ {
+  "name": "UpdatePlayer3DTextLabelText",
+  "library": "samp-stdlib",
+  "signature": "native UpdatePlayer3DTextLabelText(playerid, PlayerText3D:id, color, const text[])",
+  "return_tag": null,
+  "params": "playerid, PlayerText3D:id, color, const text[]",
+  "file": "a_samp.inc",
+  "line": 2186,
+  "summary": "Updates a player 3D Text Label's text and color."
+ },
+ {
+  "name": "UpdateVehicleDamageStatus",
+  "library": "samp-stdlib",
+  "signature": "native UpdateVehicleDamageStatus(vehicleid, panels, doors, lights, tires)",
+  "return_tag": null,
+  "params": "vehicleid, panels, doors, lights, tires",
+  "file": "a_vehicles.inc",
+  "line": 699,
+  "summary": "Sets the various visual damage statuses of a vehicle, such as popped tires, broken lights and damaged panels."
+ },
+ {
+  "name": "UsePlayerPedAnims",
+  "library": "samp-stdlib",
+  "signature": "native UsePlayerPedAnims(); // Will cause the players to use CJ running/walking animations",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 1109,
+  "summary": "Uses standard player walking animation (animation of the CJ skin) instead of custom animations for every skin (e.g. skating for skater skins)."
+ },
+ {
+  "name": "VectorSize",
+  "library": "samp-stdlib",
+  "signature": "native Float:VectorSize(Float:x, Float:y, Float:z)",
+  "return_tag": "Float",
+  "params": "Float:x, Float:y, Float:z",
+  "file": "a_samp.inc",
+  "line": 606,
+  "summary": "Returns the norm (length) of the provided vector."
+ },
+ {
   "name": "ApplyDynamicActorAnimation",
   "library": "streamer",
   "signature": "native ApplyDynamicActorAnimation(STREAMER_TAG_ACTOR:actorid, const animlib[], const animname[], Float:fdelta, loop, lockx, locky, freeze, time)",
@@ -12874,5 +17271,517 @@
   "params": "const cmd[], flags",
   "file": "src/Pawn.CMD.inc",
   "line": 45
+ },
+ {
+  "name": "BS_Delete",
+  "library": "pawn.raknet",
+  "signature": "native BS_Delete(&BitStream:bs)",
+  "return_tag": null,
+  "params": "&BitStream:bs",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 300
+ },
+ {
+  "name": "BS_EmulateIncomingPacket",
+  "library": "pawn.raknet",
+  "signature": "native BS_EmulateIncomingPacket(BitStream:bs, playerid) = PR_EmulateIncomingPacket",
+  "return_tag": null,
+  "params": "BitStream:bs, playerid",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 294,
+  "internal_name": "PR_EmulateIncomingPacket",
+  "deprecated": "Use PR_EmulateIncomingPacket instead"
+ },
+ {
+  "name": "BS_EmulateIncomingRPC",
+  "library": "pawn.raknet",
+  "signature": "native BS_EmulateIncomingRPC(BitStream:bs, playerid, rpcid) = PR_EmulateIncomingRPC",
+  "return_tag": null,
+  "params": "BitStream:bs, playerid, rpcid",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 296,
+  "internal_name": "PR_EmulateIncomingRPC",
+  "deprecated": "Use PR_EmulateIncomingRPC instead"
+ },
+ {
+  "name": "BS_GetNumberOfBitsAllocated",
+  "library": "pawn.raknet",
+  "signature": "native BS_GetNumberOfBitsAllocated(BitStream:bs, &number)",
+  "return_tag": null,
+  "params": "BitStream:bs, &number",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 315
+ },
+ {
+  "name": "BS_GetNumberOfBitsUsed",
+  "library": "pawn.raknet",
+  "signature": "native BS_GetNumberOfBitsUsed(BitStream:bs, &number)",
+  "return_tag": null,
+  "params": "BitStream:bs, &number",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 312
+ },
+ {
+  "name": "BS_GetNumberOfBytesUsed",
+  "library": "pawn.raknet",
+  "signature": "native BS_GetNumberOfBytesUsed(BitStream:bs, &number)",
+  "return_tag": null,
+  "params": "BitStream:bs, &number",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 313
+ },
+ {
+  "name": "BS_GetNumberOfUnreadBits",
+  "library": "pawn.raknet",
+  "signature": "native BS_GetNumberOfUnreadBits(BitStream:bs, &number)",
+  "return_tag": null,
+  "params": "BitStream:bs, &number",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 314
+ },
+ {
+  "name": "BS_GetReadOffset",
+  "library": "pawn.raknet",
+  "signature": "native BS_GetReadOffset(BitStream:bs, &offset)",
+  "return_tag": null,
+  "params": "BitStream:bs, &offset",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 310
+ },
+ {
+  "name": "BS_GetWriteOffset",
+  "library": "pawn.raknet",
+  "signature": "native BS_GetWriteOffset(BitStream:bs, &offset)",
+  "return_tag": null,
+  "params": "BitStream:bs, &offset",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 308
+ },
+ {
+  "name": "BS_IgnoreBits",
+  "library": "pawn.raknet",
+  "signature": "native BS_IgnoreBits(BitStream:bs, number_of_bits)",
+  "return_tag": null,
+  "params": "BitStream:bs, number_of_bits",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 305
+ },
+ {
+  "name": "BS_New",
+  "library": "pawn.raknet",
+  "signature": "native BitStream:BS_New()",
+  "return_tag": "BitStream",
+  "params": "",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 298
+ },
+ {
+  "name": "BS_NewCopy",
+  "library": "pawn.raknet",
+  "signature": "native BitStream:BS_NewCopy(BitStream:bs)",
+  "return_tag": "BitStream",
+  "params": "BitStream:bs",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 299
+ },
+ {
+  "name": "BS_ReadValue",
+  "library": "pawn.raknet",
+  "signature": "native BS_ReadValue(BitStream:bs, {PR_ValueType, Float, _}:...)",
+  "return_tag": null,
+  "params": "BitStream:bs, {PR_ValueType, Float, _}:...",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 318
+ },
+ {
+  "name": "BS_Reset",
+  "library": "pawn.raknet",
+  "signature": "native BS_Reset(BitStream:bs)",
+  "return_tag": null,
+  "params": "BitStream:bs",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 302
+ },
+ {
+  "name": "BS_ResetReadPointer",
+  "library": "pawn.raknet",
+  "signature": "native BS_ResetReadPointer(BitStream:bs)",
+  "return_tag": null,
+  "params": "BitStream:bs",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 303
+ },
+ {
+  "name": "BS_ResetWritePointer",
+  "library": "pawn.raknet",
+  "signature": "native BS_ResetWritePointer(BitStream:bs)",
+  "return_tag": null,
+  "params": "BitStream:bs",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 304
+ },
+ {
+  "name": "BS_RPC",
+  "library": "pawn.raknet",
+  "signature": "native BS_RPC(BitStream:bs, playerid, rpcid, PR_PacketPriority:priority = PR_HIGH_PRIORITY, PR_PacketReliability:reliability = PR_RELIABLE_ORDERED, orderingchannel = 0) = PR_SendRPC",
+  "return_tag": null,
+  "params": "BitStream:bs, playerid, rpcid, PR_PacketPriority:priority = PR_HIGH_PRIORITY, PR_PacketReliability:reliability = PR_RELIABLE_ORDERED, orderingchannel = 0",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 288,
+  "internal_name": "PR_SendRPC",
+  "deprecated": "Use PR_SendRPC instead"
+ },
+ {
+  "name": "BS_Send",
+  "library": "pawn.raknet",
+  "signature": "native BS_Send(BitStream:bs, playerid, PR_PacketPriority:priority = PR_HIGH_PRIORITY, PR_PacketReliability:reliability = PR_RELIABLE_ORDERED, orderingchannel = 0) = PR_SendPacket",
+  "return_tag": null,
+  "params": "BitStream:bs, playerid, PR_PacketPriority:priority = PR_HIGH_PRIORITY, PR_PacketReliability:reliability = PR_RELIABLE_ORDERED, orderingchannel = 0",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 286,
+  "internal_name": "PR_SendPacket",
+  "deprecated": "Use PR_SendPacket instead"
+ },
+ {
+  "name": "BS_SetReadOffset",
+  "library": "pawn.raknet",
+  "signature": "native BS_SetReadOffset(BitStream:bs, offset)",
+  "return_tag": null,
+  "params": "BitStream:bs, offset",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 309
+ },
+ {
+  "name": "BS_SetWriteOffset",
+  "library": "pawn.raknet",
+  "signature": "native BS_SetWriteOffset(BitStream:bs, offset)",
+  "return_tag": null,
+  "params": "BitStream:bs, offset",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 307
+ },
+ {
+  "name": "BS_WriteValue",
+  "library": "pawn.raknet",
+  "signature": "native BS_WriteValue(BitStream:bs, {PR_ValueType, Float, _}:...)",
+  "return_tag": null,
+  "params": "BitStream:bs, {PR_ValueType, Float, _}:...",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 317
+ },
+ {
+  "name": "PR_EmulateIncomingPacket",
+  "library": "pawn.raknet",
+  "signature": "native PR_EmulateIncomingPacket(BitStream:bs, playerid)",
+  "return_tag": null,
+  "params": "BitStream:bs, playerid",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 290
+ },
+ {
+  "name": "PR_EmulateIncomingRPC",
+  "library": "pawn.raknet",
+  "signature": "native PR_EmulateIncomingRPC(BitStream:bs, playerid, rpcid)",
+  "return_tag": null,
+  "params": "BitStream:bs, playerid, rpcid",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 291
+ },
+ {
+  "name": "PR_Init",
+  "library": "pawn.raknet",
+  "signature": "native PR_Init(); // internal",
+  "return_tag": null,
+  "params": "",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 280
+ },
+ {
+  "name": "PR_RegHandler",
+  "library": "pawn.raknet",
+  "signature": "native PR_RegHandler(eventid, const publicname[], PR_EventType:type)",
+  "return_tag": null,
+  "params": "eventid, const publicname[], PR_EventType:type",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 320
+ },
+ {
+  "name": "PR_SendPacket",
+  "library": "pawn.raknet",
+  "signature": "native PR_SendPacket(BitStream:bs, playerid, PR_PacketPriority:priority = PR_HIGH_PRIORITY, PR_PacketReliability:reliability = PR_RELIABLE_ORDERED, orderingchannel = 0)",
+  "return_tag": null,
+  "params": "BitStream:bs, playerid, PR_PacketPriority:priority = PR_HIGH_PRIORITY, PR_PacketReliability:reliability = PR_RELIABLE_ORDERED, orderingchannel = 0",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 282
+ },
+ {
+  "name": "PR_SendRPC",
+  "library": "pawn.raknet",
+  "signature": "native PR_SendRPC(BitStream:bs, playerid, rpcid, PR_PacketPriority:priority = PR_HIGH_PRIORITY, PR_PacketReliability:reliability = PR_RELIABLE_ORDERED, orderingchannel = 0)",
+  "return_tag": null,
+  "params": "BitStream:bs, playerid, rpcid, PR_PacketPriority:priority = PR_HIGH_PRIORITY, PR_PacketReliability:reliability = PR_RELIABLE_ORDERED, orderingchannel = 0",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 283
+ },
+ {
+  "name": "bcrypt_get_hash",
+  "library": "samp-bcrypt",
+  "signature": "native bcrypt_get_hash(hash[], size = sizeof(hash))",
+  "return_tag": null,
+  "params": "hash[], size = sizeof(hash)",
+  "file": "include/samp_bcrypt.inc",
+  "line": 97
+ },
+ {
+  "name": "bcrypt_hash",
+  "library": "samp-bcrypt",
+  "signature": "native bcrypt_hash(playerid, const callback[], const input[], cost, const args[] = \"\", {Float, _}:...)",
+  "return_tag": null,
+  "params": "playerid, const callback[], const input[], cost, const args[] = \"\", {Float, _}:...",
+  "file": "include/samp_bcrypt.inc",
+  "line": 41
+ },
+ {
+  "name": "bcrypt_set_thread_limit",
+  "library": "samp-bcrypt",
+  "signature": "native bcrypt_set_thread_limit(value)",
+  "return_tag": null,
+  "params": "value",
+  "file": "include/samp_bcrypt.inc",
+  "line": 111
+ },
+ {
+  "name": "bcrypt_verify",
+  "library": "samp-bcrypt",
+  "signature": "native bcrypt_verify(playerid, const callback[], const input[], const hash[], const args[] = \"\", {Float, _}:...)",
+  "return_tag": null,
+  "params": "playerid, const callback[], const input[], const hash[], const args[] = \"\", {Float, _}:...",
+  "file": "include/samp_bcrypt.inc",
+  "line": 74
+ },
+ {
+  "name": "CA_ContactTest",
+  "library": "colandreas",
+  "signature": "native CA_ContactTest(modelid, Float:x, Float:y, Float:z, Float:rx, Float:ry, Float:rz)",
+  "return_tag": null,
+  "params": "modelid, Float:x, Float:y, Float:z, Float:rx, Float:ry, Float:rz",
+  "file": "Server/include/colandreas.inc",
+  "line": 226
+ },
+ {
+  "name": "CA_CreateObject",
+  "library": "colandreas",
+  "signature": "native CA_CreateObject(modelid, Float:x, Float:y, Float:z, Float:rx, Float:ry, Float:rz, bool:add = false)",
+  "return_tag": null,
+  "params": "modelid, Float:x, Float:y, Float:z, Float:rx, Float:ry, Float:rz, bool:add = false",
+  "file": "Server/include/colandreas.inc",
+  "line": 377
+ },
+ {
+  "name": "CA_DestroyObject",
+  "library": "colandreas",
+  "signature": "native CA_DestroyObject(index)",
+  "return_tag": null,
+  "params": "index",
+  "file": "Server/include/colandreas.inc",
+  "line": 390
+ },
+ {
+  "name": "CA_EulerToQuat",
+  "library": "colandreas",
+  "signature": "native CA_EulerToQuat(Float:rx, Float:ry, Float:rz, &Float:x, &Float:y, &Float:z, &Float:w)",
+  "return_tag": null,
+  "params": "Float:rx, Float:ry, Float:rz, &Float:x, &Float:y, &Float:z, &Float:w",
+  "file": "Server/include/colandreas.inc",
+  "line": 238
+ },
+ {
+  "name": "CA_GetModelBoundingBox",
+  "library": "colandreas",
+  "signature": "native CA_GetModelBoundingBox(modelid, &Float:minx, &Float:miny, &Float:minz, &Float:maxx, &Float:maxy, &Float:maxz)",
+  "return_tag": null,
+  "params": "modelid, &Float:minx, &Float:miny, &Float:minz, &Float:maxx, &Float:maxy, &Float:maxz",
+  "file": "Server/include/colandreas.inc",
+  "line": 278
+ },
+ {
+  "name": "CA_GetModelBoundingSphere",
+  "library": "colandreas",
+  "signature": "native CA_GetModelBoundingSphere(modelid, &Float:offx, &Float:offy, &Float:offz, &Float:radius)",
+  "return_tag": null,
+  "params": "modelid, &Float:offx, &Float:offy, &Float:offz, &Float:radius",
+  "file": "Server/include/colandreas.inc",
+  "line": 264
+ },
+ {
+  "name": "CA_GetObjectExtraID",
+  "library": "colandreas",
+  "signature": "native CA_GetObjectExtraID(index, type)",
+  "return_tag": null,
+  "params": "index, type",
+  "file": "Server/include/colandreas.inc",
+  "line": 304
+ },
+ {
+  "name": "CA_Init",
+  "library": "colandreas",
+  "signature": "native CA_Init()",
+  "return_tag": null,
+  "params": "",
+  "file": "Server/include/colandreas.inc",
+  "line": 59
+ },
+ {
+  "name": "CA_IsValidObject",
+  "library": "colandreas",
+  "signature": "native CA_IsValidObject(index)",
+  "return_tag": null,
+  "params": "index",
+  "file": "Server/include/colandreas.inc",
+  "line": 403
+ },
+ {
+  "name": "CA_LoadFromDff",
+  "library": "colandreas",
+  "signature": "native CA_LoadFromDff(newid, const dffFileName[])",
+  "return_tag": null,
+  "params": "newid, const dffFileName[]",
+  "file": "Server/include/colandreas.inc",
+  "line": 358
+ },
+ {
+  "name": "CA_QuatToEuler",
+  "library": "colandreas",
+  "signature": "native CA_QuatToEuler(Float:x, Float:y, Float:z, Float:w, &Float:rx, &Float:ry, &Float:rz)",
+  "return_tag": null,
+  "params": "Float:x, Float:y, Float:z, Float:w, &Float:rx, &Float:ry, &Float:rz",
+  "file": "Server/include/colandreas.inc",
+  "line": 250
+ },
+ {
+  "name": "CA_RayCastLine",
+  "library": "colandreas",
+  "signature": "native CA_RayCastLine(Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &Float:x, &Float:y, &Float:z)",
+  "return_tag": null,
+  "params": "Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &Float:x, &Float:y, &Float:z",
+  "file": "Server/include/colandreas.inc",
+  "line": 108
+ },
+ {
+  "name": "CA_RayCastLineAngle",
+  "library": "colandreas",
+  "signature": "native CA_RayCastLineAngle(Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &Float:x, &Float:y, &Float:z, &Float:rx, &Float:ry, &Float:rz)",
+  "return_tag": null,
+  "params": "Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &Float:x, &Float:y, &Float:z, &Float:rx, &Float:ry, &Float:rz",
+  "file": "Server/include/colandreas.inc",
+  "line": 180
+ },
+ {
+  "name": "CA_RayCastLineAngleEx",
+  "library": "colandreas",
+  "signature": "native CA_RayCastLineAngleEx(Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &Float:x, &Float:y, &Float:z, &Float:rx, &Float:ry, &Float:rz, &Float:ocx, &Float:ocy, &Float:ocz, &Float:orx, &Float:ory, &Float:orz)",
+  "return_tag": null,
+  "params": "Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &Float:x, &Float:y, &Float:z, &Float:rx, &Float:ry, &Float:rz, &Float:ocx, &Float:ocy, &Float:ocz, &Float:orx, &Float:ory, &Float:orz",
+  "file": "Server/include/colandreas.inc",
+  "line": 339
+ },
+ {
+  "name": "CA_RayCastLineEx",
+  "library": "colandreas",
+  "signature": "native CA_RayCastLineEx(Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &Float:x, &Float:y, &Float:z, &Float:rx, &Float:ry, &Float:rz, &Float:rw, &Float:cx, &Float:cy, &Float:cz)",
+  "return_tag": null,
+  "params": "Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &Float:x, &Float:y, &Float:z, &Float:rx, &Float:ry, &Float:rz, &Float:rw, &Float:cx, &Float:cy, &Float:cz",
+  "file": "Server/include/colandreas.inc",
+  "line": 321
+ },
+ {
+  "name": "CA_RayCastLineExtraID",
+  "library": "colandreas",
+  "signature": "native CA_RayCastLineExtraID(type, Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &Float:x, &Float:y, &Float:z)",
+  "return_tag": null,
+  "params": "type, Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &Float:x, &Float:y, &Float:z",
+  "file": "Server/include/colandreas.inc",
+  "line": 146
+ },
+ {
+  "name": "CA_RayCastLineID",
+  "library": "colandreas",
+  "signature": "native CA_RayCastLineID(Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &Float:x, &Float:y, &Float:z)",
+  "return_tag": null,
+  "params": "Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, &Float:x, &Float:y, &Float:z",
+  "file": "Server/include/colandreas.inc",
+  "line": 126
+ },
+ {
+  "name": "CA_RayCastLineNormal",
+  "library": "colandreas",
+  "signature": "native CA_RayCastLineNormal(Float:startx, Float:starty, Float:startz, Float:endx, Float:endy, Float:endz, &Float:x, &Float:y, &Float:z, &Float:nx, &Float:ny, &Float:nz)",
+  "return_tag": null,
+  "params": "Float:startx, Float:starty, Float:startz, Float:endx, Float:endy, Float:endz, &Float:x, &Float:y, &Float:z, &Float:nx, &Float:ny, &Float:nz",
+  "file": "Server/include/colandreas.inc",
+  "line": 212
+ },
+ {
+  "name": "CA_RayCastMultiLine",
+  "library": "colandreas",
+  "signature": "native CA_RayCastMultiLine(Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, Float:retx[], Float:rety[], Float:retz[], Float:retdist[], ModelIDs[], size = sizeof(retx))",
+  "return_tag": null,
+  "params": "Float:StartX, Float:StartY, Float:StartZ, Float:EndX, Float:EndY, Float:EndZ, Float:retx[], Float:rety[], Float:retz[], Float:retdist[], ModelIDs[], size = sizeof(retx)",
+  "file": "Server/include/colandreas.inc",
+  "line": 164
+ },
+ {
+  "name": "CA_RayCastReflectionVector",
+  "library": "colandreas",
+  "signature": "native CA_RayCastReflectionVector(Float:startx, Float:starty, Float:startz, Float:endx, Float:endy, Float:endz, &Float:x, &Float:y, &Float:z, &Float:nx, &Float:ny, &Float:nz)",
+  "return_tag": null,
+  "params": "Float:startx, Float:starty, Float:startz, Float:endx, Float:endy, Float:endz, &Float:x, &Float:y, &Float:z, &Float:nx, &Float:ny, &Float:nz",
+  "file": "Server/include/colandreas.inc",
+  "line": 196
+ },
+ {
+  "name": "CA_RemoveBuilding",
+  "library": "colandreas",
+  "signature": "native CA_RemoveBuilding(modelid, Float:x, Float:y, Float:z, Float:radius)",
+  "return_tag": null,
+  "params": "modelid, Float:x, Float:y, Float:z, Float:radius",
+  "file": "Server/include/colandreas.inc",
+  "line": 76
+ },
+ {
+  "name": "CA_RestoreBuilding",
+  "library": "colandreas",
+  "signature": "native CA_RestoreBuilding(modelid, Float:x, Float:y, Float:z, Float:radius)",
+  "return_tag": null,
+  "params": "modelid, Float:x, Float:y, Float:z, Float:radius",
+  "file": "Server/include/colandreas.inc",
+  "line": 93
+ },
+ {
+  "name": "CA_SetObjectExtraID",
+  "library": "colandreas",
+  "signature": "native CA_SetObjectExtraID(index, type, data)",
+  "return_tag": null,
+  "params": "index, type, data",
+  "file": "Server/include/colandreas.inc",
+  "line": 291
+ },
+ {
+  "name": "CA_SetObjectPos",
+  "library": "colandreas",
+  "signature": "native CA_SetObjectPos(index, Float:x, Float:y, Float:z)",
+  "return_tag": null,
+  "params": "index, Float:x, Float:y, Float:z",
+  "file": "Server/include/colandreas.inc",
+  "line": 416
+ },
+ {
+  "name": "CA_SetObjectRot",
+  "library": "colandreas",
+  "signature": "native CA_SetObjectRot(index, Float:rx, Float:ry, Float:rz)",
+  "return_tag": null,
+  "params": "index, Float:rx, Float:ry, Float:rz",
+  "file": "Server/include/colandreas.inc",
+  "line": 429
  }
 ]

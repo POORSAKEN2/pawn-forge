@@ -141,6 +141,15 @@ class ProjectAndPlatformApiTest(unittest.TestCase):
                 self.assertIn(lib, info["libraries_detected"])
             self.assertNotIn("open.mp", [i.lower() for i in info["includes_in_main"]])
 
+    def test_bundled_samp_ecosystem_apis_present(self):
+        self.assertTrue(api.api_lookup(name="BS_New")["found"])
+        self.assertTrue(api.api_lookup(name="bcrypt_hash")["found"])
+        self.assertTrue(api.api_lookup(name="CA_RayCastLine")["found"])
+        samp = api.api_lookup(name="SendClientMessage", platform="sa-mp")
+        self.assertTrue(samp["found"])
+        self.assertEqual(samp["results"][0]["library"], "samp-stdlib")
+        self.assertIn("samp-stdlib", data.load("sources"))
+
 
 class CrashlogTest(unittest.TestCase):
     def test_fixture(self):
