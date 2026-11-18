@@ -1,25 +1,41 @@
 # Pawn Forge
 
-A plugin for Claude Code and Google Antigravity that turns your AI assistant into a SA-MP / open.mp engineer instead of a code guesser.
+Agent skills, standalone CLI (`pawnforge`), and MCP plugin for Claude Code, Google Antigravity, Cursor, Codex, and 20+ coding agents that turn your AI assistant into a SA-MP 0.3.7 / open.mp engineer instead of a code guesser.
 
 General models write Pawn the way 2008-2014 forum tutorials did: `strtok` commands, `dini` accounts,
 `format(query, ..., "'%s'")` SQL, `new string[256]`, invented vehicle IDs and animation names. Pawn Forge puts
-deterministic tools in the loop so your AI assistant (Claude or Antigravity) **compiles** what it writes, **lints** it for the defects that actually crash
-or compromise servers, and **looks up** IDs and signatures from the real open.mp data and library headers.
+deterministic tools in the loop so your AI assistant **compiles** what it writes, **lints** it for the defects that
+actually crash or compromise servers, and **looks up** IDs and signatures from official open.mp, SA-MP 0.3.7, and library headers.
 
 ## What you get
 
 | Component | What it does |
 |---|---|
-| **MCP server** (11 tools, Python stdlib only) | Compiler bridge, static analysis, crash-log triage, ID and API lookup, open.mp migration, TextDraw conversion, headless server runs |
-| **Skill: pawn-standards** | Loaded automatically for `.pwn`/`.inc` work: modern practice for strings, MySQL R41, SQLite, YSI 5, Streamer, Pawn.CMD, sscanf, open.mp. Every snippet in it is compile-tested. |
-| **Workflows / Skills** | `/pawn-forge:build`, `/pawn-forge:audit`, `/pawn-forge:migrate-openmp`, `/pawn-forge:debug-crash`, `/pawn-forge:textdraw`, `/pawn-forge:modernize-storage`, `/pawn-forge:test` (invoked as slash commands in Claude Code or on-demand skills in Antigravity) |
+| **MCP server & CLI** (11 tools / 11 subcommands, Python stdlib only) | Compiler bridge (`-Z` compat for SA-MP 0.3.7), 37-rule static analysis, crash-log triage, ID and API lookup (`open.mp` & `sa-mp`), open.mp migration, TextDraw conversion, headless server runs |
+| **Skill: pawn-standards** | Loaded automatically for `.pwn`/`.inc` work: modern practice for SA-MP 0.3.7 & open.mp, strings, MySQL R41, SQLite, YSI 5, Streamer, Pawn.CMD, sscanf, Pawn.RakNet, samp-bcrypt, ColAndreas. Every snippet in it is compile-tested. |
+| **Workflows / Skills (10 workflows)** | `/pawn-forge:build`, `/pawn-forge:audit`, `/pawn-forge:migrate-openmp`, `/pawn-forge:debug-crash`, `/pawn-forge:textdraw`, `/pawn-forge:modernize-storage`, `/pawn-forge:test`, `/pawn-forge:roleplay`, `/pawn-forge:anticheat`, `/pawn-forge:ecosystem` |
 | **Agents** | `pawn-auditor` (read-only, large audits), `pawn-build-fixer` (compile until clean) |
 | **Hooks** | Lints the lines the assistant just edited in Pawn files and feeds findings back; announces the toolchain when a session starts in a Pawn project |
 
 ## Install
 
-### Claude Code
+### Agensi & Multi-Agent Quick Start (Claude Code, Cursor, Copilot, Windsurf, Codex, Antigravity, 20+ agents)
+
+Install the 11 canonical skills via Agensi / `skills`:
+
+```bash
+npx skills add POORSAKEN2/pawn-forge
+```
+
+Install the standalone zero-dependency Python CLI (`pawnforge` + `pawnforge-mcp`):
+
+```bash
+pip install git+https://github.com/POORSAKEN2/pawn-forge.git
+```
+
+CLI subcommands map 1:1 to the 11 MCP tools: `info`, `compile`, `install-compiler`, `lint`, `lint-rules`, `analyze-log`, `lookup`, `api`, `migrate`, `textdraw`, `run-server` (pass `--json` or `--strict`).
+
+### Claude Code (Plugin)
 
 ```text
 /plugin marketplace add POORSAKEN2/pawn-forge
@@ -29,20 +45,20 @@ or compromise servers, and **looks up** IDs and signatures from the real open.mp
 or from a shell: `claude plugin marketplace add POORSAKEN2/pawn-forge` then `claude plugin install pawn-forge@pawn-forge`.
 To try it from a local checkout: `claude --plugin-dir ./plugins/pawn-forge`.
 
-### Google Antigravity
+### Google Antigravity (Plugin)
 
-Pawn Forge includes native `plugin.json` and `mcp_config.json` manifests for Antigravity.
+Pawn Forge includes native `plugin.json` and `mcp_config.json` manifests in `plugins/pawn-forge` for Antigravity. Copy only the `plugins/pawn-forge` directory (not the repo root) so Antigravity does not expose both `skills/` and `plugins/pawn-forge/skills/` simultaneously:
 
-- **Workspace / Project**: Clone or copy into `.agents/plugins/pawn-forge` in your Pawn project.
-- **Global**: Clone into `~/.gemini/config/plugins/pawn-forge` (Windows: `%USERPROFILE%\.gemini\config\plugins\pawn-forge`).
+- **Workspace / Project**: Copy `./plugins/pawn-forge` into `.agents/plugins/pawn-forge` in your Pawn project (or use `npx skills add POORSAKEN2/pawn-forge`).
+- **Global**: Copy `./plugins/pawn-forge` into `~/.gemini/config/plugins/pawn-forge` (Windows: `%USERPROFILE%\.gemini\config\plugins\pawn-forge`).
 - **Standalone MCP**: Add `server/pawn_mcp.py` to your `mcp_config.json`.
 
 ### Requirements
 
-- **Python 3.8+** on PATH. No packages to install.
+- **Python 3.8+** on PATH. Standard library only; no third-party packages required.
   On Windows set the plugin's *Python command* option to `py` (or `python`).
 - **A Pawn compiler** (pawncc 3.10.x). Found automatically in the project's `qawno/` or `pawno/`, on PATH, through
-  the *pawncc path* option, or installed on request by the `install_compiler` tool (open.mp's 3.10.11 build;
+  the *pawncc path* option, or installed on request by `install_compiler` / `pawnforge install-compiler` (open.mp's 3.10.11 build;
   3.10.10 on macOS). sampctl projects (`pawn.json`) build through sampctl when it is on PATH.
 - **Linux only**: the compiler and the open.mp server are 32-bit. On Debian/Ubuntu:
   `sudo apt install libc6-i386 lib32stdc++6 lib32atomic1`.
@@ -59,20 +75,20 @@ Set when installing, or later with `/plugin configure pawn-forge@pawn-forge`:
 | Extra include directories | none | Added to every compile (`:` or `;` separated) |
 | Lint Pawn files after each edit | on | The edit-time lint hook |
 
-## Tools
+## Tools & CLI Subcommands
 
-| Tool | Purpose |
-|---|---|
-| `project_info` | Root, main script, includes, libraries detected, platform (SA-MP vs open.mp), plugins/components, compiler |
-| `compile` | Real compiler run on a file or inline snippet: structured diagnostics with fix hints, stack estimate, `-d3` debug info. Normalises backslash `#include` paths on Linux/macOS so YSI builds there. |
-| `install_compiler` | Downloads the community compiler into the plugin's data directory |
-| `lint` / `lint_rules` | Static analysis (rules below), with inline suppression `// pawnforge-ignore PF101` |
-| `analyze_log` | CrashDetect runtime errors and backtraces, server crashes with the suspect plugin, long callbacks, missing natives, plugin load failures; grouped by root cause, with source context |
-| `lookup` | Vehicles, weapons, skins, interiors (with coordinates), animations, server limits |
-| `api_lookup` | Exact signatures: open.mp, Streamer, MySQL R41, sscanf2, Pawn.CMD, plus the project's own includes |
-| `migrate_openmp` | SA-MP to open.mp: includes, renames, deprecations, tagged constants, callback headers, plugin notes; diff, dry run by default, backup on write |
-| `convert_textdraws` | Editor export to a guarded module with arrays, named indices and Create/Destroy/Show/Hide |
-| `run_server` | Boots open.mp headlessly on a free, unannounced port; reports boot errors, runtime incidents and YSI y_testing results |
+| Tool | CLI Subcommand | Purpose |
+|---|---|---|
+| `project_info` | `pawnforge info` | Root, main script, includes, libraries detected, platform (`sa-mp` vs `open.mp`), plugins/components, compiler |
+| `compile` | `pawnforge compile` | Real compiler run on a file or inline snippet: structured diagnostics with fix hints, stack estimate, `-d3` debug info, `--compat` (`-Z`) for legacy SA-MP headers. Normalises backslash `#include` paths on Linux/macOS so YSI builds there. |
+| `install_compiler` | `pawnforge install-compiler` | Downloads the community compiler into the plugin's data directory |
+| `lint` / `lint_rules` | `pawnforge lint` / `pawnforge lint-rules` | Static analysis (37 rules below), with inline suppression `// pawnforge-ignore PF101` |
+| `analyze_log` | `pawnforge analyze-log` | CrashDetect runtime errors and backtraces, server crashes with the suspect plugin, long callbacks, missing natives, plugin load failures; grouped by root cause, with source context |
+| `lookup` | `pawnforge lookup` | Vehicles, weapons, skins, interiors (with coordinates), animations, server limits |
+| `api_lookup` | `pawnforge api` | Exact signatures (`--platform auto\|open.mp\|sa-mp`): open.mp, SA-MP 0.3.7 (`samp-stdlib`), Streamer, MySQL R41, sscanf2, Pawn.CMD, Pawn.RakNet, samp-bcrypt, ColAndreas, plus the project's own includes |
+| `migrate_openmp` | `pawnforge migrate` | SA-MP to open.mp: includes, renames, deprecations, tagged constants, callback headers, plugin notes; diff, dry run by default, backup on write |
+| `convert_textdraws` | `pawnforge textdraw` | Editor export to a guarded module with arrays, named indices and Create/Destroy/Show/Hide |
+| `run_server` | `pawnforge run-server` | Boots open.mp headlessly on a free, unannounced port; reports boot errors, runtime incidents and YSI y_testing results |
 
 ## Lint rules
 
@@ -110,6 +126,12 @@ Set when installing, or later with `/plugin configure pawn-forge@pawn-forge`:
 | PF602 | error | validation | Invalid skin ID |
 | PF603 | error | validation | Weapon ID that cannot be given |
 | PF604 | error | validation | Unknown animation |
+| PF701 | warning | security | Immediate Kick/Ban after message or dialog |
+| PF702 | error | security | Unguarded strcmp on inputtext |
+| PF703 | warning | security | Unguarded array index in combat callback |
+| PF704 | error | security | RCON command built with format %s |
+| PF801 | warning | ecosystem | BitStream not freed with BS_Delete |
+| PF802 | info | performance | IsPlayerInRangeOfPoint inside OnPlayerUpdate |
 <!-- RULES:END -->
 
 Severity: `error` = crash, memory corruption or exploit; `warning` = leak, blocking work or weak practice;
@@ -119,13 +141,13 @@ or `// pawnforge-ignore-file PF503`.
 ## How the pieces fit
 
 ```text
- you ──► Claude / Antigravity ──► skills (what good Pawn looks like, step-by-step workflows)
+ you ──► Agent (Claude / Antigravity / Cursor / Codex) ──► skills (modern Pawn + 10 workflows)
              │
-             ├──► MCP tools ──► pawncc / sampctl ──► diagnostics ──► fix ──► recompile
-             │              ├─► linter, log analyser, migrator, TextDraw converter
-             │              ├─► reference data (generated from upstream, see below)
-             │              └─► omp-server (headless tests)
-             └──► hooks: lint each edit · detect Pawn projects
+             ├──► MCP server or `pawnforge` CLI ──► pawncc / sampctl ──► diagnostics ──► fix ──► recompile
+             │                                  ├─► linter (37 rules), log analyser, migrator, TextDraw converter
+             │                                  ├─► reference data (generated from upstream, see below)
+             │                                  └─► omp-server (headless tests)
+             └──► hooks (plugin mode): lint each edit · detect Pawn projects
 ```
 
 ## Data provenance
@@ -134,7 +156,8 @@ Everything in `server/data/` is generated by `tools/build_data.py` from upstream
 
 - open.mp documentation (`openmultiplayer/web`): vehicles, weapons, skins, interiors, animations, limits
 - open.mp standard library (`openmultiplayer/omp-stdlib`): natives, callbacks, `#pragma deprecated` table
-- Incognito's Streamer, pBlueG's MySQL R41, Y_Less's sscanf2, katursis's Pawn.CMD: native signatures
+- SA-MP 0.3.7 standard library (`samp-stdlib`): natives and callbacks for `platform="sa-mp"`
+- Incognito's Streamer, pBlueG's MySQL R41, Y_Less's sscanf2, katursis's Pawn.CMD, katursis's Pawn.RakNet, Sreyas-Sreelal's samp-bcrypt, Pottus's ColAndreas: native and callback signatures
 
 `server/data/sources.json` records the exact upstream commits. To refresh, clone those repositories into one
 directory and run `python3 tools/build_data.py --sources <dir>`.
@@ -142,8 +165,8 @@ directory and run `python3 tools/build_data.py --sources <dir>`.
 ## Development
 
 ```bash
-cd plugins/pawn-forge
-python3 -m unittest discover -s tests -v
+python -m unittest discover -s plugins/pawn-forge/tests -t plugins/pawn-forge/tests -v
+python plugins/pawn-forge/tools/sync_skills.py --check
 ```
 
 Integration tests (real compiler, real headers, real server) run when these are set, and are skipped otherwise:

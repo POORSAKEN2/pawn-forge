@@ -13,13 +13,16 @@ Process:
 3. Verify every `error` and every `security` finding by reading the source line and enough context to be sure.
    Discard false positives and record which rule misfired and why.
 4. Read the high-risk systems directly, even where lint is quiet: account registration/login, admin commands and
-   permission checks, money/item/inventory changes, `OnDialogResponse`, anything that indexes arrays with client
-   values (`listitem`, `inputtext`, IDs parsed from `params`), and disconnect cleanup.
+   permission checks, `SendRconCommand` callers (`PF704`), money/item/inventory changes (see `roleplay` checks),
+   `OnDialogResponse` (`PF702` unguarded `strcmp`, `listitem` bounds), combat callbacks (`PF703` bounds, `NaN`/rapid-fire,
+   see `anticheat` checks), `Kick`/`Ban` delays (`PF701`), `Pawn.RakNet` `BitStream` lifecycle (`PF801`),
+   `OnPlayerUpdate` polling (`PF802`/`PF504`), and disconnect cleanup.
 5. Classify:
-   - Critical: crashes or memory corruption (PF101/102/104/105, unchecked indices), SQL injection, privilege or
-     money exploits.
-   - High: leaks and blocking work (PF302-305, PF401-405, PF504), weak password hashing, invalid IDs.
-   - Modernisation: legacy libraries and patterns.
+   - Critical: crashes or memory corruption (PF101/102/104/105, unchecked indices), SQL injection (PF201),
+     auth/RCON exploits (PF702 unguarded `strcmp`, PF704 `SendRconCommand` `%s`), privilege or money exploits.
+   - High: leaks and blocking work (PF302-305, PF401-405, PF504, PF801 `BitStream` leaks), immediate `Kick`/`Ban`
+     (PF701), unvalidated combat bounds (PF703), weak password hashing (PF203), invalid IDs (PF601-604).
+   - Modernisation: legacy libraries and patterns, `IsPlayerInRangeOfPoint` inside `OnPlayerUpdate` (PF802).
 
 Return only the report (it goes back to the main conversation, which cannot see your tool calls):
 - One line of scope: files scanned, platform, libraries.

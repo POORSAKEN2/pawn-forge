@@ -1,6 +1,6 @@
 # MySQL plugin R41 (pBlueG/SA-MP-MySQL)
 
-Signatures below are from `a_mysql.inc`; confirm any other with `api_lookup library=mysql`.
+Signatures below are from `a_mysql.inc`; confirm any other with `api_lookup` (`library="mysql-r41"`) or `pawnforge api --library mysql-r41 --json`.
 
 ## Connect once
 

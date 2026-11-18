@@ -1,9 +1,13 @@
 {
- "generated": "2026-10-19",
+ "generated": "2026-11-18",
  "omp-stdlib": "17c1b0191195cb0b59a820135fbca622c84129dd 2026-10-15",
  "omp-web (docs/scripting/resources)": "4014a3952e3ae9556440446c32c2b1b8ae7f2f30 2026-10-17",
  "samp-streamer-plugin": "49d48e515b9a095f016fb6a208a2cd94c42acda5 2025-11-07",
  "SA-MP-MySQL": "9524fcc9088004948770ddd6e05a6074581d3095 2020-03-27",
  "sscanf": "27f0b725095bf40ed9c4d772acd7300b02be632b 2023-10-17",
- "Pawn.CMD": "8b4505d95b641f2485fb1ce6d535d27f126bfb94 2023-02-26"
+ "Pawn.CMD": "8b4505d95b641f2485fb1ce6d535d27f126bfb94 2023-02-26",
+ "samp-stdlib": "8ffb055624308b25521665b60e78b5e6e6b3717f 2023-09-19",
+ "Pawn.RakNet": "dacb88d1c05d56614e6d2c6cd760d7dd6bba0df8 2026-09-16",
+ "samp-bcrypt": "c60e68d483a95d109855fdd7517425c0363fd10c 2024-04-17",
+ "ColAndreas": "afe3da7e6ba170777fdb021f8b8d5b7e20752523 2025-01-05"
 }

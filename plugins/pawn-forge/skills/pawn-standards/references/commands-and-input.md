@@ -58,5 +58,5 @@ YCMD:heal(playerid, params[], help)
 
 - Name IDs with an enum: `enum { DIALOG_NONE, DIALOG_LOGIN, DIALOG_REGISTER };`
 - In `OnDialogResponse`, check `dialogid`, then `response`, then validate `listitem` against your list size and
-  `strlen(inputtext)` against your buffer before use. Clients can send responses for dialogs you never showed.
+  `strlen(inputtext)` / `isnull(inputtext)` before use. Clients can send responses for dialogs you never showed.
 - Return 1 when you handled the dialog; returning 0 lets other scripts handle it.

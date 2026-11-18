@@ -78,6 +78,34 @@ CMD:pm(playerid, params[])
 public OnPlayerUpdate(playerid)
 {
 	for (new i = 0; i < MAX_PLAYERS; i++) { }                      // PF503 + PF504
+	if (IsPlayerInRangeOfPoint(playerid, 5.0, 0.0, 0.0, 0.0)) { }  // PF802
+	return 1;
+}
+
+public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
+{
+	if (!strcmp(inputtext, "secret"))                              // PF702
+	{
+		SendClientMessage(playerid, -1, "Access denied.");
+		Kick(playerid);                                            // PF701
+	}
+	return 1;
+}
+
+new gWeaponHits[50];
+public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY, Float:fZ)
+{
+	gWeaponHits[weaponid]++;                                       // PF703
+	return 1;
+}
+
+stock LegacySecurityAndRakNet(playerid, const arg[])
+{
+	new cmd[64];
+	format(cmd, sizeof cmd, "kick %s", arg);
+	SendRconCommand(cmd);                                          // PF704
+	new BitStream:bs = BS_New();                                   // PF801
+	BS_WriteValue(bs, PR_INT32, playerid);
 	return 1;
 }
 

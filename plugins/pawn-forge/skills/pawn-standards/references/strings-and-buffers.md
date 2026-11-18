@@ -11,7 +11,7 @@
 | IP address | 16 |
 | GameText / TextDraw string | 1024 (string length limit for TextDraws) |
 
-Check `lookup kind=limit` for the full table from the open.mp docs.
+Check `lookup` (`kind="limit"`) or `pawnforge lookup limit --json` for the full table from the open.mp docs.
 
 ## Safe patterns
 

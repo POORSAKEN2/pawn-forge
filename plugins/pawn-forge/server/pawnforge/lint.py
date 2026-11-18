@@ -110,6 +110,19 @@ RULES: dict[str, Rule] = {r.id: r for r in [
          "Givable weapons are 0-18 and 22-46. Use the WEAPON_* constants or the lookup tool (kind=weapon)."),
     Rule("PF604", "error", "validation", "Unknown animation",
          "Check the library and animation name with the lookup tool (kind=animation)."),
+    # ---- anti-cheat, security & ecosystem
+    Rule("PF701", "warning", "security", "Immediate Kick/Ban after message or dialog",
+         "Use a short SetTimerEx/defer delay before Kick/Ban/BanEx so queued SendClientMessage/ShowPlayerDialog packets reach the client."),
+    Rule("PF702", "error", "security", "Unguarded strcmp on inputtext",
+         "In Pawn strcmp(\"pw\", \"\") returns 0. Guard with isnull(inputtext), !inputtext[0], or strlen(inputtext) before comparing."),
+    Rule("PF703", "warning", "security", "Unguarded array index in combat callback",
+         "Validate client-supplied weaponid/damagedid/issuerid/hitid (< 0, >= sizeof, INVALID_PLAYER_ID, or IsPlayerConnected) before indexing arrays."),
+    Rule("PF704", "error", "security", "RCON command built with format %s",
+         "Validate or whitelist input strictly, or pass numeric IDs (%d) instead of unvalidated %s into SendRconCommand."),
+    Rule("PF801", "warning", "ecosystem", "BitStream not freed with BS_Delete",
+         "Call BS_Delete(bs) on every BitStream created with BS_New/BS_NewCopy before returning."),
+    Rule("PF802", "info", "performance", "IsPlayerInRangeOfPoint inside OnPlayerUpdate",
+         "OnPlayerUpdate fires ~30 times/sec per player. Use Streamer dynamic areas (OnPlayerEnterDynamicArea) or a slower timer."),
 ]}
 
 # Natives taking (destination, size) - argument indices.
@@ -272,13 +285,27 @@ class Linter:
             return False
         return fn.kind in ("command", "dialog", "timer") or fn.name.split(":")[-1] in REPEATING_CALLBACKS
 
-    def _statement_context(self, call_start: int) -> str:
-        """Text before the call on the same statement (to see if the result is used)."""
+    def _statement_start(self, offset: int) -> int:
         t = self.s.masked
-        j = call_start - 1
+        j = offset - 1
         while j >= 0 and t[j] not in ";{}":
             j -= 1
-        return t[j + 1:call_start].strip()
+        return j + 1
+
+    def _statement_context(self, call_start: int) -> str:
+        """Text before the call on the same statement (to see if the result is used)."""
+        return self.s.masked[self._statement_start(call_start):call_start].strip()
+
+    def _block_stack(self, fn, offset: int) -> tuple[int, ...]:
+        """Tuple of enclosing '{' offsets inside `fn` at `offset`."""
+        stack: list[int] = []
+        t = self.s.masked
+        for i in range(fn.body_start, min(offset, fn.body_end)):
+            if t[i] == "{":
+                stack.append(i)
+            elif t[i] == "}" and stack:
+                stack.pop()
+        return tuple(stack)
 
     # ------------------------------------------------------------------ buffers
     def check_sized_destinations(self):
@@ -593,6 +620,167 @@ class Linter:
                 sug = difflib.get_close_matches(name.upper(), names, n=3)
                 self.add("PF604", c.start, f"Animation \"{name}\" is not in library \"{lib}\"."
                          + (f" Did you mean {', '.join(sug)}?" if sug else ""))
+
+    # ------------------------------------------------------------------ anti-cheat, security & ecosystem
+    def check_immediate_kick(self):
+        msgs_by_fn: dict[int, list] = {}
+        for c in self.s.calls(r"SendClientMessage|ShowPlayerDialog"):
+            fn = self.s.function_at(c.start)
+            if fn:
+                msgs_by_fn.setdefault(fn.body_start, []).append(c)
+        for c in self.s.calls(r"Kick|Ban|BanEx"):
+            fn = self.s.function_at(c.start)
+            target = (c.arg(self.s, 0) or "").strip()
+            if not fn or not target:
+                continue
+            kick_stack = self._block_stack(fn, c.start)
+            stmt_start = self._statement_start(c.start)
+            for mc in reversed(msgs_by_fn.get(fn.body_start, [])):
+                if mc.start >= c.start:
+                    continue
+                if (mc.arg(self.s, 0) or "").strip() != target:
+                    continue
+                if re.match(r"^(?:if|else\s+if|else|while|for)\b", self._statement_context(mc.start)):
+                    continue
+                msg_stack = self._block_stack(fn, mc.start)
+                if len(msg_stack) > len(kick_stack) or kick_stack[:len(msg_stack)] != msg_stack:
+                    continue
+                if self._has_path_barrier(fn, mc.close_paren + 1, stmt_start, c.start, len(msg_stack)):
+                    continue
+                self.add("PF701", c.start,
+                         f"{c.name}({target}) immediately follows {mc.name} on the same path; delay with SetTimerEx/defer so the message arrives.")
+                break
+
+    def _has_path_barrier(self, fn, start: int, stmt_start: int, call_start: int, target_depth: int) -> bool:
+        """Return True if an unconditional return or sibling switch case separates `start` from `call_start`."""
+        t = self.s.masked
+        lo = max(fn.body_start, start)
+        hi = min(call_start, fn.body_end)
+        depth = len(self._block_stack(fn, lo))
+        for i in range(lo, hi):
+            ch = t[i]
+            if ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth = max(0, depth - 1)
+            elif depth == target_depth and (i == 0 or not (t[i - 1].isalnum() or t[i - 1] == "_")):
+                if (i < stmt_start and t[i:i + 6] == "return"
+                        and (i + 6 >= len(t) or not (t[i + 6].isalnum() or t[i + 6] == "_"))
+                        and self._statement_context(i) == ""):
+                    return True
+                # Pawn switch cases do not fall through, so sibling case/default labels are mutually exclusive.
+                if (t[i:i + 4] == "case"
+                        and (i + 4 >= len(t) or not (t[i + 4].isalnum() or t[i + 4] == "_"))
+                        and self._statement_context(i) == ""
+                        and re.match(r"(?:\s|\()[^;{}]*?:", t[i + 4:hi])):
+                    return True
+                if (t[i:i + 7] == "default"
+                        and (i + 7 >= len(t) or not (t[i + 7].isalnum() or t[i + 7] == "_"))
+                        and self._statement_context(i) == ""
+                        and re.match(r"\s*:", t[i + 7:hi])):
+                    return True
+        return False
+
+    def check_empty_strcmp(self):
+        guard_re = re.compile(r"\b(?:isnull|strlen)\s*\(\s*inputtext\s*\)|\binputtext\s*\[\s*0\s*\]")
+        for c in self.s.calls(r"strcmp"):
+            if bare_identifier(c.arg(self.s, 0)) != "inputtext" and bare_identifier(c.arg(self.s, 1)) != "inputtext":
+                continue
+            fn = self.s.function_at(c.start)
+            if not fn:
+                continue
+            cmp_stack = self._block_stack(fn, c.start)
+            guarded = False
+            for gm in guard_re.finditer(self.s.masked, fn.body_start, c.start):
+                g_stack = self._block_stack(fn, gm.start())
+                if len(g_stack) <= len(cmp_stack) and cmp_stack[:len(g_stack)] == g_stack:
+                    guarded = True
+                    break
+            if not guarded:
+                self.add("PF702", c.start,
+                         "strcmp on 'inputtext' without an empty-string guard (strcmp(\"pw\", \"\") returns 0 in Pawn).")
+
+    def check_combat_bounds(self):
+        combat_params = {
+            "OnPlayerWeaponShot": (1, 2, 3),
+            "OnPlayerGiveDamage": (1, 3, 4),
+            "OnPlayerTakeDamage": (1, 3, 4),
+        }
+        for fn in self.s.functions:
+            cb_name = fn.name.split(":")[-1]
+            indices = combat_params.get(cb_name)
+            if not indices:
+                continue
+            header = self.s.masked[fn.header_start:fn.body_start]
+            hm = re.search(rf"\b{re.escape(cb_name)}\s*\(([^)]*)\)", header)
+            if not hm:
+                continue
+            params = [p.strip() for p in hm.group(1).split(",")]
+            watched: list[str] = []
+            for idx in indices:
+                if idx >= len(params):
+                    continue
+                pm = re.search(rf"(?:const\s+)?(?:{IDENT}:)?\s*&?({IDENT})\s*(?:\[[^\]]*\])?\s*(?:=.*)?$", params[idx])
+                if pm:
+                    watched.append(pm.group(1))
+            if not watched:
+                continue
+            body = self.s.masked[fn.body_start:fn.body_end]
+            for param in watched:
+                ep = re.escape(param)
+                for am in re.finditer(rf"(?:{IDENT}|\])\s*\[\s*{ep}\s*\]", body):
+                    before = body[:am.start()]
+                    if (re.search(rf"\b{ep}\s*(?:<|<=|>|>=)\s*", before)
+                            or re.search(rf"(?:<|<=|>|>=)\s*{ep}\b", before)
+                            or re.search(rf"\b{ep}\s*[!=]=\s*INVALID_PLAYER_ID\b|\bINVALID_PLAYER_ID\s*[!=]=\s*{ep}\b", before)
+                            or re.search(rf"\bIsPlayerConnected\s*\(\s*{ep}\s*\)", before)):
+                        continue
+                    self.add("PF703", fn.body_start + am.start(),
+                             f"{cb_name} indexes an array with client-supplied '{param}' without a bounds check.")
+
+    def check_rcon_injection(self):
+        formats_by_fn: dict[int, list] = {}
+        for fc in self.s.calls(r"format"):
+            fn = self.s.function_at(fc.start)
+            key = fn.body_start if fn else -1
+            formats_by_fn.setdefault(key, []).append(fc)
+        for c in self.s.calls(r"SendRconCommand"):
+            buf = bare_identifier(c.arg(self.s, 0))
+            if not buf:
+                continue
+            fn = self.s.function_at(c.start)
+            key = fn.body_start if fn else -1
+            prior = [fc for fc in formats_by_fn.get(key, [])
+                     if fc.start < c.start and bare_identifier(fc.arg(self.s, 0)) == buf]
+            if not prior:
+                continue
+            lit = string_literal_value(prior[-1].arg(self.s, 2) or "")
+            if lit and re.search(r"%(?:[-0-9.]*)s", lit):
+                self.add("PF704", c.start,
+                         f"SendRconCommand executes '{buf}' formatted with %s; validate input or avoid %s.")
+
+    def check_bitstream_leaks(self):
+        for c in self.s.calls(r"BS_New|BS_NewCopy"):
+            ctx = self._statement_context(c.start)
+            fn = self.s.function_at(c.start)
+            if re.search(r"\bBS_Delete\s*\(\s*$", ctx):
+                continue
+            m = re.search(rf"({IDENT})\s*=\s*$", ctx) or re.search(rf"\bnew\s+(?:{IDENT}:)?({IDENT})\s*=\s*$", ctx)
+            if m and fn:
+                var = m.group(1)
+                body = self.s.masked[fn.body_start:fn.body_end]
+                if not re.search(rf"\bBS_Delete\s*\(\s*{re.escape(var)}\b", body) \
+                        and not re.search(rf"\breturn\s+{re.escape(var)}\b", body):
+                    self.add("PF801", c.start, f"BitStream '{var}' from {c.name} is never freed with BS_Delete in {fn.name}.")
+            elif not m and ctx == "":
+                self.add("PF801", c.start, f"BitStream from {c.name} is discarded without BS_Delete.")
+
+    def check_range_in_onplayerupdate(self):
+        for c in self.s.calls(r"IsPlayerInRangeOfPoint"):
+            fn = self.s.function_at(c.start)
+            if fn and fn.name.split(":")[-1] == "OnPlayerUpdate":
+                self.add("PF802", c.start,
+                         "IsPlayerInRangeOfPoint inside OnPlayerUpdate runs ~30 times per second per player.")
 
 
 # ---------------------------------------------------------------------- entry points

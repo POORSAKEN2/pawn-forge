@@ -1,27 +1,33 @@
 ---
-description: Write and run headless tests for Pawn code on a local open.mp server - YSI y_testing unit tests (@test + ASSERT_*) for gameplay logic such as economy payouts, inventory limits and spawn rules, plus boot smoke tests that catch runtime errors. Use when asked to test, verify behaviour, add unit tests or check that a gamemode boots.
+name: test
+description: Write and run headless tests for Pawn code on a local open.mp server using YSI y_testing unit tests (@test + ASSERT_*) and boot smoke tests that catch runtime errors. Use when asked to test, verify gameplay behaviour, add unit tests, or check that a gamemode boots cleanly.
+license: MIT
+compatibility: Optional Python 3.8+ for pawnforge CLI / MCP tools, pawncc, and a local open.mp server binary.
+metadata:
+  author: POORSAKEN2
+  version: "0.2.0"
 argument-hint: "[server-dir] [module or behaviour to test]"
-allowed-tools: mcp__plugin_pawn-forge_pawn__compile mcp__plugin_pawn-forge_pawn__run_server mcp__plugin_pawn-forge_pawn__project_info mcp__plugin_pawn-forge_pawn__analyze_log mcp__plugin_pawn-forge_pawn__api_lookup
 ---
 
 # Headless tests on open.mp
 
-Arguments: `$ARGUMENTS`
+Requires a local open.mp server directory (`omp-server` or `omp-server.exe`). If none exists, instruct the user to download and extract the open.mp server package for their OS; do not download it unasked. On 64-bit Linux, 32-bit binaries need `libc6-i386 lib32stdc++6 lib32atomic1`.
 
-Needs a local open.mp server directory (contains `omp-server` or `omp-server.exe`). If there is none, tell the user
-to download the open.mp server package for their OS and extract it; do not download it yourself unasked. On 64-bit
-Linux the server and compiler are 32-bit and need `libc6-i386 lib32stdc++6 lib32atomic1` (Debian/Ubuntu names).
+## Tool Resolution
+
+1. **Pawn Forge MCP**: `project_info`, `compile`, `run_server`, `analyze_log`, `api_lookup`.
+2. **Standalone CLI**: `pawnforge <cmd> --json` (or `python scripts/pawnforge_exec.py <cmd> --json`, `python -m pawnforge <cmd> --json`, or `uvx --from git+https://github.com/POORSAKEN2/pawn-forge pawnforge <cmd> --json`).
+3. **Fallback**: compile with `pawncc` and run `omp-server` manually; suggest `pip install git+https://github.com/POORSAKEN2/pawn-forge.git`.
 
 ## Unit tests (YSI y_testing)
 
-1. Make game logic testable: pure functions (`Economy_Payout(level)`, `Inventory_CanAdd(playerid, item)`) separated
-   from natives that need a connected player.
-2. Create a test entry script `gamemodes/tests.pwn` (or `test/<module>_test.pwn` copied into gamemodes):
+1. **Isolate pure logic** (`Economy_Payout(level)`, `Inventory_CanAdd(playerid, item)`) from natives requiring a connected player.
+2. **Create `gamemodes/tests.pwn`** (or `test/<module>_test.pwn` compiled into `gamemodes/`):
    ```pawn
    #define RUN_TESTS
    #include <open.mp>
    #include <YSI_Core\y_testing>
-   #include "../includes/economy.inc"   // modules under test
+   #include "../includes/economy.inc"
 
    @test() PayoutScalesWithLevel()
    {
@@ -31,21 +37,15 @@ Linux the server and compiler are 32-bit and need `libc6-i386 lib32stdc++6 lib32
 
    main() {}
    ```
-   Available checks include `ASSERT`, `ASSERT_EQ`, `ASSERT_NE`, `ASSERT_LT`, `ASSERT_LE`, `ASSERT_GT`, `ASSERT_GE`,
-   `ASSERT_TRUE`, `ASSERT_FALSE`, `ASSERT_ZE`, `ASSERT_NZ`, `ASSERT_NEAR`, `ASSERT_SAME`.
-   Write a test for each rule the user cares about, including edge cases (0, negative, max values, invalid IDs).
-3. `compile` the test script with `output: "alongside"` so `tests.amx` lands in gamemodes/.
-4. `run_server` with `server_dir` and `script: "tests"`. It stops when y_testing prints its summary and returns
-   `tests`, `fails`, `failed_tests` and the `FAIL:` assertion lines.
-5. Fix failures in the code under test (not the test, unless the test is wrong), recompile, rerun until green.
+   Macros: `ASSERT`, `ASSERT_EQ`, `ASSERT_NE`, `ASSERT_LT`, `ASSERT_LE`, `ASSERT_GT`, `ASSERT_GE`, `ASSERT_TRUE`, `ASSERT_FALSE`, `ASSERT_ZE`, `ASSERT_NZ`, `ASSERT_NEAR`, `ASSERT_SAME`. Cover edge cases (`0`, negatives, max values, invalid IDs).
+3. **Compile** with `output: "alongside"` / `pawnforge compile gamemodes/tests.pwn --output alongside --json` so `tests.amx` lands in `gamemodes/`.
+4. **Run headlessly** via `run_server` (`server_dir`, `script: "tests"`) / `pawnforge run-server <dir> --script tests --json`; stops on the `y_testing` summary and returns `tests`, `fails`, `failed_tests`, and `FAIL:` lines.
+5. **Fix** bugs in the code under test, recompile, and rerun until green.
 
 ## Boot smoke test
 
-`compile` the gamemode with `output: "alongside"`, then `run_server` with `script` and a `stop_on` regex for a line
-the gamemode prints when initialisation completes (or let it hit `timeout_s`). Check `script_errors`,
-`runtime.incidents` and `missing_natives`. If `runtime_errors_detectable` is false, recommend adding crashdetect to
-`pawn.legacy_plugins`: without it, out-of-bounds errors can be silent.
+Compile the gamemode (`--output alongside`), then run `run_server` / `pawnforge run-server <dir> --script <name> --stop-on <regex> --json` (or `--timeout <sec>`). Check `script_errors`, `runtime.incidents`, and `missing_natives`. If `runtime_errors_detectable` is false, recommend adding CrashDetect to `pawn.legacy_plugins` so out-of-bounds errors are not silent.
 
 ## Report
 
-Tests run, pass/fail with the failing assertions, fixes made, and the command to rerun (`/pawn-forge:test`).
+Tests run, pass/fail counts with failing assertions, fixes made, and rerun command (`pawnforge run-server <dir> --script tests` or `test`).

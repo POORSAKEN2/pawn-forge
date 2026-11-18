@@ -15,6 +15,10 @@ Expected checkouts under --sources (shallow clones are fine):
     SA-MP-MySQL/             github.com/pBlueG/SA-MP-MySQL
     sscanf/                  github.com/Y-Less/sscanf
     Pawn.CMD/                github.com/katursis/Pawn.CMD
+    samp-stdlib/             github.com/pawn-lang/samp-stdlib (optional)
+    Pawn.RakNet/             github.com/katursis/Pawn.RakNet (optional)
+    samp-bcrypt/             github.com/Sreyas-Sreelal/samp-bcrypt (optional)
+    ColAndreas/              github.com/Pottus/ColAndreas (optional)
 """
 from __future__ import annotations
 
@@ -226,7 +230,7 @@ def scan_includes(paths, library, root: Path):
                 "signature": line.strip().rstrip(";").replace("\t", " "),
                 "return_tag": hit.group("tag"),
                 "params": re.sub(r"\s+", " ", hit.group("params").strip()),
-                "file": str(p.relative_to(root)),
+                "file": p.relative_to(root).as_posix(),
                 "line": i + 1,
             }
             if m and m.group("alias"):
@@ -315,15 +319,47 @@ def main():
 
     libs = {
         "open.mp": (sorted((src / "omp-stdlib").glob("*.inc")), src / "omp-stdlib"),
+        "samp-stdlib": (
+            sorted((src / "samp-stdlib").glob("a_*.inc"), key=lambda p: (p.name == "a_npc.inc", p.name)),
+            src / "samp-stdlib",
+        ),
         "streamer": ([src / "samp-streamer-plugin" / "streamer.inc"], src / "samp-streamer-plugin"),
         "mysql-r41": ([src / "SA-MP-MySQL" / "a_mysql.inc.in"], src / "SA-MP-MySQL"),
         "sscanf": ([src / "sscanf" / "sscanf2.inc"], src / "sscanf"),
         "pawn.cmd": ([src / "Pawn.CMD" / "src" / "Pawn.CMD.inc"], src / "Pawn.CMD"),
+        "pawn.raknet": (
+            [
+                src / "Pawn.RakNet" / "src" / "Pawn.RakNet.inc",
+                src / "Pawn.RakNet" / "Pawn.RakNet.inc",
+                src / "Pawn.RakNet" / "include" / "Pawn.RakNet.inc",
+            ],
+            src / "Pawn.RakNet",
+        ),
+        "samp-bcrypt": (
+            [
+                src / "samp-bcrypt" / "samp_bcrypt.inc",
+                src / "samp-bcrypt" / "include" / "samp_bcrypt.inc",
+            ],
+            src / "samp-bcrypt",
+        ),
+        "colandreas": (
+            [
+                src / "ColAndreas" / "Server" / "include" / "colandreas.inc",
+                src / "ColAndreas" / "include" / "colandreas.inc",
+            ],
+            src / "ColAndreas",
+        ),
     }
+    optional_libs = {"samp-stdlib", "pawn.raknet", "samp-bcrypt", "colandreas"}
     all_natives, all_callbacks = [], []
     for lib, (paths, root) in libs.items():
-        n, c = scan_includes([p for p in paths if p.exists()], lib, root)
-        print(f"  scanned {lib:10s} natives={len(n):4d} callbacks={len(c)}")
+        if lib in optional_libs and not root.exists():
+            continue
+        existing = [p for p in paths if p.exists()]
+        if lib in optional_libs and not existing:
+            continue
+        n, c = scan_includes(existing, lib, root)
+        print(f"  scanned {lib:12s} natives={len(n):4d} callbacks={len(c)}")
         all_natives += n
         all_callbacks += c
     dump("natives.json", all_natives)
@@ -338,6 +374,14 @@ def main():
         "sscanf": git_rev(src / "sscanf"),
         "Pawn.CMD": git_rev(src / "Pawn.CMD"),
     }
+    for key, path in (
+        ("samp-stdlib", src / "samp-stdlib"),
+        ("Pawn.RakNet", src / "Pawn.RakNet"),
+        ("samp-bcrypt", src / "samp-bcrypt"),
+        ("ColAndreas", src / "ColAndreas"),
+    ):
+        if path.exists():
+            sources[key] = git_rev(path)
     dump("sources.json", sources)
 
 

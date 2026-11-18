@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pawn-forge"
+version = "0.1.0"
+description = "Deterministic toolchain and MCP server for Pawn (SA-MP / open.mp) development."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "POORSAKEN2"}]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.scripts]
+pawnforge = "pawnforge.cli:main"
+pawnforge-mcp = "pawnforge.mcp_entry:main"
+
+[tool.setuptools]
+packages = ["pawnforge", "pawnforge._data"]
+package-dir = {"pawnforge" = "plugins/pawn-forge/server/pawnforge", "pawnforge._data" = "plugins/pawn-forge/server/data"}
+
+[tool.setuptools.package-data]
+"pawnforge._data" = ["*.json"]

@@ -891,6 +891,695 @@
   "summary": "This callback is called when a vehicle is streamed out for a player's client (it's so far away that they can't see it)."
  },
  {
+  "name": "OnActorStreamIn",
+  "library": "samp-stdlib",
+  "signature": "forward OnActorStreamIn(actorid, forplayerid)",
+  "return_tag": null,
+  "params": "actorid, forplayerid",
+  "file": "a_samp.inc",
+  "line": 2855,
+  "summary": "This callback is called when an actor is streamed in by a player's client."
+ },
+ {
+  "name": "OnActorStreamOut",
+  "library": "samp-stdlib",
+  "signature": "forward OnActorStreamOut(actorid, forplayerid)",
+  "return_tag": null,
+  "params": "actorid, forplayerid",
+  "file": "a_samp.inc",
+  "line": 2866,
+  "summary": "This callback is called when an actor is streamed out by a player's client."
+ },
+ {
+  "name": "OnClientCheckResponse",
+  "library": "samp-stdlib",
+  "signature": "forward OnClientCheckResponse(playerid, actionid, memaddr, retndata)",
+  "return_tag": null,
+  "params": "playerid, actionid, memaddr, retndata",
+  "file": "a_samp.inc",
+  "line": 3193,
+  "summary": "This callback is called when a SendClientCheck request comletes"
+ },
+ {
+  "name": "OnClientMessage",
+  "library": "samp-stdlib",
+  "signature": "forward OnClientMessage(color, text[])",
+  "return_tag": null,
+  "params": "color, text[]",
+  "file": "a_npc.inc",
+  "line": 608,
+  "summary": "This callback gets called whenever the NPC sees a ClientMessage. This will be everytime a SendClientMessageToAll function is used and everytime a SendClientMessage function is sent towards the NPC. This callback won't be called when someone says something. For a version of this with player text, see"
+ },
+ {
+  "name": "OnDialogResponse",
+  "library": "samp-stdlib",
+  "signature": "forward OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])",
+  "return_tag": null,
+  "params": "playerid, dialogid, response, listitem, inputtext[]",
+  "file": "a_samp.inc",
+  "line": 2882,
+  "summary": "This callback is called when a player responds to a dialog shown using ShowPlayerDialog by either clicking a button, pressing ENTER/ESC or double-clicking a list item (if using a list style dialog)."
+ },
+ {
+  "name": "OnEnterExitModShop",
+  "library": "samp-stdlib",
+  "signature": "forward OnEnterExitModShop(playerid, enterexit, interiorid)",
+  "return_tag": null,
+  "params": "playerid, enterexit, interiorid",
+  "file": "a_samp.inc",
+  "line": 2623,
+  "summary": "This callback is called when a player enters or exits a mod shop."
+ },
+ {
+  "name": "OnFilterScriptExit",
+  "library": "samp-stdlib",
+  "signature": "forward OnFilterScriptExit()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 2257,
+  "summary": "This callback is called when a filterscript is unloaded. It is only called inside the filterscript which is unloaded."
+ },
+ {
+  "name": "OnFilterScriptInit",
+  "library": "samp-stdlib",
+  "signature": "forward OnFilterScriptInit()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 2250,
+  "summary": "This callback is called when a filterscript is initialized (loaded). It is only called inside the filterscript which is starting."
+ },
+ {
+  "name": "OnGameModeExit",
+  "library": "samp-stdlib",
+  "signature": "forward OnGameModeExit()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 2243,
+  "summary": "This callback is called when a gamemode ends, either through 'gmx', the server being shut down, or GameModeExit."
+ },
+ {
+  "name": "OnGameModeInit",
+  "library": "samp-stdlib",
+  "signature": "forward OnGameModeInit()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_samp.inc",
+  "line": 2228,
+  "summary": "This callback is triggered when the gamemode starts."
+ },
+ {
+  "name": "OnIncomingConnection",
+  "library": "samp-stdlib",
+  "signature": "forward OnIncomingConnection(playerid, ip_address[], port)",
+  "return_tag": null,
+  "params": "playerid, ip_address[], port",
+  "file": "a_samp.inc",
+  "line": 3013,
+  "summary": "This callback is called when an IP address attempts a connection to the server. To block incoming connections, use BlockIpAddress."
+ },
+ {
+  "name": "OnNPCConnect",
+  "library": "samp-stdlib",
+  "signature": "forward OnNPCConnect(myplayerid)",
+  "return_tag": null,
+  "params": "myplayerid",
+  "file": "a_npc.inc",
+  "line": 577,
+  "summary": "Gets called when a NPC successfully connects to the server."
+ },
+ {
+  "name": "OnNPCDisconnect",
+  "library": "samp-stdlib",
+  "signature": "forward OnNPCDisconnect(reason[])",
+  "return_tag": null,
+  "params": "reason[]",
+  "file": "a_npc.inc",
+  "line": 585,
+  "summary": "Gets called when the NPC gets disconnected from the server."
+ },
+ {
+  "name": "OnNPCEnterVehicle",
+  "library": "samp-stdlib",
+  "signature": "forward OnNPCEnterVehicle(vehicleid, seatid)",
+  "return_tag": null,
+  "params": "vehicleid, seatid",
+  "file": "a_npc.inc",
+  "line": 596,
+  "summary": "Gets called when a NPC enters a vehicle."
+ },
+ {
+  "name": "OnNPCExitVehicle",
+  "library": "samp-stdlib",
+  "signature": "forward OnNPCExitVehicle()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_npc.inc",
+  "line": 601,
+  "summary": "Gets called when a NPC leaves a vehicle."
+ },
+ {
+  "name": "OnNPCModeExit",
+  "library": "samp-stdlib",
+  "signature": "forward OnNPCModeExit()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_npc.inc",
+  "line": 569,
+  "summary": "Gets called when a NPC-script unloaded."
+ },
+ {
+  "name": "OnNPCModeInit",
+  "library": "samp-stdlib",
+  "signature": "forward OnNPCModeInit()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_npc.inc",
+  "line": 564,
+  "summary": "Gets called when a NPC script is loaded."
+ },
+ {
+  "name": "OnNPCSpawn",
+  "library": "samp-stdlib",
+  "signature": "forward OnNPCSpawn()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_npc.inc",
+  "line": 589,
+  "summary": "Gets called when a NPC spawned."
+ },
+ {
+  "name": "OnObjectMoved",
+  "library": "samp-stdlib",
+  "signature": "forward OnObjectMoved(objectid)",
+  "return_tag": null,
+  "params": "objectid",
+  "file": "a_samp.inc",
+  "line": 2567,
+  "summary": "This callback is called when an object is moved after MoveObject (when it stops moving)."
+ },
+ {
+  "name": "OnPlayerClickMap",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerClickMap(playerid, Float:fX, Float:fY, Float:fZ)",
+  "return_tag": null,
+  "params": "playerid, Float:fX, Float:fY, Float:fZ",
+  "file": "a_samp.inc",
+  "line": 2968,
+  "summary": "OnPlayerClickMap is called when a player places a target/waypoint on the pause menu map (by right-clicking)."
+ },
+ {
+  "name": "OnPlayerClickPlayer",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerClickPlayer(playerid, clickedplayerid, source)",
+  "return_tag": null,
+  "params": "playerid, clickedplayerid, source",
+  "file": "a_samp.inc",
+  "line": 3071,
+  "summary": "Called when a player double-clicks on a player on the scoreboard."
+ },
+ {
+  "name": "OnPlayerClickPlayerTextDraw",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)",
+  "return_tag": null,
+  "params": "playerid, PlayerText:playertextid",
+  "file": "a_samp.inc",
+  "line": 2996,
+  "summary": "This callback is called when a player clicks on a player-textdraw. It is not called when player cancels the select mode (ESC) - however, OnPlayerClickTextDraw is."
+ },
+ {
+  "name": "OnPlayerClickTextDraw",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerClickTextDraw(playerid, Text:clickedid)",
+  "return_tag": null,
+  "params": "playerid, Text:clickedid",
+  "file": "a_samp.inc",
+  "line": 2982,
+  "summary": "This callback is called when a player clicks on a textdraw or cancels the select mode with the Escape key."
+ },
+ {
+  "name": "OnPlayerCommandText",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerCommandText(playerid, cmdtext[])",
+  "return_tag": null,
+  "params": "playerid, cmdtext[]",
+  "file": "a_samp.inc",
+  "line": 2381,
+  "summary": "This callback is called when a player enters a command into the client chat window. Commands are anything that start with a forward slash, e.g. /help."
+ },
+ {
+  "name": "OnPlayerConnect",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerConnect(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 2270,
+  "summary": "This callback is called when a player connects to the server."
+ },
+ {
+  "name": "OnPlayerDeath",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerDeath(playerid, killerid, reason)",
+  "return_tag": null,
+  "params": "playerid, killerid, reason",
+  "file": "a_samp.inc",
+  "line": 2329,
+  "summary": "This callback is called when a player dies, either by suicide or by being killed by another player."
+ },
+ {
+  "name": "OnPlayerDisconnect",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerDisconnect(playerid, reason)",
+  "return_tag": null,
+  "params": "playerid, reason",
+  "file": "a_samp.inc",
+  "line": 2293,
+  "summary": "This callback is called when a player disconnects from the server."
+ },
+ {
+  "name": "OnPlayerEnterCheckpoint",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerEnterCheckpoint(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 2473,
+  "summary": "This callback is called when a player enters the checkpoint set for that player."
+ },
+ {
+  "name": "OnPlayerEnterRaceCheckpoint",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerEnterRaceCheckpoint(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 2509,
+  "summary": "This callback is called when a player enters a race checkpoint."
+ },
+ {
+  "name": "OnPlayerEnterVehicle",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)",
+  "return_tag": null,
+  "params": "playerid, vehicleid, ispassenger",
+  "file": "a_samp.inc",
+  "line": 2410,
+  "summary": "This callback is called when a player starts to enter a vehicle, meaning the player is not in vehicle yet at the time this callback is called."
+ },
+ {
+  "name": "OnPlayerExitedMenu",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerExitedMenu(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 2718,
+  "summary": "Called when a player exits a menu."
+ },
+ {
+  "name": "OnPlayerExitVehicle",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerExitVehicle(playerid, vehicleid)",
+  "return_tag": null,
+  "params": "playerid, vehicleid",
+  "file": "a_samp.inc",
+  "line": 2425,
+  "summary": "This callback is called when a player starts to exit a vehicle."
+ },
+ {
+  "name": "OnPlayerFinishedDownloading",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerFinishedDownloading(playerid, virtualworld)",
+  "return_tag": null,
+  "params": "playerid, virtualworld",
+  "file": "a_samp.inc",
+  "line": 3056,
+  "summary": "This callback is called when a player finishes downloading custom models. For more information on how to add custom models to your server, see the release thread and this tutorial."
+ },
+ {
+  "name": "OnPlayerGiveDamage",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerGiveDamage(playerid, damagedid, Float:amount, weaponid, bodypart)",
+  "return_tag": null,
+  "params": "playerid, damagedid, Float:amount, weaponid, bodypart",
+  "file": "a_samp.inc",
+  "line": 2928,
+  "summary": "This callback is called when a player gives damage to another player."
+ },
+ {
+  "name": "OnPlayerGiveDamageActor",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerGiveDamageActor(playerid, damaged_actorid, Float:amount, weaponid, bodypart)",
+  "return_tag": null,
+  "params": "playerid, damaged_actorid, Float:amount, weaponid, bodypart",
+  "file": "a_samp.inc",
+  "line": 2951,
+  "summary": "This callback is called when a player gives damage to an actor."
+ },
+ {
+  "name": "OnPlayerInteriorChange",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerInteriorChange(playerid, newinteriorid, oldinteriorid)",
+  "return_tag": null,
+  "params": "playerid, newinteriorid, oldinteriorid",
+  "file": "a_samp.inc",
+  "line": 2732,
+  "summary": "Called when a player changes interior. Can be triggered by SetPlayerInterior or when a player enter/exits a building."
+ },
+ {
+  "name": "OnPlayerKeyStateChange",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerKeyStateChange(playerid, newkeys, oldkeys)",
+  "return_tag": null,
+  "params": "playerid, newkeys, oldkeys",
+  "file": "a_samp.inc",
+  "line": 2760,
+  "summary": "This callback is called when the state of any supported key is changed (pressed/released). Directional keys do not trigger OnPlayerKeyStateChange (up/down/left/right)."
+ },
+ {
+  "name": "OnPlayerLeaveCheckpoint",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerLeaveCheckpoint(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 2491,
+  "summary": "This callback is called when a player leaves the checkpoint set for them by SetPlayerCheckpoint. Only one checkpoint can be set at a time."
+ },
+ {
+  "name": "OnPlayerLeaveRaceCheckpoint",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerLeaveRaceCheckpoint(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 2527,
+  "summary": "This callback is called when a player leaves the race checkpoint."
+ },
+ {
+  "name": "OnPlayerObjectMoved",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerObjectMoved(playerid, objectid)",
+  "return_tag": null,
+  "params": "playerid, objectid",
+  "file": "a_samp.inc",
+  "line": 2581,
+  "summary": "This callback is called when a player object is moved after MovePlayerObject (when it stops moving)."
+ },
+ {
+  "name": "OnPlayerPickUpPickup",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerPickUpPickup(playerid, pickupid)",
+  "return_tag": null,
+  "params": "playerid, pickupid",
+  "file": "a_samp.inc",
+  "line": 2592,
+  "summary": "Called when a player picks up a pickup created with CreatePickup."
+ },
+ {
+  "name": "OnPlayerRequestClass",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerRequestClass(playerid, classid)",
+  "return_tag": null,
+  "params": "playerid, classid",
+  "file": "a_samp.inc",
+  "line": 2394,
+  "summary": "Called when a player changes class at class selection (and when class selection first appears)."
+ },
+ {
+  "name": "OnPlayerRequestDownload",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerRequestDownload(playerid, type, crc)",
+  "return_tag": null,
+  "params": "playerid, type, crc",
+  "file": "a_samp.inc",
+  "line": 3057
+ },
+ {
+  "name": "OnPlayerRequestSpawn",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerRequestSpawn(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 2554,
+  "summary": "Called when a player attempts to spawn via class selection either by pressing SHIFT or clicking the 'Spawn' button."
+ },
+ {
+  "name": "OnPlayerSelectedMenuRow",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerSelectedMenuRow(playerid, row)",
+  "return_tag": null,
+  "params": "playerid, row",
+  "file": "a_samp.inc",
+  "line": 2707,
+  "summary": "This callback is called when a player selects an item from a menu (ShowMenuForPlayer)."
+ },
+ {
+  "name": "OnPlayerSelectObject",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerSelectObject(playerid, type, objectid, modelid, Float:fX, Float:fY, Float:fZ)",
+  "return_tag": null,
+  "params": "playerid, type, objectid, modelid, Float:fX, Float:fY, Float:fZ",
+  "file": "a_samp.inc",
+  "line": 3143,
+  "summary": "This callback is called when a player selects an object after SelectObject has been used."
+ },
+ {
+  "name": "OnPlayerSpawn",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerSpawn(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 2309,
+  "summary": "This callback is called when a player spawns.(i.e. after caling SpawnPlayer function)."
+ },
+ {
+  "name": "OnPlayerStateChange",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerStateChange(playerid, newstate, oldstate)",
+  "return_tag": null,
+  "params": "playerid, newstate, oldstate",
+  "file": "a_samp.inc",
+  "line": 2455,
+  "summary": "This callback is called when a player changes state. For example, when a player changes from being the driver of a vehicle to being on-foot."
+ },
+ {
+  "name": "OnPlayerStreamIn",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerStreamIn(playerid, forplayerid)",
+  "return_tag": null,
+  "params": "playerid, forplayerid",
+  "file": "a_samp.inc",
+  "line": 2802,
+  "summary": "This callback is called when a player is streamed by some other player's client."
+ },
+ {
+  "name": "OnPlayerStreamOut",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerStreamOut(playerid, forplayerid)",
+  "return_tag": null,
+  "params": "playerid, forplayerid",
+  "file": "a_samp.inc",
+  "line": 2816,
+  "summary": "This callback is called when a player is streamed out from some other player's client."
+ },
+ {
+  "name": "OnPlayerTakeDamage",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid, bodypart)",
+  "return_tag": null,
+  "params": "playerid, issuerid, Float:amount, weaponid, bodypart",
+  "file": "a_samp.inc",
+  "line": 2905,
+  "summary": "This callback is called when a player takes damage."
+ },
+ {
+  "name": "OnPlayerText",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerText(playerid, text[])",
+  "return_tag": null,
+  "params": "playerid, text[]",
+  "file": "a_samp.inc",
+  "line": 2368,
+  "summary": "Called when a player sends a chat message."
+ },
+ {
+  "name": "OnPlayerUpdate",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerUpdate(playerid)",
+  "return_tag": null,
+  "params": "playerid",
+  "file": "a_samp.inc",
+  "line": 2788,
+  "summary": "This callback is called every time a client/player updates the server with their status. It is often used to create custom callbacks for client updates that aren't actively tracked by the server, such as health or armor updates or players switching weapons."
+ },
+ {
+  "name": "OnPlayerWeaponShot",
+  "library": "samp-stdlib",
+  "signature": "forward OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY, Float:fZ)",
+  "return_tag": null,
+  "params": "playerid, weaponid, hittype, hitid, Float:fX, Float:fY, Float:fZ",
+  "file": "a_samp.inc",
+  "line": 3185,
+  "summary": "This callback is called when a player fires a shot from a weapon. Only bullet weapons are supported. Only passenger drive-by is supported (not driver drive-by, and not sea sparrow / hunter shots)."
+ },
+ {
+  "name": "OnRconCommand",
+  "library": "samp-stdlib",
+  "signature": "forward OnRconCommand(cmd[])",
+  "return_tag": null,
+  "params": "cmd[]",
+  "file": "a_samp.inc",
+  "line": 2542,
+  "summary": "This callback is called when a command is sent through the server console, remote RCON, or via the in-game \"/rcon command\"."
+ },
+ {
+  "name": "OnRconLoginAttempt",
+  "library": "samp-stdlib",
+  "signature": "forward OnRconLoginAttempt( ip[], password[], success )",
+  "return_tag": null,
+  "params": "ip[], password[], success",
+  "file": "a_samp.inc",
+  "line": 2776,
+  "summary": "This callback is called when someone attempts to log in to RCON in-game; successful or not."
+ },
+ {
+  "name": "OnRecordingPlaybackEnd",
+  "library": "samp-stdlib",
+  "signature": "forward OnRecordingPlaybackEnd()",
+  "return_tag": null,
+  "params": "",
+  "file": "a_npc.inc",
+  "line": 643,
+  "summary": "This callback is called when a recorded file being reproduced with StartRecordingPlayback has reached to its end."
+ },
+ {
+  "name": "OnScriptCash",
+  "library": "samp-stdlib",
+  "signature": "forward OnScriptCash(playerid, amount, source)",
+  "return_tag": null,
+  "params": "playerid, amount, source",
+  "file": "a_samp.inc",
+  "line": 3200,
+  "summary": "This callback is called when a SendClientCheck request comletes"
+ },
+ {
+  "name": "OnTrailerUpdate",
+  "library": "samp-stdlib",
+  "signature": "forward OnTrailerUpdate(playerid, vehicleid)",
+  "return_tag": null,
+  "params": "playerid, vehicleid",
+  "file": "a_samp.inc",
+  "line": 3030,
+  "summary": "This callback is called when a player sent a trailer update."
+ },
+ {
+  "name": "OnUnoccupiedVehicleUpdate",
+  "library": "samp-stdlib",
+  "signature": "forward OnUnoccupiedVehicleUpdate(vehicleid, playerid, passenger_seat, Float:new_x, Float:new_y, Float:new_z, Float:vel_x, Float:vel_y, Float:vel_z)",
+  "return_tag": null,
+  "params": "vehicleid, playerid, passenger_seat, Float:new_x, Float:new_y, Float:new_z, Float:vel_x, Float:vel_y, Float:vel_z",
+  "file": "a_samp.inc",
+  "line": 2690,
+  "summary": "This callback is called when a player's client updates/syncs the position of a vehicle they're not driving. This can happen outside of the vehicle or when the player is a passenger of a vehicle that has no driver."
+ },
+ {
+  "name": "OnVehicleDamageStatusUpdate",
+  "library": "samp-stdlib",
+  "signature": "forward OnVehicleDamageStatusUpdate(vehicleid, playerid)",
+  "return_tag": null,
+  "params": "vehicleid, playerid",
+  "file": "a_samp.inc",
+  "line": 2670,
+  "summary": "This callback is called when a vehicle element such as doors, tires, panels, or lights change their damage status."
+ },
+ {
+  "name": "OnVehicleDeath",
+  "library": "samp-stdlib",
+  "signature": "forward OnVehicleDeath(vehicleid, killerid)",
+  "return_tag": null,
+  "params": "vehicleid, killerid",
+  "file": "a_samp.inc",
+  "line": 2355,
+  "summary": "This callback is called when a vehicle is destroyed - either by exploding or becoming submerged in water."
+ },
+ {
+  "name": "OnVehicleMod",
+  "library": "samp-stdlib",
+  "signature": "forward OnVehicleMod(playerid, vehicleid, componentid)",
+  "return_tag": null,
+  "params": "playerid, vehicleid, componentid",
+  "file": "a_samp.inc",
+  "line": 2607,
+  "summary": "This callback is called when a vehicle is modded."
+ },
+ {
+  "name": "OnVehiclePaintjob",
+  "library": "samp-stdlib",
+  "signature": "forward OnVehiclePaintjob(playerid, vehicleid, paintjobid)",
+  "return_tag": null,
+  "params": "playerid, vehicleid, paintjobid",
+  "file": "a_samp.inc",
+  "line": 2638,
+  "summary": "Called when a player previews a vehicle paintjob inside a mod shop. Watch out, this callback is not called when the player buys the paintjob."
+ },
+ {
+  "name": "OnVehicleRespray",
+  "library": "samp-stdlib",
+  "signature": "forward OnVehicleRespray(playerid, vehicleid, color1, color2)",
+  "return_tag": null,
+  "params": "playerid, vehicleid, color1, color2",
+  "file": "a_samp.inc",
+  "line": 2656,
+  "summary": "This callback is called when a player exits a mod shop, even if the colors weren't changed. Watch out, the name is ambiguous, Pay 'n' Spray shops don't call this callback."
+ },
+ {
+  "name": "OnVehicleSirenStateChange",
+  "library": "samp-stdlib",
+  "signature": "forward OnVehicleSirenStateChange(playerid, vehicleid, newstate)",
+  "return_tag": null,
+  "params": "playerid, vehicleid, newstate",
+  "file": "a_samp.inc",
+  "line": 3045,
+  "summary": "This callback is called when a vehicle's siren is toggled."
+ },
+ {
+  "name": "OnVehicleSpawn",
+  "library": "samp-stdlib",
+  "signature": "forward OnVehicleSpawn(vehicleid)",
+  "return_tag": null,
+  "params": "vehicleid",
+  "file": "a_samp.inc",
+  "line": 2342,
+  "summary": "This callback is called when a vehicle respawns."
+ },
+ {
+  "name": "OnVehicleStreamIn",
+  "library": "samp-stdlib",
+  "signature": "forward OnVehicleStreamIn(vehicleid, forplayerid)",
+  "return_tag": null,
+  "params": "vehicleid, forplayerid",
+  "file": "a_samp.inc",
+  "line": 2830,
+  "summary": "Called when a vehicle is streamed to a player's client."
+ },
+ {
+  "name": "OnVehicleStreamOut",
+  "library": "samp-stdlib",
+  "signature": "forward OnVehicleStreamOut(vehicleid, forplayerid)",
+  "return_tag": null,
+  "params": "vehicleid, forplayerid",
+  "file": "a_samp.inc",
+  "line": 2844,
+  "summary": "This callback is called when a vehicle is streamed out for a player's client (it's so far away that they can't see it)."
+ },
+ {
   "name": "OnDynamicActorStreamIn",
   "library": "streamer",
   "signature": "forward OnDynamicActorStreamIn(STREAMER_TAG_ACTOR:actorid, forplayerid)",
@@ -1051,5 +1740,79 @@
   "params": "playerid, cmd[], params[], flags",
   "file": "src/Pawn.CMD.inc",
   "line": 64
+ },
+ {
+  "name": "OnIncomingPacket",
+  "library": "pawn.raknet",
+  "signature": "forward OnIncomingPacket(playerid, packetid, BitStream:bs)",
+  "return_tag": null,
+  "params": "playerid, packetid, BitStream:bs",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 1105
+ },
+ {
+  "name": "OnIncomingRPC",
+  "library": "pawn.raknet",
+  "signature": "forward OnIncomingRPC(playerid, rpcid, BitStream:bs)",
+  "return_tag": null,
+  "params": "playerid, rpcid, BitStream:bs",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 1106
+ },
+ {
+  "name": "OnOutcomingPacket",
+  "library": "pawn.raknet",
+  "signature": "forward OnOutcomingPacket(playerid, packetid, BitStream:bs)",
+  "return_tag": null,
+  "params": "playerid, packetid, BitStream:bs",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 1111,
+  "deprecated": "Use OnOutgoingPacket instead"
+ },
+ {
+  "name": "OnOutcomingRPC",
+  "library": "pawn.raknet",
+  "signature": "forward OnOutcomingRPC(playerid, rpcid, BitStream:bs)",
+  "return_tag": null,
+  "params": "playerid, rpcid, BitStream:bs",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 1113,
+  "deprecated": "Use OnOutgoingRPC instead"
+ },
+ {
+  "name": "OnOutgoingPacket",
+  "library": "pawn.raknet",
+  "signature": "forward OnOutgoingPacket(playerid, packetid, BitStream:bs)",
+  "return_tag": null,
+  "params": "playerid, packetid, BitStream:bs",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 1107
+ },
+ {
+  "name": "OnOutgoingRPC",
+  "library": "pawn.raknet",
+  "signature": "forward OnOutgoingRPC(playerid, rpcid, BitStream:bs)",
+  "return_tag": null,
+  "params": "playerid, rpcid, BitStream:bs",
+  "file": "src/Pawn.RakNet.inc",
+  "line": 1108
+ },
+ {
+  "name": "OnPassswordHash",
+  "library": "samp-bcrypt",
+  "signature": "forward OnPassswordHash(playerid, hashid)",
+  "return_tag": null,
+  "params": "playerid, hashid",
+  "file": "include/samp_bcrypt.inc",
+  "line": 34
+ },
+ {
+  "name": "OnPassswordVerify",
+  "library": "samp-bcrypt",
+  "signature": "forward OnPassswordVerify(playerid, bool:success)",
+  "return_tag": null,
+  "params": "playerid, bool:success",
+  "file": "include/samp_bcrypt.inc",
+  "line": 58
  }
 ]

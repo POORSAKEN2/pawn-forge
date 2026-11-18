@@ -123,6 +123,56 @@ def _plugins(root: Path) -> dict:
     return out
 
 
+_INCLUDE_RE = re.compile(r'^[ \t]*#(?:try)?include[ \t]+[<"]([^>"]+)[>"]', re.M)
+_PLATFORM_HEADERS = {"open.mp", "a_samp"}
+_SCAN_INCLUDE_BASES = ("gamemodes", "filterscripts", "src", "include", "includes", "inc")
+_EXCLUDED_SCAN_DIRS = {"qawno", "pawno", "dependencies"} | SKIP_DIRS
+
+
+def _extract_includes(path: Path) -> list[str]:
+    try:
+        txt = path.read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return []
+    return _INCLUDE_RE.findall(txt)
+
+
+def _inc_base(inc: str) -> str:
+    s = inc.strip().replace("\\", "/").rsplit("/", 1)[-1].lower()
+    return s[:-4] if s.endswith(".inc") else s
+
+
+def collect_project_includes(root: Path, main_script: str | None) -> list[str]:
+    """Collect de-duplicated #include names from main_script, falling back to local source dirs."""
+    seen: set[str] = set()
+    out: list[str] = []
+
+    def add_all(items: list[str]) -> None:
+        for item in items:
+            key = item.lower()
+            if key not in seen:
+                seen.add(key)
+                out.append(item)
+
+    if main_script:
+        main_path = root / main_script
+        if main_path.is_file():
+            add_all(_extract_includes(main_path))
+
+    if not any(i.lower() in _PLATFORM_HEADERS for i in out):
+        for base in _SCAN_INCLUDE_BASES:
+            base_dir = root / base
+            if not base_dir.is_dir():
+                continue
+            for dirpath, dirnames, filenames in os.walk(base_dir):
+                dirnames[:] = sorted(d for d in dirnames if d.lower() not in _EXCLUDED_SCAN_DIRS)
+                for fn in sorted(filenames):
+                    if fn.lower().endswith((".pwn", ".inc")):
+                        add_all(_extract_includes(Path(dirpath) / fn))
+
+    return out
+
+
 def project_info(project_dir: str) -> dict:
     from .compiler import find_compiler  # local import to avoid a cycle
 
@@ -142,20 +192,24 @@ def project_info(project_dir: str) -> dict:
         main = next(s for s in sources if s.startswith("gamemodes"))
     elif sources:
         main = sources[0]
-    includes: list[str] = []
-    if main and (root / main).exists():
-        txt = (root / main).read_text(encoding="utf-8", errors="replace")
-        includes = re.findall(r'^[ \t]*#(?:try)?include[ \t]+[<"]([^>"]+)[>"]', txt, re.M)
+    includes = collect_project_includes(root, main)
     libs = {
         "ysi": any(i.lower().startswith("ysi") for i in includes),
         "streamer": any("streamer" in i.lower() for i in includes),
         "mysql": any(i.lower() in ("a_mysql", "mysql") for i in includes),
         "sscanf": any("sscanf" in i.lower() for i in includes),
-        "pawn.cmd": any(i.lower() == "pawn.cmd" for i in includes),
+        "pawn.cmd": any(_inc_base(i) == "pawn.cmd" for i in includes),
         "zcmd/izcmd": any(i.lower() in ("zcmd", "izcmd") for i in includes),
         "dini/dfile": any(i.lower() in ("dini", "dini2", "dfile", "dutils", "dudb", "dof2") for i in includes),
         "y_ini": any("y_ini" in i.lower() for i in includes),
         "crashdetect": any("crashdetect" in i.lower() for i in includes),
+        "pawn.raknet": any(_inc_base(i) == "pawn.raknet" for i in includes),
+        "colandreas": any(_inc_base(i) == "colandreas" for i in includes),
+        "mapandreas": any(_inc_base(i) == "mapandreas" for i in includes),
+        "samp-bcrypt": any(_inc_base(i) in ("samp_bcrypt", "samp-bcrypt", "bcrypt") for i in includes),
+        "nex-ac": any(_inc_base(i) in ("nex-ac", "nex_ac") for i in includes),
+        "easydialog": any(_inc_base(i) == "easydialog" for i in includes),
+        "mselection": any(_inc_base(i) == "mselection" for i in includes),
     }
     comp = find_compiler(str(root))
     return {

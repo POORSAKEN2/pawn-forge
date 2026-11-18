@@ -1,8 +1,9 @@
 """Exact API signatures from real include files.
 
 Two sources, merged:
-  1. The bundled index (open.mp stdlib, Streamer, MySQL R41, sscanf2, Pawn.CMD),
-     generated from the upstream headers by tools/build_data.py.
+  1. The bundled index (open.mp stdlib, samp-stdlib, Streamer, MySQL R41, sscanf2,
+     Pawn.CMD, Pawn.RakNet, samp-bcrypt, ColAndreas), generated from the upstream
+     headers by tools/build_data.py, with target stdlib filtering via `platform`.
   2. The project's own include directories, scanned on demand so the answer
      matches the exact library versions the project compiles against.
 """
@@ -14,7 +15,7 @@ import re
 from pathlib import Path
 
 from . import data
-from .project import include_dirs
+from .project import include_dirs, project_info
 
 _DECL = re.compile(
     r"^\s*(?P<kind>native|forward)\s+(?:(?P<tag>[A-Za-z_@][\w@]*):)?(?P<name>[A-Za-z_@][\w@]*)\s*\((?P<params>.*?)\)\s*"
@@ -59,15 +60,30 @@ def _scan_project(project_dir: str) -> list[dict]:
     return out
 
 
+def _resolve_platform(platform: str | None, project_dir: str | None) -> str:
+    norm = (platform or "auto").strip().lower()
+    if norm in ("open.mp", "openmp"):
+        return "open.mp"
+    if norm in ("sa-mp", "samp"):
+        return "sa-mp"
+    if project_dir and project_info(project_dir).get("platform") == "sa-mp":
+        return "sa-mp"
+    return "open.mp"
+
+
 def api_lookup(name: str | None = None, query: str | None = None, library: str | None = None,
-               project_dir: str | None = None, limit: int = 10) -> dict:
+               project_dir: str | None = None, limit: int = 10, platform: str = "auto") -> dict:
     limit = max(1, min(int(limit or 10), 50))
+    resolved_platform = _resolve_platform(platform, project_dir)
     bundled = data.load("natives") + data.load("callbacks")
     project = _scan_project(project_dir) if project_dir else []
     pool = project + bundled
     if library:
         lib = library.lower()
         pool = [e for e in pool if lib in e["library"].lower()]
+    else:
+        drop_lib = "samp-stdlib" if resolved_platform == "open.mp" else "open.mp"
+        pool = [e for e in pool if e["library"].lower() != drop_lib]
 
     if name:
         exact = [e for e in pool if e["name"] == name]
@@ -76,10 +92,15 @@ def api_lookup(name: str | None = None, query: str | None = None, library: str |
         if exact:
             # Project headers win: they reflect the versions actually in use.
             exact.sort(key=lambda e: 0 if e["library"].startswith("project:") else 1)
-            dep = data.load("omp_deprecations").get(exact[0]["name"])
             res = {"found": True, "results": exact[:limit]}
-            if dep:
-                res["openmp_deprecation"] = dep
+            if (
+                resolved_platform != "sa-mp"
+                and (library or "").lower() != "samp-stdlib"
+                and exact[0]["library"].lower() != "samp-stdlib"
+            ):
+                dep = data.load("omp_deprecations").get(exact[0]["name"])
+                if dep:
+                    res["openmp_deprecation"] = dep
             return res
         names = sorted({e["name"] for e in pool})
         close = difflib.get_close_matches(name, names, n=8, cutoff=0.6)
