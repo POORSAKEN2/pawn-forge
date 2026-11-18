@@ -121,6 +121,11 @@ public OnPlayerConnect(playerid)
         good_standalone_kick = 'public DelayedKick(p){ Kick(p); return 1; }'
         good_different_branch = 'f(p, ok){ if(ok){ SendClientMessage(p, -1, "Welcome"); return 1; } Kick(p); return 1; }'
         good_separated_return = 'f(p){ SendClientMessage(p, -1, "Bye"); return 1; Kick(p); }'
+        good_switch_braceless = 'f(p, d){ switch (d) { case 1: SendClientMessage(p, -1, "ok"); case 2: Kick(p); } }'
+        good_switch_default = 'f(p, d){ switch (d) { case 1: SendClientMessage(p, -1, "ok"); default: Kick(p); } }'
+        good_switch_nested_if = 'f(p, d, x){ switch (d) { case 1: SendClientMessage(p, -1, "ok"); case 2: { if (x) Kick(p); } } }'
+        bad_switch_same_case = 'f(p, d){ switch (d) { case 1: { SendClientMessage(p, -1, "bye"); Kick(p); } } }'
+        bad_before_switch = 'f(p, d){ SendClientMessage(p, -1, "bye"); switch (d) { case 1: Kick(p); } }'
         self.assertIn("PF701", self.rules(bad_kick))
         self.assertIn("PF701", self.rules(bad_return_kick))
         self.assertIn("PF701", self.rules(bad_ban))
@@ -129,6 +134,11 @@ public OnPlayerConnect(playerid)
         self.assertEqual(self.rules(good_standalone_kick), [])
         self.assertEqual(self.rules(good_different_branch), [])
         self.assertEqual(self.rules(good_separated_return), [])
+        self.assertEqual(self.rules(good_switch_braceless), [])
+        self.assertEqual(self.rules(good_switch_default), [])
+        self.assertEqual(self.rules(good_switch_nested_if), [])
+        self.assertIn("PF701", self.rules(bad_switch_same_case))
+        self.assertIn("PF701", self.rules(bad_before_switch))
 
         # PF702: unguarded strcmp on inputtext fires; isnull/inputtext[0]/strlen guard stays quiet
         bad_cmp = 'public OnDialogResponse(p,d,r,l,inputtext[]){ if(!strcmp(inputtext, "pw")) return 1; return 0; }'

@@ -17,8 +17,17 @@ static sCashGraceUntil[MAX_PLAYERS];
 
 stock bool:AC_InGrace(untilTick)
 {
+	if (untilTick == 0) return false;
 	// Signed subtraction stays valid across the 24.9-day GetTickCount() 32-bit wrap.
 	return (GetTickCount() - untilTick) < 0;
+}
+
+stock AC_GraceUntil(ms)
+{
+	// Reserve 0 as "no active grace" so 24.9-day uptime wrap never treats 0 as in-grace.
+	new until = GetTickCount() + ms;
+	if (until == 0) until = 1;
+	return until;
 }
 
 public OnGameModeInit()
@@ -29,7 +38,7 @@ public OnGameModeInit()
 
 stock AC_SyncCash(playerid)
 {
-	sCashGraceUntil[playerid] = GetTickCount() + AC_GRACE_MS;
+	sCashGraceUntil[playerid] = AC_GraceUntil(AC_GRACE_MS);
 	ResetPlayerMoney(playerid);
 	GivePlayerMoney(playerid, sPlayerCash[playerid]);
 	return 1;
@@ -138,7 +147,7 @@ stock bool:AC_GiveWeapon(playerid, WEAPON:weaponid, ammo)
 		sPlayerAmmo[playerid][slot] = ammo;
 	}
 
-	sWeaponGraceUntil[playerid] = GetTickCount() + AC_GRACE_MS;
+	sWeaponGraceUntil[playerid] = AC_GraceUntil(AC_GRACE_MS);
 	GivePlayerWeapon(playerid, weaponid, ammo);
 	return true;
 }
@@ -150,7 +159,7 @@ stock AC_ResetWeapons(playerid)
 		sPlayerWeapons[playerid][s] = WEAPON_FIST;
 		sPlayerAmmo[playerid][s] = 0;
 	}
-	sWeaponGraceUntil[playerid] = GetTickCount() + AC_GRACE_MS;
+	sWeaponGraceUntil[playerid] = AC_GraceUntil(AC_GRACE_MS);
 	ResetPlayerWeapons(playerid);
 	return 1;
 }
@@ -198,12 +207,12 @@ public OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstat
 	{
 		new vid = GetPlayerVehicleID(playerid);
 		if (vid != 0) sLastVehModel[playerid] = GetVehicleModel(vid);
-		sWeaponGraceUntil[playerid] = GetTickCount() + AC_GRACE_MS;
+		sWeaponGraceUntil[playerid] = AC_GraceUntil(AC_GRACE_MS);
 	}
 	else if (oldstate == PLAYER_STATE_DRIVER || oldstate == PLAYER_STATE_PASSENGER)
 	{
 		// Keep sLastVehModel until next vehicle entry or strip auto-granted weapons cleanly.
-		sWeaponGraceUntil[playerid] = GetTickCount() + AC_GRACE_MS;
+		sWeaponGraceUntil[playerid] = AC_GraceUntil(AC_GRACE_MS);
 	}
 	return 1;
 }

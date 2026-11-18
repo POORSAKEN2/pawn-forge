@@ -645,25 +645,40 @@ class Linter:
                 msg_stack = self._block_stack(fn, mc.start)
                 if len(msg_stack) > len(kick_stack) or kick_stack[:len(msg_stack)] != msg_stack:
                     continue
-                if self._has_unconditional_return(fn, mc.close_paren + 1, stmt_start, len(msg_stack)):
+                if self._has_path_barrier(fn, mc.close_paren + 1, stmt_start, c.start, len(msg_stack)):
                     continue
                 self.add("PF701", c.start,
                          f"{c.name}({target}) immediately follows {mc.name} on the same path; delay with SetTimerEx/defer so the message arrives.")
                 break
 
-    def _has_unconditional_return(self, fn, start: int, end: int, target_depth: int) -> bool:
+    def _has_path_barrier(self, fn, start: int, stmt_start: int, call_start: int, target_depth: int) -> bool:
+        """Return True if an unconditional return or sibling switch case separates `start` from `call_start`."""
         t = self.s.masked
-        depth = len(self._block_stack(fn, start))
-        for i in range(max(fn.body_start, start), min(end, fn.body_end)):
+        lo = max(fn.body_start, start)
+        hi = min(call_start, fn.body_end)
+        depth = len(self._block_stack(fn, lo))
+        for i in range(lo, hi):
             ch = t[i]
             if ch == "{":
                 depth += 1
             elif ch == "}":
                 depth = max(0, depth - 1)
-            elif depth == target_depth and t[i:i + 6] == "return" and (i == 0 or not (t[i - 1].isalnum() or t[i - 1] == "_")):
-                if i + 6 >= len(t) or not (t[i + 6].isalnum() or t[i + 6] == "_"):
-                    if self._statement_context(i) == "":
-                        return True
+            elif depth == target_depth and (i == 0 or not (t[i - 1].isalnum() or t[i - 1] == "_")):
+                if (i < stmt_start and t[i:i + 6] == "return"
+                        and (i + 6 >= len(t) or not (t[i + 6].isalnum() or t[i + 6] == "_"))
+                        and self._statement_context(i) == ""):
+                    return True
+                # Pawn switch cases do not fall through, so sibling case/default labels are mutually exclusive.
+                if (t[i:i + 4] == "case"
+                        and (i + 4 >= len(t) or not (t[i + 4].isalnum() or t[i + 4] == "_"))
+                        and self._statement_context(i) == ""
+                        and re.match(r"(?:\s|\()[^;{}]*?:", t[i + 4:hi])):
+                    return True
+                if (t[i:i + 7] == "default"
+                        and (i + 7 >= len(t) or not (t[i + 7].isalnum() or t[i + 7] == "_"))
+                        and self._statement_context(i) == ""
+                        and re.match(r"\s*:", t[i + 7:hi])):
+                    return True
         return False
 
     def check_empty_strcmp(self):

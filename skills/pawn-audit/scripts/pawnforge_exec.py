@@ -15,11 +15,14 @@ INSTALL_CMD = "pip install git+https://github.com/POORSAKEN2/pawn-forge.git"
 
 def _find_server_dir() -> Path | None:
     home = Path(os.environ["HOME"]) if os.environ.get("HOME") else Path.home()
+    here = Path(__file__).resolve()
     candidates = [
         Path.cwd() / ".agents" / "plugins" / "pawn-forge" / "server",
         Path.cwd() / "plugins" / "pawn-forge" / "server",
         home / ".gemini" / "config" / "plugins" / "pawn-forge" / "server",
     ]
+    if len(here.parents) > 3:
+        candidates.append(here.parents[3] / "server")
     for base in candidates:
         if (base / "pawnforge" / "cli.py").is_file():
             return base

@@ -1,14 +1,18 @@
 from __future__ import annotations
 
+import contextlib
+import io
 import json
 import os
 import subprocess
 import sys
 import tempfile
 import unittest
+import unittest.mock
 from pathlib import Path
 
 from helpers import FIXTURES, PLUGIN
+from pawnforge import cli
 
 
 REPO_ROOT = PLUGIN.parent.parent
@@ -215,6 +219,83 @@ class CliTest(unittest.TestCase):
             miss_payload = json.loads(r_miss.stdout)
             self.assertFalse(miss_payload["ok"])
             self.assertIn("install", miss_payload)
+
+            # 4. Synced skill script resolves server/ via parents[3] even when cwd is outside repo.
+            synced_exec = PLUGIN / "skills" / "build" / "scripts" / "pawnforge_exec.py"
+            r_plugin_dir = subprocess.run(
+                [sys.executable, "-S", str(synced_exec), "lookup", "vehicle", "infernus", "--json"],
+                cwd=tmp, capture_output=True, text=True, timeout=60, env=env_ws,
+            )
+            self.assertEqual(r_plugin_dir.returncode, 0, r_plugin_dir.stdout + r_plugin_dir.stderr)
+            self.assertEqual(json.loads(r_plugin_dir.stdout)["results"][0]["id"], 411)
+
+    def test_compile_text_mode_prints_failure_diagnostics(self):
+        fail_res = {
+            "ok": False,
+            "clean": False,
+            "errors": 1,
+            "warnings": 0,
+            "diagnostics": [
+                {
+                    "file": "gm.pwn",
+                    "line": 42,
+                    "severity": "error",
+                    "code": "017",
+                    "message": 'undefined symbol "foo"',
+                }
+            ],
+        }
+        buf = io.StringIO()
+        with unittest.mock.patch("pawnforge.cli.call_tool", return_value=fail_res), \
+                contextlib.redirect_stdout(buf):
+            rc = cli.main(["compile", "gm.pwn"])
+        out = buf.getvalue()
+        self.assertEqual(rc, 1)
+        self.assertIn("Compile FAILED", out)
+        self.assertIn("gm.pwn:42 [error 017] undefined symbol \"foo\"", out)
+        self.assertNotIn("Error: Command failed.", out)
+
+    def test_lookup_limit_text_mode_renders_limits(self):
+        r = self.run_cli(["lookup", "limit"])
+        self.assertEqual(r.returncode, 0, r.stderr)
+        lines = [line for line in r.stdout.splitlines() if line.strip()]
+        self.assertTrue(lines)
+        self.assertTrue(any("Players: 1000" in line for line in lines), r.stdout)
+        self.assertFalse(any(line.strip() == ":" for line in lines), r.stdout)
+
+    def test_run_server_config_preserves_string_booleans(self):
+        mock_res = {
+            "ok": True,
+            "server": "open.mp",
+            "port": 7777,
+            "stop_reason": "exited",
+            "passed": True,
+        }
+        buf = io.StringIO()
+        with unittest.mock.patch("pawnforge.runner.server_run", return_value=mock_res) as mock_run, \
+                contextlib.redirect_stdout(buf):
+            rc = cli.main(["run-server", "/fake/server", "--config", "announce=false", "--config", "maxplayers=50"])
+        self.assertEqual(rc, 0)
+        cfg = mock_run.call_args.kwargs["config"]
+        self.assertEqual(cfg, {"announce": "false", "maxplayers": "50"})
+        self.assertIs(type(cfg["announce"]), str)
+
+    def test_lint_stdin_utf8_bytes(self):
+        env = {k: v for k, v in os.environ.items() if k not in ("PYTHONIOENCODING", "PYTHONUTF8")}
+        env["PYTHONPATH"] = str(PLUGIN / "server")
+        env["PYTHONUTF8"] = "0"
+        env["LC_ALL"] = "C"
+        # Include UTF-8 multi-byte sequences (with 0x81 byte that fails cp1252/ASCII decoding without reconfigure).
+        utf8_code = 'f(){ new a[8]; format(a, 99, "あいう café 世界"); }\n'.encode("utf-8")
+        r = subprocess.run(
+            [sys.executable, "-m", "pawnforge", "lint", "--code", "-", "--json"],
+            input=utf8_code, capture_output=True, timeout=60, env=env,
+        )
+        self.assertEqual(r.returncode, 0, r.stderr.decode("utf-8", errors="replace"))
+        payload = json.loads(r.stdout.decode("utf-8"))
+        self.assertTrue(payload["ok"])
+        self.assertIn("PF102", payload["by_rule"])
+        self.assertIn("あいう café 世界", payload["findings"][0]["source"])
 
 
 if __name__ == "__main__":

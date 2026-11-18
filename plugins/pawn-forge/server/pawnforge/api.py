@@ -1,8 +1,9 @@
 """Exact API signatures from real include files.
 
 Two sources, merged:
-  1. The bundled index (open.mp stdlib, Streamer, MySQL R41, sscanf2, Pawn.CMD),
-     generated from the upstream headers by tools/build_data.py.
+  1. The bundled index (open.mp stdlib, samp-stdlib, Streamer, MySQL R41, sscanf2,
+     Pawn.CMD, Pawn.RakNet, samp-bcrypt, ColAndreas), generated from the upstream
+     headers by tools/build_data.py, with target stdlib filtering via `platform`.
   2. The project's own include directories, scanned on demand so the answer
      matches the exact library versions the project compiles against.
 """

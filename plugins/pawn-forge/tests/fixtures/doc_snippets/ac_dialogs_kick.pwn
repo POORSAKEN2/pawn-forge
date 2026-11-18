@@ -89,7 +89,9 @@ stock bool:AC_SetPlayerPos(playerid, Float:x, Float:y, Float:z)
 	sLastY[playerid] = y;
 	sLastZ[playerid] = z;
 	sLastMoveTick[playerid] = GetTickCount();
-	sTeleportGraceUntil[playerid] = GetTickCount() + AC_TP_GRACE_MS;
+	new until = GetTickCount() + AC_TP_GRACE_MS;
+	if (until == 0) until = 1;
+	sTeleportGraceUntil[playerid] = until;
 	sSpeedStrikes[playerid] = 0;
 	return SetPlayerPos(playerid, x, y, z);
 }
@@ -99,7 +101,7 @@ stock bool:AC_CheckMovement(playerid)
 	if (!IsPlayerConnected(playerid)) return true;
 
 	new now = GetTickCount();
-	if ((now - sTeleportGraceUntil[playerid]) < 0)
+	if (sTeleportGraceUntil[playerid] != 0 && (now - sTeleportGraceUntil[playerid]) < 0)
 		return true;
 
 	new PLAYER_STATE:state = GetPlayerState(playerid);

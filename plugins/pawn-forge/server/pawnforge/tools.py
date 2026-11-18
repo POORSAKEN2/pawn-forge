@@ -81,10 +81,13 @@ TOOLS = [
     },
     {
         "name": "lint",
-        "description": "Static analysis for Pawn: buffer/sizeof mismatches, format specifier vs argument "
+        "description": "Static analysis for Pawn (PF101-PF802): buffer/sizeof mismatches, format specifier vs argument "
                        "mismatches, unsized sscanf strings, SQL injection via format()/%s, legacy MySQL APIs, "
                        "unfreed caches and SQLite results, timer and TextDraw leaks, strtok/dini/zcmd legacy, "
-                       "heavy OnPlayerUpdate work, and invalid vehicle/skin/weapon/animation IDs. Scans a file, "
+                       "heavy OnPlayerUpdate work (including IsPlayerInRangeOfPoint, PF802), invalid "
+                       "vehicle/skin/weapon/animation IDs, immediate Kick/Ban after message/dialog (PF701), "
+                       "unguarded strcmp on inputtext (PF702), unguarded combat array bounds (PF703), RCON %s "
+                       "injection (PF704), and unfreed Pawn.RakNet BitStreams (PF801). Scans a file, "
                        "a directory (third-party include dirs skipped by default) or inline code.",
         "inputSchema": _schema({
             "path": STR, "code": STR,
@@ -132,10 +135,11 @@ TOOLS = [
     },
     {
         "name": "api_lookup",
-        "description": "Exact native/callback signatures from real include files: open.mp stdlib, Streamer, "
-                       "MySQL R41, sscanf2 and Pawn.CMD (bundled), plus the project's own includes when "
-                       "project_dir is given. Use name= for one symbol (with open.mp deprecation info) or "
-                       "query= to search. Never guess a signature.",
+        "description": "Exact native/callback signatures from real include files: open.mp stdlib, samp-stdlib "
+                       "(SA-MP 0.3.7), Streamer, MySQL R41, sscanf2, Pawn.CMD, Pawn.RakNet, samp-bcrypt and "
+                       "ColAndreas (bundled), plus the project's own includes when project_dir is given. Filter "
+                       "target stdlib with platform ('auto', 'open.mp', or 'sa-mp'), use name= for one symbol "
+                       "(with open.mp deprecation info) or query= to search. Never guess a signature.",
         "inputSchema": _schema({
             "name": STR,
             "query": STR,

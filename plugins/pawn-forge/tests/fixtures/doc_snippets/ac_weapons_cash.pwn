@@ -19,7 +19,15 @@ main() {}
 
 static stock bool:AC_InGrace(untilTick)
 {
+	if (untilTick == 0) return false;
 	return (GetTickCount() - untilTick) < 0;
+}
+
+static stock AC_GraceUntil(ms)
+{
+	new until = GetTickCount() + ms;
+	if (until == 0) until = 1;
+	return until;
 }
 
 forward AC_ExecKick(playerid);
@@ -79,7 +87,7 @@ public OnPlayerDisconnect(playerid, reason)
 
 stock AC_SyncCash(playerid)
 {
-	sCashGraceUntil[playerid] = GetTickCount() + AC_GRACE_MS;
+	sCashGraceUntil[playerid] = AC_GraceUntil(AC_GRACE_MS);
 	ResetPlayerMoney(playerid);
 	GivePlayerMoney(playerid, sPlayerCash[playerid]);
 	return 1;
@@ -138,7 +146,7 @@ stock bool:AC_GiveWeapon(playerid, WEAPON:weaponid, ammo)
 		sPlayerAmmo[playerid][slot] = ammo;
 	}
 
-	sWeaponGraceUntil[playerid] = GetTickCount() + AC_GRACE_MS;
+	sWeaponGraceUntil[playerid] = AC_GraceUntil(AC_GRACE_MS);
 	GivePlayerWeapon(playerid, weaponid, ammo);
 	return true;
 }
@@ -150,7 +158,7 @@ stock AC_ResetWeapons(playerid)
 		sPlayerWeapons[playerid][s] = WEAPON_FIST;
 		sPlayerAmmo[playerid][s] = 0;
 	}
-	sWeaponGraceUntil[playerid] = GetTickCount() + AC_GRACE_MS;
+	sWeaponGraceUntil[playerid] = AC_GraceUntil(AC_GRACE_MS);
 	ResetPlayerWeapons(playerid);
 	return 1;
 }
@@ -184,11 +192,11 @@ public OnPlayerStateChange(playerid, PLAYER_STATE:newstate, PLAYER_STATE:oldstat
 	{
 		new vid = GetPlayerVehicleID(playerid);
 		if (vid != 0) sLastVehModel[playerid] = GetVehicleModel(vid);
-		sWeaponGraceUntil[playerid] = GetTickCount() + AC_GRACE_MS;
+		sWeaponGraceUntil[playerid] = AC_GraceUntil(AC_GRACE_MS);
 	}
 	else if (oldstate == PLAYER_STATE_DRIVER || oldstate == PLAYER_STATE_PASSENGER)
 	{
-		sWeaponGraceUntil[playerid] = GetTickCount() + AC_GRACE_MS;
+		sWeaponGraceUntil[playerid] = AC_GraceUntil(AC_GRACE_MS);
 	}
 	return 1;
 }

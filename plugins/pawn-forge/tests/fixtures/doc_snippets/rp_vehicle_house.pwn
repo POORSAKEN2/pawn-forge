@@ -111,6 +111,7 @@ stock Veh_ToggleLock(playerid, idx)
 
 	new vid = gServerVeh[idx][E_VEH_RUNTIME_ID];
 	if (vid == INVALID_VEHICLE_ID || !IsValidVehicle(vid)) return 0;
+	if (GetVehicleVirtualWorld(vid) != GetPlayerVirtualWorld(playerid)) return 0;
 
 	new Float:vx, Float:vy, Float:vz, Float:px, Float:py, Float:pz;
 	GetVehiclePos(vid, vx, vy, vz);
@@ -227,6 +228,7 @@ public OnPlayerDisconnect(playerid, reason)
 
 public OnVehicleDeath(vehicleid, killerid)
 {
+	if (vehicleid <= 0 || vehicleid >= MAX_VEHICLES) return 1;
 	new idx = gVehByRuntime[vehicleid];
 	if (idx >= 0)
 	{
@@ -239,6 +241,7 @@ public OnVehicleDeath(vehicleid, killerid)
 
 public OnVehicleSpawn(vehicleid)
 {
+	if (vehicleid <= 0 || vehicleid >= MAX_VEHICLES) return 1;
 	new idx = gVehByRuntime[vehicleid];
 	if (idx >= 0)
 	{

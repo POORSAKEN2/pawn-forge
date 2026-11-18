@@ -251,14 +251,14 @@ def _dispatch(ns: argparse.Namespace) -> tuple[str, dict[str, Any]]:
             "amx_path": ns.amx_path,
             "timeout_s": ns.timeout_s,
             "stop_on": ns.stop_on,
-            "config": _parse_kv_pairs(ns.config, coerce=True),
+            "config": _parse_kv_pairs(ns.config),
         })
         return "run_server", args
     raise ValueError(f"Unknown subcommand: {cmd}")
 
 
 def _format_text(cmd: str, res: dict[str, Any]) -> str:
-    if res.get("ok") is False or (res.get("error") and "ok" not in res):
+    if (res.get("ok") is False and "error" in res) or (res.get("error") and "ok" not in res):
         lines = [f"Error: {res.get('error', 'Command failed.')}"]
         if res.get("how_to_fix"):
             lines.append(f"How to fix: {res['how_to_fix']}")
@@ -331,6 +331,8 @@ def _format_text(cmd: str, res: dict[str, Any]) -> str:
         for it in res.get("results", []):
             if isinstance(it, list):
                 lines.append("  " + " | ".join(map(str, it)))
+            elif isinstance(it, dict) and "type" in it and "limits" in it:
+                lines.append(f"  {it['type']}: {' | '.join(map(str, it['limits']))}")
             elif isinstance(it, dict):
                 ident = it.get("id", it.get("interior", ""))
                 name = it.get("name", it.get("model_name", ""))
@@ -411,6 +413,11 @@ def main(argv: list[str] | None = None) -> int:
     if hasattr(sys.stdout, "reconfigure"):
         try:
             sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+    if hasattr(sys.stdin, "reconfigure"):
+        try:
+            sys.stdin.reconfigure(encoding="utf-8", errors="replace")
         except Exception:
             pass
     parser = _build_parser()

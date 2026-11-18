@@ -22,7 +22,9 @@ stock AC_SetPlayerPos(playerid, Float:x, Float:y, Float:z)
 	sLastY[playerid] = y;
 	sLastZ[playerid] = z;
 	sLastMoveTick[playerid] = GetTickCount();
-	sTeleportGraceUntil[playerid] = GetTickCount() + AC_TP_GRACE_MS;
+	new until = GetTickCount() + AC_TP_GRACE_MS;
+	if (until == 0) until = 1;
+	sTeleportGraceUntil[playerid] = until;
 	sSpeedStrikes[playerid] = 0;
 	return SetPlayerPos(playerid, x, y, z);
 }
@@ -38,7 +40,7 @@ stock AC_CheckMovement(playerid)
 	if (!IsPlayerConnected(playerid)) return 1;
 
 	new now = GetTickCount();
-	if ((now - sTeleportGraceUntil[playerid]) < 0)
+	if (sTeleportGraceUntil[playerid] != 0 && (now - sTeleportGraceUntil[playerid]) < 0)
 		return 1; // Inside server-teleport grace window.
 
 	new PLAYER_STATE:state = GetPlayerState(playerid);
@@ -163,9 +165,9 @@ public OnPlayerWeaponShot(playerid, WEAPON:weaponid, BULLET_HIT_TYPE:hittype, hi
 
 	// 5. Lag-tolerant rapid-fire check (burst packets can condense two shots; require 3 strikes).
 	new now = GetTickCount();
-	new dt = now - sLastShotTick[playerid];
+	new prev = sLastShotTick[playerid];
 	sLastShotTick[playerid] = now;
-	if (dt >= 0 && dt < AC_WeaponMinShotMs(weaponid))
+	if (prev != 0 && (now - prev) >= 0 && (now - prev) < AC_WeaponMinShotMs(weaponid))
 	{
 		if (++sRapidFireStrikes[playerid] >= 3)
 			return 0;

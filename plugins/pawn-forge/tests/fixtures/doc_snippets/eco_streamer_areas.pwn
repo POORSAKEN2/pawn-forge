@@ -69,7 +69,7 @@ public OnPlayerConnect(playerid)
 {
 	sPlayerBeacon[playerid] = CreateDynamicSphere(0.0, 0.0, 0.0, 5.0, .playerid = -1);
 	AttachDynamicAreaToPlayer(sPlayerBeacon[playerid], playerid);
-	Streamer_SetIntData(STREAMER_TYPE_AREA, sPlayerBeacon[playerid], E_STREAMER_PLAYER_ID, -1);
+	Streamer_SetIntData(STREAMER_TYPE_AREA, sPlayerBeacon[playerid], E_STREAMER_EXTRA_ID, playerid);
 	return 1;
 }
 
@@ -113,7 +113,7 @@ stock bool:Eco_IsPlayerSafe(playerid)
 stock Eco_GetBeaconOwner(STREAMER_TAG_AREA:areaid)
 {
 	if (!IsValidDynamicArea(areaid)) return INVALID_PLAYER_ID;
-	return Streamer_GetIntData(STREAMER_TYPE_AREA, areaid, E_STREAMER_PLAYER_ID);
+	return Streamer_GetIntData(STREAMER_TYPE_AREA, areaid, E_STREAMER_EXTRA_ID);
 }
 
 stock Eco_TeleportPreloaded(playerid, Float:x, Float:y, Float:z, worldid, interiorid)

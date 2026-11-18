@@ -148,6 +148,7 @@ Clone the repository and copy `./plugins/pawn-forge` to your global Antigravity 
 - **Windows (PowerShell)**:
   ```powershell
   git clone --depth 1 https://github.com/POORSAKEN2/pawn-forge.git "$env:TEMP\pawn-forge-repo"
+  New-Item -ItemType Directory -Force "$env:USERPROFILE\.gemini\config\plugins" | Out-Null
   Copy-Item -Recurse "$env:TEMP\pawn-forge-repo\plugins\pawn-forge" "$env:USERPROFILE\.gemini\config\plugins\pawn-forge"
   Remove-Item -Recurse -Force "$env:TEMP\pawn-forge-repo"
   ```

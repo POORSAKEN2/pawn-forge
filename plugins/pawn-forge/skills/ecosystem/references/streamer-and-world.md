@@ -60,7 +60,7 @@ stock World_CreateZones()
 }
 ```
 
-## 3. Attachments & Per-Player Visibility (`E_STREAMER_PLAYER_ID`)
+## 3. Attachments, Visibility (`E_STREAMER_PLAYER_ID`) & Metadata (`E_STREAMER_EXTRA_ID`)
 
 Verified attachment & data natives:
 - `native AttachDynamicObjectToVehicle(STREAMER_TAG_OBJECT:objectid, vehicleid, Float:offsetx, Float:offsety, Float:offsetz, Float:rx, Float:ry, Float:rz)`
@@ -68,7 +68,11 @@ Verified attachment & data natives:
 - `native Streamer_SetIntData(type, STREAMER_ALL_TAGS:id, data, value)`
 - `native Streamer_GetIntData(type, STREAMER_ALL_TAGS:id, data)`
 
-Use `AttachDynamicObjectToVehicle` for sirens, roof bars, or cargo crates, and `AttachDynamicAreaToPlayer` for moving proximity rings (e.g., taser/cuff aura or squad beacon) without per-frame polling. To restrict or retarget an existing Streamer item to one player dynamically, set `E_STREAMER_PLAYER_ID`:
+Use `AttachDynamicObjectToVehicle` for sirens, roof bars, or cargo crates, and `AttachDynamicAreaToPlayer` for moving proximity rings (e.g., taser/cuff aura or squad beacon) without per-frame polling.
+
+Keep Streamer's two player-related data keys distinct:
+- **`E_STREAMER_PLAYER_ID`** controls **per-player visibility** (`-1` = visible to all players, or a specific `playerid` to restrict/retarget visibility dynamically).
+- **`E_STREAMER_EXTRA_ID`** stores **custom integer metadata** (such as an owning `playerid` or SQL ID) without affecting visibility.
 
 ```pawn
 stock World_AttachSiren(vehicleid, &STREAMER_TAG_OBJECT:outObj)
@@ -79,10 +83,16 @@ stock World_AttachSiren(vehicleid, &STREAMER_TAG_OBJECT:outObj)
 
 stock World_CreatePersonalBeacon(playerid, &STREAMER_TAG_AREA:outArea)
 {
+	// .playerid = -1 keeps the area visible to everyone; E_STREAMER_EXTRA_ID tracks the owner.
 	outArea = CreateDynamicSphere(0.0, 0.0, 0.0, 5.0, .playerid = -1);
 	AttachDynamicAreaToPlayer(outArea, playerid);
-	// Or restrict visibility/ownership metadata dynamically via E_STREAMER_PLAYER_ID:
-	Streamer_SetIntData(STREAMER_TYPE_AREA, outArea, E_STREAMER_PLAYER_ID, -1);
+	Streamer_SetIntData(STREAMER_TYPE_AREA, outArea, E_STREAMER_EXTRA_ID, playerid);
+}
+
+stock World_GetBeaconOwner(STREAMER_TAG_AREA:areaid)
+{
+	if (!IsValidDynamicArea(areaid)) return INVALID_PLAYER_ID;
+	return Streamer_GetIntData(STREAMER_TYPE_AREA, areaid, E_STREAMER_EXTRA_ID);
 }
 ```
 

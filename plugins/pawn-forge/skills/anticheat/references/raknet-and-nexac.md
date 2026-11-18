@@ -15,7 +15,7 @@ stock AC_SendSafeClientRPC(playerid, rpcid, value)
 {
 	new BitStream:bs = BS_New();
 	BS_WriteValue(bs, PR_INT32, value);
-	BS_RPC(bs, playerid, rpcid);
+	PR_SendRPC(bs, playerid, rpcid);
 	BS_Delete(bs); // Required: prevents BitStream handle leak (PF801).
 	return 1;
 }
@@ -170,7 +170,7 @@ public OnIncomingRPC(playerid, rpcid, BitStream:bs)
 			BS_ResetReadPointer(bs);
 
 			if (amount != amount || amount <= 0.0 || amount > 500.0) return 0;
-			if (targetId == playerid || weaponId > 54) return 0;
+			if (targetId == playerid || weaponId < 0 || weaponId > 54) return 0;
 		}
 		case RPC_DAMAGE_VEHICLE:
 		{
