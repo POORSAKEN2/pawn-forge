@@ -27,6 +27,7 @@ SNIPPETS = {
     "rp_vehicle_house.pwn": ("omp-stdlib", "mysqlinc", "Pawn.CMD/src", "sscanf", "samp-streamer-plugin"),
     "ac_weapons_cash.pwn": ("omp-stdlib",),
     "ac_dialogs_kick.pwn": ("omp-stdlib",),
+    "eco_streamer_areas.pwn": ("omp-stdlib", "samp-streamer-plugin"),
 }
 
 
