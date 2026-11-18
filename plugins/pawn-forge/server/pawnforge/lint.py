@@ -285,13 +285,16 @@ class Linter:
             return False
         return fn.kind in ("command", "dialog", "timer") or fn.name.split(":")[-1] in REPEATING_CALLBACKS
 
-    def _statement_context(self, call_start: int) -> str:
-        """Text before the call on the same statement (to see if the result is used)."""
+    def _statement_start(self, offset: int) -> int:
         t = self.s.masked
-        j = call_start - 1
+        j = offset - 1
         while j >= 0 and t[j] not in ";{}":
             j -= 1
-        return t[j + 1:call_start].strip()
+        return j + 1
+
+    def _statement_context(self, call_start: int) -> str:
+        """Text before the call on the same statement (to see if the result is used)."""
+        return self.s.masked[self._statement_start(call_start):call_start].strip()
 
     def _block_stack(self, fn, offset: int) -> tuple[int, ...]:
         """Tuple of enclosing '{' offsets inside `fn` at `offset`."""
@@ -631,6 +634,7 @@ class Linter:
             if not fn or not target:
                 continue
             kick_stack = self._block_stack(fn, c.start)
+            stmt_start = self._statement_start(c.start)
             for mc in reversed(msgs_by_fn.get(fn.body_start, [])):
                 if mc.start >= c.start:
                     continue
@@ -641,7 +645,7 @@ class Linter:
                 msg_stack = self._block_stack(fn, mc.start)
                 if len(msg_stack) > len(kick_stack) or kick_stack[:len(msg_stack)] != msg_stack:
                     continue
-                if self._has_unconditional_return(fn, mc.close_paren + 1, c.start, len(msg_stack)):
+                if self._has_unconditional_return(fn, mc.close_paren + 1, stmt_start, len(msg_stack)):
                     continue
                 self.add("PF701", c.start,
                          f"{c.name}({target}) immediately follows {mc.name} on the same path; delay with SetTimerEx/defer so the message arrives.")

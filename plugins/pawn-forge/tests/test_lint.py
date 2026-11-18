@@ -114,17 +114,21 @@ public OnPlayerConnect(playerid)
     def test_anticheat_and_ecosystem_rules_and_false_positive_guards(self):
         # PF701: immediate Kick/Ban after SendClientMessage/ShowPlayerDialog fires; timer-delayed or unrelated stays quiet
         bad_kick = 'f(p){ SendClientMessage(p, -1, "Bye"); Kick(p); }'
+        bad_return_kick = 'f(p){ SendClientMessage(p, -1, "Bye"); return Kick(p); }'
         bad_ban = 'f(p){ ShowPlayerDialog(p, 1, DIALOG_STYLE_MSGBOX, "Ban", "Bye", "OK", ""); BanEx(p, "reason"); }'
         good_kick = 'f(p){ SendClientMessage(p, -1, "Bye"); SetTimerEx("DelayedKick", 200, false, "i", p); }'
         good_other_player = 'f(admin, target){ SendClientMessage(admin, -1, "Kicked."); Kick(target); }'
         good_standalone_kick = 'public DelayedKick(p){ Kick(p); return 1; }'
         good_different_branch = 'f(p, ok){ if(ok){ SendClientMessage(p, -1, "Welcome"); return 1; } Kick(p); return 1; }'
+        good_separated_return = 'f(p){ SendClientMessage(p, -1, "Bye"); return 1; Kick(p); }'
         self.assertIn("PF701", self.rules(bad_kick))
+        self.assertIn("PF701", self.rules(bad_return_kick))
         self.assertIn("PF701", self.rules(bad_ban))
         self.assertEqual(self.rules(good_kick), [])
         self.assertEqual(self.rules(good_other_player), [])
         self.assertEqual(self.rules(good_standalone_kick), [])
         self.assertEqual(self.rules(good_different_branch), [])
+        self.assertEqual(self.rules(good_separated_return), [])
 
         # PF702: unguarded strcmp on inputtext fires; isnull/inputtext[0]/strlen guard stays quiet
         bad_cmp = 'public OnDialogResponse(p,d,r,l,inputtext[]){ if(!strcmp(inputtext, "pw")) return 1; return 0; }'
