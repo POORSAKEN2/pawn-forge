@@ -136,7 +136,14 @@ TOOLS = [
                        "MySQL R41, sscanf2 and Pawn.CMD (bundled), plus the project's own includes when "
                        "project_dir is given. Use name= for one symbol (with open.mp deprecation info) or "
                        "query= to search. Never guess a signature.",
-        "inputSchema": _schema({"name": STR, "query": STR, "library": STR, "project_dir": STR, "limit": INT}),
+        "inputSchema": _schema({
+            "name": STR,
+            "query": STR,
+            "library": STR,
+            "project_dir": STR,
+            "limit": INT,
+            "platform": {"type": "string", "enum": ["auto", "open.mp", "sa-mp", "openmp", "samp"]},
+        }),
         "annotations": {"readOnlyHint": True},
         "fn": lambda a: api.api_lookup(**a),
     },

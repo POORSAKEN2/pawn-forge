@@ -4,11 +4,12 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import unittest.mock
 from pathlib import Path
 
 from helpers import FIXTURES, PLUGIN
 
-from pawnforge import api, data, lookup
+from pawnforge import api, data, lookup, project, tools
 from pawnforge.crashlog import analyze_log
 from pawnforge.migrate import migrate_openmp
 from pawnforge.textdraw import convert_textdraws
@@ -77,6 +78,68 @@ class ApiTest(unittest.TestCase):
             r = api.api_lookup(name="MyLib_Do", project_dir=d)
             self.assertTrue(r["found"])
             self.assertTrue(r["results"][0]["library"].startswith("project:"))
+
+
+class ProjectAndPlatformApiTest(unittest.TestCase):
+    def test_detects_new_libraries_and_modular_samp_platform(self):
+        with tempfile.TemporaryDirectory() as d:
+            Path(d, "includes").mkdir()
+            Path(d, "includes", "core.inc").write_text(
+                "#include <a_samp>\n#include <Pawn.RakNet>\n#include <samp_bcrypt>\n"
+                "#include <colandreas>\n#include <nex-ac>\n#include <easyDialog>\n"
+            )
+            info = project.project_info(d)
+            self.assertEqual(info["platform"], "sa-mp")
+            for lib in ("pawn.raknet", "samp-bcrypt", "colandreas", "nex-ac", "easydialog"):
+                self.assertIn(lib, info["libraries_detected"])
+
+    def test_api_lookup_platform_filtering_and_collision_handling(self):
+        with tempfile.TemporaryDirectory() as d:
+            Path(d, "include").mkdir()
+            Path(d, "gamemodes").mkdir()
+            Path(d, "gamemodes", "gm.pwn").write_text("#include <a_samp>\nmain(){}\n")
+            fake_bundled = [
+                {"name": "TextDrawColour", "library": "open.mp", "signature": "native TextDrawColour(Text:text, colour)"},
+                {"name": "GetPlayerPoolSize", "library": "open.mp", "signature": "native GetPlayerPoolSize()"},
+                {"name": "GetPlayerPoolSize", "library": "samp-stdlib", "signature": "native GetPlayerPoolSize()"},
+            ]
+            with unittest.mock.patch("pawnforge.api.data.load", side_effect=lambda k: fake_bundled if k == "natives" else ([] if k == "callbacks" else {"GetPlayerPoolSize": {"replacement": "MAX_PLAYERS"}} if k == "omp_deprecations" else {})):
+                default_res = api.api_lookup(name="GetPlayerPoolSize")
+                self.assertEqual([r["library"] for r in default_res["results"]], ["open.mp"])
+                self.assertIn("openmp_deprecation", default_res)
+
+                samp_res = api.api_lookup(name="GetPlayerPoolSize", project_dir=d)
+                self.assertEqual([r["library"] for r in samp_res["results"]], ["samp-stdlib"])
+                self.assertNotIn("openmp_deprecation", samp_res)
+
+                explicit_samp = api.api_lookup(query="TextDrawColour", platform="sa-mp")
+                self.assertEqual(explicit_samp["count"], 0)
+
+                explicit_lib = api.api_lookup(name="GetPlayerPoolSize", library="samp-stdlib")
+                self.assertEqual([r["library"] for r in explicit_lib["results"]], ["samp-stdlib"])
+                self.assertNotIn("openmp_deprecation", explicit_lib)
+
+                via_tool = tools.call_tool("api_lookup", {"name": "GetPlayerPoolSize", "platform": "samp"})
+                self.assertEqual([r["library"] for r in via_tool["results"]], ["samp-stdlib"])
+                self.assertNotIn("openmp_deprecation", via_tool)
+
+    def test_collect_includes_exclusions_and_remaining_libraries(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "pawno" / "include").mkdir(parents=True)
+            (root / "pawno" / "include" / "a_samp.inc").write_text("#include <a_samp>\n")
+            (root / "include" / "dependencies").mkdir(parents=True)
+            (root / "include" / "dependencies" / "ignored.inc").write_text("#include <open.mp>\n")
+            (root / "src").mkdir()
+            (root / "src" / "main.inc").write_text(
+                "#include <a_samp>\n#include <mapandreas>\n#include <mSelection>\n"
+                "#include <bcrypt>\n#include <nex_ac>\n"
+            )
+            info = project.project_info(d)
+            self.assertEqual(info["platform"], "sa-mp")
+            for lib in ("mapandreas", "mselection", "samp-bcrypt", "nex-ac"):
+                self.assertIn(lib, info["libraries_detected"])
+            self.assertNotIn("open.mp", [i.lower() for i in info["includes_in_main"]])
 
 
 class CrashlogTest(unittest.TestCase):
